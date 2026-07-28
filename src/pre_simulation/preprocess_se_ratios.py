@@ -48,9 +48,7 @@ def preprocess_se_ratios(in_path, out_path):
         columns={"Activity_clean": "Activity"}
     )
 
-    out_dir = os.path.dirname(out_path)
-    if out_dir:
-        os.makedirs(out_dir, exist_ok=True)
+    os.makedirs(os.path.dirname(out_path) or ".", exist_ok=True)
     df_final.to_csv(out_path, index=False)
     print(f"  Saved preprocessed SE ratios for Mie-ken. Shape: {df_final.shape}")
 
