@@ -21,7 +21,9 @@ def preprocess_questionnaire_a(in_path, out_path):
     df_q_melt = df_q_clean.melt(
         id_vars=["Region_JP", "Region_EN"], var_name="Metric", value_name="Count"
     )
-    os.makedirs(os.path.dirname(out_path), exist_ok=True)
+    out_dir = os.path.dirname(out_path)
+    if out_dir:
+        os.makedirs(out_dir, exist_ok=True)
     df_q_melt.to_csv(out_path, index=False)
     print(f"  Saved preprocessed Questionnaire A. Shape: {df_q_melt.shape}")
 
