@@ -1,0 +1,70 @@
+Sex,Activity,SE_Ratio_Fraction
+Both sexes,Sleep,0.0029
+Male,Sleep,0.0043
+Female,Sleep,0.0055000000000000005
+Both sexes,Personal care,0.0179
+Male,Personal care,0.0217
+Female,Personal care,0.0167
+Both sexes,Meals,0.0077
+Male,Meals,0.008
+Female,Meals,0.0123
+Both sexes,Commuting to and from school or work,0.0127
+Male,Commuting to and from school or work,0.0232
+Female,Commuting to and from school or work,0.029300000000000003
+Both sexes,Work,0.0168
+Male,Work,0.0174
+Female,Work,0.0388
+Both sexes,Schoolwork,0.0398
+Male,Schoolwork,0.048
+Female,Schoolwork,0.0635
+Both sexes,Housework,0.0371
+Male,Housework,0.0951
+Female,Housework,0.0291
+Both sexes,Caring or nursing,0.17579999999999998
+Male,Caring or nursing,0.35
+Female,Caring or nursing,0.1753
+Both sexes,Child care,0.0601
+Male,Child care,0.078
+Female,Child care,0.071
+Both sexes,Shopping,0.0275
+Male,Shopping,0.053399999999999996
+Female,Shopping,0.0231
+Both sexes,Moving (excluding commuting),0.027200000000000002
+Male,Moving (excluding commuting),0.0412
+Female,Moving (excluding commuting),0.0533
+Both sexes,"Watching TV, listening to the radio, reading newspapers or magazines",0.0072
+Male,"Watching TV, listening to the radio, reading newspapers or magazines",0.0095
+Female,"Watching TV, listening to the radio, reading newspapers or magazines",0.0146
+Both sexes,Rest and relaxation,0.0138
+Male,Rest and relaxation,0.020499999999999997
+Female,Rest and relaxation,0.0203
+Both sexes,"Learning, self-education, and training (excluding schoolwork)",0.051699999999999996
+Male,"Learning, self-education, and training (excluding schoolwork)",0.0701
+Female,"Learning, self-education, and training (excluding schoolwork)",0.0649
+Both sexes,Hobbies and amusements,0.0429
+Male,Hobbies and amusements,0.058600000000000006
+Female,Hobbies and amusements,0.0363
+Both sexes,Sports,0.054299999999999994
+Male,Sports,0.0785
+Female,Sports,0.061
+Both sexes,Volunteer and social activities,0.08349999999999999
+Male,Volunteer and social activities,0.085
+Female,Volunteer and social activities,0.1432
+Both sexes,Social life,0.08380000000000001
+Male,Social life,0.0782
+Female,Social life,0.1168
+Both sexes,Medical examination or treatment,0.1174
+Male,Medical examination or treatment,0.1142
+Female,Medical examination or treatment,0.1433
+Both sexes,Other activities,0.0885
+Male,Other activities,0.13419999999999999
+Female,Other activities,0.0984
+Both sexes,Primary activities(Regrouped),0.0024
+Male,Primary activities(Regrouped),0.0039000000000000003
+Female,Primary activities(Regrouped),0.0038
+Both sexes,Secondary activities(Regrouped),0.0108
+Male,Secondary activities(Regrouped),0.015600000000000001
+Female,Secondary activities(Regrouped),0.0132
+Both sexes,Tertiary activities(Regrouped),0.012
+Male,Tertiary activities(Regrouped),0.0124
+Female,Tertiary activities(Regrouped),0.0146
