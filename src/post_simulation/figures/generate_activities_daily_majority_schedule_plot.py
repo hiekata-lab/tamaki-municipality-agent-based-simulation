@@ -1,6 +1,6 @@
 import pandas as pd
 import os
-from src.tools import get_csv_and_out_parser
+
 
 os.environ["MPLCONFIGDIR"] = "./.matplotlib"
 
@@ -61,7 +61,11 @@ def generate_average_day_plot(csv_path, out_dir):
 
 
 if __name__ == "__main__":
-    parser = get_csv_and_out_parser("Generate activities daily majority schedule plot", "--schedule-csv")
+    parser = argparse.ArgumentParser(description="Generate activities daily majority schedule plot")
+
+    parser.add_argument("--schedule-csv", type=str, required=True, help='Input CSV path')
+
+    parser.add_argument('--out-dir', type=str, required=True, help='Output directory')
     args = parser.parse_args()
 
     generate_average_day_plot(args.schedule_csv, args.out_dir)

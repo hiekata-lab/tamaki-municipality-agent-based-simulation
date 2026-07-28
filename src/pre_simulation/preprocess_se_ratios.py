@@ -1,7 +1,8 @@
+import argparse
 import pandas as pd
 import os
 from src.constants import SE_RATIOS_ID_COLS, SE_RATIOS_ACTIVITIES
-from src.tools import get_io_parser
+
 
 
 def preprocess_se_ratios(in_path, out_path):
@@ -54,6 +55,10 @@ def preprocess_se_ratios(in_path, out_path):
 
 
 if __name__ == "__main__":
-    parser = get_io_parser("Preprocess SE ratios")
+    parser = argparse.ArgumentParser(description="Preprocess SE ratios")
+
+    parser.add_argument('--in-path', type=str, required=True, help='Input CSV')
+
+    parser.add_argument('--out-path', type=str, required=True, help='Output CSV')
     args = parser.parse_args()
     preprocess_se_ratios(args.in_path, args.out_path)

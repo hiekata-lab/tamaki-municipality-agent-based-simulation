@@ -1,3 +1,4 @@
+import argparse
 import os
 import pandas as pd
 import numpy as np
@@ -9,16 +10,14 @@ from src.constants import (
     COL_SEX,
     SIM_TO_ACTIVITY_MAPPING,
 )
-from src.tools import (
-    load_and_preprocess_simulation_data,
-    load_simulation_metadata,
-    get_sim_and_out_parser,
-)
+
 
 def generate_std_table(sim_dir, out_dir):
     os.makedirs(out_dir, exist_ok=True)
 
-    df = load_and_preprocess_simulation_data(sim_dir)
+    csv_path = os.path.join(sim_dir, "aggregated.csv")
+
+    df = pd.read_csv(csv_path, parse_dates=["starting_time", "end_time"])
 
     df["mapped_act"] = df["activity"].map(SIM_TO_ACTIVITY_MAPPING)
     df_act = (
@@ -31,7 +30,7 @@ def generate_std_table(sim_dir, out_dir):
     df_act = pd.merge(df_act, df[["unique_simulation_id", "days_simulated"]].drop_duplicates(), on="unique_simulation_id", how="left")
     df_act["duration"] /= df_act["days_simulated"]
 
-    df_meta = load_simulation_metadata(sim_dir)
+    df_meta = df[["unique_simulation_id", COL_SCENARIO, COL_AGE, COL_SEX, COL_HEALTH]].drop_duplicates()
 
     df_full = pd.merge(df_meta, df_act, on="unique_simulation_id", how="left")
     df_full = df_full.pivot_table(
@@ -72,7 +71,11 @@ def generate_std_table(sim_dir, out_dir):
 
 
 if __name__ == "__main__":
-    parser = get_sim_and_out_parser("Generate activities daily std minutes table")
+    parser = argparse.ArgumentParser(description="Generate activities daily std minutes table")
+
+    parser.add_argument('--sim-dir', type=str, default='.', help='Path to simulation dir')
+
+    parser.add_argument('--out-dir', type=str, default='tables', help='Output directory for tables')
     args = parser.parse_args()
 
     generate_std_table(args.sim_dir, args.out_dir)

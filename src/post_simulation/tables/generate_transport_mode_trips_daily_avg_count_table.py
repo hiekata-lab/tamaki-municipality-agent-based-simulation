@@ -1,3 +1,4 @@
+import argparse
 import os
 import pandas as pd
 import numpy as np
@@ -8,20 +9,18 @@ from src.constants import (
     COL_SEX,
     TRANSPORTATION_MODES,
 )
-from src.tools import (
-    load_and_preprocess_simulation_data,
-    load_simulation_metadata,
-    load_locations_coordinates,
-    get_sim_and_out_parser,
-)
+
 
 def generate_transport_tables(sim_dir, out_dir):
     os.makedirs(out_dir, exist_ok=True)
 
-    df = load_and_preprocess_simulation_data(sim_dir)
+    csv_path = os.path.join(sim_dir, "aggregated.csv")
+    df = pd.read_csv(csv_path, parse_dates=["starting_time", "end_time"])
 
     # Load Location Graph
-    loc_x, loc_y = load_locations_coordinates()
+    graph_df = pd.read_json("data/processed/locations_graph.json", orient="index")
+    loc_x = graph_df["x"]
+    loc_y = graph_df["y"]
 
     # Filter for Transport
     df_t = df[df["activity"].isin(TRANSPORTATION_MODES)].copy()
@@ -44,7 +43,7 @@ def generate_transport_tables(sim_dir, out_dir):
     )
 
     # Load Metadata
-    df_meta = load_simulation_metadata(sim_dir)
+    df_meta = df[["unique_simulation_id", COL_SCENARIO, COL_AGE, COL_SEX, COL_HEALTH]].drop_duplicates()
 
     # Cross demographics with all transport modes
     df_meta_cross = (
@@ -90,7 +89,11 @@ def generate_transport_tables(sim_dir, out_dir):
 
 
 if __name__ == "__main__":
-    parser = get_sim_and_out_parser("Generate transport mode trips daily avg count table")
+    parser = argparse.ArgumentParser(description="Generate transport mode trips daily avg count table")
+
+    parser.add_argument('--sim-dir', type=str, default='.', help='Path to simulation dir')
+
+    parser.add_argument('--out-dir', type=str, default='tables', help='Output directory for tables')
     args = parser.parse_args()
 
     generate_transport_tables(args.sim_dir, args.out_dir)

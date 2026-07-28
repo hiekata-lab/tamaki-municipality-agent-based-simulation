@@ -1,3 +1,4 @@
+import argparse
 import os
 import pandas as pd
 import numpy as np
@@ -13,18 +14,15 @@ from src.constants import (
     COL_VALIDATION,
     SIM_TO_ACTIVITY_MAPPING,
 )
-from src.tools import (
-    load_and_preprocess_simulation_data,
-    load_simulation_metadata,
-    get_sim_and_out_parser,
-)
+
 
 
 def generate_comparison_table(sim_dir, validation_path, se_ratios_path, out_dir):
     os.makedirs(out_dir, exist_ok=True)
 
     # 1. Load Simulation Data
-    df = load_and_preprocess_simulation_data(sim_dir)
+    csv_path = os.path.join(sim_dir, "aggregated.csv")
+    df = pd.read_csv(csv_path, parse_dates=["starting_time", "end_time"])
 
     # Filter and group activities
     df["mapped_act"] = df["activity"].map(SIM_TO_ACTIVITY_MAPPING)
@@ -41,7 +39,7 @@ def generate_comparison_table(sim_dir, validation_path, se_ratios_path, out_dir)
     df_act["duration"] /= df_act["days_simulated"]
 
     # 2. Extract Demographics
-    df_meta = load_simulation_metadata(sim_dir)
+    df_meta = df[["unique_simulation_id", COL_SCENARIO, COL_AGE, COL_SEX, COL_HEALTH]].drop_duplicates()
 
     # Cross demographics with all activities (fill 0 for missing activities)
     df_full = pd.merge(df_meta, df_act, on="unique_simulation_id", how="left")
@@ -151,7 +149,11 @@ def generate_comparison_table(sim_dir, validation_path, se_ratios_path, out_dir)
 
 
 if __name__ == "__main__":
-    parser = get_sim_and_out_parser("Generate activities daily avg minutes table")
+    parser = argparse.ArgumentParser(description="Generate activities daily avg minutes table")
+
+    parser.add_argument('--sim-dir', type=str, default='.', help='Path to simulation dir')
+
+    parser.add_argument('--out-dir', type=str, default='tables', help='Output directory for tables')
     args = parser.parse_args()
 
     validation_path = "data/processed/Average time spent in activities for participants by Kind of activities, Day of the week, Area classification, Sex, Usual economic activity, Usual state of health, Age (15 Years Old and Over)-Japan, Prefectures.csv"

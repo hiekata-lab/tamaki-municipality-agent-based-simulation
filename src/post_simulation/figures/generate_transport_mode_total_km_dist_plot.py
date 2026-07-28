@@ -1,6 +1,6 @@
 import pandas as pd
 import os
-from src.tools import get_csv_and_out_parser
+
 
 os.environ["MPLCONFIGDIR"] = "./.matplotlib"
 import matplotlib.pyplot as plt
@@ -36,7 +36,11 @@ def plot_transport_metric(csv_path, out_dir):
 
 
 if __name__ == "__main__":
-    parser = get_csv_and_out_parser("Generate transport mode total km dist plot")
+    parser = argparse.ArgumentParser(description="Generate transport mode total km dist plot")
+
+    parser.add_argument("--csv", type=str, required=True, help='Input CSV path')
+
+    parser.add_argument('--out-dir', type=str, required=True, help='Output directory')
     args = parser.parse_args()
 
     plot_transport_metric(args.csv, args.out_dir)

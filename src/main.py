@@ -5,37 +5,43 @@ import argparse
 
 
 def run_script(script_path, args=None):
-    if args is None:
-        args = []
     print(f"Running {script_path}...", flush=True)
-    cmd = [sys.executable, script_path] + args
-
+    # Create command
+    cmd = [sys.executable, script_path] + args or []
+    # Copy environment variables
     env = os.environ.copy()
+    # Set the project root
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+    # If there is a pythonpath in env replace it otherwise dont 
     if "PYTHONPATH" in env:
         env["PYTHONPATH"] = f"{project_root}:{env['PYTHONPATH']}"
     else:
         env["PYTHONPATH"] = project_root
-
+    # 
     result = subprocess.run(cmd, check=True, env=env)
     return result
 
 
 def main():
+    # Create a CLI arg parser
     parser = argparse.ArgumentParser(
         description="Run the Tamaki Town Agent-Based Simulation full experiment"
     )
+    # Add arguments for running different stages of the simulation pipeline
     parser.add_argument(
         "--stages",
         nargs="+",
         choices=["pre_sim", "sim", "post_sim"],
         default=["pre_sim", "sim", "post_sim"],
     )
+    # Parse arguments
     args = parser.parse_args()
 
+    # Print arguments
     print(f"Starting full experiment replication. Stages: {args.stages}", flush=True)
-    os.makedirs("simulation_results", exist_ok=True)
 
+    # Make sure the output directories are made
+    os.makedirs("simulation_results", exist_ok=True)
     os.makedirs("data/raw", exist_ok=True)
     os.makedirs("data/processed", exist_ok=True)
 
@@ -45,21 +51,21 @@ def main():
         val_out = "data/processed/Average time spent in activities for participants by Kind of activities, Day of the week, Area classification, Sex, Usual economic activity, Usual state of health, Age (15 Years Old and Over)-Japan, Prefectures.csv"
         run_script(
             "src/pre_simulation/preprocess_validation_data.py",
-            ["--in-path", val_in, "--out-path", val_out],
+            ["--in-path", val_in, "--out-path", "data/processed"],
         )
 
         qa_in = "data/raw/Questionnaire A.csv"
         qa_out = "data/processed/Questionnaire A.csv"
         run_script(
             "src/pre_simulation/preprocess_questionnaire_a.py",
-            ["--in-path", qa_in, "--out-path", qa_out],
+            ["--in-path", qa_in, "--out-path", "data/processed"],
         )
 
         se_in = "data/raw/Standard Error Ratios of Average time spent in activities for all persons by Sex, Kind of activities - Weekly average, Japan, Prefectures.csv"
         se_out = "data/processed/Standard Error Ratios of Average time spent in activities for all persons by Sex, Kind of activities - Weekly average, Japan, Prefectures.csv"
         run_script(
             "src/pre_simulation/preprocess_se_ratios.py",
-            ["--in-path", se_in, "--out-path", se_out],
+            ["--in-path", se_in, "--out-path", "data/processed"],
         )
 
         run_script(
@@ -101,10 +107,6 @@ def main():
                         raw_dir,
                         "--locations",
                         "data/processed/locations_graph.json",
-                        "--travel-modes",
-                        "data/raw/travel_modes.json",
-                        "--activities",
-                        "data/raw/activities.json",
                         "--agents",
                         "data/processed/agents.csv",
                         "--temperature",
@@ -119,7 +121,11 @@ def main():
             if "post_sim" in args.stages:
                 run_script(
                     "src/post_simulation/aggregate_simulation_results.py",
-                    ["--results-dir", raw_dir, "--out-dir", agg_dir],
+                    ["--in-dir", raw_dir, "--out-dir", agg_dir],
+                )
+                run_script(
+                    "src/post_simulation/preprocess_aggregated_data.py",
+                    ["--in-dir", agg_dir, "--out-dir", agg_dir],
                 )
 
                 # Tables

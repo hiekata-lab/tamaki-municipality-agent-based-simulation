@@ -14,6 +14,7 @@ import json
 import boto3
 from dotenv import load_dotenv
 import botocore.exceptions
+from src.constants import ACTIVITIES, TRAVEL_MODES
 
 if os.path.exists("secrets.env"):
     load_dotenv("secrets.env")
@@ -49,18 +50,6 @@ parser.add_argument(
     help="Path to locations graph JSON",
 )
 parser.add_argument(
-    "--travel-modes",
-    type=str,
-    default="./travel_modes.json",
-    help="Path to travel modes JSON",
-)
-parser.add_argument(
-    "--activities",
-    type=str,
-    default="./activities.json",
-    help="Path to activities JSON",
-)
-parser.add_argument(
     "--agents", type=str, default="./agents.csv", help="Path to agents CSV"
 )
 parser.add_argument(
@@ -81,16 +70,6 @@ print("Loading simulation data...")
 locations_path = args.locations
 with open(locations_path, "r", encoding="utf-8") as f:
     LOCATIONS = json.load(f)
-
-# Agents modes of travel
-travel_modes_path = args.travel_modes
-with open(travel_modes_path, "r") as f:
-    TRAVEL_MODES = json.load(f)
-
-# Agents activities
-activities_path = args.activities
-with open(activities_path, "r") as f:
-    ACTIVITIES = json.load(f)
 
 # Agents dataframe
 agents_path = args.agents
@@ -130,8 +109,7 @@ def starting_time(history: list[State]) -> JsonValue:
             # Calculate the travel time by dist (km) / speed (km/h) * 60 = minutes
             travel_time = (dist / TRAVEL_MODES[tm2_act]["speed"]) * 60
             return add_minutes_to_time(timestamp, travel_time)
-        case a if a in TRAVEL_MODES:
-            return add_minutes_to_time(timestamp, 5)
+
         case _:
             duration = ACTIVITIES[tm1_act]["duration"]
             return add_minutes_to_time(timestamp, duration)

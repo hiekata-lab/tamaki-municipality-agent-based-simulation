@@ -1,6 +1,6 @@
 import pandas as pd
 import os
-from src.tools import get_csv_and_out_parser
+
 
 os.environ["MPLCONFIGDIR"] = "./.matplotlib"
 
@@ -128,7 +128,11 @@ def generate_activity_time_comparison_plot(comparison_csv, out_dir):
 
 
 if __name__ == "__main__":
-    parser = get_csv_and_out_parser("Generate activities daily avg minutes plot", "--comparison-csv")
+    parser = argparse.ArgumentParser(description="Generate activities daily avg minutes plot")
+
+    parser.add_argument("--comparison-csv", type=str, required=True, help='Input CSV path')
+
+    parser.add_argument('--out-dir', type=str, required=True, help='Output directory')
     args = parser.parse_args()
 
     generate_activity_time_comparison_plot(args.comparison_csv, args.out_dir)

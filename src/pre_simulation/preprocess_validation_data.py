@@ -1,7 +1,8 @@
+import argparse
 import pandas as pd
 import os
 from src.constants import COL_HEALTH, COL_VALIDATION
-from src.tools import get_io_parser
+
 
 
 def preprocess_validation_data(in_path, out_path):
@@ -44,6 +45,10 @@ def preprocess_validation_data(in_path, out_path):
 
 
 if __name__ == "__main__":
-    parser = get_io_parser("Preprocess validation data")
+    parser = argparse.ArgumentParser(description="Preprocess validation data")
+
+    parser.add_argument('--in-path', type=str, required=True, help='Input CSV')
+
+    parser.add_argument('--out-path', type=str, required=True, help='Output CSV')
     args = parser.parse_args()
     preprocess_validation_data(args.in_path, args.out_path)

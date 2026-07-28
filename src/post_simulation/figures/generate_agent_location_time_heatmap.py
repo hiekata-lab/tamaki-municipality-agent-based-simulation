@@ -1,9 +1,10 @@
+import argparse
 import os
 import pandas as pd
 import geopandas as gpd
 import matplotlib.pyplot as plt
 from adjustText import adjust_text
-from src.tools import get_csv_and_out_parser
+
 
 # Required to read incomplete shapefiles
 os.environ["SHAPE_RESTORE_SHX"] = "YES"
@@ -21,7 +22,11 @@ plt.rcParams["font.sans-serif"] = [
 
 
 def main():
-    parser = get_csv_and_out_parser("Generate agent location time heatmap.", "--time-csv")
+    parser = argparse.ArgumentParser(description="Generate agent location time heatmap.")
+
+    parser.add_argument("--time-csv", type=str, required=True, help='Input CSV path')
+
+    parser.add_argument('--out-dir', type=str, required=True, help='Output directory')
     args = parser.parse_args()
 
     os.makedirs(args.out_dir, exist_ok=True)

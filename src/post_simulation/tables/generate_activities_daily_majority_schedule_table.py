@@ -1,15 +1,15 @@
+import argparse
 import os
 import pandas as pd
 import numpy as np
-from src.tools import (
-    load_and_preprocess_simulation_data,
-    get_sim_and_out_parser,
-)
+
 
 def generate_daily_schedule_table(sim_dir, out_dir):
     os.makedirs(out_dir, exist_ok=True)
 
-    df = load_and_preprocess_simulation_data(sim_dir)
+    csv_path = os.path.join(sim_dir, "aggregated.csv")
+
+    df = pd.read_csv(csv_path, parse_dates=["starting_time", "end_time"])
 
     # To include the final 8-hour period in resampling, add an end row for each agent
     df_last = df.groupby("unique_simulation_id").last().reset_index()
@@ -62,7 +62,11 @@ def generate_daily_schedule_table(sim_dir, out_dir):
 
 
 if __name__ == "__main__":
-    parser = get_sim_and_out_parser("Generate daily schedule table")
+    parser = argparse.ArgumentParser(description="Generate daily schedule table")
+
+    parser.add_argument('--sim-dir', type=str, default='.', help='Path to simulation dir')
+
+    parser.add_argument('--out-dir', type=str, default='tables', help='Output directory for tables')
     args = parser.parse_args()
 
     generate_daily_schedule_table(args.sim_dir, args.out_dir)

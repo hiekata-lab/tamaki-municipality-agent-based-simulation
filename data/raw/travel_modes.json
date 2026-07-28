@@ -1,9 +1,0 @@
-{
-    "Riding bus": {"speed": 45},
-    "Riding bike": {"speed": 20},
-    "Walking": {"speed": 10},
-    "Riding mobility-on-demand shuttle": {"speed": 55},
-    "Riding taxi": {"speed": 60},
-    "Riding car": {"speed": 60},
-    "Driving car": {"speed": 60}
-}

@@ -1,21 +1,25 @@
+import argparse
 import os
 import pandas as pd
-from src.tools import (
-    load_and_preprocess_simulation_data,
-    load_locations_coordinates,
-    get_sim_and_out_parser,
-)
+
 
 def main():
-    parser = get_sim_and_out_parser("Generate agent location time table.")
+    parser = argparse.ArgumentParser(description="Generate agent location time table.")
+
+    parser.add_argument('--sim-dir', type=str, default='.', help='Path to simulation dir')
+
+    parser.add_argument('--out-dir', type=str, default='tables', help='Output directory for tables')
     args = parser.parse_args()
 
     os.makedirs(args.out_dir, exist_ok=True)
 
     # Load locations graph to map node IDs to coordinates
-    loc_x, loc_y = load_locations_coordinates()
+    graph_df = pd.read_json("data/processed/locations_graph.json", orient="index")
+    loc_x = graph_df["x"]
+    loc_y = graph_df["y"]
 
-    df = load_and_preprocess_simulation_data(args.sim_dir)
+    csv_path = os.path.join(args.sim_dir, "aggregated.csv")
+    df = pd.read_csv(csv_path, parse_dates=["starting_time", "end_time"])
 
     # Group by agent and location
     df_loc = (
