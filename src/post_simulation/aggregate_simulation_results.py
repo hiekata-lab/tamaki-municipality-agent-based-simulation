@@ -26,8 +26,9 @@ def main():
     results_dir = args.results_dir
     out_dir = args.out_dir
 
-    results_path = Path(results_dir)
+    os.makedirs(out_dir, exist_ok=True)
 
+    results_path = Path(results_dir)
     # Aggregate JSON
     conf_files = list(results_path.glob("*/conf.json"))
     all_json_data = []
