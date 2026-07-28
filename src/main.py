@@ -155,6 +155,14 @@ def main():
                     "src/post_simulation/tables/generate_transport_mode_total_km_dist_table.py",
                     ["--sim-dir", agg_dir, "--out-dir", tab_dir],
                 )
+                run_script(
+                    "src/post_simulation/tables/generate_agent_trips_table.py",
+                    ["--sim-dir", agg_dir, "--out-dir", tab_dir],
+                )
+                run_script(
+                    "src/post_simulation/tables/generate_agent_location_time_table.py",
+                    ["--sim-dir", agg_dir, "--out-dir", tab_dir],
+                )
 
                 # Figures
                 comp_csv = os.path.join(
@@ -171,8 +179,6 @@ def main():
                     "src/post_simulation/figures/generate_activities_daily_majority_schedule_plot.py",
                     ["--schedule-csv", sched_csv, "--out-dir", fig_dir],
                 )
-
-                # Transport plots
                 t_time_avg_csv = os.path.join(
                     tab_dir, "results_transport_mode_time_daily_avg_minutes.csv"
                 )
@@ -180,7 +186,6 @@ def main():
                     "src/post_simulation/figures/generate_transport_mode_time_daily_avg_minutes_plot.py",
                     ["--csv", t_time_avg_csv, "--out-dir", fig_dir],
                 )
-
                 t_trips_avg_csv = os.path.join(
                     tab_dir, "results_transport_mode_trips_daily_avg_count.csv"
                 )
@@ -188,7 +193,6 @@ def main():
                     "src/post_simulation/figures/generate_transport_mode_trips_daily_avg_count_plot.py",
                     ["--csv", t_trips_avg_csv, "--out-dir", fig_dir],
                 )
-
                 t_trips_tot_csv = os.path.join(
                     tab_dir, "results_transport_mode_trips_total_count.csv"
                 )
@@ -196,7 +200,6 @@ def main():
                     "src/post_simulation/figures/generate_transport_mode_trips_total_count_plot.py",
                     ["--csv", t_trips_tot_csv, "--out-dir", fig_dir],
                 )
-
                 t_dist_avg_csv = os.path.join(
                     tab_dir, "results_transport_mode_daily_avg_km_dist.csv"
                 )
@@ -204,7 +207,6 @@ def main():
                     "src/post_simulation/figures/generate_transport_mode_daily_avg_km_dist_plot.py",
                     ["--csv", t_dist_avg_csv, "--out-dir", fig_dir],
                 )
-
                 t_dist_tot_csv = os.path.join(
                     tab_dir, "results_transport_mode_total_km_dist.csv"
                 )
@@ -212,22 +214,10 @@ def main():
                     "src/post_simulation/figures/generate_transport_mode_total_km_dist_plot.py",
                     ["--csv", t_dist_tot_csv, "--out-dir", fig_dir],
                 )
-
-                # Trip Map
-                run_script(
-                    "src/post_simulation/tables/generate_agent_trips_table.py",
-                    ["--sim-dir", agg_dir, "--out-dir", tab_dir],
-                )
                 trip_csv = os.path.join(tab_dir, "results_agent_trips.csv")
                 run_script(
                     "src/post_simulation/figures/generate_agent_trips_plot.py",
                     ["--trip-csv", trip_csv, "--out-dir", fig_dir],
-                )
-
-                # Location Time Heatmap
-                run_script(
-                    "src/post_simulation/tables/generate_agent_location_time_table.py",
-                    ["--sim-dir", agg_dir, "--out-dir", tab_dir],
                 )
                 time_csv = os.path.join(tab_dir, "results_agent_location_time.csv")
                 run_script(
