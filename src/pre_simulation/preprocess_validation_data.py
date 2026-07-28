@@ -38,7 +38,9 @@ def preprocess_validation_data(in_path, out_path):
     ]
     df_val = df_val[keep_cols]
 
-    os.makedirs(os.path.dirname(out_path), exist_ok=True)
+    out_dir = os.path.dirname(out_path)
+    if out_dir:
+        os.makedirs(out_dir, exist_ok=True)
     df_val.to_csv(out_path, index=False)
     print(f"  Saved preprocessed validation data. Shape: {df_val.shape}")
 
