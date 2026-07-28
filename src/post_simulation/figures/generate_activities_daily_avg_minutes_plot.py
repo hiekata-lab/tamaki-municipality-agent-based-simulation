@@ -12,28 +12,14 @@ import scipy.stats as stats
 
 
 def generate_activity_time_comparison_plot(comparison_csv, out_dir):
-    df = pd.read_csv(comparison_csv, header=[0, 1])
-
-    # Vectorize column parsing
-    lvl0 = (
-        pd.Series([c[0] for c in df.columns])
-        .replace(regex="^Unnamed.*", value=np.nan)
-        .ffill()
-    )
-    lvl0.iloc[:5] = df.iloc[0, :5].values
-
-    lvl1 = pd.Series([c[1] for c in df.columns]).fillna("")
-    lvl1.iloc[:5] = ""
-
-    df.columns = pd.MultiIndex.from_arrays([lvl0, lvl1])
-    df = df.iloc[1:].reset_index(drop=True)
+    df = pd.read_csv(
+        comparison_csv, header=[0, 1], index_col=[0, 1, 2, 3, 4]
+    ).reset_index()
 
     df_scen2 = df[
         (df[("Scenario", "")] == "Scenario 2")
         & (df[("Day of the week", "")] == "Weekday")
     ].copy()
-
-    activities = lvl0[5:].unique().tolist()
 
     df_g = df_scen2.xs(
         "Survey on Time Use and Leisure Activities 2021", level=1, axis=1
@@ -41,6 +27,7 @@ def generate_activity_time_comparison_plot(comparison_csv, out_dir):
     df_s = df_scen2.xs("Simulation", level=1, axis=1).apply(
         pd.to_numeric, errors="coerce"
     )
+    activities = df_g.columns.tolist()
 
     # Vectorized means, se, degrees of freedom, and t-scores
     means_gold = df_g.mean().fillna(0).values
