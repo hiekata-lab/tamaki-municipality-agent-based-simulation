@@ -10,11 +10,11 @@ from src.constants import (
     COL_LOCATION,
     COL_LOCATION_NAME,
     COL_NEXT_LOC,
+    COL_SIMULATION_UUID,
     COL_STARTING_TIME,
     COL_START_LOCATION,
     COL_START_X,
     COL_START_Y,
-    COL_UNIQUE_SIMULATION_ID,
     COL_X,
     COL_Y,
 )
@@ -32,7 +32,7 @@ def generate_agent_trips_table(sim_dir, out_dir):
     df = pd.read_csv(csv_path, parse_dates=[COL_STARTING_TIME, COL_END_TIME])
 
     agent_trips_export_cols = [
-        COL_UNIQUE_SIMULATION_ID,
+        COL_SIMULATION_UUID,
         COL_STARTING_TIME,
         COL_LOCATION,
         COL_NEXT_LOC,

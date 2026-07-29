@@ -15,47 +15,50 @@ from src.constants import (
     COL_DAY_OF_WEEK_EN,
     COL_SCENARIO,
     COL_SIMULATION,
-    COL_VALIDATION,
+    SURVEY_TITLE,
+    TRANSPORTATION_MODES,
 )
 
 
 def generate_activity_time_comparison_plot(comparison_csv, out_dir):
-    df = pd.read_csv(
-        comparison_csv, header=[0, 1], index_col=[0, 1, 2, 3, 4]
-    ).reset_index()
+    df = pd.read_csv(comparison_csv)
 
-    df_scen2 = df[
-        (df[(COL_SCENARIO, "")] == "Scenario 2")
-        & (df[(COL_DAY_OF_WEEK_EN, "")] == "Weekday")
-    ].copy()
+    # Extract all activity names from column headers (Activity - Metric)
+    activity_cols = [c for c in df.columns if " - " in c]
+    all_activities = list(dict.fromkeys([c.split(" - ")[0] for c in activity_cols]))
 
-    df_g = df_scen2.xs(
-        COL_VALIDATION, level=1, axis=1
-    ).apply(pd.to_numeric, errors="coerce")
-    df_s = df_scen2.xs(COL_SIMULATION, level=1, axis=1).apply(
-        pd.to_numeric, errors="coerce"
+    # Exclude all transportation modes from general activity plot
+    activities = [
+        act
+        for act in all_activities
+        if act not in TRANSPORTATION_MODES
+        and not act.startswith("Riding")
+        and not act.startswith("Walking")
+        and not act.startswith("Driving")
+    ]
+
+    sim_cols = [f"{act} - {COL_SIMULATION}" for act in activities]
+    val_cols = [f"{act} - {SURVEY_TITLE}" for act in activities]
+    ci95_lower_cols = [f"{act} - CI_95_Lower" for act in activities]
+    ci95_upper_cols = [f"{act} - CI_95_Upper" for act in activities]
+    ci90_lower_cols = [f"{act} - CI_90_Lower" for act in activities]
+    ci90_upper_cols = [f"{act} - CI_90_Upper" for act in activities]
+
+    means_sim = df[sim_cols].mean().fillna(0).values
+    means_gold = df[val_cols].mean().fillna(0).values
+
+    ci95_gold = np.nan_to_num(
+        ((df[ci95_upper_cols].values - df[ci95_lower_cols].values) / 2.0).mean(axis=0)
     )
-    activities = df_g.columns.tolist()
+    ci90_gold = np.nan_to_num(
+        ((df[ci90_upper_cols].values - df[ci90_lower_cols].values) / 2.0).mean(axis=0)
+    )
 
-    # Vectorized means, se, degrees of freedom, and t-scores
-    means_gold = df_g.mean().fillna(0).values
-    means_sim = df_s.mean().fillna(0).values
-
-    se_g = df_g.sem().fillna(0)
-    se_s = df_s.sem().fillna(0)
-
-    df_g_count = np.maximum(1, df_g.count() - 1)
-    df_s_count = np.maximum(1, df_s.count() - 1)
-
-    t95_g = stats.t.ppf(0.975, df_g_count)
-    t95_s = stats.t.ppf(0.975, df_s_count)
-    t90_g = stats.t.ppf(0.95, df_g_count)
-    t90_s = stats.t.ppf(0.95, df_s_count)
-
-    ci95_gold = np.nan_to_num(t95_g * se_g)
-    ci95_sim = np.nan_to_num(t95_s * se_s)
-    ci90_gold = np.nan_to_num(t90_g * se_g)
-    ci90_sim = np.nan_to_num(t90_s * se_s)
+    # For simulation CI, calculate standard error across demographic groups
+    se_sim = df[sim_cols].sem().fillna(0).values
+    dof = np.maximum(1, df[sim_cols].count().values - 1)
+    ci95_sim = np.nan_to_num(stats.t.ppf(0.975, dof) * se_sim)
+    ci90_sim = np.nan_to_num(stats.t.ppf(0.95, dof) * se_sim)
 
     y = np.arange(len(activities))
     height = 0.35
@@ -120,7 +123,7 @@ def generate_activity_time_comparison_plot(comparison_csv, out_dir):
 
     ax.set_xlabel("Average Time Spent (minutes)")
     ax.set_title(
-        "Average Time Spent on Activities (2021 Japanese Time Use Survey vs Scenario 2)",
+        "Average Time Spent on Activities (2021 Japanese Time Use Survey vs Simulation)",
         loc="center",
     )
     ax.set_yticks(y)

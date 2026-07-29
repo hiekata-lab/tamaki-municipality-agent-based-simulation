@@ -363,6 +363,11 @@ def run_single_simulation(
         llm_server_post,
     )
 
+    import uuid
+
+    simulation_uuid = str(uuid.uuid4())
+    agent_uuid = agent.get("agent_uuid", str(uuid.uuid5(uuid.NAMESPACE_DNS, f"agent-{sim_id}")))
+
     save_simulation_results(
         results,
         START_TIME,
@@ -374,6 +379,8 @@ def run_single_simulation(
         llm_server_post,
         dir=args.output_dir,
         extra_config={
+            "simulation_uuid": simulation_uuid,
+            "agent_uuid": agent_uuid,
             "agent_params": agent,
             "inference_parameters": INFERENCE_PARAMETERS,
             "additional_model_request_fields": ADDITIONAL_MODEL_REQUEST_FIELDS

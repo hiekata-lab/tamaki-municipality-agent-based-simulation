@@ -63,6 +63,9 @@ GENERATE_AGENT_TRIPS_TABLE_SCRIPT = (
 GENERATE_AGENT_LOCATION_TIME_TABLE_SCRIPT = (
     "src/post_simulation/tables/generate_agent_location_time_table.py"
 )
+GENERATE_AVG_DAYS_SIMULATED_TABLE_SCRIPT = (
+    "src/post_simulation/tables/generate_avg_days_simulated_table.py"
+)
 GENERATE_ACTIVITIES_DAILY_AVG_MINUTES_PLOT_SCRIPT = (
     "src/post_simulation/figures/generate_activities_daily_avg_minutes_plot.py"
 )
@@ -272,6 +275,10 @@ def main():
                 )
                 run_script(
                     GENERATE_AGENT_LOCATION_TIME_TABLE_SCRIPT,
+                    ["--sim-dir", agg_dir, "--out-dir", tab_dir],
+                )
+                run_script(
+                    GENERATE_AVG_DAYS_SIMULATED_TABLE_SCRIPT,
                     ["--sim-dir", agg_dir, "--out-dir", tab_dir],
                 )
 

@@ -9,9 +9,10 @@ from src.constants import (
     COL_SCHEDULE_ACTIVITY,
     COL_SEGMENT_INDEX,
     COL_SIM_ACTIVITY,
+    COL_SIMULATION_UUID,
     COL_STARTING_TIME,
     COL_TIME,
-    COL_UNIQUE_SIMULATION_ID,
+    TRANSPORTATION_MODES,
 )
 
 
@@ -22,25 +23,33 @@ def generate_daily_schedule_table(sim_dir, out_dir):
 
     df = pd.read_csv(csv_path, parse_dates=[COL_STARTING_TIME, COL_END_TIME])
 
+    # Filter out transportation modes from general activity schedule
+    df = df[
+        ~df[COL_SIM_ACTIVITY].isin(TRANSPORTATION_MODES)
+        & ~df[COL_SIM_ACTIVITY].str.startswith("Riding", na=False)
+        & ~df[COL_SIM_ACTIVITY].str.startswith("Walking", na=False)
+        & ~df[COL_SIM_ACTIVITY].str.startswith("Driving", na=False)
+    ].copy()
+
     # To include the final 8-hour period in resampling, add an end row for each agent
-    df_last = df.groupby(COL_UNIQUE_SIMULATION_ID).last().reset_index()
+    df_last = df.groupby(COL_SIMULATION_UUID).last().reset_index()
     df_last[COL_STARTING_TIME] += pd.Timedelta(hours=8)
     df_last[COL_SIM_ACTIVITY] = np.nan
 
     df_combined = pd.concat([df, df_last]).sort_values(
-        [COL_UNIQUE_SIMULATION_ID, COL_STARTING_TIME]
+        [COL_SIMULATION_UUID, COL_STARTING_TIME]
     )
 
     # Drop duplicates in case two activities have the same starting_time
     df_combined = df_combined.drop_duplicates(
-        subset=[COL_UNIQUE_SIMULATION_ID, COL_STARTING_TIME], keep="last"
+        subset=[COL_SIMULATION_UUID, COL_STARTING_TIME], keep="last"
     )
 
     df_combined = df_combined.set_index(COL_STARTING_TIME)
 
     # Resample to 1-minute intervals and forward-fill activities
     df_min = (
-        df_combined.groupby(COL_UNIQUE_SIMULATION_ID)[COL_SIM_ACTIVITY]
+        df_combined.groupby(COL_SIMULATION_UUID)[COL_SIM_ACTIVITY]
         .resample("1min")
         .ffill()
         .dropna()

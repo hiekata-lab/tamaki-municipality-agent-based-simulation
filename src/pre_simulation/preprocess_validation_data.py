@@ -2,18 +2,18 @@ import argparse
 import pandas as pd
 import os
 from src.constants import (
-    COL_HEALTH,
-    COL_VALIDATION,
-    HEALTH_MAP,
-    VALIDATION_COL_MAP,
-    DAY_OF_WEEK_MAP,
-    SEX_MAP,
-    AGE_MAP,
     ACTIVITY_MAP,
-    COL_DAY_OF_WEEK_EN,
-    COL_SEX_EN,
-    COL_AGE_GROUP,
+    AGE_MAP,
     COL_ACTIVITY,
+    COL_AGE_GROUP,
+    COL_DAY_OF_WEEK_EN,
+    COL_HEALTH,
+    COL_SEX_EN,
+    COL_VALIDATION_VALUE,
+    DAY_OF_WEEK_MAP,
+    HEALTH_MAP,
+    SEX_MAP,
+    VALIDATION_COL_MAP,
 )
 
 
@@ -31,9 +31,11 @@ def preprocess_validation_data(in_path, out_path):
     df_val[COL_ACTIVITY] = df_val[COL_ACTIVITY].map(ACTIVITY_MAP)
     df_val[COL_HEALTH] = df_val[COL_HEALTH].map(HEALTH_MAP)
     # Convert the value column to numeric, coercing any errors to NaN
-    df_val[COL_VALIDATION] = pd.to_numeric(df_val[COL_VALIDATION], errors="coerce")
+    df_val[COL_VALIDATION_VALUE] = pd.to_numeric(
+        df_val[COL_VALIDATION_VALUE], errors="coerce"
+    )
     # Drop any rows that have NaN in the value or health columns
-    df_val = df_val.dropna(subset=[COL_VALIDATION, COL_HEALTH])
+    df_val = df_val.dropna(subset=[COL_VALIDATION_VALUE, COL_HEALTH])
     # Keep only the columns that are needed for the simulation
     df_val = df_val[
         [
@@ -42,7 +44,7 @@ def preprocess_validation_data(in_path, out_path):
             COL_SEX_EN,
             COL_HEALTH,
             COL_ACTIVITY,
-            COL_VALIDATION,
+            COL_VALIDATION_VALUE,
         ]
     ]
     # Save the preprocessed validation data

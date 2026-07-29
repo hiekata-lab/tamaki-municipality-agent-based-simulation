@@ -9,10 +9,10 @@ from src.constants import (
     COL_ID,
     COL_LOCATION,
     COL_LOCATION_NAME,
+    COL_SIMULATION_UUID,
     COL_STARTING_TIME,
     COL_START_X,
     COL_START_Y,
-    COL_UNIQUE_SIMULATION_ID,
     COL_X,
     COL_Y,
 )
@@ -31,7 +31,7 @@ def generate_agent_location_time_table(sim_dir, out_dir):
 
     # Group by agent and location
     df_loc = (
-        df.groupby([COL_UNIQUE_SIMULATION_ID, COL_LOCATION])
+        df.groupby([COL_SIMULATION_UUID, COL_LOCATION])
         .agg({COL_DURATION: "sum", COL_START_X: "first", COL_START_Y: "first"})
         .reset_index()
         .rename(columns={COL_START_X: COL_X, COL_START_Y: COL_Y})

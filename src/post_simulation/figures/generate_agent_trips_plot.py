@@ -27,10 +27,10 @@ from src.constants import (
     COL_DEST_Y,
     COL_ID,
     COL_LOCATION_NAME,
+    COL_SIMULATION_UUID,
     COL_START_LOCATION,
     COL_START_X,
     COL_START_Y,
-    COL_UNIQUE_SIMULATION_ID,
     COL_X,
     COL_Y,
 )
@@ -62,7 +62,7 @@ def main():
     # Plot the background map
     map_df.plot(ax=ax, color="lightgrey", edgecolor="white", alpha=0.8)
 
-    agents = df[COL_UNIQUE_SIMULATION_ID].unique()
+    agents = df[COL_SIMULATION_UUID].unique()
     cmap = plt.get_cmap("tab20")
 
     # Gather unique locations from the newly generated legend table
@@ -76,7 +76,7 @@ def main():
 
     visited_loc_ids = set()
 
-    for i, (agent_id, agent_data) in enumerate(df.groupby(COL_UNIQUE_SIMULATION_ID)):
+    for i, (agent_id, agent_data) in enumerate(df.groupby(COL_SIMULATION_UUID)):
         color = cmap(i % 20)
 
         mask = (agent_data[COL_START_X] != agent_data[COL_DEST_X]) | (

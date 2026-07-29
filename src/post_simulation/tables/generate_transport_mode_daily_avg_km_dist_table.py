@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 from src.constants import (
     COL_AGE_GROUP,
+    COL_AGENT_UUID,
     COL_DAYS_SIMULATED,
     COL_DIST,
     COL_DURATION,
@@ -12,8 +13,8 @@ from src.constants import (
     COL_SCENARIO,
     COL_SEX_EN,
     COL_SIM_ACTIVITY,
+    COL_SIMULATION_UUID,
     COL_STARTING_TIME,
-    COL_UNIQUE_SIMULATION_ID,
     TRANSPORTATION_MODES,
 )
 
@@ -30,29 +31,35 @@ def generate_transport_tables(sim_dir, out_dir):
 
     # Aggregate by sim ID and transport mode
     df_t_agg = (
-        df_t.groupby([COL_UNIQUE_SIMULATION_ID, COL_SIM_ACTIVITY])
+        df_t.groupby([COL_SIMULATION_UUID, COL_SIM_ACTIVITY])
         .agg(duration=(COL_DURATION, "sum"), trips=("trips", "sum"), dist=(COL_DIST, "sum"))
         .reset_index()
     )
 
     # Load Metadata
     df_meta = df[
-        [COL_UNIQUE_SIMULATION_ID, COL_SCENARIO, COL_AGE_GROUP, COL_SEX_EN, COL_HEALTH]
+        [
+            COL_SIMULATION_UUID,
+            COL_AGENT_UUID,
+            COL_SCENARIO,
+            COL_AGE_GROUP,
+            COL_SEX_EN,
+            COL_HEALTH,
+        ]
     ].drop_duplicates()
 
     # Cross demographics with all transport modes
-    df_meta_cross = (
-        df_meta.assign(key=1)
-        .merge(pd.DataFrame({COL_SIM_ACTIVITY: TRANSPORTATION_MODES, "key": 1}), on="key")
-        .drop("key", axis=1)
-    )
+    modes_df = pd.DataFrame({COL_SIM_ACTIVITY: TRANSPORTATION_MODES})
     df_full = pd.merge(
-        df_meta_cross, df_t_agg, on=[COL_UNIQUE_SIMULATION_ID, COL_SIM_ACTIVITY], how="left"
+        df_meta.merge(modes_df, how="cross"),
+        df_t_agg,
+        on=[COL_SIMULATION_UUID, COL_SIM_ACTIVITY],
+        how="left",
     ).fillna(0)
     df_full = pd.merge(
         df_full,
-        df[[COL_UNIQUE_SIMULATION_ID, COL_DAYS_SIMULATED]].drop_duplicates(),
-        on=COL_UNIQUE_SIMULATION_ID,
+        df[[COL_SIMULATION_UUID, COL_DAYS_SIMULATED]].drop_duplicates(),
+        on=COL_SIMULATION_UUID,
         how="left",
     )
 

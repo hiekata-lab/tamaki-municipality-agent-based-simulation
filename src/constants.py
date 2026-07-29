@@ -19,7 +19,8 @@ COL_DAY_OF_WEEK_JP = "Day_of_week_JP"
 COL_AREA_CLASSIFICATION_JP = "Area_classification_JP"
 COL_AREA_CLASSIFICATION_EN = "Area_classification_EN"
 COL_SEX_JP = "Sex_JP"
-COL_VALIDATION = "Survey on Time Use and Leisure Activities 2021"
+COL_VALIDATION_VALUE = "validation_value"
+SURVEY_TITLE = "Survey on Time Use and Leisure Activities 2021"
 COL_SIMULATION = "Simulation"
 COL_SE_RATIO_PCT = "Standard_Error_Ratio_Pct"
 COL_SE_RATIO_FRACTION = "SE_Ratio_Fraction"
@@ -32,10 +33,12 @@ COL_SAMPLE_PERSONS_TIME_USE = "Sample_Persons_Time_Use"
 COL_SAMPLE_PERSONS_AVERAGE_TIME = "Sample_Persons_Average_Time"
 COL_METRIC = "Metric"
 COL_COUNT = "Count"
-COL_UNIQUE_SIMULATION_ID = "unique_simulation_id"
+COL_SIMULATION_UUID = "simulation_uuid"
+COL_AGENT_UUID = "agent_uuid"
 COL_STARTING_TIME = "starting_time"
 COL_END_TIME = "end_time"
 COL_DURATION = "duration"
+COL_NORMALIZED_DURATION = "normalized_duration"
 COL_SIM_ACTIVITY = "activity"
 COL_LOCATION = "location"
 COL_NEXT_LOC = "next_loc"
@@ -124,10 +127,23 @@ SIM_ACTIVITY_TO_VAL_ACTIVIY_MAP = {
     "Medical examination or treatment": "Medical examination or treatment",
     "Other activities": "Other activities",
     "Arriving": None,
+    "Riding bus": "Riding bus",
+    "Riding bike": "Riding bike",
+    "Walking": "Walking",
+    "Riding mobility-on-demand shuttle": "Riding mobility-on-demand shuttle",
+    "Riding taxi": "Riding taxi",
+    "Riding car": "Riding car",
+    "Driving car": "Driving car",
 }
 
+VALIDATION_ACTIVITIES = list(
+    dict.fromkeys(
+        act for act in SIM_ACTIVITY_TO_VAL_ACTIVIY_MAP.values() if act is not None
+    )
+)
+
 HEALTH_MAP = {
-    "0_Total": None,
+    "0_Total": "Total",
     "1_Excellent": "Good",
     "2_Good": "Good",
     "3_Fair": "Normal",
@@ -137,7 +153,7 @@ HEALTH_MAP = {
 
 VALIDATION_COL_MAP = {
     "Age": COL_AGE_GROUP,
-    "value": COL_VALIDATION,
+    "value": COL_VALIDATION_VALUE,
 }
 
 DAY_OF_WEEK_MAP = {

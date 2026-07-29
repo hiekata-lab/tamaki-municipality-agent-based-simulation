@@ -236,12 +236,15 @@ def main():
     )
     args = parser.parse_args()
 
+    import uuid
+
     NR_OF_AGENTS = args.num_agents
     print(f"Number of agents is {NR_OF_AGENTS}")
     # Sample agent attributes
     age = sample_age_distribution(NR_OF_AGENTS)
     gender = sample_gender_distribution(age)
     personas_dict = {
+        "agent_uuid": [str(uuid.uuid4()) for _ in range(NR_OF_AGENTS)],
         "home": sample_home_distribution(NR_OF_AGENTS),
         "nationality": sample_nationality_distribution(NR_OF_AGENTS),
         "regionality": sample_regionality_distribution(NR_OF_AGENTS),
