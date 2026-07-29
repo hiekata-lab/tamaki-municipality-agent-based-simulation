@@ -229,3 +229,4 @@ simulations/
 .lsps
 simulation_results/
 .matplotlib
+data/processed/
