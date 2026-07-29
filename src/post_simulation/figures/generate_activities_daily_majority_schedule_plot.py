@@ -8,13 +8,20 @@ import matplotlib.pyplot as plt
 import numpy as np
 import argparse
 import matplotlib.patches as mpatches
-from src.constants import ACTIVITY_COLORS
+from src.constants import (
+    ACTIVITY_COLOR_MAP,
+    COL_SCHEDULE_ACTIVITY,
+    COL_SEGMENT_INDEX,
+    COL_TIME,
+)
 
 
 def generate_average_day_plot(csv_path, out_dir):
     df = pd.read_csv(csv_path)
 
-    most_common_activities = df.sort_values("Segment Index")["Activity"].tolist()
+    most_common_activities = df.sort_values(COL_SEGMENT_INDEX)[
+        COL_SCHEDULE_ACTIVITY
+    ].tolist()
     unique_activities = set(most_common_activities)
 
     fig, ax = plt.subplots(figsize=(15, 3))
@@ -22,7 +29,7 @@ def generate_average_day_plot(csv_path, out_dir):
     bar_height = 0.5
     # Vectorize barh by passing arrays
     acts_series = pd.Series(most_common_activities)
-    colors = acts_series.map(ACTIVITY_COLORS).fillna("#808080").tolist()
+    colors = acts_series.map(ACTIVITY_COLOR_MAP).fillna("#808080").tolist()
     starts = np.arange(len(most_common_activities)) * 10
     widths = np.full(len(most_common_activities), 10)
     ax.barh(
@@ -37,7 +44,7 @@ def generate_average_day_plot(csv_path, out_dir):
     ax.set_ylim(-0.5, 0.5)
 
     tick_positions = np.arange(0, 24 * 60 + 1, 120)
-    time_map = df.set_index("Segment Index")["Time"].to_dict()
+    time_map = df.set_index(COL_SEGMENT_INDEX)[COL_TIME].to_dict()
     tick_labels = [time_map.get(pos // 10, "24:00") for pos in tick_positions]
 
     ax.set_xticks(tick_positions)
@@ -48,7 +55,7 @@ def generate_average_day_plot(csv_path, out_dir):
     ax.set_title("Average Agent Daily Schedule (Majority of Every 10-min Segment)")
 
     patches = [
-        mpatches.Patch(color=ACTIVITY_COLORS.get(act, "#808080"), label=act)
+        mpatches.Patch(color=ACTIVITY_COLOR_MAP.get(act, "#808080"), label=act)
         for act in unique_activities
     ]
     ax.legend(handles=patches, bbox_to_anchor=(1.05, 1), loc="upper left")
@@ -61,11 +68,15 @@ def generate_average_day_plot(csv_path, out_dir):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Generate activities daily majority schedule plot")
+    parser = argparse.ArgumentParser(
+        description="Generate activities daily majority schedule plot"
+    )
 
-    parser.add_argument("--schedule-csv", type=str, required=True, help='Input CSV path')
+    parser.add_argument(
+        "--schedule-csv", type=str, required=True, help="Input CSV path"
+    )
 
-    parser.add_argument('--out-dir', type=str, required=True, help='Output directory')
+    parser.add_argument("--out-dir", type=str, required=True, help="Output directory")
     args = parser.parse_args()
 
     generate_average_day_plot(args.schedule_csv, args.out_dir)

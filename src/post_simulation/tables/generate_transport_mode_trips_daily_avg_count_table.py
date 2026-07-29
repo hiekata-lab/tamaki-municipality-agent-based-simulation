@@ -4,9 +4,19 @@ import pandas as pd
 import numpy as np
 from src.constants import (
     COL_AGE_GROUP,
+    COL_DAYS_SIMULATED,
+    COL_DURATION,
+    COL_END_TIME,
     COL_HEALTH,
+    COL_LOCATION,
+    COL_NEXT_LOC,
     COL_SCENARIO,
     COL_SEX_EN,
+    COL_SIM_ACTIVITY,
+    COL_STARTING_TIME,
+    COL_UNIQUE_SIMULATION_ID,
+    COL_X,
+    COL_Y,
     TRANSPORTATION_MODES,
 )
 
@@ -15,21 +25,21 @@ def generate_transport_tables(sim_dir, out_dir):
     os.makedirs(out_dir, exist_ok=True)
 
     csv_path = os.path.join(sim_dir, "aggregated.csv")
-    df = pd.read_csv(csv_path, parse_dates=["starting_time", "end_time"])
+    df = pd.read_csv(csv_path, parse_dates=[COL_STARTING_TIME, COL_END_TIME])
 
     # Load Location Graph
     graph_df = pd.read_json("data/processed/locations_graph.json", orient="index")
-    loc_x = graph_df["x"]
-    loc_y = graph_df["y"]
+    loc_x = graph_df[COL_X]
+    loc_y = graph_df[COL_Y]
 
     # Filter for Transport
-    df_t = df[df["activity"].isin(TRANSPORTATION_MODES)].copy()
+    df_t = df[df[COL_SIM_ACTIVITY].isin(TRANSPORTATION_MODES)].copy()
 
     # Vectorized Distance Calculation
-    df_t["x1"] = df_t["location"].map(loc_x)
-    df_t["y1"] = df_t["location"].map(loc_y)
-    df_t["x2"] = df_t["next_loc"].map(loc_x)
-    df_t["y2"] = df_t["next_loc"].map(loc_y)
+    df_t["x1"] = df_t[COL_LOCATION].map(loc_x)
+    df_t["y1"] = df_t[COL_LOCATION].map(loc_y)
+    df_t["x2"] = df_t[COL_NEXT_LOC].map(loc_x)
+    df_t["y2"] = df_t[COL_NEXT_LOC].map(loc_y)
     df_t["dist"] = np.sqrt(
         (df_t["x1"] - df_t["x2"]) ** 2 + (df_t["y1"] - df_t["y2"]) ** 2
     )
@@ -37,29 +47,29 @@ def generate_transport_tables(sim_dir, out_dir):
 
     # Aggregate by sim ID and transport mode
     df_t_agg = (
-        df_t.groupby(["unique_simulation_id", "activity"])
-        .agg(duration=("duration", "sum"), trips=("trips", "sum"), dist=("dist", "sum"))
+        df_t.groupby([COL_UNIQUE_SIMULATION_ID, COL_SIM_ACTIVITY])
+        .agg(duration=(COL_DURATION, "sum"), trips=("trips", "sum"), dist=("dist", "sum"))
         .reset_index()
     )
 
     # Load Metadata
     df_meta = df[
-        ["unique_simulation_id", COL_SCENARIO, COL_AGE_GROUP, COL_SEX_EN, COL_HEALTH]
+        [COL_UNIQUE_SIMULATION_ID, COL_SCENARIO, COL_AGE_GROUP, COL_SEX_EN, COL_HEALTH]
     ].drop_duplicates()
 
     # Cross demographics with all transport modes
     df_meta_cross = (
         df_meta.assign(key=1)
-        .merge(pd.DataFrame({"activity": TRANSPORTATION_MODES, "key": 1}), on="key")
+        .merge(pd.DataFrame({COL_SIM_ACTIVITY: TRANSPORTATION_MODES, "key": 1}), on="key")
         .drop("key", axis=1)
     )
     df_full = pd.merge(
-        df_meta_cross, df_t_agg, on=["unique_simulation_id", "activity"], how="left"
+        df_meta_cross, df_t_agg, on=[COL_UNIQUE_SIMULATION_ID, COL_SIM_ACTIVITY], how="left"
     ).fillna(0)
     df_full = pd.merge(
         df_full,
-        df[["unique_simulation_id", "days_simulated"]].drop_duplicates(),
-        on="unique_simulation_id",
+        df[[COL_UNIQUE_SIMULATION_ID, COL_DAYS_SIMULATED]].drop_duplicates(),
+        on=COL_UNIQUE_SIMULATION_ID,
         how="left",
     )
 

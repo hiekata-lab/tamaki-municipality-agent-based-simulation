@@ -6,14 +6,14 @@ os.environ["MPLCONFIGDIR"] = "./.matplotlib"
 import matplotlib.pyplot as plt
 import numpy as np
 import argparse
-from src.constants import TRANSPORTATION_MODES
+from src.constants import COL_SCENARIO, TRANSPORTATION_MODES
 
 
 def plot_transport_metric(csv_path, out_dir):
     df = pd.read_csv(csv_path)
     scenarios = ["Scenario 1", "Scenario 2", "Scenario 3", "Scenario 4"]
 
-    df_agg = df.groupby("Scenario").mean(numeric_only=True)
+    df_agg = df.groupby(COL_SCENARIO).mean(numeric_only=True)
 
     fig, ax = plt.subplots(figsize=(12, 6))
     df_plot = df_agg.reindex(scenarios).fillna(0)[TRANSPORTATION_MODES].T

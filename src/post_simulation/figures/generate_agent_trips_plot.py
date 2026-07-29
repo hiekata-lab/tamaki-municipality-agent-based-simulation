@@ -21,6 +21,21 @@ plt.rcParams["font.sans-serif"] = [
 ]
 
 
+from src.constants import (
+    COL_DEST_LOCATION,
+    COL_DEST_X,
+    COL_DEST_Y,
+    COL_ID,
+    COL_LOCATION_NAME,
+    COL_START_LOCATION,
+    COL_START_X,
+    COL_START_Y,
+    COL_UNIQUE_SIMULATION_ID,
+    COL_X,
+    COL_Y,
+)
+
+
 def main():
     parser = argparse.ArgumentParser(description="Generate trip map.")
 
@@ -47,25 +62,25 @@ def main():
     # Plot the background map
     map_df.plot(ax=ax, color="lightgrey", edgecolor="white", alpha=0.8)
 
-    agents = df["unique_simulation_id"].unique()
+    agents = df[COL_UNIQUE_SIMULATION_ID].unique()
     cmap = plt.get_cmap("tab20")
 
     # Gather unique locations from the newly generated legend table
     legend_csv = args.trip_csv.replace(".csv", "_legend.csv")
     legend_df = pd.read_csv(legend_csv)
     locations = (
-        legend_df.set_index("Location Name")[["ID", "x", "y"]]
+        legend_df.set_index(COL_LOCATION_NAME)[[COL_ID, COL_X, COL_Y]]
         .apply(tuple, axis=1)
         .to_dict()
     )
 
     visited_loc_ids = set()
 
-    for i, (agent_id, agent_data) in enumerate(df.groupby("unique_simulation_id")):
+    for i, (agent_id, agent_data) in enumerate(df.groupby(COL_UNIQUE_SIMULATION_ID)):
         color = cmap(i % 20)
 
-        mask = (agent_data["start_x"] != agent_data["dest_x"]) | (
-            agent_data["start_y"] != agent_data["dest_y"]
+        mask = (agent_data[COL_START_X] != agent_data[COL_DEST_X]) | (
+            agent_data[COL_START_Y] != agent_data[COL_DEST_Y]
         )
         valid_trips = agent_data[mask]
 
@@ -73,18 +88,18 @@ def main():
             # Update visited locations
             loc_map_func = lambda x: locations.get(x, (None,))[0]
             visited_loc_ids.update(
-                valid_trips["start_location"].map(loc_map_func).dropna().tolist()
+                valid_trips[COL_START_LOCATION].map(loc_map_func).dropna().tolist()
             )
             visited_loc_ids.update(
-                valid_trips["dest_location"].map(loc_map_func).dropna().tolist()
+                valid_trips[COL_DEST_LOCATION].map(loc_map_func).dropna().tolist()
             )
 
             # Vectorized arrow plotting
             ax.quiver(
-                valid_trips["start_x"],
-                valid_trips["start_y"],
-                valid_trips["dest_x"] - valid_trips["start_x"],
-                valid_trips["dest_y"] - valid_trips["start_y"],
+                valid_trips[COL_START_X],
+                valid_trips[COL_START_Y],
+                valid_trips[COL_DEST_X] - valid_trips[COL_START_X],
+                valid_trips[COL_DEST_Y] - valid_trips[COL_START_Y],
                 angles="xy",
                 scale_units="xy",
                 scale=1,
@@ -94,8 +109,8 @@ def main():
                 headwidth=5,
             )
             ax.scatter(
-                valid_trips["start_x"],
-                valid_trips["start_y"],
+                valid_trips[COL_START_X],
+                valid_trips[COL_START_Y],
                 color=color,
                 s=9,
                 alpha=0.5,

@@ -8,14 +8,68 @@ TRANSPORTATION_MODES = [
     "Driving car",
 ]
 
-SCENARIO_MAPPING = {
+# Standardized CSV columns for the project
+COL_AGE_GROUP = "Age_Group"
+COL_SEX_EN = "Sex"
+COL_HEALTH = "Usual state of health"
+COL_SCENARIO = "Scenario"
+COL_ACTIVITY = "Kind of activities"
+COL_DAY_OF_WEEK_EN = "Day of the week"
+COL_DAY_OF_WEEK_JP = "Day_of_week_JP"
+COL_AREA_CLASSIFICATION_JP = "Area_classification_JP"
+COL_AREA_CLASSIFICATION_EN = "Area_classification_EN"
+COL_SEX_JP = "Sex_JP"
+COL_VALIDATION = "Survey on Time Use and Leisure Activities 2021"
+COL_SIMULATION = "Simulation"
+COL_SE_RATIO_PCT = "Standard_Error_Ratio_Pct"
+COL_SE_RATIO_FRACTION = "SE_Ratio_Fraction"
+COL_REGION_JP = "Region_JP"
+COL_REGION_EN = "Region_EN"
+COL_SAMPLE_EDS = "Sample_EDs"
+COL_SAMPLE_HOUSEHOLDS = "Sample_Households"
+COL_SAMPLE_PERSONS_LEISURE = "Sample_Persons_Leisure"
+COL_SAMPLE_PERSONS_TIME_USE = "Sample_Persons_Time_Use"
+COL_SAMPLE_PERSONS_AVERAGE_TIME = "Sample_Persons_Average_Time"
+COL_METRIC = "Metric"
+COL_COUNT = "Count"
+COL_UNIQUE_SIMULATION_ID = "unique_simulation_id"
+COL_STARTING_TIME = "starting_time"
+COL_END_TIME = "end_time"
+COL_DURATION = "duration"
+COL_SIM_ACTIVITY = "activity"
+COL_LOCATION = "location"
+COL_NEXT_LOC = "next_loc"
+COL_DAYS_SIMULATED = "days_simulated"
+COL_AGE_YEAR = "Age_Year"
+COL_START_X = "start_x"
+COL_START_Y = "start_y"
+COL_DEST_X = "dest_x"
+COL_DEST_Y = "dest_y"
+COL_X = "x"
+COL_Y = "y"
+COL_ID = "ID"
+COL_LOCATION_NAME = "Location Name"
+COL_START_LOCATION = "start_location"
+COL_DEST_LOCATION = "dest_location"
+COL_SEGMENT_INDEX = "Segment Index"
+COL_TIME = "Time"
+COL_SCHEDULE_ACTIVITY = "Activity"
+
+# Standardized JSON keys for the project
+KEY_EXTRA_PARAMS = "extra_params"
+PARAM_MOD_POLICY = "agent_params.mod_policy"
+PARAM_AGE = "agent_params.age"
+PARAM_GENDER = "agent_params.gender"
+PARAM_HEALTH = "agent_params.health"
+
+SIM_SCENARIO_TO_VAL_SCENARIO_MAP = {
     "Mobility-on-demand shuttle: not available": "Scenario 1",
     "Mobility-on-demand shuttle: is Free when traveling within Tamaki-town": "Scenario 2",
     "Mobility-on-demand shuttle: costs 400 yen fixed when traveling within Tamaki-town": "Scenario 3",
     "Mobility-on-demand shuttle: costs 800 yen fixed when traveling within Tamaki-town": "Scenario 4",
 }
 
-ACTIVITY_COLORS = {
+ACTIVITY_COLOR_MAP = {
     "Sleep": "#1e3a5f",
     "Personal care": "#5b9bd5",
     "Meals": "#e8a838",
@@ -47,7 +101,7 @@ ACTIVITY_COLORS = {
     "Unknown": "#808080",
 }
 
-SIM_TO_ACTIVITY_MAPPING = {
+SIM_ACTIVITY_TO_VAL_ACTIVIY_MAP = {
     "Sleep": "Sleep",
     "Personal care": "Personal care",
     "Meals": "Meals",
@@ -71,46 +125,6 @@ SIM_TO_ACTIVITY_MAPPING = {
     "Arriving": None,
 }
 
-# Standardized CSV columns for the project
-COL_AGE_GROUP = "Age_Group"
-COL_SEX_EN = "Sex"
-COL_HEALTH = "Usual state of health"
-COL_SCENARIO = "Scenario"
-COL_ACTIVITY = "Kind of activities"
-COL_DAY_OF_WEEK_EN = "Day of the week"
-COL_DAY_OF_WEEK_JP = "Day_of_week_JP"
-COL_AREA_CLASSIFICATION_JP = "Area_classification_JP"
-COL_AREA_CLASSIFICATION_EN = "Area_classification_EN"
-COL_SEX_JP = "Sex_JP"
-COL_VALIDATION = "Survey on Time Use and Leisure Activities 2021"
-COL_SIMULATION = "Simulation"
-COL_SE_RATIO_PCT = "Standard_Error_Ratio_Pct"
-COL_SE_RATIO_FRACTION = "SE_Ratio_Fraction"
-COL_REGION_JP = "Region_JP"
-COL_REGION_EN = "Region_EN"
-COL_SAMPLE_EDS = "Sample_EDs"
-COL_SAMPLE_HOUSEHOLDS = "Sample_Households"
-COL_SAMPLE_PERSONS_LEISURE = "Sample_Persons_Leisure"
-COL_SAMPLE_PERSONS_TIME_USE = "Sample_Persons_Time_Use"
-COL_SAMPLE_PERSONS_AVERAGE_TIME = "Sample_Persons_Average_Time"
-COL_METRIC = "Metric"
-COL_UNIQUE_SIMULATION_ID = "unique_simulation_id"
-COL_STARTING_TIME = "starting_time"
-COL_END_TIME = "end_time"
-COL_DURATION = "duration"
-COL_SIM_ACTIVITY = "activity"
-COL_LOCATION = "location"
-COL_NEXT_LOC = "next_loc"
-COL_DAYS_SIMULATED = "days_simulated"
-COL_AGE_YEAR = "Age_Year"
-
-# Standardized JSON keys for the project
-KEY_EXTRA_PARAMS = "extra_params"
-PARAM_MOD_POLICY = "agent_params.mod_policy"
-PARAM_AGE = "agent_params.age"
-PARAM_GENDER = "agent_params.gender"
-PARAM_HEALTH = "agent_params.health"
-
 HEALTH_MAP = {
     "0_Total": None,
     "1_Excellent": "Good",
@@ -121,6 +135,7 @@ HEALTH_MAP = {
 }
 
 VALIDATION_COL_MAP = {
+    "Age": COL_AGE_GROUP,
     "value": COL_VALIDATION,
 }
 
@@ -150,6 +165,8 @@ AGE_MAP = {
     "6_55 to 64 years old": "55 to 64 years old",
     "7_65 to 74 years old": "65 to 74 years old",
     "8_75 years old and over": "75 years old and over",
+    "6_65 to 74 years old": "65 to 74 years old",
+    "7_75 years old and over": "75 years old and over",
 }
 
 ACTIVITY_MAP = {
@@ -197,17 +214,6 @@ SE_RATIOS_COL_MAP = {
     "Area classification": COL_AREA_CLASSIFICATION_EN,
     "Sex": COL_SEX_EN,
 }
-
-AGENT_TRIPS_EXPORT_COLS = [
-    "unique_simulation_id",
-    "starting_time",
-    "location",
-    "next_loc",
-    "start_x",
-    "start_y",
-    "dest_x",
-    "dest_y",
-]
 
 ACTIVITIES = {
     "Sleep": {"duration": 60, "available_in": ["home", "lodging", "campground"]},

@@ -5,7 +5,7 @@ import numpy as np
 from src.constants import (
     ACTIVITIES,
     COL_SCENARIO,
-    SCENARIO_MAPPING,
+    SIM_SCENARIO_TO_VAL_SCENARIO_MAP,
     COL_AGE_GROUP,
     COL_SEX_EN,
     COL_HEALTH,
@@ -82,7 +82,9 @@ def preprocess_aggregated_data(in_dir: str, out_dir: str):
     # Parse the agent parameters from the raw JSON DF into a new separate DF
     agent_params = pd.json_normalize(df_meta_raw[KEY_EXTRA_PARAMS].tolist())
     # Set the scenario columns by mapping from agent params
-    df_meta[COL_SCENARIO] = agent_params[PARAM_MOD_POLICY].map(SCENARIO_MAPPING)
+    df_meta[COL_SCENARIO] = agent_params[PARAM_MOD_POLICY].map(
+        SIM_SCENARIO_TO_VAL_SCENARIO_MAP
+    )
     # Create a series of ages by extracting the numerical age from the natural language age
     age_series = agent_params[PARAM_AGE].str.extract(r"(\d+)").astype(int)[0]
     df_meta[COL_AGE_YEAR] = age_series

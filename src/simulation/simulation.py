@@ -138,7 +138,7 @@ def activity(history: list[State]) -> list[JsonValue]:
                     act
                     for t in tm1_loc_types
                     for act, act_data in ACTIVITIES.items()
-                    if t in act_data["available_in"]
+                    if act_data["available_in"] and t in act_data["available_in"]
                 }
             )
             return loc_activities + list(TRAVEL_MODES.keys())
@@ -236,7 +236,11 @@ def amz_bedrock_runtime_post(prompt: str, response_format: dict[str, Any]) -> st
 # MARK: LSPS Simulation
 
 ACTIVITY_TIMES_STR = "\n".join(
-    [f"- {k}: {v['duration']} minutes" for k, v in ACTIVITIES.items()]
+    [
+        f"- {k}: {v['duration']} minutes"
+        for k, v in ACTIVITIES.items()
+        if isinstance(v, dict)
+    ]
 )
 
 PROMPT_TEMPLATE = f"""[gMASK]<sop><|system|>

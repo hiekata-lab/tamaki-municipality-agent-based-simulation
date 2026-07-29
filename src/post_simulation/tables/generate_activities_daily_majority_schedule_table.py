@@ -4,32 +4,43 @@ import pandas as pd
 import numpy as np
 
 
+from src.constants import (
+    COL_END_TIME,
+    COL_SCHEDULE_ACTIVITY,
+    COL_SEGMENT_INDEX,
+    COL_SIM_ACTIVITY,
+    COL_STARTING_TIME,
+    COL_TIME,
+    COL_UNIQUE_SIMULATION_ID,
+)
+
+
 def generate_daily_schedule_table(sim_dir, out_dir):
     os.makedirs(out_dir, exist_ok=True)
 
     csv_path = os.path.join(sim_dir, "aggregated.csv")
 
-    df = pd.read_csv(csv_path, parse_dates=["starting_time", "end_time"])
+    df = pd.read_csv(csv_path, parse_dates=[COL_STARTING_TIME, COL_END_TIME])
 
     # To include the final 8-hour period in resampling, add an end row for each agent
-    df_last = df.groupby("unique_simulation_id").last().reset_index()
-    df_last["starting_time"] += pd.Timedelta(hours=8)
-    df_last["activity"] = np.nan
+    df_last = df.groupby(COL_UNIQUE_SIMULATION_ID).last().reset_index()
+    df_last[COL_STARTING_TIME] += pd.Timedelta(hours=8)
+    df_last[COL_SIM_ACTIVITY] = np.nan
 
     df_combined = pd.concat([df, df_last]).sort_values(
-        ["unique_simulation_id", "starting_time"]
+        [COL_UNIQUE_SIMULATION_ID, COL_STARTING_TIME]
     )
 
     # Drop duplicates in case two activities have the same starting_time
     df_combined = df_combined.drop_duplicates(
-        subset=["unique_simulation_id", "starting_time"], keep="last"
+        subset=[COL_UNIQUE_SIMULATION_ID, COL_STARTING_TIME], keep="last"
     )
 
-    df_combined = df_combined.set_index("starting_time")
+    df_combined = df_combined.set_index(COL_STARTING_TIME)
 
     # Resample to 1-minute intervals and forward-fill activities
     df_min = (
-        df_combined.groupby("unique_simulation_id")["activity"]
+        df_combined.groupby(COL_UNIQUE_SIMULATION_ID)[COL_SIM_ACTIVITY]
         .resample("1min")
         .ffill()
         .dropna()
@@ -37,24 +48,24 @@ def generate_daily_schedule_table(sim_dir, out_dir):
     )
 
     # Calculate segment index (10-minute blocks)
-    df_min["Segment Index"] = (
-        df_min["starting_time"].dt.hour * 60 + df_min["starting_time"].dt.minute
+    df_min[COL_SEGMENT_INDEX] = (
+        df_min[COL_STARTING_TIME].dt.hour * 60 + df_min[COL_STARTING_TIME].dt.minute
     ) // 10
 
     # Find most common activity per segment
     df_schedule = (
-        df_min.groupby("Segment Index")["activity"]
+        df_min.groupby(COL_SEGMENT_INDEX)[COL_SIM_ACTIVITY]
         .agg(lambda x: x.mode()[0])
         .reset_index()
     )
-    df_schedule = df_schedule.rename(columns={"activity": "Activity"})
+    df_schedule = df_schedule.rename(columns={COL_SIM_ACTIVITY: COL_SCHEDULE_ACTIVITY})
 
     # Format time column
-    df_schedule["Time"] = df_schedule["Segment Index"].apply(
+    df_schedule[COL_TIME] = df_schedule[COL_SEGMENT_INDEX].apply(
         lambda x: f"{(x * 10) // 60:02d}:{(x * 10) % 60:02d}"
     )
 
-    df_schedule = df_schedule[["Segment Index", "Time", "Activity"]]
+    df_schedule = df_schedule[[COL_SEGMENT_INDEX, COL_TIME, COL_SCHEDULE_ACTIVITY]]
 
     path = os.path.join(out_dir, "results_activities_daily_schedule.csv")
     df_schedule.to_csv(path, index=False)

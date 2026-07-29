@@ -21,6 +21,16 @@ plt.rcParams["font.sans-serif"] = [
 ]
 
 
+from src.constants import (
+    COL_DURATION,
+    COL_ID,
+    COL_LOCATION,
+    COL_LOCATION_NAME,
+    COL_X,
+    COL_Y,
+)
+
+
 def main():
     parser = argparse.ArgumentParser(description="Generate agent location time heatmap.")
 
@@ -51,25 +61,27 @@ def main():
     legend_csv = args.time_csv.replace(".csv", "_legend.csv")
     legend_df = pd.read_csv(legend_csv)
     locations = (
-        legend_df.set_index("Location Name")[["ID", "x", "y"]]
+        legend_df.set_index(COL_LOCATION_NAME)[[COL_ID, COL_X, COL_Y]]
         .apply(tuple, axis=1)
         .to_dict()
     )
 
     # Aggregate duration by location across all agents to create a heatmap
-    loc_durations = df.groupby(["location", "x", "y"])["duration"].sum().reset_index()
+    loc_durations = (
+        df.groupby([COL_LOCATION, COL_X, COL_Y])[COL_DURATION].sum().reset_index()
+    )
 
-    vmin = loc_durations["duration"].min()
-    vmax = loc_durations["duration"].max()
+    vmin = loc_durations[COL_DURATION].min()
+    vmax = loc_durations[COL_DURATION].max()
 
     import seaborn as sns
 
     # Plot the KDE heatmap for the "bleed" effect
     sns.kdeplot(
         data=loc_durations,
-        x="x",
-        y="y",
-        weights="duration",
+        x=COL_X,
+        y=COL_Y,
+        weights=COL_DURATION,
         fill=True,
         cmap="YlOrRd",
         alpha=0.4, # Slightly lower alpha
@@ -81,9 +93,9 @@ def main():
 
     # Plot the actual circles
     sc = ax.scatter(
-        loc_durations["x"],
-        loc_durations["y"],
-        c=loc_durations["duration"],
+        loc_durations[COL_X],
+        loc_durations[COL_Y],
+        c=loc_durations[COL_DURATION],
         cmap="YlOrRd",
         s=150,
         alpha=0.9,
@@ -98,7 +110,7 @@ def main():
     cbar.set_label("Total Time Spent (minutes)", fontsize=14)
     cbar.ax.tick_params(labelsize=12)
 
-    visited_loc_names = set(loc_durations["location"].unique())
+    visited_loc_names = set(loc_durations[COL_LOCATION].unique())
     visited_loc_ids = set()
     for loc_name in visited_loc_names:
         if loc_name in locations:

@@ -6,13 +6,20 @@ import scipy.stats as stats
 from src.constants import (
     COL_ACTIVITY,
     COL_AGE_GROUP,
+    COL_DAYS_SIMULATED,
     COL_DAY_OF_WEEK_EN,
+    COL_DURATION,
+    COL_END_TIME,
     COL_HEALTH,
     COL_SCENARIO,
+    COL_SE_RATIO_FRACTION,
     COL_SEX_EN,
+    COL_SIM_ACTIVITY,
     COL_SIMULATION,
+    COL_STARTING_TIME,
+    COL_UNIQUE_SIMULATION_ID,
     COL_VALIDATION,
-    SIM_TO_ACTIVITY_MAPPING,
+    SIM_ACTIVITY_TO_VAL_ACTIVIY_MAP,
 )
 
 
@@ -21,13 +28,13 @@ def generate_comparison_table(sim_dir, validation_path, se_ratios_path, out_dir)
 
     # 1. Load Simulation Data
     csv_path = os.path.join(sim_dir, "aggregated.csv")
-    df = pd.read_csv(csv_path, parse_dates=["starting_time", "end_time"])
+    df = pd.read_csv(csv_path, parse_dates=[COL_STARTING_TIME, COL_END_TIME])
 
     # Filter and group activities
-    df["mapped_act"] = df["activity"].map(SIM_TO_ACTIVITY_MAPPING)
+    df["mapped_act"] = df[COL_SIM_ACTIVITY].map(SIM_ACTIVITY_TO_VAL_ACTIVIY_MAP)
     df_act = (
         df.dropna(subset=["mapped_act"])
-        .groupby(["unique_simulation_id", "mapped_act"])["duration"]
+        .groupby([COL_UNIQUE_SIMULATION_ID, "mapped_act"])[COL_DURATION]
         .sum()
         .reset_index()
     )
@@ -36,29 +43,29 @@ def generate_comparison_table(sim_dir, validation_path, se_ratios_path, out_dir)
     # days_simulated is already joined in load_and_preprocess_simulation_data
     df_act = pd.merge(
         df_act,
-        df[["unique_simulation_id", "days_simulated"]].drop_duplicates(),
-        on="unique_simulation_id",
+        df[[COL_UNIQUE_SIMULATION_ID, COL_DAYS_SIMULATED]].drop_duplicates(),
+        on=COL_UNIQUE_SIMULATION_ID,
         how="left",
     )
-    df_act["duration"] /= df_act["days_simulated"]
+    df_act[COL_DURATION] /= df_act[COL_DAYS_SIMULATED]
 
     # 2. Extract Demographics
     df_meta = df[
-        ["unique_simulation_id", COL_SCENARIO, COL_AGE_GROUP, COL_SEX_EN, COL_HEALTH]
+        [COL_UNIQUE_SIMULATION_ID, COL_SCENARIO, COL_AGE_GROUP, COL_SEX_EN, COL_HEALTH]
     ].drop_duplicates()
 
     # Cross demographics with all activities (fill 0 for missing activities)
-    df_full = pd.merge(df_meta, df_act, on="unique_simulation_id", how="left")
+    df_full = pd.merge(df_meta, df_act, on=COL_UNIQUE_SIMULATION_ID, how="left")
     df_full = df_full.pivot_table(
         index=[
-            "unique_simulation_id",
+            COL_UNIQUE_SIMULATION_ID,
             COL_SCENARIO,
             COL_AGE_GROUP,
             COL_SEX_EN,
             COL_HEALTH,
         ],
         columns="mapped_act",
-        values="duration",
+        values=COL_DURATION,
         fill_value=0,
     ).reset_index()
 
@@ -66,22 +73,22 @@ def generate_comparison_table(sim_dir, validation_path, se_ratios_path, out_dir)
     df_melt = pd.melt(
         df_full,
         id_vars=[
-            "unique_simulation_id",
+            COL_UNIQUE_SIMULATION_ID,
             COL_SCENARIO,
             COL_AGE_GROUP,
             COL_SEX_EN,
             COL_HEALTH,
         ],
         value_vars=[
-            c for c in SIM_TO_ACTIVITY_MAPPING.values() if c in df_full.columns
+            c for c in SIM_ACTIVITY_TO_VAL_ACTIVIY_MAP.values() if c in df_full.columns
         ],
         var_name=COL_ACTIVITY,
-        value_name="duration",
+        value_name=COL_DURATION,
     )
     df_sim_stats = (
         df_melt.groupby(
             [COL_SCENARIO, COL_AGE_GROUP, COL_SEX_EN, COL_HEALTH, COL_ACTIVITY]
-        )["duration"]
+        )[COL_DURATION]
         .agg(["mean", "std", "count"])
         .reset_index()
     )
@@ -93,7 +100,7 @@ def generate_comparison_table(sim_dir, validation_path, se_ratios_path, out_dir)
     df_val = pd.read_csv(validation_path)
     se_ratios = (
         pd.read_csv(se_ratios_path)
-        .set_index(["Sex", "Activity"])["SE_Ratio_Fraction"]
+        .set_index([COL_SEX_EN, COL_ACTIVITY])[COL_SE_RATIO_FRACTION]
         .to_dict()
     )
 

@@ -11,20 +11,28 @@ import argparse
 import scipy.stats as stats
 
 
+from src.constants import (
+    COL_DAY_OF_WEEK_EN,
+    COL_SCENARIO,
+    COL_SIMULATION,
+    COL_VALIDATION,
+)
+
+
 def generate_activity_time_comparison_plot(comparison_csv, out_dir):
     df = pd.read_csv(
         comparison_csv, header=[0, 1], index_col=[0, 1, 2, 3, 4]
     ).reset_index()
 
     df_scen2 = df[
-        (df[("Scenario", "")] == "Scenario 2")
-        & (df[("Day of the week", "")] == "Weekday")
+        (df[(COL_SCENARIO, "")] == "Scenario 2")
+        & (df[(COL_DAY_OF_WEEK_EN, "")] == "Weekday")
     ].copy()
 
     df_g = df_scen2.xs(
-        "Survey on Time Use and Leisure Activities 2021", level=1, axis=1
+        COL_VALIDATION, level=1, axis=1
     ).apply(pd.to_numeric, errors="coerce")
-    df_s = df_scen2.xs("Simulation", level=1, axis=1).apply(
+    df_s = df_scen2.xs(COL_SIMULATION, level=1, axis=1).apply(
         pd.to_numeric, errors="coerce"
     )
     activities = df_g.columns.tolist()
