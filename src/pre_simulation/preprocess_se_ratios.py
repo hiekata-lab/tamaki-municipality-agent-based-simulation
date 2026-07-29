@@ -46,9 +46,18 @@ def preprocess_se_ratios(in_path, out_path):
     # Map the sex and activity values
     df_se_mie[COL_SEX_EN] = df_se_mie[COL_SEX_EN].map(SEX_MAP)
     df_se_mie[COL_ACTIVITY] = df_se_mie[COL_ACTIVITY].map(ACTIVITY_MAP)
-    df_se_mie[COL_SE_RATIO_FRACTION] = df_se_mie[COL_SE_RATIO_PCT] / 100.0
+    # Make the SE numeric and divide by 100 to turn them form percentages ratios to fractions
+    df_se_mie[COL_SE_RATIO_FRACTION] = (
+        pd.to_numeric(
+            df_se_mie[COL_SE_RATIO_PCT].astype(str).str.replace(",", ""),
+            errors="coerce",
+        )
+        / 100.0
+    )
     df_final = df_se_mie[[COL_SEX_EN, COL_ACTIVITY, COL_SE_RATIO_FRACTION]]
     # Create directories and save
+    if os.path.isdir(out_path) or not out_path.endswith(".csv"):
+        out_path = os.path.join(out_path, os.path.basename(in_path))
     os.makedirs(os.path.dirname(out_path) or ".", exist_ok=True)
     df_final.to_csv(out_path, index=False)
     print(f"  Saved preprocessed SE ratios for Mie-ken. Shape: {df_final.shape}")

@@ -24,7 +24,9 @@ print("Loaded household size data...")
 
 # Get population data by age and gender
 population_path = "data/raw/Population by Sex, Age (single years) and All nationality or Japanese - Japan, Prefectures, Municipalities (including Municipalities as of 2000).csv"
-POPULATION_DF = pd.read_csv(population_path, engine="python", thousands=",", encoding="shift_jis").fillna(0)
+POPULATION_DF = pd.read_csv(
+    population_path, engine="python", thousands=",", encoding="shift_jis"
+).fillna(0)
 print("Loaded population data...")
 
 # Get the genearted locations graph
@@ -34,6 +36,7 @@ with open(locations_path, "r", encoding="utf-8") as f:
 print("Loaded locations graph data...")
 
 # Distributions
+
 
 # Sample uniformly between all locations that has the type Home from the locations_grapj.json
 def sample_home_distribution(n):
@@ -118,16 +121,14 @@ def sample_gender_distribution(ages):
     # Create a dictionary that valculates the probabilites of each gender given the age
     # Fallback to 50/50 if no data exists
     age_probs = {
-        c: (m[c] / t[c], f[c] / t[c]))
+        c: (m[c] / t[c], f[c] / t[c]) if (c in t.index and t[c] > 0) else (0.5, 0.5)
         for c in unique_ages
-        if c in t.index and t[c] > 0 
-        else (0.5,0.5)
     }
 
     # Print the probabilities of being gender Male or Female for every age
     print(f"\nSampling gender distribution... Probabilities by age:")
     for k, v in age_probs.items():
-        print({k: f"Male: {v[0]}, Female: {v[1]}")
+        print({k: f"Male: {v[0]}, Female: {v[1]}"})
 
     # Calculate weights for each age
     weights = [age_probs[c] for c in ages]
@@ -162,7 +163,7 @@ def sample_health_distribution(age, gender):
     # Initialize the weight map
     weights_map = {}
 
-    # Copy the household size dataframe 
+    # Copy the household size dataframe
     df = HOUSEHOLD_SIZE_DF.copy()
     # Use the copy to add a new column with the coerced values, replace nans with 0
     df["value"] = pd.to_numeric(df["value"], errors="coerce").fillna(0)
@@ -199,7 +200,7 @@ def sample_health_distribution(age, gender):
                 counts["Normal"] / total,
                 counts["Poor"] / total,
             ]
-            
+
     # Print probabilities for each health class
     print(f"\nSampling health distribution... Probabilities by gender and age group:")
     for k, v in weights_map.items():
@@ -221,6 +222,7 @@ def sample_health_distribution(age, gender):
 # Sample the agents
 def main():
     import argparse
+
     # Set up parser
     parser = argparse.ArgumentParser()
     parser.add_argument(

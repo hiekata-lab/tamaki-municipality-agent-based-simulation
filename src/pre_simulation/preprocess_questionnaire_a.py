@@ -19,9 +19,11 @@ def preprocess_questionnaire_a(in_path, out_path):
     print(f"Preprocessing Questionnaire A: {in_path} -> {out_path}")
     # Skip 3 rows and change the columns
     df_q = pd.read_csv(in_path, skiprows=3, header=None)
-    df_q.columns = [None, "地域区分", "Regions"] + list(df_q.iloc[5, 3:8])
+    df_q = df_q.iloc[:, 1:8].copy()
+    col_names = ["地域区分", "Regions"] + list(df_q.iloc[2, 2:7])
+    df_q.columns = col_names
     # Remove header rows and summary/footnote rows (keeping the 47 prefectures)
-    df_q = df_q.iloc[9:56].copy()
+    df_q = df_q.iloc[4:51].copy()
     df_q = df_q.rename(columns=QUESTIONNAIRE_A_COL_MAP)
     df_q = df_q.dropna(subset=[COL_REGION_EN, COL_SAMPLE_EDS])
     df_q[COL_REGION_EN] = df_q[COL_REGION_EN].str.strip()
@@ -43,6 +45,8 @@ def preprocess_questionnaire_a(in_path, out_path):
         value_name=COL_COUNT,
     )
     # Create dir and save!
+    if os.path.isdir(out_path) or not out_path.endswith(".csv"):
+        out_path = os.path.join(out_path, os.path.basename(in_path))
     os.makedirs(os.path.dirname(out_path) or ".", exist_ok=True)
     df_q_melt.to_csv(out_path, index=False)
     print(f"  Saved preprocessed Questionnaire A. Shape: {df_q_melt.shape}")

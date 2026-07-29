@@ -317,6 +317,4 @@ def main():
 
 
 if __name__ == "__main__":
-    # NOTE: Overriding sys.argv to ONLY run post_sim for now. Remove this block to allow running all stages (pre_sim, sim, post_sim).
-    sys.argv = [sys.argv[0], "--stages", "post_sim"]
     main()

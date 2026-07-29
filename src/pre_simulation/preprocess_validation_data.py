@@ -46,6 +46,8 @@ def preprocess_validation_data(in_path, out_path):
         ]
     ]
     # Save the preprocessed validation data
+    if os.path.isdir(out_path) or not out_path.endswith(".csv"):
+        out_path = os.path.join(out_path, os.path.basename(in_path))
     os.makedirs(os.path.dirname(out_path) or ".", exist_ok=True)
     df_val.to_csv(out_path, index=False)
     print(f"  Saved preprocessed validation data. Shape: {df_val.shape}")

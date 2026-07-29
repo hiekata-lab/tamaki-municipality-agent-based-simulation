@@ -102,7 +102,8 @@ HEALTH_MAP = {
     "3_Fair": "Normal",
     "4_Not good": "Poor",
     "5_Poor": "Poor",
-    
+}
+
 VALIDATION_COL_MAP = {
     "value": COL_VALIDATION,
 }
