@@ -6,7 +6,7 @@ from src.constants import (
     COL_AGE,
     COL_HEALTH,
     COL_SCENARIO,
-    COL_SEX,
+    COL_SEX_EN,
     TRANSPORTATION_MODES,
 )
 
@@ -43,7 +43,9 @@ def generate_transport_tables(sim_dir, out_dir):
     )
 
     # Load Metadata
-    df_meta = df[["unique_simulation_id", COL_SCENARIO, COL_AGE, COL_SEX, COL_HEALTH]].drop_duplicates()
+    df_meta = df[
+        ["unique_simulation_id", COL_SCENARIO, COL_AGE, COL_SEX_EN, COL_HEALTH]
+    ].drop_duplicates()
 
     # Cross demographics with all transport modes
     df_meta_cross = (
@@ -55,10 +57,10 @@ def generate_transport_tables(sim_dir, out_dir):
         df_meta_cross, df_t_agg, on=["unique_simulation_id", "activity"], how="left"
     ).fillna(0)
     df_full = pd.merge(
-        df_full, 
-        df[["unique_simulation_id", "days_simulated"]].drop_duplicates(), 
-        on="unique_simulation_id", 
-        how="left"
+        df_full,
+        df[["unique_simulation_id", "days_simulated"]].drop_duplicates(),
+        on="unique_simulation_id",
+        how="left",
     )
 
     # Save total distance before normalizing
@@ -72,12 +74,16 @@ def generate_transport_tables(sim_dir, out_dir):
     # Pivot DataFrames
     def pivot_and_save(val_col, agg_func, out_filename):
         df_group = (
-            df_full.groupby([COL_SCENARIO, COL_AGE, COL_SEX, COL_HEALTH] + ["activity"])[val_col]
+            df_full.groupby(
+                [COL_SCENARIO, COL_AGE, COL_SEX_EN, COL_HEALTH] + ["activity"]
+            )[val_col]
             .agg(agg_func)
             .reset_index()
         )
         df_pivot = df_group.pivot_table(
-            index=[COL_SCENARIO, COL_AGE, COL_SEX, COL_HEALTH], columns="activity", values=val_col
+            index=[COL_SCENARIO, COL_AGE, COL_SEX_EN, COL_HEALTH],
+            columns="activity",
+            values=val_col,
         ).reset_index()
         path = os.path.join(out_dir, out_filename)
         df_pivot.to_csv(path, index=False)
@@ -87,11 +93,17 @@ def generate_transport_tables(sim_dir, out_dir):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Generate transport mode trips total count table")
+    parser = argparse.ArgumentParser(
+        description="Generate transport mode trips total count table"
+    )
 
-    parser.add_argument('--sim-dir', type=str, default='.', help='Path to simulation dir')
+    parser.add_argument(
+        "--sim-dir", type=str, default=".", help="Path to simulation dir"
+    )
 
-    parser.add_argument('--out-dir', type=str, default='tables', help='Output directory for tables')
+    parser.add_argument(
+        "--out-dir", type=str, default="tables", help="Output directory for tables"
+    )
     args = parser.parse_args()
 
     generate_transport_tables(args.sim_dir, args.out_dir)

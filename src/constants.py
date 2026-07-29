@@ -72,66 +72,114 @@ SIM_TO_ACTIVITY_MAPPING = {
 }
 
 COL_AGE = "Age"
-COL_SEX = "Sex"
+COL_SEX_EN = "Sex"
 COL_HEALTH = "Usual state of health"
 COL_SCENARIO = "Scenario"
 COL_ACTIVITY = "Kind of activities"
-COL_DAY_OF_WEEK = "Day of the week"
+COL_DAY_OF_WEEK_EN = "Day of the week"
+COL_DAY_OF_WEEK_JP = "Day_of_week_JP"
+COL_AREA_CLASSIFICATION_JP = "Area_classification_JP"
+COL_AREA_CLASSIFICATION_EN = "Area_classification_EN"
+COL_SEX_JP = "Sex_JP"
 COL_VALIDATION = "Survey on Time Use and Leisure Activities 2021"
 COL_SIMULATION = "Simulation"
+COL_SE_RATIO_PCT = "Standard_Error_Ratio_Pct"
+COL_SE_RATIO_FRACTION = "SE_Ratio_Fraction"
+COL_REGION_JP = "Region_JP"
+COL_REGION_EN = "Region_EN"
+COL_SAMPLE_EDS = "Sample_EDs"
+COL_SAMPLE_HOUSEHOLDS = "Sample_Households"
+COL_SAMPLE_PERSONS_LEISURE = "Sample_Persons_Leisure"
+COL_SAMPLE_PERSONS_TIME_USE = "Sample_Persons_Time_Use"
+COL_SAMPLE_PERSONS_AVERAGE_TIME = "Sample_Persons_Average_Time"
+COL_METRIC = "Metric"
+COL_COUNT = "Count"
 
-QUESTIONNAIRE_A_COLS = [
-    "Region_JP",
-    "Region_EN",
-    "Sample_EDs",
-    "Sample_Households",
-    "Sample_Persons_Leisure",
-    "Sample_Persons_Time_Use",
-    "Sample_Persons_Average_Time",
-]
+HEALTH_MAP = {
+    "0_Total": None,
+    "1_Excellent": "Good",
+    "2_Good": "Good",
+    "3_Fair": "Normal",
+    "4_Not good": "Poor",
+    "5_Poor": "Poor",
+    
+VALIDATION_COL_MAP = {
+    "value": COL_VALIDATION,
+}
 
-QUESTIONNAIRE_A_NUMERIC_COLS = [
-    "Sample_EDs",
-    "Sample_Households",
-    "Sample_Persons_Leisure",
-    "Sample_Persons_Time_Use",
-    "Sample_Persons_Average_Time",
-]
+DAY_OF_WEEK_MAP = {
+    "0_Total": "Total",
+    "1_Average of days": "Average of days",
+    "2_Weekday": "Weekday",
+    "3_Saturday": "Saturday",
+    "4_Sunday": "Sunday",
+    "5_Average of Saturday and Sunday": "Average of Saturday and Sunday",
+    "6_Average of weekdays": "Average of weekdays",
+}
 
-SE_RATIOS_ID_COLS = [
-    "Day_of_week_JP",
-    "Area_classification_JP",
-    "Sex_JP",
-    "Day_of_week_EN",
-    "Area_classification_EN",
-    "Sex_EN",
-]
+SEX_MAP = {
+    "0_Both sexes": "Both sexes",
+    "1_Male": "Male",
+    "2_Female": "Female",
+}
 
-SE_RATIOS_ACTIVITIES = [
-    "01_Sleep",
-    "02_Personal care",
-    "03_Meals",
-    "04_Commuting to and from school or work",
-    "05_Work",
-    "06_Schoolwork",
-    "07_Housework",
-    "08_Caring or nursing",
-    "09_Child care",
-    "10_Shopping",
-    "11_Moving (excluding commuting)",
-    "12_Watching TV, listening to the radio, reading newspapers or magazines",
-    "13_Rest and relaxation",
-    "14_Learning, self-education, and training (excluding schoolwork)",
-    "15_Hobbies and amusements",
-    "16_Sports",
-    "17_Volunteer and social activities",
-    "18_Social life",
-    "19_Medical examination or treatment",
-    "20_Other activities",
-    "R1_Primary activities(Regrouped)",
-    "R2_Secondary activities(Regrouped)",
-    "R3_Tertiary activities(Regrouped)",
-]
+AGE_MAP = {
+    "0_Total": "Total",
+    "1_15 to 19 years old": "15 to 19 years old",
+    "2_20 to 24 years old": "20 to 24 years old",
+    "3_25 to 34 years old": "25 to 34 years old",
+    "4_35 to 44 years old": "35 to 44 years old",
+    "5_45 to 54 years old": "45 to 54 years old",
+    "6_55 to 64 years old": "55 to 64 years old",
+    "7_65 to 74 years old": "65 to 74 years old",
+    "8_75 years old and over": "75 years old and over",
+}
+
+ACTIVITY_MAP = {
+    "01_Sleep": "Sleep",
+    "02_Personal care": "Personal care",
+    "03_Meals": "Meals",
+    "04_Commuting to and from school or work": "Commuting to and from school or work",
+    "05_Work": "Work",
+    "06_Schoolwork": "Schoolwork",
+    "07_Housework": "Housework",
+    "08_Caring or nursing": "Caring or nursing",
+    "09_Child care": "Child care",
+    "10_Shopping": "Shopping",
+    "11_Moving (excluding commuting)": "Moving (excluding commuting)",
+    "12_Watching TV, listening to the radio, reading newspapers or magazines": "Watching TV, listening to the radio, reading newspapers or magazines",
+    "13_Rest and relaxation": "Rest and relaxation",
+    "14_Learning, self-education, and training (excluding schoolwork)": "Learning, self-education, and training (excluding schoolwork)",
+    "15_Hobbies and amusements": "Hobbies and amusements",
+    "16_Sports": "Sports",
+    "17_Volunteer and social activities": "Volunteer and social activities",
+    "18_Social life": "Social life",
+    "19_Medical examination or treatment": "Medical examination or treatment",
+    "20_Other activities": "Other activities",
+    "R1_Primary activities(Regrouped)": "Primary activities(Regrouped)",
+    "R2_Secondary activities(Regrouped)": "Secondary activities(Regrouped)",
+    "R3_Tertiary activities(Regrouped)": "Tertiary activities(Regrouped)",
+}
+
+QUESTIONNAIRE_A_COL_MAP = {
+    "地域区分": COL_REGION_JP,
+    "Regions": COL_REGION_EN,
+    "Number of \nsample EDs": COL_SAMPLE_EDS,
+    "Number of sample households": COL_SAMPLE_HOUSEHOLDS,
+    "Leisure Activities": COL_SAMPLE_PERSONS_LEISURE,
+    "Time Use\nActivities by Time of Day＊": COL_SAMPLE_PERSONS_TIME_USE,
+    "Average Time of Main Activities": COL_SAMPLE_PERSONS_AVERAGE_TIME,
+}
+
+
+SE_RATIOS_COL_MAP = {
+    "曜日": COL_DAY_OF_WEEK_JP,
+    "地域区分": COL_AREA_CLASSIFICATION_JP,
+    "男女": COL_SEX_JP,
+    "Day of the week": COL_DAY_OF_WEEK_EN,
+    "Area classification": COL_AREA_CLASSIFICATION_EN,
+    "Sex": COL_SEX_EN,
+}
 
 AGENT_TRIPS_EXPORT_COLS = [
     "unique_simulation_id",

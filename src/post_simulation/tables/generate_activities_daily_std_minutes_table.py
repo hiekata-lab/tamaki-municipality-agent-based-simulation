@@ -7,7 +7,7 @@ from src.constants import (
     COL_AGE,
     COL_HEALTH,
     COL_SCENARIO,
-    COL_SEX,
+    COL_SEX_EN,
     SIM_TO_ACTIVITY_MAPPING,
 )
 
@@ -27,14 +27,21 @@ def generate_std_table(sim_dir, out_dir):
         .reset_index()
     )
 
-    df_act = pd.merge(df_act, df[["unique_simulation_id", "days_simulated"]].drop_duplicates(), on="unique_simulation_id", how="left")
+    df_act = pd.merge(
+        df_act,
+        df[["unique_simulation_id", "days_simulated"]].drop_duplicates(),
+        on="unique_simulation_id",
+        how="left",
+    )
     df_act["duration"] /= df_act["days_simulated"]
 
-    df_meta = df[["unique_simulation_id", COL_SCENARIO, COL_AGE, COL_SEX, COL_HEALTH]].drop_duplicates()
+    df_meta = df[
+        ["unique_simulation_id", COL_SCENARIO, COL_AGE, COL_SEX_EN, COL_HEALTH]
+    ].drop_duplicates()
 
     df_full = pd.merge(df_meta, df_act, on="unique_simulation_id", how="left")
     df_full = df_full.pivot_table(
-        index=["unique_simulation_id", COL_SCENARIO, COL_AGE, COL_SEX, COL_HEALTH],
+        index=["unique_simulation_id", COL_SCENARIO, COL_AGE, COL_SEX_EN, COL_HEALTH],
         columns="mapped_act",
         values="duration",
         fill_value=0,
@@ -42,7 +49,7 @@ def generate_std_table(sim_dir, out_dir):
 
     df_melt = pd.melt(
         df_full,
-        id_vars=["unique_simulation_id", COL_SCENARIO, COL_AGE, COL_SEX, COL_HEALTH],
+        id_vars=["unique_simulation_id", COL_SCENARIO, COL_AGE, COL_SEX_EN, COL_HEALTH],
         value_vars=[
             c for c in SIM_TO_ACTIVITY_MAPPING.values() if c in df_full.columns
         ],
@@ -51,7 +58,7 @@ def generate_std_table(sim_dir, out_dir):
     )
 
     df_std = (
-        df_melt.groupby([COL_SCENARIO, COL_AGE, COL_SEX, COL_HEALTH, COL_ACTIVITY])[
+        df_melt.groupby([COL_SCENARIO, COL_AGE, COL_SEX_EN, COL_HEALTH, COL_ACTIVITY])[
             "duration"
         ]
         .std()
@@ -60,7 +67,7 @@ def generate_std_table(sim_dir, out_dir):
     df_std = df_std.rename(columns={"duration": "Std"})
 
     df_pivot = df_std.pivot_table(
-        index=[COL_SCENARIO, COL_AGE, COL_SEX, COL_HEALTH],
+        index=[COL_SCENARIO, COL_AGE, COL_SEX_EN, COL_HEALTH],
         columns=COL_ACTIVITY,
         values="Std",
     )
@@ -71,11 +78,17 @@ def generate_std_table(sim_dir, out_dir):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Generate activities daily std minutes table")
+    parser = argparse.ArgumentParser(
+        description="Generate activities daily std minutes table"
+    )
 
-    parser.add_argument('--sim-dir', type=str, default='.', help='Path to simulation dir')
+    parser.add_argument(
+        "--sim-dir", type=str, default=".", help="Path to simulation dir"
+    )
 
-    parser.add_argument('--out-dir', type=str, default='tables', help='Output directory for tables')
+    parser.add_argument(
+        "--out-dir", type=str, default="tables", help="Output directory for tables"
+    )
     args = parser.parse_args()
 
     generate_std_table(args.sim_dir, args.out_dir)

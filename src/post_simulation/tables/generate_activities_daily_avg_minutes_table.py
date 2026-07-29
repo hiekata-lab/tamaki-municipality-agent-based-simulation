@@ -6,15 +6,14 @@ import scipy.stats as stats
 from src.constants import (
     COL_ACTIVITY,
     COL_AGE,
-    COL_DAY_OF_WEEK,
+    COL_DAY_OF_WEEK_EN,
     COL_HEALTH,
     COL_SCENARIO,
-    COL_SEX,
+    COL_SEX_EN,
     COL_SIMULATION,
     COL_VALIDATION,
     SIM_TO_ACTIVITY_MAPPING,
 )
-
 
 
 def generate_comparison_table(sim_dir, validation_path, se_ratios_path, out_dir):
@@ -35,16 +34,23 @@ def generate_comparison_table(sim_dir, validation_path, se_ratios_path, out_dir)
 
     # Normalize to daily average
     # days_simulated is already joined in load_and_preprocess_simulation_data
-    df_act = pd.merge(df_act, df[["unique_simulation_id", "days_simulated"]].drop_duplicates(), on="unique_simulation_id", how="left")
+    df_act = pd.merge(
+        df_act,
+        df[["unique_simulation_id", "days_simulated"]].drop_duplicates(),
+        on="unique_simulation_id",
+        how="left",
+    )
     df_act["duration"] /= df_act["days_simulated"]
 
     # 2. Extract Demographics
-    df_meta = df[["unique_simulation_id", COL_SCENARIO, COL_AGE, COL_SEX, COL_HEALTH]].drop_duplicates()
+    df_meta = df[
+        ["unique_simulation_id", COL_SCENARIO, COL_AGE, COL_SEX_EN, COL_HEALTH]
+    ].drop_duplicates()
 
     # Cross demographics with all activities (fill 0 for missing activities)
     df_full = pd.merge(df_meta, df_act, on="unique_simulation_id", how="left")
     df_full = df_full.pivot_table(
-        index=["unique_simulation_id", COL_SCENARIO, COL_AGE, COL_SEX, COL_HEALTH],
+        index=["unique_simulation_id", COL_SCENARIO, COL_AGE, COL_SEX_EN, COL_HEALTH],
         columns="mapped_act",
         values="duration",
         fill_value=0,
@@ -53,7 +59,7 @@ def generate_comparison_table(sim_dir, validation_path, se_ratios_path, out_dir)
     # Melt and average across demographics
     df_melt = pd.melt(
         df_full,
-        id_vars=["unique_simulation_id", COL_SCENARIO, COL_AGE, COL_SEX, COL_HEALTH],
+        id_vars=["unique_simulation_id", COL_SCENARIO, COL_AGE, COL_SEX_EN, COL_HEALTH],
         value_vars=[
             c for c in SIM_TO_ACTIVITY_MAPPING.values() if c in df_full.columns
         ],
@@ -61,7 +67,7 @@ def generate_comparison_table(sim_dir, validation_path, se_ratios_path, out_dir)
         value_name="duration",
     )
     df_sim_stats = (
-        df_melt.groupby([COL_SCENARIO, COL_AGE, COL_SEX, COL_HEALTH, COL_ACTIVITY])[
+        df_melt.groupby([COL_SCENARIO, COL_AGE, COL_SEX_EN, COL_HEALTH, COL_ACTIVITY])[
             "duration"
         ]
         .agg(["mean", "std", "count"])
@@ -80,7 +86,7 @@ def generate_comparison_table(sim_dir, validation_path, se_ratios_path, out_dir)
     )
 
     scenarios = pd.DataFrame({COL_SCENARIO: df_sim_avg[COL_SCENARIO].unique()})
-    day_types = pd.DataFrame({COL_DAY_OF_WEEK: df_val[COL_DAY_OF_WEEK].unique()})
+    day_types = pd.DataFrame({COL_DAY_OF_WEEK_EN: df_val[COL_DAY_OF_WEEK_EN].unique()})
 
     df_sim_avg = df_sim_avg.merge(day_types, how="cross")
     df_val = df_val.merge(scenarios, how="cross")
@@ -88,14 +94,21 @@ def generate_comparison_table(sim_dir, validation_path, se_ratios_path, out_dir)
     df_merged = pd.merge(
         df_sim_avg,
         df_val,
-        on=[COL_SCENARIO, COL_DAY_OF_WEEK, COL_AGE, COL_SEX, COL_HEALTH, COL_ACTIVITY],
+        on=[
+            COL_SCENARIO,
+            COL_DAY_OF_WEEK_EN,
+            COL_AGE,
+            COL_SEX_EN,
+            COL_HEALTH,
+            COL_ACTIVITY,
+        ],
         how="outer",
     )
 
     # 4. Calculate Confidence Intervals (Vectorized)
     def get_se(row):
         return se_ratios.get(
-            (row[COL_SEX], row[COL_ACTIVITY]),
+            (row[COL_SEX_EN], row[COL_ACTIVITY]),
             se_ratios.get(("Both sexes", row[COL_ACTIVITY]), np.nan),
         )
 
@@ -133,7 +146,7 @@ def generate_comparison_table(sim_dir, validation_path, se_ratios_path, out_dir)
         "CI_95_Upper",
     ]
     df_pivot = df_merged.pivot_table(
-        index=[COL_SCENARIO, COL_DAY_OF_WEEK, COL_AGE, COL_SEX, COL_HEALTH],
+        index=[COL_SCENARIO, COL_DAY_OF_WEEK_EN, COL_AGE, COL_SEX_EN, COL_HEALTH],
         columns=COL_ACTIVITY,
         values=val_cols,
     ).swaplevel(axis=1)
@@ -149,16 +162,22 @@ def generate_comparison_table(sim_dir, validation_path, se_ratios_path, out_dir)
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Generate activities daily avg minutes table")
+    parser = argparse.ArgumentParser(
+        description="Generate activities daily avg minutes table"
+    )
 
-    parser.add_argument('--sim-dir', type=str, default='.', help='Path to simulation dir')
+    parser.add_argument(
+        "--sim-dir", type=str, default=".", help="Path to simulation dir"
+    )
 
-    parser.add_argument('--out-dir', type=str, default='tables', help='Output directory for tables')
+    parser.add_argument(
+        "--out-dir", type=str, default="tables", help="Output directory for tables"
+    )
     args = parser.parse_args()
 
     validation_path = "data/processed/Average time spent in activities for participants by Kind of activities, Day of the week, Area classification, Sex, Usual economic activity, Usual state of health, Age (15 Years Old and Over)-Japan, Prefectures.csv"
     se_ratios_path = "data/processed/Standard Error Ratios of Average time spent in activities for all persons by Sex, Kind of activities - Weekly average, Japan, Prefectures.csv"
 
     generate_comparison_table(
-            args.sim_dir, validation_path, se_ratios_path, args.out_dir
-        )
+        args.sim_dir, validation_path, se_ratios_path, args.out_dir
+    )

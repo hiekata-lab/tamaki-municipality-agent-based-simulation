@@ -1,7 +1,20 @@
 import argparse
 import pandas as pd
 import os
-from src.constants import COL_HEALTH, COL_VALIDATION
+from src.constants import (
+    COL_HEALTH,
+    COL_VALIDATION,
+    HEALTH_MAP,
+    VALIDATION_COL_MAP,
+    DAY_OF_WEEK_MAP,
+    SEX_MAP,
+    AGE_MAP,
+    ACTIVITY_MAP,
+    COL_DAY_OF_WEEK_EN,
+    COL_SEX_EN,
+    COL_AGE,
+    COL_ACTIVITY,
+)
 
 
 def preprocess_validation_data(in_path, out_path):
@@ -9,34 +22,26 @@ def preprocess_validation_data(in_path, out_path):
     df_val = pd.read_csv(in_path)
     # Only select data from the non-working population
     df_val = df_val[df_val["Usual economic activity"] == "2_Not working"]
-    # Strip _ prefix from col values
-    for col in ["Day of the week", "Sex", "Age", "Kind of activities"]:
-        df_val[col] = df_val[col].str.split("_", n=1).str[-1]
-    # Map the health values from the 5-class validation data format to the unified 3-class format for the project
-    df_val[COL_HEALTH] = df_val[COL_HEALTH].map(
-        {
-            "0_Total": None,
-            "1_Excellent": "Good",
-            "2_Good": "Good",
-            "3_Fair": "Normal",
-            "4_Not good": "Poor",
-            "5_Poor": "Poor",
-        }
-    )
+    # Rename columns using the map
+    df_val = df_val.rename(columns=VALIDATION_COL_MAP)
+    # Map column values using the defined dictionaries
+    df_val[COL_DAY_OF_WEEK_EN] = df_val[COL_DAY_OF_WEEK_EN].map(DAY_OF_WEEK_MAP)
+    df_val[COL_SEX_EN] = df_val[COL_SEX_EN].map(SEX_MAP)
+    df_val[COL_AGE] = df_val[COL_AGE].map(AGE_MAP)
+    df_val[COL_ACTIVITY] = df_val[COL_ACTIVITY].map(ACTIVITY_MAP)
+    df_val[COL_HEALTH] = df_val[COL_HEALTH].map(HEALTH_MAP)
     # Convert the value column to numeric, coercing any errors to NaN
-    df_val["value"] = pd.to_numeric(df_val["value"], errors="coerce")
+    df_val[COL_VALIDATION] = pd.to_numeric(df_val[COL_VALIDATION], errors="coerce")
     # Drop any rows that have NaN in the value or health columns
-    df_val = df_val.dropna(subset=["value", COL_HEALTH])
-    # Rename the value column to validation_value
-    df_val = df_val.rename(columns={"value": COL_VALIDATION})
+    df_val = df_val.dropna(subset=[COL_VALIDATION, COL_HEALTH])
     # Keep only the columns that are needed for the simulation
     df_val = df_val[
         [
-            "Day of the week",
-            "Age",
-            "Sex",
+            COL_DAY_OF_WEEK_EN,
+            COL_AGE,
+            COL_SEX_EN,
             COL_HEALTH,
-            "Kind of activities",
+            COL_ACTIVITY,
             COL_VALIDATION,
         ]
     ]
