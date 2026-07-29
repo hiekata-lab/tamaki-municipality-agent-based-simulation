@@ -6,69 +6,97 @@ from src.constants import (
     ACTIVITIES,
     COL_SCENARIO,
     SCENARIO_MAPPING,
-    COL_AGE,
+    COL_AGE_GROUP,
     COL_SEX_EN,
     COL_HEALTH,
+    COL_UNIQUE_SIMULATION_ID,
+    COL_STARTING_TIME,
+    COL_END_TIME,
+    COL_DURATION,
+    COL_SIM_ACTIVITY,
+    COL_LOCATION,
+    COL_NEXT_LOC,
+    COL_DAYS_SIMULATED,
+    COL_AGE_YEAR,
+    KEY_EXTRA_PARAMS,
+    PARAM_MOD_POLICY,
+    PARAM_AGE,
+    PARAM_GENDER,
+    PARAM_HEALTH,
 )
 
 
 def preprocess_aggregated_data(in_dir: str, out_dir: str):
     os.makedirs(out_dir, exist_ok=True)
 
+    # Load aggregated raw data
     csv_path = os.path.join(in_dir, "aggregated_raw.csv")
     if not os.path.exists(csv_path):
         print(f"  No raw csv data found at {csv_path}")
         return
-
+    # Read into pandas
     df_sim = pd.read_csv(csv_path)
-    df_sim["starting_time"] = pd.to_datetime(
-        df_sim["starting_time"], format="%Y-%m-%d %H.%M"
+    # Cast starting times to datetime objects
+    df_sim[COL_STARTING_TIME] = pd.to_datetime(
+        df_sim[COL_STARTING_TIME], format="%Y-%m-%d %H.%M"
     )
-    df_sim = df_sim.sort_values(["unique_simulation_id", "starting_time"])
+    # Sort values in the dataframe by UID and the starting time
+    df_sim = df_sim.sort_values([COL_UNIQUE_SIMULATION_ID, COL_STARTING_TIME])
 
-    df_sim["end_time"] = df_sim.groupby("unique_simulation_id")["starting_time"].shift(
+    # NOTE: Create Utility columns from the aggregated simulation data file
+    # Create the end time column by shifting up the start time of the next state
+    df_sim[COL_END_TIME] = df_sim.groupby(COL_UNIQUE_SIMULATION_ID)[
+        COL_STARTING_TIME
+    ].shift(-1)
+    # Create a map for the time each activity takes using the time delta
+    # Use this to assign the duration of the state when no next state is available
+    activity_durations = {
+        act: pd.Timedelta(minutes=data[COL_DURATION])
+        for act, data in ACTIVITIES.items()
+    }
+    df_sim[COL_END_TIME] = df_sim[COL_END_TIME].fillna(
+        df_sim[COL_STARTING_TIME] + df_sim[COL_SIM_ACTIVITY].map(activity_durations)
+    )
+    # Convert the duration to minutes
+    df_sim[COL_DURATION] = (
+        df_sim[COL_END_TIME] - df_sim[COL_STARTING_TIME]
+    ).dt.total_seconds() / 60.0
+    # Create the next location column by shifting up the location of the next state
+    df_sim[COL_NEXT_LOC] = df_sim.groupby(COL_UNIQUE_SIMULATION_ID)[COL_LOCATION].shift(
         -1
     )
-
-    activity_durations = {
-        act: pd.Timedelta(minutes=data["duration"]) for act, data in ACTIVITIES.items()
-    }
-    df_sim["end_time"] = df_sim["end_time"].fillna(
-        df_sim["starting_time"] + df_sim["activity"].map(activity_durations)
-    )
-
-    df_sim["duration"] = (
-        df_sim["end_time"] - df_sim["starting_time"]
-    ).dt.total_seconds() / 60.0
-
-    df_sim["next_loc"] = df_sim.groupby("unique_simulation_id")["location"].shift(-1)
-    df_sim["next_loc"] = df_sim["next_loc"].fillna(df_sim["location"])
-
-    df_sim["days_simulated"] = (
-        df_sim.groupby("unique_simulation_id")["duration"].transform("sum") / (24 * 60)
+    df_sim[COL_NEXT_LOC] = df_sim[COL_NEXT_LOC].fillna(df_sim[COL_LOCATION])
+    # Create a column for the number of days simulated by dividing the total duration by the number of minutes in a day
+    df_sim[COL_DAYS_SIMULATED] = (
+        df_sim.groupby(COL_UNIQUE_SIMULATION_ID)[COL_DURATION].transform("sum")
+        / (24 * 60)
     ).clip(lower=1)
 
-    # Process metadata
+    # NOTE: Crate Metadata columns from the aggregated json metadata file
     json_path = os.path.join(in_dir, "aggregated.json")
-
     df_meta_raw = pd.read_json(json_path)
+    # Create a fresh df for the metadata columns
     df_meta = pd.DataFrame()
-    df_meta["unique_simulation_id"] = df_meta_raw["unique_simulation_id"]
-    agent_params = pd.json_normalize(df_meta_raw["extra_params"].tolist())
-
-    df_meta[COL_SCENARIO] = agent_params["agent_params.mod_policy"].map(
-        SCENARIO_MAPPING
-    )
-    age_series = agent_params["agent_params.age"].str.extract(r"(\d+)").astype(int)[0]
-    df_meta["Age_Years"] = age_series
-    df_meta[COL_AGE] = np.where(
+    # Set the unique simulation id by taking it from the raw DF created directly from JSON
+    df_meta[COL_UNIQUE_SIMULATION_ID] = df_meta_raw[COL_UNIQUE_SIMULATION_ID]
+    # Parse the agent parameters from the raw JSON DF into a new separate DF
+    agent_params = pd.json_normalize(df_meta_raw[KEY_EXTRA_PARAMS].tolist())
+    # Set the scenario columns by mapping from agent params
+    df_meta[COL_SCENARIO] = agent_params[PARAM_MOD_POLICY].map(SCENARIO_MAPPING)
+    # Create a series of ages by extracting the numerical age from the natural language age
+    age_series = agent_params[PARAM_AGE].str.extract(r"(\d+)").astype(int)[0]
+    df_meta[COL_AGE_YEAR] = age_series
+    # Set age groups and create the respective groups
+    df_meta[COL_AGE_GROUP] = np.where(
         age_series <= 74, "65 to 74 years old", "75 years old and over"
     )
-    df_meta[COL_SEX_EN] = agent_params["agent_params.gender"]
-    df_meta[COL_HEALTH] = agent_params["agent_params.health"]
-
-    df_sim = pd.merge(df_sim, df_meta, on="unique_simulation_id", how="left")
-
+    # Set genders by taking them directly from the agents
+    df_meta[COL_SEX_EN] = agent_params[PARAM_GENDER]
+    # Same for health
+    df_meta[COL_HEALTH] = agent_params[PARAM_HEALTH]
+    # Merge the metadata frame with the simulation data frame
+    df_sim = pd.merge(df_sim, df_meta, on=COL_UNIQUE_SIMULATION_ID, how="left")
+    # Export
     out_csv_path = os.path.join(out_dir, "aggregated.csv")
     df_sim.to_csv(out_csv_path, index=False)
     print(f"  Preprocessed data and output to {out_csv_path}")
@@ -91,5 +119,4 @@ if __name__ == "__main__":
         help="Output directory for aggregated.csv.",
     )
     args = parser.parse_args()
-
     preprocess_aggregated_data(args.in_dir, args.out_dir)
