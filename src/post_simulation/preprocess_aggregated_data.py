@@ -4,25 +4,32 @@ import pandas as pd
 import numpy as np
 from src.constants import (
     ACTIVITIES,
-    COL_SCENARIO,
-    SIM_SCENARIO_TO_VAL_SCENARIO_MAP,
     COL_AGE_GROUP,
-    COL_SEX_EN,
-    COL_HEALTH,
-    COL_UNIQUE_SIMULATION_ID,
-    COL_STARTING_TIME,
-    COL_END_TIME,
+    COL_AGE_YEAR,
+    COL_DAYS_SIMULATED,
+    COL_DEST_X,
+    COL_DEST_Y,
+    COL_DIST,
     COL_DURATION,
-    COL_SIM_ACTIVITY,
+    COL_END_TIME,
+    COL_HEALTH,
     COL_LOCATION,
     COL_NEXT_LOC,
-    COL_DAYS_SIMULATED,
-    COL_AGE_YEAR,
+    COL_SCENARIO,
+    COL_SEX_EN,
+    COL_SIM_ACTIVITY,
+    COL_STARTING_TIME,
+    COL_START_X,
+    COL_START_Y,
+    COL_UNIQUE_SIMULATION_ID,
+    COL_X,
+    COL_Y,
     KEY_EXTRA_PARAMS,
-    PARAM_MOD_POLICY,
     PARAM_AGE,
     PARAM_GENDER,
     PARAM_HEALTH,
+    PARAM_MOD_POLICY,
+    SIM_SCENARIO_TO_VAL_SCENARIO_MAP,
 )
 
 
@@ -71,6 +78,19 @@ def preprocess_aggregated_data(in_dir: str, out_dir: str):
         df_sim.groupby(COL_UNIQUE_SIMULATION_ID)[COL_DURATION].transform("sum")
         / (24 * 60)
     ).clip(lower=1)
+    # Create a column for current loc x,y and next loc x,y
+    graph_df = pd.read_json("data/processed/locations_graph.json", orient="index")
+    loc_x = graph_df[COL_X]
+    loc_y = graph_df[COL_Y]
+    df_sim[COL_START_X] = df_sim[COL_LOCATION].map(loc_x)
+    df_sim[COL_START_Y] = df_sim[COL_LOCATION].map(loc_y)
+    df_sim[COL_DEST_X] = df_sim[COL_NEXT_LOC].map(loc_x)
+    df_sim[COL_DEST_Y] = df_sim[COL_NEXT_LOC].map(loc_y)
+    # Create a column for the distance between start and dest locations
+    df_sim[COL_DIST] = np.sqrt(
+        (df_sim[COL_START_X] - df_sim[COL_DEST_X]) ** 2
+        + (df_sim[COL_START_Y] - df_sim[COL_DEST_Y]) ** 2
+    )
 
     # NOTE: Crate Metadata columns from the aggregated json metadata file
     json_path = os.path.join(in_dir, "aggregated.json")

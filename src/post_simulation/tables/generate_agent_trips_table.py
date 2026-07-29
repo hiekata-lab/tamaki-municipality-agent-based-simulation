@@ -20,29 +20,16 @@ from src.constants import (
 )
 
 
-def main():
-    parser = argparse.ArgumentParser(description="Generate trip map table.")
+def generate_agent_trips_table(sim_dir, out_dir):
+    os.makedirs(out_dir, exist_ok=True)
 
-    parser.add_argument('--sim-dir', type=str, default='.', help='Path to simulation dir')
-
-    parser.add_argument('--out-dir', type=str, default='tables', help='Output directory for tables')
-    args = parser.parse_args()
-
-    os.makedirs(args.out_dir, exist_ok=True)
-
-    # Load locations graph to map node IDs to coordinates
+    # Load locations graph for legend table coordinate mapping
     graph_df = pd.read_json("data/processed/locations_graph.json", orient="index")
     loc_x = graph_df[COL_X]
     loc_y = graph_df[COL_Y]
 
-    csv_path = os.path.join(args.sim_dir, "aggregated.csv")
+    csv_path = os.path.join(sim_dir, "aggregated.csv")
     df = pd.read_csv(csv_path, parse_dates=[COL_STARTING_TIME, COL_END_TIME])
-
-    # Map locations to coordinates
-    df[COL_START_X] = df[COL_LOCATION].map(loc_x)
-    df[COL_START_Y] = df[COL_LOCATION].map(loc_y)
-    df[COL_DEST_X] = df[COL_NEXT_LOC].map(loc_x)
-    df[COL_DEST_Y] = df[COL_NEXT_LOC].map(loc_y)
 
     agent_trips_export_cols = [
         COL_UNIQUE_SIMULATION_ID,
@@ -67,7 +54,7 @@ def main():
     # Drop rows where start coordinates could not be found
     export_df = export_df.dropna(subset=[COL_START_X, COL_START_Y, COL_DEST_X, COL_DEST_Y])
 
-    out_file = os.path.join(args.out_dir, "results_agent_trips.csv")
+    out_file = os.path.join(out_dir, "results_agent_trips.csv")
     export_df.to_csv(out_file, index=False)
     print(f"  Saved {out_file}")
 
@@ -86,10 +73,18 @@ def main():
     legend_df[COL_X] = legend_df[COL_LOCATION_NAME].map(loc_x)
     legend_df[COL_Y] = legend_df[COL_LOCATION_NAME].map(loc_y)
 
-    legend_file = os.path.join(args.out_dir, "results_agent_trips_legend.csv")
+    legend_file = os.path.join(out_dir, "results_agent_trips_legend.csv")
     legend_df.to_csv(legend_file, index=False)
     print(f"  Saved {legend_file}")
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description="Generate trip map table.")
+    parser.add_argument(
+        "--sim-dir", type=str, default=".", help="Path to simulation dir"
+    )
+    parser.add_argument(
+        "--out-dir", type=str, default="tables", help="Output directory for tables"
+    )
+    args = parser.parse_args()
+    generate_agent_trips_table(args.sim_dir, args.out_dir)
