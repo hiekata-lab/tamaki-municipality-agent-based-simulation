@@ -12,7 +12,7 @@ from src.constants import (
     ACTIVITY_MAP,
     COL_DAY_OF_WEEK_EN,
     COL_SEX_EN,
-    COL_AGE,
+    COL_AGE_GROUP,
     COL_ACTIVITY,
 )
 
@@ -27,7 +27,7 @@ def preprocess_validation_data(in_path, out_path):
     # Map column values using the defined dictionaries
     df_val[COL_DAY_OF_WEEK_EN] = df_val[COL_DAY_OF_WEEK_EN].map(DAY_OF_WEEK_MAP)
     df_val[COL_SEX_EN] = df_val[COL_SEX_EN].map(SEX_MAP)
-    df_val[COL_AGE] = df_val[COL_AGE].map(AGE_MAP)
+    df_val[COL_AGE_GROUP] = df_val[COL_AGE_GROUP].map(AGE_MAP)
     df_val[COL_ACTIVITY] = df_val[COL_ACTIVITY].map(ACTIVITY_MAP)
     df_val[COL_HEALTH] = df_val[COL_HEALTH].map(HEALTH_MAP)
     # Convert the value column to numeric, coercing any errors to NaN
@@ -38,7 +38,7 @@ def preprocess_validation_data(in_path, out_path):
     df_val = df_val[
         [
             COL_DAY_OF_WEEK_EN,
-            COL_AGE,
+            COL_AGE_GROUP,
             COL_SEX_EN,
             COL_HEALTH,
             COL_ACTIVITY,

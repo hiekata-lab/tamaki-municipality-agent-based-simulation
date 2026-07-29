@@ -71,7 +71,8 @@ SIM_TO_ACTIVITY_MAPPING = {
     "Arriving": None,
 }
 
-COL_AGE = "Age"
+# Standardized CSV columns for the project
+COL_AGE_GROUP = "Age_Group"
 COL_SEX_EN = "Sex"
 COL_HEALTH = "Usual state of health"
 COL_SCENARIO = "Scenario"
@@ -93,7 +94,22 @@ COL_SAMPLE_PERSONS_LEISURE = "Sample_Persons_Leisure"
 COL_SAMPLE_PERSONS_TIME_USE = "Sample_Persons_Time_Use"
 COL_SAMPLE_PERSONS_AVERAGE_TIME = "Sample_Persons_Average_Time"
 COL_METRIC = "Metric"
-COL_COUNT = "Count"
+COL_UNIQUE_SIMULATION_ID = "unique_simulation_id"
+COL_STARTING_TIME = "starting_time"
+COL_END_TIME = "end_time"
+COL_DURATION = "duration"
+COL_SIM_ACTIVITY = "activity"
+COL_LOCATION = "location"
+COL_NEXT_LOC = "next_loc"
+COL_DAYS_SIMULATED = "days_simulated"
+COL_AGE_YEAR = "Age_Year"
+
+# Standardized JSON keys for the project
+KEY_EXTRA_PARAMS = "extra_params"
+PARAM_MOD_POLICY = "agent_params.mod_policy"
+PARAM_AGE = "agent_params.age"
+PARAM_GENDER = "agent_params.gender"
+PARAM_HEALTH = "agent_params.health"
 
 HEALTH_MAP = {
     "0_Total": None,

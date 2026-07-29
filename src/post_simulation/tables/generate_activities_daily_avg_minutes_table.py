@@ -5,7 +5,7 @@ import numpy as np
 import scipy.stats as stats
 from src.constants import (
     COL_ACTIVITY,
-    COL_AGE,
+    COL_AGE_GROUP,
     COL_DAY_OF_WEEK_EN,
     COL_HEALTH,
     COL_SCENARIO,
@@ -44,13 +44,19 @@ def generate_comparison_table(sim_dir, validation_path, se_ratios_path, out_dir)
 
     # 2. Extract Demographics
     df_meta = df[
-        ["unique_simulation_id", COL_SCENARIO, COL_AGE, COL_SEX_EN, COL_HEALTH]
+        ["unique_simulation_id", COL_SCENARIO, COL_AGE_GROUP, COL_SEX_EN, COL_HEALTH]
     ].drop_duplicates()
 
     # Cross demographics with all activities (fill 0 for missing activities)
     df_full = pd.merge(df_meta, df_act, on="unique_simulation_id", how="left")
     df_full = df_full.pivot_table(
-        index=["unique_simulation_id", COL_SCENARIO, COL_AGE, COL_SEX_EN, COL_HEALTH],
+        index=[
+            "unique_simulation_id",
+            COL_SCENARIO,
+            COL_AGE_GROUP,
+            COL_SEX_EN,
+            COL_HEALTH,
+        ],
         columns="mapped_act",
         values="duration",
         fill_value=0,
@@ -59,7 +65,13 @@ def generate_comparison_table(sim_dir, validation_path, se_ratios_path, out_dir)
     # Melt and average across demographics
     df_melt = pd.melt(
         df_full,
-        id_vars=["unique_simulation_id", COL_SCENARIO, COL_AGE, COL_SEX_EN, COL_HEALTH],
+        id_vars=[
+            "unique_simulation_id",
+            COL_SCENARIO,
+            COL_AGE_GROUP,
+            COL_SEX_EN,
+            COL_HEALTH,
+        ],
         value_vars=[
             c for c in SIM_TO_ACTIVITY_MAPPING.values() if c in df_full.columns
         ],
@@ -67,9 +79,9 @@ def generate_comparison_table(sim_dir, validation_path, se_ratios_path, out_dir)
         value_name="duration",
     )
     df_sim_stats = (
-        df_melt.groupby([COL_SCENARIO, COL_AGE, COL_SEX_EN, COL_HEALTH, COL_ACTIVITY])[
-            "duration"
-        ]
+        df_melt.groupby(
+            [COL_SCENARIO, COL_AGE_GROUP, COL_SEX_EN, COL_HEALTH, COL_ACTIVITY]
+        )["duration"]
         .agg(["mean", "std", "count"])
         .reset_index()
     )
@@ -97,7 +109,7 @@ def generate_comparison_table(sim_dir, validation_path, se_ratios_path, out_dir)
         on=[
             COL_SCENARIO,
             COL_DAY_OF_WEEK_EN,
-            COL_AGE,
+            COL_AGE_GROUP,
             COL_SEX_EN,
             COL_HEALTH,
             COL_ACTIVITY,
@@ -146,7 +158,7 @@ def generate_comparison_table(sim_dir, validation_path, se_ratios_path, out_dir)
         "CI_95_Upper",
     ]
     df_pivot = df_merged.pivot_table(
-        index=[COL_SCENARIO, COL_DAY_OF_WEEK_EN, COL_AGE, COL_SEX_EN, COL_HEALTH],
+        index=[COL_SCENARIO, COL_DAY_OF_WEEK_EN, COL_AGE_GROUP, COL_SEX_EN, COL_HEALTH],
         columns=COL_ACTIVITY,
         values=val_cols,
     ).swaplevel(axis=1)

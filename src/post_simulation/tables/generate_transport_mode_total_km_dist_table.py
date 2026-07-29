@@ -3,7 +3,7 @@ import os
 import pandas as pd
 import numpy as np
 from src.constants import (
-    COL_AGE,
+    COL_AGE_GROUP,
     COL_HEALTH,
     COL_SCENARIO,
     COL_SEX_EN,
@@ -44,7 +44,7 @@ def generate_transport_tables(sim_dir, out_dir):
 
     # Load Metadata
     df_meta = df[
-        ["unique_simulation_id", COL_SCENARIO, COL_AGE, COL_SEX_EN, COL_HEALTH]
+        ["unique_simulation_id", COL_SCENARIO, COL_AGE_GROUP, COL_SEX_EN, COL_HEALTH]
     ].drop_duplicates()
 
     # Cross demographics with all transport modes
@@ -75,13 +75,13 @@ def generate_transport_tables(sim_dir, out_dir):
     def pivot_and_save(val_col, agg_func, out_filename):
         df_group = (
             df_full.groupby(
-                [COL_SCENARIO, COL_AGE, COL_SEX_EN, COL_HEALTH] + ["activity"]
+                [COL_SCENARIO, COL_AGE_GROUP, COL_SEX_EN, COL_HEALTH] + ["activity"]
             )[val_col]
             .agg(agg_func)
             .reset_index()
         )
         df_pivot = df_group.pivot_table(
-            index=[COL_SCENARIO, COL_AGE, COL_SEX_EN, COL_HEALTH],
+            index=[COL_SCENARIO, COL_AGE_GROUP, COL_SEX_EN, COL_HEALTH],
             columns="activity",
             values=val_col,
         ).reset_index()

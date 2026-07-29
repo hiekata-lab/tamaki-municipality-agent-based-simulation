@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 from src.constants import (
     COL_ACTIVITY,
-    COL_AGE,
+    COL_AGE_GROUP,
     COL_HEALTH,
     COL_SCENARIO,
     COL_SEX_EN,
@@ -36,12 +36,18 @@ def generate_std_table(sim_dir, out_dir):
     df_act["duration"] /= df_act["days_simulated"]
 
     df_meta = df[
-        ["unique_simulation_id", COL_SCENARIO, COL_AGE, COL_SEX_EN, COL_HEALTH]
+        ["unique_simulation_id", COL_SCENARIO, COL_AGE_GROUP, COL_SEX_EN, COL_HEALTH]
     ].drop_duplicates()
 
     df_full = pd.merge(df_meta, df_act, on="unique_simulation_id", how="left")
     df_full = df_full.pivot_table(
-        index=["unique_simulation_id", COL_SCENARIO, COL_AGE, COL_SEX_EN, COL_HEALTH],
+        index=[
+            "unique_simulation_id",
+            COL_SCENARIO,
+            COL_AGE_GROUP,
+            COL_SEX_EN,
+            COL_HEALTH,
+        ],
         columns="mapped_act",
         values="duration",
         fill_value=0,
@@ -49,7 +55,13 @@ def generate_std_table(sim_dir, out_dir):
 
     df_melt = pd.melt(
         df_full,
-        id_vars=["unique_simulation_id", COL_SCENARIO, COL_AGE, COL_SEX_EN, COL_HEALTH],
+        id_vars=[
+            "unique_simulation_id",
+            COL_SCENARIO,
+            COL_AGE_GROUP,
+            COL_SEX_EN,
+            COL_HEALTH,
+        ],
         value_vars=[
             c for c in SIM_TO_ACTIVITY_MAPPING.values() if c in df_full.columns
         ],
@@ -58,16 +70,16 @@ def generate_std_table(sim_dir, out_dir):
     )
 
     df_std = (
-        df_melt.groupby([COL_SCENARIO, COL_AGE, COL_SEX_EN, COL_HEALTH, COL_ACTIVITY])[
-            "duration"
-        ]
+        df_melt.groupby(
+            [COL_SCENARIO, COL_AGE_GROUP, COL_SEX_EN, COL_HEALTH, COL_ACTIVITY]
+        )["duration"]
         .std()
         .reset_index()
     )
     df_std = df_std.rename(columns={"duration": "Std"})
 
     df_pivot = df_std.pivot_table(
-        index=[COL_SCENARIO, COL_AGE, COL_SEX_EN, COL_HEALTH],
+        index=[COL_SCENARIO, COL_AGE_GROUP, COL_SEX_EN, COL_HEALTH],
         columns=COL_ACTIVITY,
         values="Std",
     )
