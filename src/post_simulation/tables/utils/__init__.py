@@ -7,6 +7,12 @@ from src.post_simulation.tables.utils.processing import (
     generate_location_legend_table,
     load_normalized_transport_data,
 )
+from src.post_simulation.tables.utils.stats import (
+    calculate_combined_standard_error,
+    calculate_confidence_interval,
+    calculate_margin_of_error,
+    calculate_standard_error,
+)
 
 __all__ = [
     "load_aggregated_simulation_data",
@@ -14,4 +20,8 @@ __all__ = [
     "export_grouped_pivot_table",
     "generate_location_legend_table",
     "load_normalized_transport_data",
+    "calculate_combined_standard_error",
+    "calculate_confidence_interval",
+    "calculate_margin_of_error",
+    "calculate_standard_error",
 ]

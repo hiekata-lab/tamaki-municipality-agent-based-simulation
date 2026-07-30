@@ -4,10 +4,10 @@ import textwrap
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import scipy.stats as stats
 from src.constants import (
+    COL_ACTIVITY,
     COL_SIMULATION,
-    SURVEY_TITLE,
+    COL_VALIDATION_VALUE,
     TRANSPORTATION_MODES,
 )
 from src.post_simulation.figures.utils import (
@@ -23,41 +23,19 @@ def generate_activity_time_comparison_plot(
 ) -> None:
     df = pd.read_csv(comparison_csv)
 
-    activity_cols = [c for c in df.columns if " - " in c]
-    all_activities = list(dict.fromkeys([c.split(" - ")[0] for c in activity_cols]))
+    df_plot = df[
+        ~df[COL_ACTIVITY].isin(TRANSPORTATION_MODES)
+        & ~df[COL_ACTIVITY].str.startswith(("Riding", "Walking", "Driving"))
+    ].copy()
 
-    activities = [
-        act
-        for act in all_activities
-        if act not in TRANSPORTATION_MODES
-        and not act.startswith(("Riding", "Walking", "Driving"))
-    ]
+    activities = df_plot[COL_ACTIVITY].tolist()
+    means_sim = df_plot[COL_SIMULATION].values
+    means_gold = df_plot[COL_VALIDATION_VALUE].values
 
-    sim_cols = [f"{act} - {COL_SIMULATION}" for act in activities]
-    val_cols = [f"{act} - {SURVEY_TITLE}" for act in activities]
-    ci95_lower_cols = [f"{act} - CI_95_Lower" for act in activities]
-    ci95_upper_cols = [f"{act} - CI_95_Upper" for act in activities]
-    ci90_lower_cols = [f"{act} - CI_90_Lower" for act in activities]
-    ci90_upper_cols = [f"{act} - CI_90_Upper" for act in activities]
-
-    means_sim = df[sim_cols].mean().fillna(0).values
-    means_gold = df[val_cols].mean().fillna(0).values
-
-    ci95_gold = np.nan_to_num(
-        ((df[ci95_upper_cols].values - df[ci95_lower_cols].values) / 2.0).mean(
-            axis=0
-        )
-    )
-    ci90_gold = np.nan_to_num(
-        ((df[ci90_upper_cols].values - df[ci90_lower_cols].values) / 2.0).mean(
-            axis=0
-        )
-    )
-
-    se_sim = df[sim_cols].sem().fillna(0).values
-    dof = np.maximum(1, df[sim_cols].count().values - 1)
-    ci95_sim = np.nan_to_num(stats.t.ppf(0.975, dof) * se_sim)
-    ci90_sim = np.nan_to_num(stats.t.ppf(0.95, dof) * se_sim)
+    ci95_gold = (df_plot["CI_95_Upper"].values - df_plot["CI_95_Lower"].values) / 2.0
+    ci90_gold = (df_plot["CI_90_Upper"].values - df_plot["CI_90_Lower"].values) / 2.0
+    ci95_sim = df_plot["CI_95_Sim"].values
+    ci90_sim = df_plot["CI_90_Sim"].values
 
     y = np.arange(len(activities))
     height = 0.35

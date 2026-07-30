@@ -1,8 +1,6 @@
 import argparse
 import os
-import numpy as np
 import pandas as pd
-import scipy.stats as stats
 from src.constants import (
     COL_ACTIVITY,
     COL_AGE_GROUP,
@@ -21,6 +19,10 @@ from src.constants import (
     VALIDATION_ACTIVITIES,
 )
 from src.post_simulation.tables.utils import (
+    calculate_combined_standard_error,
+    calculate_confidence_interval,
+    calculate_margin_of_error,
+    calculate_standard_error,
     load_aggregated_simulation_data,
     save_table_csv,
 )
@@ -58,9 +60,9 @@ def generate_comparison_table(
         .reset_index()
         .rename(columns={COL_SIM_ACTIVITY: COL_ACTIVITY, "mean": COL_SIMULATION})
     )
-    df_sim_stats["se_sim"] = (
-        df_sim_stats["std"] / np.sqrt(df_sim_stats["count"])
-    ).fillna(0)
+    df_sim_stats["se_sim"] = calculate_standard_error(
+        std=df_sim_stats["std"], count=df_sim_stats["count"]
+    )
 
     df_val = pd.read_csv(validation_path)
     df_val_filtered = (
@@ -85,6 +87,14 @@ def generate_comparison_table(
         how="outer",
     )
 
+    df_merged[COL_SCENARIO] = df_merged[COL_SCENARIO].fillna("Scenario 2")
+    df_merged[COL_DAY_OF_WEEK_EN] = df_merged[COL_DAY_OF_WEEK_EN].fillna("Weekday")
+    df_merged[COL_SIMULATION] = df_merged[COL_SIMULATION].fillna(0)
+    df_merged["std"] = df_merged["std"].fillna(0)
+    df_merged["count"] = df_merged["count"].fillna(0)
+    df_merged["se_sim"] = df_merged["se_sim"].fillna(0)
+    df_merged[COL_VALIDATION_VALUE] = df_merged[COL_VALIDATION_VALUE].fillna(0)
+
     se_ratios = (
         pd.read_csv(se_ratios_path)
         .set_index([COL_SEX_EN, COL_ACTIVITY])[COL_SE_RATIO_FRACTION]
@@ -93,26 +103,40 @@ def generate_comparison_table(
     se_ratio_col = df_merged[COL_ACTIVITY].map(
         lambda act: se_ratios.get(("Both sexes", act), 0.0)
     )
-    se_abs = se_ratio_col * df_merged[COL_VALIDATION_VALUE]
-    df_merged["se_combined"] = np.sqrt(se_abs**2 + df_merged["se_sim"] ** 2)
+    se_val = se_ratio_col * df_merged[COL_VALIDATION_VALUE]
 
-    dof = (df_merged["count"] - 1).clip(lower=1)
-    t_90 = stats.t.ppf(0.95, dof)
-    t_95 = stats.t.ppf(0.975, dof)
-
-    df_merged["CI_90_Lower"] = (
-        df_merged[COL_VALIDATION_VALUE] - t_90 * df_merged["se_combined"]
-    )
-    df_merged["CI_90_Upper"] = (
-        df_merged[COL_VALIDATION_VALUE] + t_90 * df_merged["se_combined"]
-    )
-    df_merged["CI_95_Lower"] = (
-        df_merged[COL_VALIDATION_VALUE] - t_95 * df_merged["se_combined"]
-    )
-    df_merged["CI_95_Upper"] = (
-        df_merged[COL_VALIDATION_VALUE] + t_95 * df_merged["se_combined"]
+    df_merged["se_combined"] = calculate_combined_standard_error(
+        se1=se_val, se2=df_merged["se_sim"]
     )
 
+    val_mean = df_merged[COL_VALIDATION_VALUE]
+    count = df_merged["count"].replace(0, 1)
+
+    df_merged["CI_90_Lower"], df_merged["CI_90_Upper"] = (
+        calculate_confidence_interval(
+            mean=val_mean,
+            se=df_merged["se_combined"],
+            count=count,
+            confidence_level=0.90,
+        )
+    )
+    df_merged["CI_95_Lower"], df_merged["CI_95_Upper"] = (
+        calculate_confidence_interval(
+            mean=val_mean,
+            se=df_merged["se_combined"],
+            count=count,
+            confidence_level=0.95,
+        )
+    )
+
+    df_merged["CI_90_Sim"] = calculate_margin_of_error(
+        se=df_merged["se_sim"], count=count, confidence_level=0.90
+    )
+    df_merged["CI_95_Sim"] = calculate_margin_of_error(
+        se=df_merged["se_sim"], count=count, confidence_level=0.95
+    )
+
+    df_merged = df_merged.fillna(0)
     df_merged = df_merged.sort_values(
         by=[COL_SCENARIO, COL_DAY_OF_WEEK_EN, COL_ACTIVITY]
     ).reset_index(drop=True)
