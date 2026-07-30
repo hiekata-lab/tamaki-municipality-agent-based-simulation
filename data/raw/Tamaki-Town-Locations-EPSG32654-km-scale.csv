@@ -1,0 +1,1138 @@
+,Longitude,Latitude,name,type,x,y
+0,136.6308751,34.4902591,Tamaki,"['locality', 'political']",98.71302578936768,3825.191097341899
+1,136.5861072,34.4722813,Hara,"['sublocality_level_2', 'sublocality', 'political']",94.51113949748938,3823.3744001750483
+2,136.5809986,34.4785451,そうりん農園,"['point_of_interest', 'establishment']",94.07191099615122,3824.0902497526317
+3,136.5813693,34.4790167,バス予約ドットコム株式会社,"['travel_agency', 'point_of_interest', 'establishment']",94.10827783375623,3824.1411093727716
+4,136.5821704,34.47901359999999,お菓子屋さん,"['store', 'food', 'point_of_interest', 'establishment']",94.18190382709575,3824.1375440950405
+5,136.5821781,34.4796215,TREEFARM,"['cafe', 'food', 'point_of_interest', 'establishment']",94.1855630839665,3824.2049935768277
+6,136.582543,34.479095,岡村商店,"['liquor_store', 'store', 'point_of_interest', 'establishment']",94.21655021182634,3824.1450819724882
+7,136.5824731,34.4492359,境内参道跡(原道),"['place_of_worship', 'point_of_interest', 'establishment']",94.06522048713202,3820.8308328180806
+8,136.5827521,34.4491963,天台烏薬の木,"['point_of_interest', 'establishment']",94.09068461942189,3820.8253158235802
+9,136.582601,34.4490817,國束寺旧本堂跡,"['point_of_interest', 'establishment']",94.07623387468193,3820.813201777241
+10,136.582558,34.4489423,国束寺跡,"['point_of_interest', 'establishment']",94.07160345811566,3820.797900397827
+11,136.5828853,34.4789556,Higashitokida Post Office,"['post_office', 'atm', 'finance', 'point_of_interest', 'establishment']",94.2473393724942,3824.128231699649
+12,136.5828508,34.47901170000001,Japan Post Bank ATM,"['atm', 'finance', 'point_of_interest', 'establishment']",94.2444402914106,3824.134597811134
+13,136.5835149,34.4790094,国束川,"['point_of_interest', 'establishment']",94.30547642165544,3824.1316730638046
+14,136.582907,34.479887,Taniguchi Barber Shop,"['hair_care', 'health', 'point_of_interest', 'establishment']",94.25385547527694,3824.231535256181
+15,136.5835574,34.4792682,Kunitaba Bridge,"['point_of_interest', 'establishment']",94.31063933518051,3824.160230530963
+16,136.5837204,34.4838806,Kuchira Shrine,"['place_of_worship', 'point_of_interest', 'establishment']",94.34801027188968,3824.6715783514105
+17,136.5842583,34.4611139,原のイヌナシ(玉城町天然記念物),"['point_of_interest', 'establishment']",94.28698995210178,3822.1421838663096
+18,136.5846951,34.46843519999999,Ryuhoji,"['place_of_worship', 'point_of_interest', 'establishment']",94.36266368585208,3822.9531341884876
+19,136.584384,34.479256,Kano Stone,"['point_of_interest', 'establishment']",94.3865649508012,3824.155554222834
+20,136.5855379,34.4519509,的山分岐(岩屋道),"['point_of_interest', 'establishment']",94.36021448313399,3821.1199004338378
+21,136.5851322,34.45573949999999,国束山登り口(旧国束寺参道),"['point_of_interest', 'establishment']",94.34127832309349,3821.5420851531444
+22,136.5854397,34.4562255,日本武尊の砥石,"['point_of_interest', 'establishment']",94.37190953609533,3821.594798756429
+23,136.5849502,34.46018619999999,天然記念物｢あいなしの木｣,"['point_of_interest', 'establishment']",94.3461072806479,3822.0364244176476
+24,136.5856829,34.4774556,Fumi,"['point_of_interest', 'establishment']",94.49723169218342,3823.9504807814933
+25,136.585375,34.4790379,宿場町通り跡(熊野古道),"['point_of_interest', 'establishment']",94.47660400668427,3824.1273619670233
+26,136.585375,34.479038,旧宿場町の家並(熊野古道),"['point_of_interest', 'establishment']",94.4766044918404,3824.1273730675894
+27,136.5858346,34.4565954,弘法石,"['point_of_interest', 'establishment']",94.41001393388991,3821.63427369635
+28,136.5856941,34.4573192,百瀬川の滝(比定地),"['point_of_interest', 'establishment']",94.40060435727524,3821.7151837107094
+29,136.5866772,34.4679494,アスピア玉城(アグリの) お花畑,"['point_of_interest', 'establishment']",94.54253535028413,3822.8912460860624
+30,136.5861072,34.47228129999999,Yoji Construction,"['general_contractor', 'point_of_interest', 'establishment']",94.51113949748932,3823.3744001750474
+31,136.5861072,34.47228129999999,（株）浅井農園,"['point_of_interest', 'establishment']",94.51113949748932,3823.3744001750474
+32,136.5861072,34.47228129999999,Enkyoji,"['place_of_worship', 'point_of_interest', 'establishment']",94.51113949748932,3823.3744001750474
+33,136.5861143,34.4789534,國束寺観音道道標・参宮道・熊野道標,"['point_of_interest', 'establishment']",94.54415405568882,3824.115012016181
+34,136.5865027,34.4795174,SHO,"['bakery', 'store', 'food', 'point_of_interest', 'establishment']",94.58259323094599,3824.176059058843
+35,136.5866533,34.4791613,勢進塾 玉城多気教室,"['school', 'point_of_interest', 'establishment']",94.59470985492551,3824.13592507911
+36,136.5869307,34.479168,東谷農園 農産物直売所,"['point_of_interest', 'establishment']",94.62024221217737,3824.1355546864656
+37,136.5867898,34.4799008,Michishirube,"['point_of_interest', 'establishment']",94.61084417220235,3824.2174654653786
+38,136.5879656,34.46788749999999,アスピア玉城 玉城弘法温泉,"['spa', 'point_of_interest', 'establishment']",94.66068679869693,3822.879201611938
+39,136.5872331,34.4675702,TAMAKITCHENとんとん,"['restaurant', 'food', 'point_of_interest', 'establishment']",94.59180467508611,3822.846920553784
+40,136.5873423,34.4676883,ふるさと味工房 アグリ ／（有）玉城アクトファーム,"['point_of_interest', 'establishment']",94.60241677636886,3822.8595918329106
+41,136.5874046,34.46774049999999,タコハウス,"['meal_takeaway', 'restaurant', 'food', 'point_of_interest', 'establishment']",94.60839752428897,3822.8651361719844
+42,136.5875794,34.4675317,ふれあい広場,"['park', 'point_of_interest', 'establishment']",94.62345592959889,3822.841256399689
+43,136.5874694,34.46793280000001,施設トイレ,"['point_of_interest', 'establishment']",94.61528729393659,3822.886222340646
+44,136.5875764,34.46784579999999,ポケふた 玉城（ミジュマル&バネブー）,"['tourist_attraction', 'point_of_interest', 'establishment']",94.6247027885152,3822.8761352555393
+45,136.5876532,34.4681056,アスピア玉城 (駐車場),"['parking', 'point_of_interest', 'establishment']",94.63302297653473,3822.9046661205953
+46,136.5879656,34.46788749999999,三重玉城町チャレンジショップ,"['bakery', 'food', 'point_of_interest', 'store', 'establishment']",94.66068679869693,3822.879201611938
+47,136.587346,34.4687035,アグリ たこ焼きハウス,"['restaurant', 'meal_takeaway', 'food', 'point_of_interest', 'establishment']",94.60767867828568,3822.972269722815
+48,136.5875173,34.4686965,アグリ別館米工房,"['food', 'point_of_interest', 'store', 'establishment']",94.62339338965056,3822.9708048839484
+49,136.587537,34.4688577,Asupiatamakidai Parking Lot,"['parking', 'point_of_interest', 'establishment']",94.62598601231404,3822.988619866289
+50,136.5878325,34.4685205,Asupiatamaki Daini Parking Lot,"['parking', 'point_of_interest', 'establishment']",94.65151846416359,3822.9500024114836
+51,136.5876259,34.4767705,Harataiyo Power Station,"['point_of_interest', 'establishment']",94.67252278248978,3823.866627108004
+52,136.587426,34.477476,Hara Community Center,"['point_of_interest', 'establishment']",94.65756755904894,3823.9457442101443
+53,136.5876186,34.4773846,公衆トイレ,"['point_of_interest', 'establishment']",94.6748293871964,3823.9348249069913
+54,136.5877504,34.47739979999999,Haranoson Park,"['park', 'point_of_interest', 'establishment']",94.6870189940029,3823.9359829587384
+55,136.5878523,34.4799417,Akibado,"['place_of_worship', 'point_of_interest', 'establishment']",94.70871140741819,3824.217738713109
+56,136.5878349,34.480241,地区トイレ,"['point_of_interest', 'establishment']",94.7085632342529,3824.2510325348203
+57,136.587889,34.480103,参拝者接待場跡,"['point_of_interest', 'establishment']",94.71286713243502,3824.2354965391164
+58,136.5879121,34.4800401,「順礼道引観世音」の碑,"['point_of_interest', 'establishment']",94.71468556886364,3824.228421536928
+59,136.5879486,34.4801876,Hara Community Center,"['point_of_interest', 'establishment']",94.71875598214689,3824.244648291247
+60,136.5879187,34.4799699,Sanjusantaisekibutsukannondo,"['place_of_worship', 'point_of_interest', 'establishment']",94.71495187330392,3824.2206024481425
+61,136.5879817,34.480045,伊勢新四国八十八ヶ所第五十番 札所,"['place_of_worship', 'point_of_interest', 'establishment']",94.72110720372747,3824.228685997706
+62,136.5880163,34.48011640000001,旧石佛庵 境内,"['point_of_interest', 'establishment']",94.72463395890477,3824.23647286306
+63,136.5880592,34.4801879,青面金剛像・役行者像,"['place_of_worship', 'point_of_interest', 'establishment']",94.72892415774014,3824.2442375034343
+64,136.5880464,34.4799668,Haranoootsujikannondo,"['place_of_worship', 'point_of_interest', 'establishment']",94.72667548314068,3824.2197455793735
+65,136.588279,34.479965,原の大辻道標(熊野街道),"['point_of_interest', 'establishment']",94.74804817902233,3824.2186118529817
+66,136.5887999,34.466901,摘み草かふぇ陽光桜のかぜ,"['cafe', 'food', 'point_of_interest', 'establishment']",94.73260885700968,3822.7663457024014
+67,136.5879951,34.46803269999999,アスピア玉城,"['tourist_attraction', 'point_of_interest', 'establishment']",94.66410276589008,3822.8952011681076
+68,136.5900873,34.4696495,長太屋玉城牧場,"['food', 'point_of_interest', 'establishment']",94.86428633553814,3823.0662771651564
+69,136.5895512,34.470415,松阪まるよし 玉城牧場(松阪牛専門店),"['food', 'point_of_interest', 'establishment']",94.81870951767597,3823.153403161221
+70,136.5894726,34.4724964,株式会社 ソイルフィールド,"['general_contractor', 'point_of_interest', 'establishment']",94.82157016358326,3823.384765195187
+71,136.5898399,34.4731811,セレクトショップ幸樹,"['clothing_store', 'store', 'point_of_interest', 'establishment']",94.85865466214466,3823.4592964643552
+72,136.5893272,34.4736852,Kotokuji,"['place_of_worship', 'point_of_interest', 'establishment']",94.81396475315547,3823.5173119812657
+73,136.5902122,34.4732129,エキゾティカ,"['point_of_interest', 'establishment']",94.89303465745749,3823.4613323768167
+74,136.5901934,34.4732574,リンパデトックス Ayanasu,"['health', 'point_of_interest', 'establishment']",94.89152198119253,3823.466347557053
+75,136.589834,34.481192,apollostation 原 SS (森岡石油店),"['gas_station', 'point_of_interest', 'establishment']",94.89693632849055,3824.348573268642
+76,136.590038,34.4813181,Miracon Zenith,"['point_of_interest', 'establishment']",94.91629961143259,3824.3617522851964
+77,136.590411,34.481209,キタボデーショップ工場,"['car_repair', 'point_of_interest', 'establishment']",94.95005778466043,3824.348144634616
+78,136.589559,34.48285,アサヒ木工,"['point_of_interest', 'establishment']",94.87969456938276,3824.5337240883805
+79,136.5903075,34.4830169,西口神具店,"['store', 'point_of_interest', 'establishment']",94.94930581452546,3824.5492466734354
+80,136.5897265,34.4472095,惣風池方面分岐点,"['point_of_interest', 'establishment']",94.72241223443893,3820.5767669481597
+81,136.5902871,34.47155159999999,Hirokien Adult Day Care,"['point_of_interest', 'establishment']",94.89187077204132,3823.276618650124
+82,136.5910891,34.4721157,hesrt & heart,"['point_of_interest', 'establishment']",94.9683335503767,3823.3360188259035
+83,136.590545,34.473343,（有）三重産業,"['general_contractor', 'point_of_interest', 'establishment']",94.92425962706108,3823.4744387347705
+84,136.5908336,34.4814647,浦田工業,"['point_of_interest', 'establishment']",94.99014313395449,3824.3748328431147
+85,136.6005703,34.4876818,Kano,"['sublocality_level_2', 'sublocality', 'political']",95.915218436383,3825.0259336824165
+86,136.5909442,34.4459659,南無阿弥陀仏石塔,"['point_of_interest', 'establishment']",94.82837077690748,3820.4338363529
+87,136.5957488,34.4630108,Tsumuro,"['sublocality_level_2', 'sublocality', 'political']",95.35265350670385,3822.3066444848328
+88,136.591581,34.47354,邨田印刷紙器（株） 伊勢工場,"['point_of_interest', 'establishment']",95.02045417239202,3823.4921502312814
+89,136.5923591,34.48368509999999,キウイオーチャード,"['point_of_interest', 'establishment']",95.14112601859925,3824.6151886226457
+90,136.5926038,34.48673670000001,JGSDF Tamaki Training field,"['point_of_interest', 'establishment']",95.17840162759938,3824.952950836103
+91,136.5931729,34.4776184,ソーラーオーナーズ 玉城町,"['point_of_interest', 'establishment']",95.18654803150828,3823.938488883552
+92,136.5926682,34.482518,原コスモス畑,"['point_of_interest', 'establishment']",95.16388483131875,3824.4843944481845
+93,136.594586,34.47211300000001,株式会社 バンスイ,"['general_contractor', 'point_of_interest', 'establishment']",95.28979765094141,3823.3216950882866
+94,136.595705,34.482953,トライス（株） 玉城工場,"['point_of_interest', 'establishment']",95.44513461792504,3824.520504899957
+95,136.5968933,34.4834433,(有)北武運輸玉城営業所,"['storage', 'point_of_interest', 'establishment']",95.55673577491247,3824.570168179423
+96,136.5968294,34.4681146,Jizoson,"['place_of_worship', 'point_of_interest', 'establishment']",95.47669427196263,3822.868861753543
+97,136.5967846,34.4681706,Tsumuro Community Center,"['point_of_interest', 'establishment']",95.47284643191763,3822.875257525252
+98,136.5978528,34.46925660000001,Tsumuroku Jido Park,"['park', 'point_of_interest', 'establishment']",95.57630512073631,3822.991529531457
+99,136.5969496,34.4715288,Saiwai Shrine,"['place_of_worship', 'point_of_interest', 'establishment']",95.50426164600009,3823.24737330451
+100,136.5976787,34.4715158,Okorishin,"['place_of_worship', 'point_of_interest', 'establishment']",95.57122674686875,3823.2430092572476
+101,136.59749,34.4832694,㈱S-QREST,"['point_of_interest', 'establishment']",95.6107425877974,3824.548473405406
+102,136.59749,34.4832694,㈱田村建設 玉城資材倉庫,"['storage', 'point_of_interest', 'establishment']",95.6107425877974,3824.548473405406
+103,136.5976957,34.46426599999999,Chichinomiya,"['place_of_worship', 'point_of_interest', 'establishment']",95.53772546319028,3822.438177798573
+104,136.5984654,34.4674455,Tsubura Shrine,"['place_of_worship', 'point_of_interest', 'establishment']",95.62386641651223,3822.7880349150555
+105,136.5978826,34.4714828,Saiwai Shrine Parking Lot,"['parking', 'point_of_interest', 'establishment']",95.58981216681295,3823.238529300345
+106,136.5983101,34.4741452,広瀬精工 積良工場,"['point_of_interest', 'establishment']",95.64198999630497,3823.53235638825
+107,136.598207,34.483323,河原紙器（株） 伊勢倉庫,"['storage', 'point_of_interest', 'establishment']",95.67690817413357,3824.5515506651764
+108,136.5984596,34.4860414,Kanonoson Park,"['park', 'point_of_interest', 'establishment']",95.71327806885098,3824.852294714784
+109,136.5982841,34.486163,公園トイレ,"['point_of_interest', 'establishment']",95.69773506055778,3824.8664959936714
+110,136.5985614,34.488099,戸上瓦商店,"['general_contractor', 'point_of_interest', 'establishment']",95.7325897711768,3825.080290797498
+111,136.598655,34.489208,藤原クレーン,"['point_of_interest', 'establishment']",95.74655834608659,3825.203020390661
+112,136.598535,34.490517,ＪＡ伊勢 玉城城西ライスセンター,"['point_of_interest', 'establishment']",95.74186219454161,3825.348806693595
+113,136.6053922,34.462756,Yamakami,"['sublocality_level_2', 'sublocality', 'political']",96.23805469873123,3822.2397594874965
+114,136.5999821,34.470844,中村鉄工所,"['point_of_interest', 'establishment']",95.77973615486634,3823.1592113481397
+115,136.5994008,34.4747949,（株）KAETSUプレシジョン,"['point_of_interest', 'establishment']",95.74539915860491,3823.6001079770476
+116,136.6065978,34.477943,Yano,"['sublocality_level_2', 'sublocality', 'political']",96.42220782441355,3823.920764173382
+117,136.6000624,34.4833463,ファミリータウン玉城町蚊野,"['point_of_interest', 'establishment']",95.84756805686519,3824.546705735276
+118,136.5998196,34.4843984,Tenrikyo Tojojimabun Church,"['point_of_interest', 'establishment']",95.83033820061699,3824.6644662971016
+119,136.5998734,34.4843629,天理教,"['point_of_interest', 'establishment']",95.83511171251745,3824.6603101721953
+120,136.6000803,34.4842622,印章のふじかわ,"['finance', 'point_of_interest', 'establishment']",95.85364260492491,3824.648303440298
+121,136.59996,34.488644,西村電気工事,"['electrician', 'point_of_interest', 'establishment']",95.86377675340144,3825.1351865461143
+122,136.59983,34.489122,西本・設計事務所,"['point_of_interest', 'establishment']",95.8541399912996,3825.188767539907
+123,136.6053922,34.4988261,Kamitanui,"['sublocality_level_2', 'sublocality', 'political']",96.41226052075444,3826.2437060925263
+124,136.6001371,34.47119989999999,オザキ自動車工業,"['car_dealer', 'store', 'point_of_interest', 'establishment']",95.79570630076627,3823.1980973763384
+125,136.6006299,34.481512,Miyabiru,"['point_of_interest', 'establishment']",95.89086320759321,3824.340817176973
+126,136.600589,34.482072,外城田川農業センター,"['food', 'point_of_interest', 'store', 'establishment']",95.88981127102306,3824.403143650318
+127,136.6005891,34.4820723,玉城町の個別指導塾アップ↑,"['school', 'point_of_interest', 'establishment']",95.88982191362669,3824.40317655139
+128,136.6010813,34.4826698,Higashitokida Shrine,"['place_of_worship', 'point_of_interest', 'establishment']",95.9379539512499,3824.46753135247
+129,136.601028,34.4828135,Enmusubinokami,"['place_of_worship', 'point_of_interest', 'establishment']",95.93374936275656,3824.4836961318483
+130,136.6012577,34.4846921,Kumon Maths & English,"['point_of_interest', 'establishment']",95.96394559886598,3824.691310231477
+131,136.601267,34.48469599999999,Mack英語教室,"['point_of_interest', 'establishment']",95.96481928937533,3824.6917059189427
+132,136.6008905,34.4876294,蚊野土地改良区,"['point_of_interest', 'establishment']",95.94439607541507,3825.0188349381856
+133,136.6011353,34.4876142,Eijuji,"['place_of_worship', 'point_of_interest', 'establishment']",95.96682325714657,3825.0161675431445
+134,136.6006271,34.4895495,Kano Shrine,"['place_of_worship', 'point_of_interest', 'establishment']",95.92947115043697,3825.233030102524
+135,136.6018541,34.4715272,（有）日本オーガニックシステム,"['point_of_interest', 'establishment']",95.95513638216164,3823.2275562413156
+136,136.6018061,34.4811527,Park,"['park', 'point_of_interest', 'establishment']",95.99724428193365,3824.296224538732
+137,136.602443,34.481001,桜の里 玉城町,"['point_of_interest', 'establishment']",96.05505601811153,3824.2768359912716
+138,136.602015,34.48227,Tokida Nursery School,"['school', 'point_of_interest', 'establishment']",96.02184717744537,3824.419414033286
+139,136.601657,34.483365,Tokida Elementary School,"['primary_school', 'school', 'point_of_interest', 'establishment']",95.99423292576655,3824.5423972675985
+140,136.602379,34.48343399999999,玉城町立 梅がおか児童館,"['point_of_interest', 'establishment']",96.06093208588712,3824.547166709525
+141,136.6020694,34.4839215,JAバンクATM,"['atm', 'finance', 'point_of_interest', 'establishment']",96.03483034493075,3824.602520695552
+142,136.602038,34.48396999999999,ＪＡ伊勢 玉城支店外城田,"['point_of_interest', 'establishment']",96.0321785379785,3824.6080301099246
+143,136.6022089,34.48366770000001,Isekeisatsusho Kanokeisatsukanchuzaisho,"['police', 'point_of_interest', 'establishment']",96.04642623533495,3824.5737893287487
+144,136.6014932,34.4844085,蚊野屋モータース,"['car_dealer', 'store', 'point_of_interest', 'establishment']",95.98422118998033,3824.6588864921823
+145,136.6018322,34.4844501,玉城まちかど博物館 楽珍,"['museum', 'point_of_interest', 'establishment']",96.01558250866167,3824.662147276818
+146,136.6022953,34.4976235,Asakutaku Community Center,"['point_of_interest', 'establishment']",96.12183432445948,3826.122604697161
+147,136.603043,34.46851400000001,Yamadaji,"['place_of_worship', 'point_of_interest', 'establishment']",96.04987813576288,3822.8883195943554
+148,136.6023408,34.4724364,株式会社伊勢グリーン,"['point_of_interest', 'establishment']",96.00427302066929,3823.326533973795
+149,136.6033255,34.4812109,介護付有料老人ホーム桜の里,"['health', 'point_of_interest', 'establishment']",96.13719121566939,3824.296604383137
+150,136.603298,34.4845758,プラスワン,"['point_of_interest', 'establishment']",96.15092331301898,3824.6702341890214
+151,136.603045,34.48467909999999,坂谷モータース,"['car_dealer', 'store', 'point_of_interest', 'establishment']",96.12816732641892,3824.682713389417
+152,136.6033014,34.4846429,建光ドラム工房,"['real_estate_agency', 'store', 'point_of_interest', 'establishment']",96.15156008948357,3824.677669001215
+153,136.603298,34.484662,福田建具店・プラスワン,"['general_contractor', 'point_of_interest', 'establishment']",96.15133986875118,3824.6798027966756
+154,136.60309,34.489608,立花自動車工業,"['car_repair', 'point_of_interest', 'establishment']",96.15612486806675,3825.2296646694026
+155,136.6036538,34.4896174,Muku Design Studio,"['point_of_interest', 'establishment']",96.20799041380315,3825.2284519509303
+156,136.6038668,34.49791859999999,Asakudaku Park,"['park', 'point_of_interest', 'establishment']",96.26768683479762,3826.149072435969
+157,136.6032731,34.4988681,Sugihara shrine,"['place_of_worship', 'point_of_interest', 'establishment']",96.21771403401851,3826.256847495792
+158,136.6029632,34.50269979999999,公衆トイレ(湖畔のさくら広場),"['point_of_interest', 'establishment']",96.20775908031874,3826.6834252032645
+159,136.6029884,34.5037324,湖畔のさくら広場,"['park', 'point_of_interest', 'establishment']",96.2150675921602,3826.797947977488
+160,136.603979,34.483359,Access,"['point_of_interest', 'establishment']",96.20764023689262,3824.532438871205
+161,136.604391,34.48714520000001,（株）鴻原まるよし 事務所,"['food', 'point_of_interest', 'store', 'establishment']",96.26380318756809,3824.951076513963
+162,136.6036969,34.4892378,株式会社せこ住研,"['general_contractor', 'point_of_interest', 'establishment']",96.21011738130217,3825.18614208852
+163,136.6044928,34.4767897,"Tanoe shrine, Tanoe-mimae shrine","['place_of_worship', 'point_of_interest', 'establishment']",96.22313492602441,3823.8011606480723
+164,136.6049663,34.4848335,みよの台薬局 桃の木店,"['pharmacy', 'store', 'health', 'point_of_interest', 'establishment']",96.30551456985337,3824.6921656457107
+165,136.6052441,34.4848986,Hakuryu Hot Spring,"['spa', 'point_of_interest', 'establishment']",96.33136368779908,3824.6982808842604
+166,136.6049162,34.4850506,鍼灸院琥珀(こはく),"['health', 'point_of_interest', 'establishment']",96.30195824715163,3824.716465154922
+167,136.605365,34.484884,Nakajima Clinic,"['health', 'point_of_interest', 'establishment']",96.34240597581316,3824.6961766546983
+168,136.604842,34.4853374,白瀧山不動院,"['point_of_interest', 'establishment']",96.29652346265624,3824.7485980950305
+169,136.6055352,34.4871636,ベルコ株式会社 伊勢工場,"['point_of_interest', 'establishment']",96.36906108095741,3824.9485420625197
+170,136.6053922,34.4988261,にしやまようせい,"['campground', 'lodging', 'point_of_interest', 'establishment']",96.41226052075444,3826.2437060925263
+171,136.605738,34.5015634,まちあい広場,"['park', 'point_of_interest', 'establishment']",96.45726589172187,3826.5461760330004
+172,136.605639,34.46861,Yamagamijido Park,"['park', 'point_of_interest', 'establishment']",96.28900620990736,3822.8885928262143
+173,136.606109,34.468855,中西建具店,"['point_of_interest', 'establishment']",96.33339852608263,3822.9139097211273
+174,136.6055791,34.46956059999999,公民館駐車場(自家用車用),"['point_of_interest', 'establishment']",96.28808877821628,3822.9943532074103
+175,136.6056307,34.4696637,Yamagami Community Center,"['point_of_interest', 'establishment']",96.29333035575326,3823.0055914432696
+176,136.605685,34.47035450000001,山神の子安堂,"['place_of_worship', 'point_of_interest', 'establishment']",96.30165756154544,3823.0820562252256
+177,136.6065574,34.4714492,らーめん 王富,"['restaurant', 'food', 'point_of_interest', 'establishment']",96.38714453323634,3823.2000848038424
+178,136.6061833,34.476809,Kanonji,"['place_of_worship', 'point_of_interest', 'establishment']",96.3786295608842,3823.7965423507503
+179,136.6065263,34.4773676,(有)奥野瓦工業,"['roofing_contractor', 'point_of_interest', 'establishment']",96.41285715239403,3823.857178050296
+180,136.6058927,34.4843341,癒しの郷・翠龍,"['point_of_interest', 'establishment']",96.38825499036494,3824.6330247530577
+181,136.6059197,34.48426299999999,訪問看護ステーション 虹の夢玉城,"['health', 'point_of_interest', 'establishment']",96.39039339811221,3824.6250243511126
+182,136.6058818,34.484297,就労継続支援Ｂ型事業所 虹てらす,"['point_of_interest', 'establishment']",96.38707390874933,3824.6289500732582
+183,136.6058927,34.4843341,医療法人 白奉会,"['point_of_interest', 'establishment']",96.38825499036494,3824.6330247530577
+184,136.6058927,34.4843341,（株）伊勢ライフケア,"['health', 'point_of_interest', 'establishment']",96.38825499036494,3824.6330247530577
+185,136.6058928,34.48433410000001,Nijinoyumetamaki Adult Day Care,"['point_of_interest', 'establishment']",96.38826418216037,3824.6330243531474
+186,136.6066543,34.4854179,BODYSHOP KAZU (ボディーショップ カズ),"['car_repair', 'point_of_interest', 'establishment']",96.46349309624732,3824.7502860234094
+187,136.606168,34.486414,（有）秋無建設 玉城営業所,"['general_contractor', 'point_of_interest', 'establishment']",96.4236045721569,3824.862802259143
+188,136.606168,34.486414,（有）アーム,"['point_of_interest', 'establishment']",96.4236045721569,3824.862802259143
+189,136.6065999,34.4870658,玉城町旧精密金型製造工場事務所付き賃貸,"['point_of_interest', 'establishment']",96.46645050500798,3824.933427964058
+190,136.6062868,34.5018737,駐車場(まちあい広場),"['parking', 'point_of_interest', 'establishment']",96.50919913671252,3826.5784256294223
+191,136.607384,34.476779,Sumi Construction,"['general_contractor', 'point_of_interest', 'establishment']",96.48886058577604,3823.788411939478
+192,136.6077039,34.4773528,Yano Community Center,"['point_of_interest', 'establishment']",96.5210373105174,3823.850827580505
+193,136.6150375,34.4850478,Nojino,"['sublocality_level_2', 'sublocality', 'political']",97.2322641191493,3824.675715534548
+194,136.6071086,34.4853178,伊勢ライン運輸㈱ 営業所,"['point_of_interest', 'establishment']",96.50476754566311,3824.737358055622
+195,136.6076222,34.487738,城西牧場（株）,"['food', 'point_of_interest', 'establishment']",96.56366046626982,3825.0039578944925
+196,136.608181,34.459614,氷室洞窟,"['point_of_interest', 'establishment']",96.4793044267461,3821.8798367666914
+197,136.6075585,34.46122769999999,Kamo Shrine,"['tourist_attraction', 'place_of_worship', 'point_of_interest', 'establishment']",96.42985423406103,3822.061451937551
+198,136.6085492,34.4714999,Matoyama Koen Dai 2 Parking Lot,"['parking', 'point_of_interest', 'establishment']",96.57049957511911,3823.197751683521
+199,136.6085568,34.4854296,京セラドキュメントソリューションズ㈱玉城工場,"['point_of_interest', 'establishment']",96.63842105715413,3824.7439793274702
+200,136.608959,34.497435,下村孝雄税理士事務所,"['accounting', 'lawyer', 'finance', 'point_of_interest', 'establishment']",96.73334011771844,3826.0750250675874
+201,136.60867,34.498907,米田商店,"['point_of_interest', 'establishment']",96.71388710299972,3826.239578929774
+202,136.6087364,34.4988909,Yamanokami,"['place_of_worship', 'point_of_interest', 'establishment']",96.71991164326236,3826.2375263343424
+203,136.6086803,34.4641586,的山公園展望台第１駐車場,"['point_of_interest', 'establishment']",96.54713437303586,3822.3823118365694
+204,136.608742,34.4642476,公衆トイレ,"['point_of_interest', 'establishment']",96.55323640673701,3822.3919446981918
+205,136.6091408,34.476828,Onishi Construction,"['general_contractor', 'point_of_interest', 'establishment']",96.65059296863969,3823.786830024789
+206,136.609462,34.484429,（株）ニコニコエクスプレス 本社,"['point_of_interest', 'establishment']",96.71679541954724,3824.629290851885
+207,136.6097921,34.4848859,Kyandi Hair Salon,"['hair_care', 'point_of_interest', 'establishment']",96.74934210764238,3824.6786897723136
+208,136.6097304,34.4982287,Yamanokami,"['place_of_worship', 'point_of_interest', 'establishment']",96.80806548061204,3826.160046305607
+209,136.6098426,34.5022415,（株）大里伊勢農場,"['food', 'point_of_interest', 'establishment']",96.8377471814677,3826.605036764385
+210,136.6098159,34.5063812,斎宮調整池管理・遊歩道,"['park', 'point_of_interest', 'establishment']",96.8552785122603,3827.0646689164264
+211,136.61052,34.472761,美和ロック株式会社 玉城工場,"['point_of_interest', 'establishment']",96.75776130512799,3823.3298656055895
+212,136.611448,34.497913,モリフォトスタジオ・ＭＰＳ,"['point_of_interest', 'establishment']",96.96439373611886,3826.1181394450787
+213,136.6113552,34.4591378,的山公園展望台,"['park', 'point_of_interest', 'establishment']",96.76886111415853,3821.8142980733323
+214,136.6289499,34.4775743,Katsuta,"['sublocality_level_2', 'sublocality', 'political']",98.4751424352795,3823.790699357807
+215,136.6120043,34.4854183,ハイツ21,"['point_of_interest', 'establishment']",96.95524886817007,3824.7289516697865
+216,136.6118408,34.4860039,FamilyMart,"['convenience_store', 'store', 'food', 'point_of_interest', 'establishment']",96.94304494145297,3824.79460873897
+217,136.611846,34.485993,銀行ATM | イーネット ファミリーマートたまき野篠 共同出張所,"['atm', 'finance', 'point_of_interest', 'establishment']",96.94347033151914,3824.7933780247495
+218,136.6119825,34.4860066,Kubota,"['point_of_interest', 'establishment']",96.95608243862755,3824.794342543816
+219,136.611986,34.496863,伊勢ロードサービス,"['point_of_interest', 'establishment']",97.00877176411258,3825.9994358201266
+220,136.611856,34.49698,【出張専門】アート・ロックサービス,"['locksmith', 'point_of_interest', 'establishment']",96.99738873003359,3826.0129425854366
+221,136.6121684,34.4727715,安藤サッシ,"['point_of_interest', 'establishment']",96.90935018097453,3823.3244482516825
+222,136.6125748,34.4725413,Dog Salon boost,"['point_of_interest', 'establishment']",96.94560099089145,3823.297272518545
+223,136.612322,34.474249,Next,"['health', 'point_of_interest', 'establishment']",96.93059385943268,3823.4878436264203
+224,136.612475,34.474794,（有）みえツアーズ,"['travel_agency', 'point_of_interest', 'establishment']",96.94728643812583,3823.5477300238185
+225,136.6125716,34.4746917,Tamakien Park,"['park', 'point_of_interest', 'establishment']",96.95567351856484,3823.5359886193146
+226,136.6133078,34.4846285,Nojinonoson Park,"['point_of_interest', 'establishment']",97.07125401889172,3824.636075701764
+227,136.6131764,34.4853353,袖引きの宮,"['place_of_worship', 'point_of_interest', 'establishment']",97.06258395950996,3824.7150580748257
+228,136.613008,34.495147,（有）レイルロード,"['point_of_interest', 'establishment']",97.09442102601543,3825.804870846952
+229,136.6127966,34.4960709,南木工所,"['point_of_interest', 'establishment']",97.07944839159703,3825.9082719020844
+230,136.6129746,34.4969185,Tanabechaya Community Center,"['point_of_interest', 'establishment']",97.09989555959031,3826.0016483329177
+231,136.6129664,34.4975436,正念僧・即身仏供養碑塚,"['place_of_worship', 'point_of_interest', 'establishment']",97.10215698832315,3826.0710698704065
+232,136.6186549,34.5035511,Tamagawa,"['sublocality_level_2', 'sublocality', 'political']",97.65388725303312,3826.7152252413584
+233,136.6135383,34.4729414,神都久保道場,"['point_of_interest', 'establishment']",97.03610454094031,3823.337839033158
+234,136.613247,34.47444400000001,Tamakien Community Center,"['point_of_interest', 'establishment']",97.01656793425646,3823.505796581503
+235,136.6135505,34.4745639,株式会社M.E.A,"['car_repair', 'point_of_interest', 'establishment']",97.0450461523906,3823.517894487711
+236,136.6136998,34.47619690000001,（有）竜川組,"['general_contractor', 'point_of_interest', 'establishment']",97.06664179230127,3823.6985682553322
+237,136.6162433,34.473179,Tamiyaji,"['sublocality_level_2', 'sublocality', 'political']",97.28592005554033,3823.3534198907246
+238,136.614196,34.486317,坂谷木工,"['furniture_store', 'home_goods_store', 'store', 'point_of_interest', 'establishment']",97.16103434257442,3824.819960575203
+239,136.6144505,34.4863546,ヤマニ建築,"['point_of_interest', 'establishment']",97.18460805329873,3824.8231184932215
+240,136.6136253,34.4931586,西村塾,"['school', 'point_of_interest', 'establishment']",97.14156596495846,3825.5816851831614
+241,136.6140362,34.49363599999999,伊勢市清掃（株） 玉城支店,"['point_of_interest', 'establishment']",97.18163274867257,3825.6330381538187
+242,136.6143782,34.4936436,AZUSA,"['general_contractor', 'point_of_interest', 'establishment']",97.2131016877534,3825.6325165213357
+243,136.6143404,34.4944096,玉城衛生,"['point_of_interest', 'establishment']",97.2133207677629,3825.71769663832
+244,136.6141897,34.4958929,cpサロン chura-ku チュラーク,"['beauty_salon', 'gym', 'health', 'point_of_interest', 'establishment']",97.20662246855238,3825.882950799806
+245,136.6137,34.496661,Tanui,"['hair_care', 'health', 'point_of_interest', 'establishment']",97.16532073613075,3825.9701682321393
+246,136.6139204,34.49728029999999,キッチンハウス 菜実,"['restaurant', 'food', 'point_of_interest', 'establishment']",97.18856276283873,3826.0380332139976
+247,136.6186549,34.5080594,Sakamoto,"['sublocality_level_2', 'sublocality', 'political']",97.67560847133322,3827.2156648835917
+248,136.6151918,34.4782758,Tamiyaji Shrine,"['place_of_worship', 'point_of_interest', 'establishment']",97.21381316139461,3823.9233801986675
+249,136.6152701,34.4783386,御船殿跡,"['point_of_interest', 'establishment']",97.22131342628872,3823.9300388163833
+250,136.6150375,34.4850478,フォーリスト,"['point_of_interest', 'establishment']",97.2322641191493,3824.675715534548
+251,136.6151366,34.4852596,石仏地蔵群,"['place_of_worship', 'point_of_interest', 'establishment']",97.242393820728,3824.698830720929
+252,136.6151062,34.4855271,遥拝所,"['place_of_worship', 'point_of_interest', 'establishment']",97.24088876685512,3824.7286456364745
+253,136.6152953,34.4852161,お地蔵様,"['place_of_worship', 'point_of_interest', 'establishment']",97.25677133551467,3824.693368729842
+254,136.6152739,34.4854939,正来寺跡,"['point_of_interest', 'establishment']",97.25614311721822,3824.7242910653868
+255,136.6154967,34.485318,Nojino Community Center,"['point_of_interest', 'establishment']",97.27577438938897,3824.703876366468
+256,136.6146339,34.4955578,上田辺、薬師如来収納建屋,"['place_of_worship', 'point_of_interest', 'establishment']",97.24583097443346,3825.843980072883
+257,136.6149231,34.49672779999999,玉城まちかど博物館 きまぐれ工房 布庵,"['museum', 'point_of_interest', 'establishment']",97.278050506217,3825.972700615325
+258,136.614803,34.497411,松澤加重子司法書士事務所,"['point_of_interest', 'establishment']",97.27030672446283,3826.0490180771894
+259,136.6355399,34.5155069,Seko,"['sublocality_level_2', 'sublocality', 'political']",99.2629330323246,3827.975142755023
+260,136.6156613,34.4779736,Tomimukaiyama Tamiya Temple,"['place_of_worship', 'point_of_interest', 'establishment']",97.25551559992577,3823.887961448624
+261,136.6159795,34.4781007,Tamaya Iron Works,"['point_of_interest', 'establishment']",97.28537830894685,3823.9008005384962
+262,136.616077,34.47783199999999,タマタニインダストリー,"['point_of_interest', 'establishment']",97.29304647953424,3823.870584788106
+263,136.6163751,34.4782928,三宅電機,"['electrician', 'point_of_interest', 'establishment']",97.32266898018605,3823.9205462093696
+264,136.6162466,34.4849346,野篠区消防車庫,"['point_of_interest', 'establishment']",97.34285522902215,3824.6583252912533
+265,136.6234786,34.4921527,Shimotanui,"['sublocality_level_2', 'sublocality', 'political']",98.04232000779722,3825.430731615508
+266,136.6167331,34.4749805,Panasonic Ise Plant,"['point_of_interest', 'establishment']",97.33962381618348,3823.5514397490942
+267,136.6167331,34.4749805,パナソニック インダストリー,"['point_of_interest', 'establishment']",97.33962381618348,3823.5514397490942
+268,136.6167331,34.4749805,パーソルファクトリーパートナーズ㈱伊勢事業所,"['point_of_interest', 'establishment']",97.33962381618348,3823.5514397490942
+269,136.6173844,34.48408440000001,foret bois,"['hair_care', 'clothing_store', 'store', 'point_of_interest', 'establishment']",97.44334289458057,3824.5594108580262
+270,136.6173926,34.4840611,日々と旅 hutte,"['point_of_interest', 'establishment']",97.44398438892682,3824.5567917591397
+271,136.617149,34.48559,Nojino Temple,"['place_of_worship', 'point_of_interest', 'establishment']",97.42895815282938,3824.7274774037664
+272,136.617533,34.48564,Moritech,"['car_dealer', 'store', 'point_of_interest', 'establishment']",97.46449476118042,3824.731495940827
+273,136.617747,34.494116,AUTOSHOP K's,"['car_repair', 'point_of_interest', 'store', 'establishment']",97.5249945329192,3825.671512292029
+274,136.6170518,34.496395,上田辺羽根遥拝所,"['place_of_worship', 'point_of_interest', 'establishment']",97.47208247315342,3825.9272638022526
+275,136.6173973,34.4991263,Sakatekokusho Shrine,"['place_of_worship', 'point_of_interest', 'establishment']",97.5169959920384,3826.2290708990936
+276,136.6177368,34.51617049999999,Ise Country Club,"['point_of_interest', 'establishment']",97.63033739566215,3828.119693175481
+277,136.6180228,34.4862306,Ito Dental Clinic,"['dentist', 'doctor', 'health', 'point_of_interest', 'establishment']",97.51235972566845,3824.795101403153
+278,136.617805,34.4865715,接待地蔵尊,"['place_of_worship', 'point_of_interest', 'establishment']",97.49398254974449,3824.8338112881875
+279,136.617877,34.493647,Hane Community Center,"['point_of_interest', 'establishment']",97.53468300908932,3825.618932872317
+280,136.6185114,34.4962415,（有）荒木電機,"['point_of_interest', 'establishment']",97.6054862702284,3825.904402525312
+281,136.6188645,34.49573579999999,セントラルアイランドB,"['point_of_interest', 'establishment']",97.63550188902923,3825.846859635124
+282,136.6180961,34.4987803,（有）サン・クリーン・サービス,"['point_of_interest', 'establishment']",97.57954949326016,3826.1878759489414
+283,136.6191302,34.5012421,Kamitamagawanoson Park,"['park', 'point_of_interest', 'establishment']",97.68644278274773,3826.4570213549728
+284,136.6189246,34.5023864,板倉製作所,"['point_of_interest', 'establishment']",97.67306080889033,3826.584863190946
+285,136.6181855,34.5036992,Kichijoji,"['place_of_worship', 'point_of_interest', 'establishment']",97.61146479147963,3826.7335372276452
+286,136.619243,34.47553,銀行ATM | イーネット ファミリーマートサニーロード玉城 共同出張所,"['atm', 'finance', 'point_of_interest', 'establishment']",97.57299841067771,3823.6024280048077
+287,136.6186461,34.47581449999999,Country House,"['cafe', 'store', 'food', 'point_of_interest', 'establishment']",97.51949680339347,3823.6363882573364
+288,136.6191015,34.4757219,FamilyMart,"['convenience_store', 'store', 'food', 'point_of_interest', 'establishment']",97.5609145043455,3823.624293725418
+289,136.6187997,34.4767457,（有）南出モールド,"['point_of_interest', 'establishment']",97.53809980828531,3823.7391426408667
+290,136.6192017,34.47856160000001,（株）ＹＳＫ,"['real_estate_agency', 'point_of_interest', 'establishment']",97.58379569621414,3823.939111832016
+291,136.6193745,34.47844629999999,Cat cafe Nekotachinoie,"['cafe', 'food', 'point_of_interest', 'establishment']",97.59912507622747,3823.9256242162
+292,136.6192017,34.47856160000001,Alivio,"['hair_care', 'point_of_interest', 'establishment']",97.58379569621414,3823.939111832016
+293,136.619275,34.47863900000001,ログハウスブラン,"['lodging', 'point_of_interest', 'establishment']",97.59090631276003,3823.9474113113915
+294,136.6192013,34.4790812,からふるしーど。（株式会社 MountainGo）,"['point_of_interest', 'establishment']",97.58626035208877,3823.9967910196156
+295,136.6195657,34.4856855,幸神社の常夜燈,"['point_of_interest', 'establishment']",97.65155138157412,3824.728441024913
+296,136.620537,34.467375,カークラブ自動車販売,"['point_of_interest', 'establishment']",97.65271216961247,3822.692035095195
+297,136.6204697,34.4681519,Mie Highway Patrol Tamaki Unit,"['police', 'point_of_interest', 'establishment']",97.65026283250883,3822.7785420368837
+298,136.6207348,34.4746857,（株）アドウェル,"['point_of_interest', 'establishment']",97.70607244961685,3823.5027616304365
+299,136.6201251,34.4764928,Nonohanatei,"['restaurant', 'food', 'point_of_interest', 'establishment']",97.65872102392588,3823.705786361206
+300,136.6201375,34.4803742,総合解体エスシー,"['general_contractor', 'point_of_interest', 'establishment']",97.67854229402722,3824.136587020993
+301,136.6201786,34.4856967,Takenobi Bridge,"['point_of_interest', 'establishment']",97.70794051808718,3824.727241009462
+302,136.6206962,34.495473,丸亀運運輸 玉城倉庫,"['storage', 'point_of_interest', 'establishment']",97.80257852790633,3825.810384809013
+303,136.6205369,34.50291889999999,"Yamato Transport Co., Ltd. Ise Tamaki Center","['moving_company', 'storage', 'point_of_interest', 'establishment']",97.82379125107266,3826.637543891235
+304,136.6215817,34.5139046,里山ガーデニングコンテスト花畑,"['park', 'point_of_interest', 'establishment']",97.9727025549023,3827.852834988719
+305,136.6295089,34.46436970000001,Miyako,"['sublocality_level_2', 'sublocality', 'political']",98.46312258509768,3822.3227227931893
+306,136.62161,34.4691508,EV充電スポット,"['point_of_interest', 'establishment']",97.75990144913102,3822.884880168429
+307,136.6212058,34.4791133,Kamoshita Shrine,"['place_of_worship', 'point_of_interest', 'establishment']",97.77067473310291,3823.9923648350446
+308,136.6212376,34.48141409999999,Katsuta Chibiki Shrine,"['place_of_worship', 'point_of_interest', 'establishment']",97.78466947880305,3824.2476355182316
+309,136.6216679,34.48136229999999,Jizoson,"['place_of_worship', 'point_of_interest', 'establishment']",97.82397362141212,3824.240170902494
+310,136.622023,34.4823028,Yahashira Shrine,"['place_of_worship', 'point_of_interest', 'establishment']",97.86113971283356,3824.343155046032
+311,136.6216964,34.4857879,JA - SS / Tamaki SS,"['gas_station', 'point_of_interest', 'establishment']",97.84788917113916,3824.731315488839
+312,136.621202,34.485234,ＪＡ伊勢 玉城選果場,"['point_of_interest', 'establishment']",97.79978028881055,3824.6718006554274
+313,136.621202,34.485234,ＪＡ伊勢 玉城農機センター,"['car_repair', 'food', 'point_of_interest', 'establishment']",97.79978028881055,3824.6718006554274
+314,136.6212011,34.4928559,Car Body Service Nakamura,"['car_repair', 'point_of_interest', 'establishment']",97.83638313470846,3825.5178641524735
+315,136.621388,34.493342,Shimotanui Community Center,"['point_of_interest', 'establishment']",97.85590053976513,3825.57107822844
+316,136.6218704,34.4935188,（有）杉本家具工房,"['point_of_interest', 'establishment']",97.90108755534067,3825.588781245675
+317,136.621754,34.4945785,キママ工房（せこ住研）,"['storage', 'point_of_interest', 'establishment']",97.8954900974466,3825.7068758456185
+318,136.6212765,34.4951511,森永技研（有）,"['point_of_interest', 'establishment']",97.85436139972694,3825.7723396570686
+319,136.6218272,34.4953792,Tanui-noson Park,"['park', 'point_of_interest', 'establishment']",97.90607155177713,3825.7954648926343
+320,136.6212658,34.4958282,玉城まちかど博物館 伊勢美夜之窯,"['museum', 'point_of_interest', 'establishment']",97.85663750303246,3825.847543010989
+321,136.6217032,34.49599499999999,吉川塗装,"['painter', 'point_of_interest', 'establishment']",97.89763944199699,3825.8643152124373
+322,136.6221938,34.4962402,G.H. あしたば 玉城,"['point_of_interest', 'establishment']",97.94390785165515,3825.8895782861864
+323,136.6221909,34.50149090000001,Ｍ’ｓ ＳＱＵＡＲＥ エムズスクエア,"['car_repair', 'point_of_interest', 'establishment']",97.9689144629212,3826.472437640828
+324,136.622285,34.50164089999999,TOTAL CAR SERVICE,"['store', 'point_of_interest', 'establishment']",97.97828411641437,3826.488713222637
+325,136.6222496,34.50251830000001,Ministop,"['convenience_store', 'store', 'food', 'point_of_interest', 'establishment']",97.97925439178199,3826.58624907042
+326,136.6221065,34.5025396,Nakamura Dental Clinic,"['dentist', 'health', 'point_of_interest', 'establishment']",97.96620644770813,3826.589183731202
+327,136.621868,34.5030238,Sakura Pharmacy Ise Tamaki,"['pharmacy', 'drugstore', 'health', 'store', 'point_of_interest', 'establishment']",97.94661998644355,3826.643882313521
+328,136.6219489,34.5025313,Nakamura Otorhinolaryngology,"['doctor', 'health', 'point_of_interest', 'establishment']",97.95168350714184,3826.588890484575
+329,136.622287,34.5025344,証明写真機,"['point_of_interest', 'establishment']",97.98276884358417,3826.587887189951
+330,136.6223304,34.5024517,Ion Bank ATM,"['atm', 'point_of_interest', 'finance', 'establishment']",97.98635909486096,3826.5785342202876
+331,136.622363,34.50188,山口テクニカルスタジオ,"['health', 'point_of_interest', 'establishment']",97.98660306396667,3826.5149434113237
+332,136.622133,34.50326,Tamakitamagawa Clinic,"['health', 'point_of_interest', 'establishment']",97.97210961622693,3826.6690453043907
+333,136.6221365,34.5035794,ガーデンカフェボヌール,"['cafe', 'food', 'point_of_interest', 'store', 'establishment']",97.97396881509276,3826.7044859905395
+334,136.6221766,34.5043617,hair design COCO,"['hair_care', 'point_of_interest', 'establishment']",97.9814197800869,3826.791164507288
+335,136.6223056,34.50699999999999,YUSEI FARM,"['point_of_interest', 'establishment']",98.00597501336672,3827.083511933435
+336,136.6220625,34.5115631,伊勢志摩陸運,"['point_of_interest', 'establishment']",98.00560601664212,3827.59100274387
+337,136.6225561,34.5111029,三海冷蔵,"['storage', 'point_of_interest', 'establishment']",98.04874590320372,3827.5379514871947
+338,136.6217463,34.5138137,ナカムラ建築,"['point_of_interest', 'establishment']",97.98738901228528,3827.8420885912847
+339,136.6225118,34.4681634,Asahiya,"['point_of_interest', 'store', 'establishment']",97.83805892022134,3822.7716829077194
+340,136.6221596,34.46863549999999,たまき地場産品販売処「城(ぐすく)」,"['point_of_interest', 'store', 'establishment']",97.80794998251407,3822.8254905896583
+341,136.6218651,34.4688284,Esaichiba Esakichi,"['point_of_interest', 'store', 'establishment']",97.78180308348615,3822.848076334292
+342,136.6219606,34.46860259999999,Shiro Sunny Road Zoi Parking Lot,"['parking', 'point_of_interest', 'establishment']",97.78949675425066,3822.8226312828087
+343,136.6226371,34.4680594,Heikichi,"['restaurant', 'food', 'point_of_interest', 'establishment']",97.84907824905817,3822.759639468782
+344,136.6222128,34.4686946,さばき屋,"['food', 'point_of_interest', 'store', 'establishment']",97.81312514786457,3822.831838987456
+345,136.6219127,34.4690598,Lawson Tamaki IC,"['convenience_store', 'atm', 'finance', 'food', 'point_of_interest', 'store', 'establishment']",97.78729217781593,3822.873572949602
+346,136.6218936,34.46909179999999,Lawson Bank Atm Tamaki Inter Conjunction Branch,"['atm', 'finance', 'point_of_interest', 'establishment']",97.78569015473651,3822.8772011529713
+347,136.6220156,34.4802883,公衆トイレ,"['point_of_interest', 'establishment']",97.85076708728809,3824.119567567474
+348,136.6230796,34.4825542,Katsuta Community Center,"['point_of_interest', 'establishment']",97.95947112784557,3824.366852127916
+349,136.6230641,34.482916,Enmanji,"['place_of_worship', 'point_of_interest', 'establishment']",97.95978676386491,3824.407074992837
+350,136.6222077,34.4859026,熊野古道道標(田宮寺石碑),"['point_of_interest', 'establishment']",97.89543753637804,3824.742010346207
+351,136.622924,34.49255600000001,たまき末芳園,"['point_of_interest', 'establishment']",97.9932880788066,3825.4777087760476
+352,136.6228217,34.4934067,株式会社大勇建築,"['point_of_interest', 'establishment']",97.98797933613352,3825.5725472299473
+353,136.623332,34.497191,てんれいホール たまき館,"['point_of_interest', 'establishment']",98.05308805870783,3825.990585716029
+354,136.62286,34.499777,伊勢銘花園直売所,"['store', 'point_of_interest', 'establishment']",98.02215498199978,3826.2795219872037
+355,136.6228031,34.500015,延久のみちクリニック,"['health', 'point_of_interest', 'establishment']",98.0180712961661,3826.306167606435
+356,136.622931,34.467992,Seven Bank ATM,"['atm', 'bank', 'finance', 'point_of_interest', 'store', 'establishment']",97.87577389897692,3822.7509872890514
+357,136.6229685,34.4681053,7-Eleven,"['convenience_store', 'atm', 'finance', 'food', 'point_of_interest', 'store', 'establishment']",97.87976629172853,3822.76341464304
+358,136.6236922,34.46873109999999,(株)KATAOKA,"['general_contractor', 'point_of_interest', 'establishment']",97.94930852434528,3822.8299986636393
+359,136.6230075,34.4755453,勝田農事実行組合 ライスセンター,"['point_of_interest', 'establishment']",97.91913125111314,3823.589125953272
+360,136.623209,34.475647,玉城ふれあい農園,"['point_of_interest', 'establishment']",97.93814363081736,3823.599612467518
+361,136.623274,34.490156,（有）城西自動車,"['car_dealer', 'store', 'point_of_interest', 'establishment']",98.01390910693485,3825.209905533739
+362,136.6237551,34.4925396,レディア玉城サニーロード店（体質改善整体・小顔コルギ）,"['beauty_salon', 'point_of_interest', 'establishment']",98.06959399837581,3825.4725775611078
+363,136.6237551,34.4925396,結婚相談所伊勢志摩婚活フェリーチェ,"['health', 'point_of_interest', 'establishment']",98.06959399837581,3825.4725775611078
+364,136.6237411,34.4966782,Flower Pharmacy Tamaki,"['pharmacy', 'health', 'store', 'point_of_interest', 'establishment']",98.08821830535086,3825.932033292738
+365,136.6235555,34.4960472,初瀬街道巡礼供養碑,"['place_of_worship', 'point_of_interest', 'establishment']",98.06812497290579,3825.8627292761203
+366,136.6241208,34.4959258,萬丸,"['restaurant', 'food', 'point_of_interest', 'establishment']",98.11949439171237,3825.8470016611313
+367,136.6236403,34.4968244,篠塚小児科,"['doctor', 'health', 'point_of_interest', 'establishment']",98.07965786115237,3825.9486635734334
+368,136.6258906,34.4999798,Okamura,"['sublocality_level_2', 'sublocality', 'political']",98.30164263733383,3826.289962593569
+369,136.6241011,34.5035168,株式会社近藤友男商店,"['point_of_interest', 'establishment']",98.15420630496892,3826.6897094616356
+370,136.630715,34.5066162,Hyuga,"['sublocality_level_2', 'sublocality', 'political']",98.77688730954908,3827.0074272438123
+371,136.6239833,34.50936280000001,正隨寺,"['place_of_worship', 'point_of_interest', 'establishment']",98.17151328119549,3827.33910687573
+372,136.62442,34.468928,ボナール伊勢 玉城館,"['store', 'point_of_interest', 'establishment']",98.01716490889527,3822.848957400524
+373,136.624829,34.468831,ショートステイ柿の葉,"['health', 'point_of_interest', 'establishment']",98.05429973066121,3822.8365617764575
+374,136.6248919,34.46880069999999,宮古ヒルズ,"['health', 'point_of_interest', 'establishment']",98.05993675482995,3822.8329479716035
+375,136.6248734,34.4718135,Narahara Shrine,"['place_of_worship', 'point_of_interest', 'establishment']",98.0727179656009,3823.167452868099
+376,136.6245056,34.49279050000001,（株）ドリーム・リニア,"['point_of_interest', 'store', 'establishment']",98.13977783100714,3825.497439245237
+377,136.6252764,34.49288909999999,Toraya,"['restaurant', 'food', 'point_of_interest', 'establishment']",98.21109451773542,3825.5053147429903
+378,136.6248165,34.4929364,いちおのいちご直売所,"['store', 'point_of_interest', 'establishment']",98.16905368628528,3825.5123965536254
+379,136.6253487,34.4924587,（株）坂口設備,"['point_of_interest', 'establishment']",98.21566963038232,3825.457250904468
+380,136.6249744,34.49387999999999,すいーとぴー,"['restaurant', 'food', 'point_of_interest', 'establishment']",98.1881041798945,3825.616510800995
+381,136.6248766,34.4944322,蘭の斎庭,"['florist', 'store', 'point_of_interest', 'establishment']",98.18177165727498,3825.678196475162
+382,136.6244974,34.4956172,株式会社 山下 玉城支店 空き家ヘルパー,"['point_of_interest', 'establishment']",98.1526210835313,3825.811245975114
+383,136.6249065,34.4958401,アルファオート,"['car_dealer', 'point_of_interest', 'store', 'establishment']",98.19129140171852,3825.834359451458
+384,136.6251547,34.5145245,Seko Community Center,"['point_of_interest', 'establishment']",98.30398867699353,3827.907408936186
+385,136.6258485,34.5139636,Sekonoson Park,"['park', 'point_of_interest', 'establishment']",98.36503902479633,3827.842383687351
+386,136.62599,34.47111700000001,広瀬精工（株） 玉城工場,"['point_of_interest', 'establishment']",98.17202085621277,3823.0856942939977
+387,136.62599,34.47111700000001,広瀬精工（株） 労組玉城事務所,"['point_of_interest', 'establishment']",98.17202085621277,3823.0856942939977
+388,136.6255703,34.4856946,Bridgestone,"['car_repair', 'point_of_interest', 'store', 'establishment']",98.20351229679824,3824.7055293013923
+389,136.62634,34.48574599999999,Higashitani Tofu Shop,"['food', 'point_of_interest', 'store', 'establishment']",98.2745067920449,3824.7081708438564
+390,136.626026,34.490906,池山学習教室,"['school', 'point_of_interest', 'establishment']",98.27045334445138,3825.2821990426196
+391,136.626026,34.490906,池山敦行政書士事務所,"['school', 'point_of_interest', 'establishment']",98.27045334445138,3825.2821990426196
+392,136.6261592,34.4909084,幸得塗装工芸,"['painter', 'point_of_interest', 'establishment']",98.2827072684032,3825.2819351856238
+393,136.625732,34.493142,（有）松井機工,"['point_of_interest', 'establishment']",98.25418374265172,3825.531573527553
+394,136.6262616,34.49225789999999,玉城町宿舎,"['real_estate_agency', 'point_of_interest', 'establishment']",98.29860708370019,3825.4313268437822
+395,136.6260728,34.4926999,Sun Tamaki Park,"['park', 'point_of_interest', 'establishment']",98.28338002686132,3825.48114203123
+396,136.6259826,34.4948481,公衆トイレ,"['point_of_interest', 'establishment']",98.28541949887783,3825.7199590353525
+397,136.6261677,34.4954986,玉城町体育センター,"['point_of_interest', 'establishment']",98.30555908399832,3825.791429949662
+398,136.6266808,34.4948139,Total Field,"['point_of_interest', 'establishment']",98.34942343999428,3825.7133832050863
+399,136.6259601,34.4960907,ナルカワキャリー,"['point_of_interest', 'establishment']",98.2893269211679,3825.857981689622
+400,136.6266092,34.49576770000001,Tamaki mun. ground parking lot (Gymnasium side),"['parking', 'point_of_interest', 'establishment']",98.34742884536116,3825.8195434222253
+401,136.62581,34.50088,岩間特殊溶接所,"['point_of_interest', 'establishment']",98.29856500674069,3826.3902089998555
+402,136.6265189,34.50355069999999,犬との食道,"['point_of_interest', 'establishment']",98.3765551986107,3826.6838439347653
+403,136.6266991,34.5058898,玉城電装,"['car_repair', 'store', 'point_of_interest', 'establishment']",98.40436359508377,3826.9427751240655
+404,136.6265066,34.5063445,Hinata Community Center,"['point_of_interest', 'establishment']",98.38886098924284,3826.994014885853
+405,136.6258514,34.5066143,Higashimi Temple,"['place_of_worship', 'point_of_interest', 'establishment']",98.32995066565468,3827.026572500965
+406,136.6268465,34.5073199,ミライエ牛肉店,"['food', 'point_of_interest', 'store', 'establishment']",98.42478612606199,3827.1009346070223
+407,136.6263994,34.5101901,Hoanji,"['place_of_worship', 'point_of_interest', 'establishment']",98.3975065982737,3827.421317432309
+408,136.6267801,34.5143452,Joganji,"['place_of_worship', 'point_of_interest', 'establishment']",98.45247394882725,3827.881033072276
+409,136.6261093,34.46355559999999,Taiyaki Straw Main Store,"['store', 'food', 'point_of_interest', 'establishment']",98.14665507780062,3822.2458785274434
+410,136.6262091,34.4639537,わらしべ,"['store', 'food', 'point_of_interest', 'establishment']",98.15774338155222,3822.289671810589
+411,136.626717,34.46367,南部急送,"['point_of_interest', 'establishment']",98.20307660047774,3822.256159134297
+412,136.6261671,34.46401050000001,ハジメ産業（株）玉城工場,"['point_of_interest', 'establishment']",98.15415482114064,3822.2961439377978
+413,136.626309,34.472344,玉城町養豚組合,"['food', 'point_of_interest', 'establishment']",98.2072432981606,3823.2206258918295
+414,136.6264319,34.47691889999999,浜塚山,"['point_of_interest', 'establishment']",98.2405268079043,3823.727966320896
+415,136.6269608,34.4783773,Hamatsukaku Community Center,"['point_of_interest', 'establishment']",98.29615428125824,3823.8877488482676
+416,136.627076,34.485846,ENEOS / Osu Katsuta SS,"['gas_station', 'point_of_interest', 'establishment']",98.34263721055106,3824.716341811886
+417,136.630715,34.4908343,Tamaru,"['sublocality_level_2', 'sublocality', 'political']",98.70107354439224,3825.2555831052896
+418,136.6266393,34.4920316,Current,"['point_of_interest', 'establishment']",98.33223289586546,3825.4047032259523
+419,136.6267781,34.495486,Tamaki Municipal Central Community Center,"['point_of_interest', 'establishment']",98.36159713513416,3825.787601382632
+420,136.6267786,34.4955331,Johoku Park,"['park', 'point_of_interest', 'establishment']",98.3618695350042,3825.792827659931
+421,136.6277398,34.4951885,Choei Ground Parking Lot,"['parking', 'point_of_interest', 'establishment']",98.44855186726002,3825.7507501311898
+422,136.6276357,34.4957036,橘内蔵介正以墓碑,"['point_of_interest', 'establishment']",98.44146056478384,3825.808342331194
+423,136.6277599,34.4979547,Born craft guitar,"['point_of_interest', 'store', 'establishment']",98.46369585952267,3826.0577280602442
+424,136.6269756,34.5011088,Jishoji,"['place_of_worship', 'point_of_interest', 'establishment']",98.40678232141352,3826.410966101542
+425,136.6269756,34.5011088,Okamura Community Center,"['point_of_interest', 'establishment']",98.40678232141352,3826.410966101542
+426,136.6274746,34.5047287,Kohei,"['point_of_interest', 'establishment']",98.4700439168557,3826.8108016930937
+427,136.6269591,34.5054312,Sea Glass Hair Salon,"['hair_care', 'point_of_interest', 'establishment']",98.42605048794579,3826.8908337766306
+428,136.6270877,34.5062258,（株）佑成産業,"['general_contractor', 'point_of_interest', 'establishment']",98.44168902885238,3826.9785253104155
+429,136.630715,34.5111249,Monzen,"['sublocality_level_2', 'sublocality', 'political']",98.79855199019524,3827.5079085016946
+430,136.6278112,34.514376,北岡機器工業,"['point_of_interest', 'establishment']",98.54736346714414,3827.8803470550574
+431,136.6282796,34.46342050000001,Seino Ise,"['moving_company', 'point_of_interest', 'establishment']",98.34554364416464,3822.222247438131
+432,136.6280739,34.4636462,南部急送倉庫,"['storage', 'point_of_interest', 'establishment']",98.32771548197826,3822.24811906315
+433,136.628317,34.471553,菜の花畑,"['point_of_interest', 'establishment']",98.3880399259809,3823.1248327198423
+434,136.627531,34.477408,株式会社うらた産業,"['general_contractor', 'point_of_interest', 'establishment']",98.3439118111268,3823.7778842998146
+435,136.628376,34.476555,伊勢行政書士事務所,"['point_of_interest', 'establishment']",98.41749051689753,3823.6798365825634
+436,136.6278201,34.479449,WANぴぃーす（出張専門）,"['point_of_interest', 'establishment']",98.38029333482275,3824.003291911834
+437,136.6278925,34.4803667,Y WAI Auto Body,"['car_dealer', 'car_repair', 'store', 'point_of_interest', 'establishment']",98.39135775312072,3824.104871652715
+438,136.6275933,34.4805153,カラオケステージ母恵夢,"['point_of_interest', 'establishment']",98.36456890844217,3824.122557244993
+439,136.6275541,34.4806655,Paint Factory Yamamoto,"['car_repair', 'point_of_interest', 'establishment']",98.36168732542812,3824.139385935493
+440,136.628354,34.48023,浜塚の道標,"['point_of_interest', 'establishment']",98.4331227271703,3824.0878613917694
+441,136.628642,34.4869257,玉城町社会福祉協議会,"['point_of_interest', 'establishment']",98.49176414674677,3824.8299609234846
+442,136.628356,34.4868585,Hokenfukushi Hall,"['health', 'point_of_interest', 'establishment']",98.46515382013074,3824.8236393617863
+443,136.62864,34.486926,玉城町相談支援事業所みらい,"['point_of_interest', 'establishment']",98.49158175997995,3824.830002181357
+444,136.628642,34.4869257,玉城町 保健福祉課 子育て支援係,"['point_of_interest', 'establishment']",98.49176414674677,3824.8299609234846
+445,136.628642,34.4869257,玉城町 保健福祉課地域共生室,"['point_of_interest', 'establishment']",98.49176414674677,3824.8299609234846
+446,136.628642,34.4869257,玉城町 健康管理センター,"['local_government_office', 'point_of_interest', 'establishment']",98.49176414674677,3824.8299609234846
+447,136.6285359,34.4881521,タマキ・マナビ倉庫,"['point_of_interest', 'establishment']",98.4879047715321,3824.9665176145318
+448,136.6284935,34.48986600000001,田丸城 本丸門跡,"['point_of_interest', 'establishment']",98.49224315073859,3825.1569350649306
+449,136.6279403,34.4904519,Tamaru Castle Turret Ruins,"['point_of_interest', 'establishment']",98.44421382194635,3825.2241731569775
+450,136.6280588,34.4905163,Shiroyama Park,"['park', 'point_of_interest', 'establishment']",98.45541467412608,3825.2308502438227
+451,136.6280885,34.4905746,Tamaru Castle Main Keep,"['point_of_interest', 'establishment']",98.45842458032398,3825.2372035646126
+452,136.6282048,34.4903853,Tamaru Castle Ruins,"['point_of_interest', 'establishment']",98.46820401982038,3825.2157278463283
+453,136.6280274,34.490839,Tamaru Castle Dry Moat Ruins,"['point_of_interest', 'establishment']",98.45407953712903,3825.2667960045783
+454,136.6282943,34.4904652,Murayama Ryuhei Autobiographical Monument,"['point_of_interest', 'establishment']",98.47681394945533,3825.224240903309
+455,136.6284321,34.4903309,Tamaru Castle Honmaru Toraguchi (Tiger Mouth) Ruins,"['point_of_interest', 'establishment']",98.48883381452487,3825.208784854193
+456,136.6285721,34.4909643,Tamaru Castle Parking Lot,"['parking', 'point_of_interest', 'establishment']",98.50474488933058,3825.2785374011523
+457,136.627954,34.4913633,Shiroyamainari Shrine,"['place_of_worship', 'point_of_interest', 'establishment']",98.44985312533612,3825.325287195356
+458,136.6279219,34.4916479,Tamaru Castle Kitanomaru Ruins,"['point_of_interest', 'establishment']",98.44827064106921,3825.3570065178146
+459,136.6279256,34.4938583,玉城まちかど博物館「擬革紙の会」,"['museum', 'point_of_interest', 'establishment']",98.45923432180012,3825.6023538782024
+460,136.6355399,34.4884517,Sata,"['sublocality_level_2', 'sublocality', 'political']",99.13309773443139,3824.9719305469603
+461,136.6278437,34.4945566,公衆トイレ,"['point_of_interest', 'establishment']",98.45506353823252,3825.680193536553
+462,136.628704,34.493672,田丸神社たまる石 祓石,"['place_of_worship', 'point_of_interest', 'establishment']",98.52987903275864,3825.578576609509
+463,136.628704,34.493672,Tamaru Shrine,"['tourist_attraction', 'place_of_worship', 'point_of_interest', 'establishment']",98.52987903275864,3825.578576609509
+464,136.6279675,34.4948737,Subestação elétrica,"['point_of_interest', 'establishment']",98.4679655679015,3825.714900079983
+465,136.6282574,34.4949444,Chubudenryokupawaguriddotamaruhendensho,"['point_of_interest', 'establishment']",98.49494871095958,3825.721594416728
+466,136.6279626,34.4956666,六地蔵,"['place_of_worship', 'point_of_interest', 'establishment']",98.47132627724216,3825.8029342493137
+467,136.6282225,34.4956841,はせ街道 道標,"['point_of_interest', 'establishment']",98.49529635114001,3825.80384256565
+468,136.6285593,34.4964403,小原電器,"['home_goods_store', 'point_of_interest', 'store', 'establishment']",98.52988397932337,3825.8864432195915
+469,136.6279108,34.5051936,（有）巴商事,"['painter', 'point_of_interest', 'establishment']",98.51236337379605,3826.8606710710014
+470,136.629314,34.468012,Koutaiji Temple,"['tourist_attraction', 'place_of_worship', 'point_of_interest', 'establishment']",98.46269185444683,3822.7278047739273
+471,136.6292951,34.46794,Tamakimachikadohakubutsukan Kamiterusankotai Temple,"['place_of_worship', 'point_of_interest', 'establishment']",98.46060856480263,3822.719887704202
+472,136.6293274,34.4698211,ｃｌｅｏ,"['hair_care', 'point_of_interest', 'establishment']",98.47261059165723,3822.928567410921
+473,136.6292958,34.4718554,ホワイトハイツ 宮古,"['point_of_interest', 'establishment']",98.47947421765298,3823.1545069655167
+474,136.629439,34.473325,Nakai Orthopedic Clinic,"['health', 'point_of_interest', 'establishment']",98.4996957970853,3823.317067829939
+475,136.6291939,34.4741028,林英一牧場,"['point_of_interest', 'establishment']",98.48089933314611,3823.404380952155
+476,136.6292573,34.474741,Caro,"['hair_care', 'point_of_interest', 'establishment']",98.48979252658168,3823.4749710814635
+477,136.6293168,34.4766129,Charme Hair Salon,"['hair_care', 'point_of_interest', 'establishment']",98.50425214270392,3823.682521464445
+478,136.6289499,34.4775743,天然たい焼き 鉄兵衛,"['restaurant', 'food', 'point_of_interest', 'establishment']",98.4751424352795,3823.790699357807
+479,136.6288411,34.4776353,（有）マルデン産業,"['point_of_interest', 'establishment']",98.46543406221073,3823.797903333233
+480,136.6295089,34.4779007,Katsutanoson Park,"['park', 'point_of_interest', 'establishment']",98.5280957457627,3823.8247074662804
+481,136.6291601,34.486635,Goody Tamakiten Shinshosha Parking Lot,"['parking', 'point_of_interest', 'establishment']",98.53798827663775,3824.7956311454313
+482,136.6292941,34.4867657,Sugi Drug Tamaki,"['drugstore', 'store', 'health', 'point_of_interest', 'establishment']",98.55093267909496,3824.8096062489794
+483,136.6293682,34.4866731,Hyakugo Bank ATM,"['atm', 'finance', 'point_of_interest', 'establishment']",98.55729868598392,3824.799032584428
+484,136.6294621,34.4868561,グッディ玉城店寿司惣菜部,"['supermarket', 'grocery_or_supermarket', 'store', 'food', 'point_of_interest', 'establishment']",98.56680853066273,3824.818972690794
+485,136.6294658,34.4866444,ぱん屋 はるはる,"['bakery', 'store', 'food', 'point_of_interest', 'establishment']",98.56613165713317,3824.7954585644984
+486,136.6295471,34.486618,Gooday,"['supermarket', 'grocery_or_supermarket', 'store', 'food', 'point_of_interest', 'establishment']",98.57347747802507,3824.792204695736
+487,136.629626,34.4881114,砲術家 森 逸平 生誕地碑,"['tourist_attraction', 'point_of_interest', 'establishment']",98.58790330452862,3824.9576632626004
+488,136.6289411,34.4895527,Tamaru Castle Fujimidai Ruins,"['point_of_interest', 'establishment']",98.53187712583923,3825.1203769172002
+489,136.62876,34.4897989,Tamaru Castle Ninomaru Ruins,"['point_of_interest', 'establishment']",98.51641497841105,3825.148426440109
+490,136.6287818,34.4899291,田丸城 二の丸虎口跡,"['point_of_interest', 'establishment']",98.51904423362511,3825.1627923534747
+491,136.6289668,34.49058019999999,Tamaru Castle Water Well,"['point_of_interest', 'establishment']",98.53917608925666,3825.234330669354
+492,136.6289612,34.49061149999999,田丸城 三の丸 金明水 銀明水,"['point_of_interest', 'establishment']",98.53881178293948,3825.237827354549
+493,136.6289529,34.4906359,Public Toilet,"['point_of_interest', 'establishment']",98.5381661670996,3825.240568857814
+494,136.6287345,34.4909219,Tamaru Castle Sannomaru (Outer) Ruins,"['point_of_interest', 'establishment']",98.51946727610647,3825.2731847265145
+495,136.6295815,34.4909018,Tamaki Choritsu Tamaki Junior High School,"['school', 'point_of_interest', 'establishment']",98.59721818148194,3825.267584051688
+496,136.6289877,34.49171889999999,Lotus Pond Remains,"['point_of_interest', 'establishment']",98.54656826442317,3825.360647102801
+497,136.628758,34.491793,Fujimimon (Nagayamon),"['point_of_interest', 'establishment']",98.52581288066716,3825.3697863111015
+498,136.6293176,34.4923393,見学者駐車場,"['point_of_interest', 'establishment']",98.57986971991998,3825.4282011974037
+499,136.6294817,34.49276700000001,中川電装（株） 玉城工場,"['point_of_interest', 'establishment']",98.59700669751066,3825.475024554975
+500,136.6289577,34.49349,田丸城 移築武器庫火薬蔵,"['point_of_interest', 'establishment']",98.55232120299682,3825.557364611734
+501,136.6293307,34.4935002,田丸神社 常夜燈(東参道),"['place_of_worship', 'point_of_interest', 'establishment']",98.58665144943917,3825.5570129347348
+502,136.6290954,34.49378,カットハウス美楽,"['point_of_interest', 'establishment']",98.56637022397184,3825.589007774847
+503,136.6291073,34.5052009,Mr.Tireman Nakanishi,"['car_repair', 'store', 'point_of_interest', 'establishment']",98.62234949682181,3826.8567199016384
+504,136.630039,34.463959,（有）しんよう土建,"['general_contractor', 'point_of_interest', 'establishment']",98.5098879247656,3822.2750260233615
+505,136.6295089,34.46436970000001,三重西濃運輸（株） 伊勢出張所,"['point_of_interest', 'establishment']",98.46312258509768,3822.3227227931893
+506,136.629542,34.46674199999999,（有）村木耐建工業,"['general_contractor', 'point_of_interest', 'establishment']",98.47755536952702,3822.5859240258883
+507,136.6296237,34.4673123,青木建工,"['general_contractor', 'point_of_interest', 'establishment']",98.48780467751162,3822.6489042660646
+508,136.6295721,34.4676617,Kamimiyako Shrine,"['place_of_worship', 'point_of_interest', 'establishment']",98.48473836268083,3822.687893970673
+509,136.6299001,34.4681495,Kamiterusan Kotaiji Parking Lot,"['parking', 'point_of_interest', 'establishment']",98.51723506658763,3822.7407370641586
+510,136.6299859,34.4677592,広泰寺山門,"['point_of_interest', 'establishment']",98.52324928620673,3822.6970713627784
+511,136.629622,34.47658699999999,澤田サイン工房,"['store', 'point_of_interest', 'establishment']",98.53218340972863,3823.67843266296
+512,136.6297175,34.4776683,Park Dori Park,"['point_of_interest', 'establishment']",98.54615502266691,3823.7980806929713
+513,136.6296883,34.4780911,パークアベニュー公園通り,"['point_of_interest', 'establishment']",98.54550130021322,3823.8451290025587
+514,136.6300447,34.4863352,熊野古道道標 (広泰寺石標),"['point_of_interest', 'establishment']",98.6178557586011,3824.7588338269475
+515,136.6299969,34.4865236,勝田豊富地蔵大菩薩,"['place_of_worship', 'point_of_interest', 'establishment']",98.61436714716436,3824.7799369589893
+516,136.6304607,34.4870822,庚申堂(青面金剛/道標),"['point_of_interest', 'establishment']",98.65967984290083,3824.840098889848
+517,136.6307663,34.4869064,Tamaruo Bridge,"['point_of_interest', 'establishment']",98.68692445483629,3824.8193692549908
+518,136.6302344,34.4885174,Choei Pool,"['point_of_interest', 'establishment']",98.6457730610285,3825.0003108150304
+519,136.6301136,34.4882031,Kosetsuen Park,"['park', 'point_of_interest', 'establishment']",98.63316040195606,3824.965902904205
+520,136.6301125,34.4883268,村山龍平生誕地,"['tourist_attraction', 'point_of_interest', 'establishment']",98.6336534575551,3824.9796383904686
+521,136.63079,34.48854799999999,Ikeyama Hair Salon,"['hair_care', 'point_of_interest', 'establishment']",98.69698646039393,3825.0014980064275
+522,136.630223,34.489551,Tamaki Municipal Tamaru Nursery School,"['school', 'point_of_interest', 'establishment']",98.64968985013606,3825.1150891910197
+523,136.6308281,34.4902148,玉城町議会事務局,"['city_hall', 'local_government_office', 'point_of_interest', 'establishment']",98.708493246458,3825.1863667948705
+524,136.6308281,34.4902148,玉城町役場 建設課,"['local_government_office', 'point_of_interest', 'establishment']",98.708493246458,3825.1863667948705
+525,136.6308281,34.4902148,玉城町役場 まちづくり推進課,"['local_government_office', 'point_of_interest', 'establishment']",98.708493246458,3825.1863667948705
+526,136.6308281,34.4902148,玉城町上下水道課,"['local_government_office', 'point_of_interest', 'establishment']",98.708493246458,3825.1863667948705
+527,136.630918,34.490278,玉城町役場 保健福祉課,"['local_government_office', 'point_of_interest', 'establishment']",98.71705951009586,3825.1930247106975
+528,136.630918,34.490278,Tamaki town hall,"['local_government_office', 'point_of_interest', 'establishment']",98.71705951009586,3825.1930247106975
+529,136.6303158,34.4905085,田丸城 鹿威し跡,"['point_of_interest', 'establishment']",98.66281828483706,3825.2210058053365
+530,136.6305973,34.4905096,田丸城 内堀,"['point_of_interest', 'establishment']",98.68869624552498,3825.220008396014
+531,136.630533,34.4907716,Tamaru Castle Second Gate Ruins,"['point_of_interest', 'establishment']",98.68404483048228,3825.2493469781016
+532,136.6305698,34.4907691,大賀ハス,"['tourist_attraction', 'point_of_interest', 'establishment']",98.6874151016677,3825.248923120519
+533,136.6307264,34.4906531,紀州藩同心屋敷跡,"['point_of_interest', 'establishment']",98.70125103755709,3825.2354239704187
+534,136.6306057,34.49085289999999,バスロータリー,"['point_of_interest', 'establishment']",98.69111715271639,3825.258082429759
+535,136.6306054,34.4908965,玉城中学校跡石碑,"['point_of_interest', 'establishment']",98.69129899077804,3825.2629233675375
+536,136.6308281,34.4902148,玉城町産業振興課,"['local_government_office', 'point_of_interest', 'establishment']",98.708493246458,3825.1863667948705
+537,136.6308001,34.4911676,玉城町教育委員会事務局,"['local_government_office', 'point_of_interest', 'establishment']",98.7104958318327,3825.2922420915984
+538,136.6308673,34.4912447,Murayama Ryuhei Memorial,"['tourist_attraction', 'museum', 'point_of_interest', 'establishment']",98.71704242907721,3825.3005332160938
+539,136.6303429,34.4913923,C58蒸気機関車,"['tourist_attraction', 'point_of_interest', 'establishment']",98.66955420647852,3825.3190027732635
+540,136.6304988,34.4914931,田丸城 旧三の丸御殿奥書院,"['point_of_interest', 'establishment']",98.68436699188192,3825.3295718890868
+541,136.6306074,34.4911419,入館見学者用駐車場,"['point_of_interest', 'establishment']",98.69266147086502,3825.2901556286984
+542,136.630878,34.4913022,図書館,"['library', 'point_of_interest', 'establishment']",98.71830201581615,3825.3068733565365
+543,136.6305641,34.4919494,お城広場,"['park', 'point_of_interest', 'establishment']",98.69256032507366,3825.379963013562
+544,136.6299235,34.4923525,玉城町屋内体育館,"['point_of_interest', 'establishment']",98.63562022321561,3825.427256281724
+545,136.630589,34.4930481,シャン・ドゥ・フルール Ａ棟 101,"['point_of_interest', 'establishment']",98.700126143604,3825.5018233498213
+546,136.6303585,34.4936106,紀州藩五十人組同心屋敷跡,"['point_of_interest', 'establishment']",98.68164353797847,3825.5651794506402
+547,136.6308101,34.4943871,山本カイロプラクティックセンター,"['point_of_interest', 'establishment']",98.72687821538076,3825.649577523454
+548,136.6391588,34.504703,Nagafuke,"['sublocality_level_2', 'sublocality', 'political']",99.54363077827915,3826.761503148173
+549,136.630418,34.464638,みや古,"['restaurant', 'food', 'point_of_interest', 'establishment']",98.54799213093315,3822.348890337194
+550,136.6313094,34.4672978,Kotohira Shrine,"['place_of_worship', 'point_of_interest', 'establishment']",98.64271107549553,3822.6405928641143
+551,136.6310009,34.4732687,三重県度会郡玉城町発電所,"['point_of_interest', 'establishment']",98.64300952106731,3823.304607835002
+552,136.631441,34.4749687,（有）都設備,"['point_of_interest', 'establishment']",98.69162755580683,3823.4915636392493
+553,136.631723,34.48639300000001,角自動車,"['point_of_interest', 'establishment']",98.77239360932982,3824.758576318103
+554,136.6315254,34.4869462,ヴィラナリー伊勢,"['point_of_interest', 'establishment']",98.75688746974454,3824.8207689015508
+555,136.6319128,34.4867422,堰止枠石,"['point_of_interest', 'establishment']",98.79151550810836,3824.796584093489
+556,136.6310731,34.4879447,妙兄堂,"['place_of_worship', 'point_of_interest', 'establishment']",98.72010965566238,3824.933404007421
+557,136.631276,34.487651,松田自転車商会,"['bicycle_store', 'point_of_interest', 'store', 'establishment']",98.7373484586276,3824.8999955866334
+558,136.631362,34.488379,ナカセ電化ショップ,"['home_goods_store', 'store', 'point_of_interest', 'establishment']",98.74874871374189,3824.980464020862
+559,136.6316662,34.48819579999999,勝田町の熊野古道道標,"['point_of_interest', 'establishment']",98.77582881397085,3824.9589187658253
+560,136.6311442,34.4890132,山本工業 倉庫( D ),"['storage', 'point_of_interest', 'establishment']",98.73177571886417,3825.051728294763
+561,136.6319023,34.4883807,Nichijousha Dry Cleaners,"['laundry', 'point_of_interest', 'establishment']",98.79841711708129,3824.978504620061
+562,136.631853,34.488179,Sakaetei,"['lodging', 'point_of_interest', 'establishment']",98.792917415458,3824.956311262072
+563,136.6319657,34.4884479,World Wind,"['point_of_interest', 'establishment']",98.80456699946103,3824.9857119909693
+564,136.631577,34.49013909999999,どっぐさろんCuore,"['store', 'point_of_interest', 'establishment']",98.77696139756631,3825.174986029169
+565,136.6308281,34.4902148,玉城町役場 総務防災課,"['local_government_office', 'point_of_interest', 'establishment']",98.708493246458,3825.1863667948705
+566,136.6308281,34.4902148,玉城町出納室,"['local_government_office', 'point_of_interest', 'establishment']",98.708493246458,3825.1863667948705
+567,136.630918,34.490278,玉城町税務住民課,"['accounting', 'local_government_office', 'finance', 'point_of_interest', 'establishment']",98.71705951009586,3825.1930247106975
+568,136.630918,34.490278,玉城町役場 日直室,"['local_government_office', 'point_of_interest', 'establishment']",98.71705951009586,3825.1930247106975
+569,136.631089,34.4905023,Tamaki Choyakuba Chushajo Shinshosha Parking Lot,"['parking', 'point_of_interest', 'establishment']",98.73385334756348,3825.217242777
+570,136.6309447,34.4907036,玉城町役場駐車場,"['parking', 'point_of_interest', 'establishment']",98.72155749315891,3825.240161541757
+571,136.6313145,34.4905049,田丸城 外堀,"['point_of_interest', 'establishment']",98.75459154231427,3825.2166347359994
+572,136.631431,34.491259,Tamaki Chamber of Commerce,"['point_of_interest', 'establishment']",98.76892031539482,3825.299879088578
+573,136.63098,34.49102,Tamarujo-ato(Tamakicho yakuba),"['transit_station', 'point_of_interest', 'establishment']",98.72632144807861,3825.2751426151517
+574,136.6312149,34.4909883,田丸城 大手門跡,"['point_of_interest', 'establishment']",98.74775874359835,3825.2706897555336
+575,136.6310722,34.4917154,公衆トイレ（お城広場）,"['point_of_interest', 'establishment']",98.73813519133004,3825.3519676791266
+576,136.6315607,34.4908535,田丸勘定所跡,"['point_of_interest', 'establishment']",98.77889373596746,3825.254351569697
+577,136.631625,34.49213369999999,Tamaru Police Box,"['police', 'point_of_interest', 'establishment']",98.7909509826799,3825.396202303377
+578,136.6313315,34.4926876,Honcho Community Center,"['point_of_interest', 'establishment']",98.76663596839889,3825.458854014343
+579,136.6317622,34.4923883,Tenrikyo Tamakibun Church,"['point_of_interest', 'establishment']",98.80478334885952,3825.4239182407982
+580,136.6316075,34.4928484,大賀蓮生育地,"['point_of_interest', 'establishment']",98.79277464518498,3825.4756059261626
+581,136.6313331,34.4938684,Fukuda Dental Clinic,"['dentist', 'health', 'point_of_interest', 'establishment']",98.7724538040568,3825.589920347848
+582,136.631207,34.493228,たまきあい,"['point_of_interest', 'establishment']",98.7577887936876,3825.5193352521997
+583,136.6315237,34.494443,CHOKI,"['hair_care', 'point_of_interest', 'establishment']",98.79273059503763,3825.6529449693585
+584,136.6317084,34.4944792,バル・カステールⅢ,"['point_of_interest', 'establishment']",98.80987940755911,3825.6562289021736
+585,136.6316511,34.4707835,宮古会所,"['point_of_interest', 'establishment']",98.69085397911857,3823.0261581780023
+586,136.631698,34.474761,桔川電機工事,"['electrician', 'point_of_interest', 'establishment']",98.71425591395463,3823.467486683993
+587,136.6317949,34.4767165,社会福祉法人ゆり 介護老人福祉施設はなのその,"['health', 'point_of_interest', 'establishment']",98.73254975969671,3823.6841681547025
+588,136.632387,34.486168,Shadisaradakantamakiten,"['store', 'food', 'point_of_interest', 'establishment']",98.83234474755841,3824.730961019076
+589,136.632387,34.486168,伊勢米穀企業組合田丸営業所,"['store', 'food', 'point_of_interest', 'establishment']",98.83234474755841,3824.730961019076
+590,136.631995,34.486254,Naruse Pharmacy,"['pharmacy', 'store', 'health', 'point_of_interest', 'establishment']",98.79672703584062,3824.7420655486935
+591,136.6321577,34.4862832,Hair salon Merge,"['hair_care', 'point_of_interest', 'establishment']",98.81182173497463,3824.744660069637
+592,136.6320303,34.4867394,小池流水芸発祥の地,"['point_of_interest', 'establishment']",98.80230197722791,3824.7958061787463
+593,136.632773,34.487095,ＪＡ伊勢 伊勢・玉城経済センター,"['point_of_interest', 'establishment']",98.87227352243691,3824.832326694151
+594,136.632774,34.48709589999999,ＪＡ伊勢 LPガスセンター,"['point_of_interest', 'establishment']",98.8723697562829,3824.8324226223567
+595,136.6326979,34.48725939999999,ＪＡ伊勢 玉城支店,"['bank', 'atm', 'finance', 'point_of_interest', 'establishment']",98.86615996122163,3824.8508741159735
+596,136.6327776,34.4872833,JAバンクATM,"['atm', 'finance', 'point_of_interest', 'establishment']",98.87360019392602,3824.853210308777
+597,136.6328045,34.48761329999999,Nokyo Parking Lot,"['parking', 'point_of_interest', 'establishment']",98.87765671768284,3824.889734439006
+598,136.632909,34.4873615,JA Tamaki Shinshosha Parking Lot,"['parking', 'point_of_interest', 'establishment']",98.88605299024837,3824.861368494396
+599,136.63207,34.489217,Nonaka-ya shop,"['store', 'food', 'point_of_interest', 'establishment']",98.81784599985433,3825.0706699361785
+600,136.6321561,34.4889843,Kitamura Barber Shop,"['hair_care', 'health', 'point_of_interest', 'establishment']",98.82464236193942,3825.0444972067066
+601,136.632312,34.489218,喜多ガラス店,"['store', 'point_of_interest', 'establishment']",98.84009335858713,3825.069818917104
+602,136.6328445,34.4888687,Daitokuji,"['place_of_worship', 'point_of_interest', 'establishment']",98.88735942123516,3825.0289288462777
+603,136.6322178,34.4893943,魚菊商店,"['store', 'food', 'point_of_interest', 'establishment']",98.83228172685725,3825.089763251873
+604,136.6328389,34.4890785,和歌山藩附家老久野家墓所,"['point_of_interest', 'establishment']",98.88785181861283,3825.052239572982
+605,136.632377,34.489476,田丸道標 熊野古道伊勢路,"['point_of_interest', 'establishment']",98.84730622007844,3825.0981993609344
+606,136.63249,34.4897159,伊勢路押印3號,"['place_of_worship', 'point_of_interest', 'establishment']",98.85884387732327,3825.1243798456767
+607,136.6325337,34.4899362,Osayan,"['restaurant', 'food', 'point_of_interest', 'establishment']",98.86391798426804,3825.1486601437327
+608,136.6322945,34.4901153,毎日新聞・産経新聞 玉城販売所,"['store', 'point_of_interest', 'establishment']",98.84279283574945,3825.1694916727433
+609,136.632626,34.49032800000001,（有）小牧肥料店,"['food', 'point_of_interest', 'establishment']",98.87428223688144,3825.1917843092515
+610,136.6318081,34.4905764,NTT West Tamaki Telephone Switchboard,"['point_of_interest', 'establishment']",98.80030163479468,3825.2226089427463
+611,136.6322793,34.4906256,ギャラリー久,"['art_gallery', 'point_of_interest', 'establishment']",98.84384579434234,3825.22619704322
+612,136.6319173,34.4909336,赤門久野屋敷跡,"['point_of_interest', 'establishment']",98.81205330608756,3825.261825159877
+613,136.632437,34.490881,追分道標『熊野街道ー伊勢本街道』,"['point_of_interest', 'establishment']",98.85956614069693,3825.253920373621
+614,136.6325196,34.4909597,Sawada Pharmacy,"['pharmacy', 'health', 'point_of_interest', 'store', 'establishment']",98.8675356991914,3825.262327981627
+615,136.632045,34.49108399999999,ヘアーカルラ,"['hair_care', 'point_of_interest', 'establishment']",98.82451228489383,3825.2780123659277
+616,136.6330593,34.49114369999999,ミエマン醤油西村商店 伊勢うどん 通販 土産 たれ うまいつゆ だし人気,"['food', 'point_of_interest', 'establishment']",98.91802248263447,3825.2806073456645
+617,136.632839,34.4916537,魚町区会所,"['point_of_interest', 'establishment']",98.90022318361385,3825.338094608012
+618,136.6329,34.49096,Otemonbashi,"['transit_station', 'point_of_interest', 'establishment']",98.90249949259147,3825.260849224412
+619,136.6330268,34.4916012,Horyuji,"['place_of_worship', 'point_of_interest', 'establishment']",98.91723160965869,3825.3315204823457
+620,136.632332,34.492807,Saikoji,"['place_of_worship', 'point_of_interest', 'establishment']",98.8591627739747,3825.468130001375
+621,136.6329998,34.4932174,玉城町立 さくら児童館,"['point_of_interest', 'establishment']",98.92250871231698,3825.5110311765984
+622,136.6329443,34.49345760000001,Toilet,"['point_of_interest', 'establishment']",98.91856100979534,3825.5379147497656
+623,136.6331951,34.49382,Tamaru Elementary School,"['secondary_school', 'school', 'point_of_interest', 'establishment']",98.94335089519498,3825.5771454508244
+624,136.6331154,34.4947085,Kawada Jizoson,"['place_of_worship', 'point_of_interest', 'establishment']",98.94029133671924,3825.676088585008
+625,136.6333741,34.4754806,三重県立特別支援学校 玉城わかば学園,"['school', 'point_of_interest', 'establishment']",98.87178801946749,3823.5407033004917
+626,136.6333681,34.4754803,三重県立特別支援学校 玉城わかば学園 職員室,"['school', 'point_of_interest', 'establishment']",98.8712350208619,3823.5406938405026
+627,136.6337682,34.4762899,宮の里ミタスメモリアルホーム,"['health', 'point_of_interest', 'establishment']",98.91189901892899,3823.6289721790185
+628,136.6330642,34.48613489999999,Enupiohojiniroha,"['health', 'point_of_interest', 'establishment']",98.89443054179405,3824.724595183666
+629,136.63341,34.4859041,JA精米所,"['point_of_interest', 'establishment']",98.92510698468419,3824.6976013900567
+630,136.633431,34.48592300000001,ＪＡ伊勢 グリーンコープ玉城生産資材配達専用,"['point_of_interest', 'establishment']",98.9271279060379,3824.699615895306
+631,136.6339001,34.486619,ダイアナ かおるん,"['clothing_store', 'health', 'point_of_interest', 'store', 'establishment']",98.9735851829999,3824.7750099621508
+632,136.6332418,34.4872085,ＪＡ伊勢 玉城グリーンコープ,"['point_of_interest', 'establishment']",98.91590742635395,3824.843062335046
+633,136.6339001,34.486619,Agurosu,"['point_of_interest', 'establishment']",98.9735851829999,3824.7750099621508
+634,136.633999,34.4885415,Tamakicho Sight Seeing Information Center,"['travel_agency', 'point_of_interest', 'establishment']",98.99190128188802,3824.988020464562
+635,136.6335232,34.4888134,Yamahaongakukyoshitsu Tamaki School,"['point_of_interest', 'establishment']",98.94947450348538,3825.020092966442
+636,136.6332299,34.489089,御鳥見役屋敷跡,"['point_of_interest', 'establishment']",98.92383961855772,3825.0518510692427
+637,136.633887,34.488692,Tamaru Taxis,"['point_of_interest', 'establishment']",98.98232939486026,3825.0051714850697
+638,136.6340895,34.48855579999999,Tamaru Station,"['train_station', 'transit_station', 'point_of_interest', 'establishment']",99.000287947229,3824.989248201406
+639,136.6340584,34.48895520000001,富士,"['food', 'point_of_interest', 'establishment']",98.9993461737102,3825.033706424517
+640,136.6341777,34.4886979,西国巡礼者の像,"['point_of_interest', 'establishment']",99.00907649570779,3825.0046712823114
+641,136.633137,34.4897698,Jam,"['store', 'restaurant', 'food', 'point_of_interest', 'establishment']",98.91856889936788,3825.127791250208
+642,136.633353,34.49024,ENEOS Tamakicho SS,"['gas_station', 'point_of_interest', 'establishment']",98.94067851244256,3825.179126476802
+643,136.633608,34.490357,ヴェリナ|リラクゼーション、エステ,"['beauty_salon', 'point_of_interest', 'establishment']",98.9646771701586,3825.1911004320236
+644,136.6332323,34.4910054,リカーショップミヱマン,"['liquor_store', 'point_of_interest', 'store', 'establishment']",98.9332589212493,3825.264568012533
+645,136.6339206,34.49055860000001,田丸町道路元標,"['point_of_interest', 'establishment']",98.99437579297583,3825.2122364180473
+646,136.6339937,34.4905041,札場跡（田丸領高札場跡),"['point_of_interest', 'establishment']",99.00083284468832,3825.205896265757
+647,136.6340829,34.4905514,Jishaku Bridge,"['point_of_interest', 'establishment']",99.00925820516649,3825.2107922620244
+648,136.633826,34.491059,Hyakugo Bank ATM,"['atm', 'finance', 'point_of_interest', 'establishment']",98.98808275905665,3825.268158317477
+649,136.6338247,34.4911307,Hyakugo bank Tamaru branch,"['bank', 'atm', 'finance', 'point_of_interest', 'establishment']",98.98830739901186,3825.276122409404
+650,136.6335202,34.4917821,共立事務所,"['point_of_interest', 'establishment']",98.9634476663671,3825.3496399700557
+651,136.634095,34.491512,（株）小林真珠,"['jewelry_store', 'point_of_interest', 'store', 'establishment']",99.01498039094591,3825.3173737927245
+652,136.6341169,34.49218430000001,（株）野呂教材,"['store', 'point_of_interest', 'establishment']",99.02021972173715,3825.3919141805936
+653,136.6338378,34.4927491,アニバーサリー,"['point_of_interest', 'establishment']",98.99727901633125,3825.4557178586224
+654,136.6385556,34.5117643,Igura,"['sublocality_level_2', 'sublocality', 'political']",99.52206866822095,3827.547723557392
+655,136.6341734,34.5164187,Fashion Center Shimamura Tamaki,"['clothing_store', 'furniture_store', 'home_goods_store', 'store', 'food', 'point_of_interest', 'establishment']",99.14175458562828,3828.0817864002497
+656,136.6346361,34.5165457,e-Mobility Power 充電スタンド,"['point_of_interest', 'establishment']",99.18487783377444,3828.0940447186363
+657,136.6346568,34.51624489999999,Seven Bank ATM,"['atm', 'bank', 'store', 'point_of_interest', 'finance', 'establishment']",99.18533543771575,3828.0605726541526
+658,136.6345786,34.47060380000001,Kajiwaraji,"['place_of_worship', 'point_of_interest', 'establishment']",98.95912226408458,3822.9945786070202
+659,136.634592,34.470949,宮古の石風呂,"['point_of_interest', 'establishment']",98.96200977801723,3823.0328436004497
+660,136.6343446,34.474961,玉城町建設業協組,"['point_of_interest', 'establishment']",98.95851019908453,3823.479170304975
+661,136.6341627,34.476533,南勢就労支援センター,"['point_of_interest', 'establishment']",98.94932989617374,3823.6543896699445
+662,136.634328,34.4852413,Deguchi Pharmacy,"['pharmacy', 'beauty_salon', 'health', 'food', 'point_of_interest', 'store', 'establishment']",99.00630466849107,3824.6203807956836
+663,136.6352061,34.4848779,AWA Tamakiten Coin Laundry,"['laundry', 'point_of_interest', 'establishment']",99.08527252151566,3824.576553841202
+664,136.6343902,34.4851086,Cils,"['beauty_salon', 'health', 'point_of_interest', 'store', 'establishment']",99.01138511410251,3824.605403560693
+665,136.634356,34.485146,ユーカリ,"['beauty_salon', 'point_of_interest', 'establishment']",99.00842104321863,3824.6096909551648
+666,136.6343864,34.485155,ことり食堂,"['restaurant', 'food', 'point_of_interest', 'establishment']",99.01125846668683,3824.6105692010187
+667,136.63518,34.484896,リフォームショップたまき,"['point_of_interest', 'establishment']",99.08296034186095,3824.5786666735944
+668,136.634556,34.485801,西泰建築板金,"['general_contractor', 'point_of_interest', 'establishment']",99.02994687614265,3824.6816033631717
+669,136.6352036,34.4860362,Glover House,"['point_of_interest', 'establishment']",99.09059939366497,3824.705138585936
+670,136.6345864,34.4871879,中井精肉店,"['store', 'food', 'point_of_interest', 'establishment']",99.03939553169789,3824.8354327498037
+671,136.634937,34.487143,Cut Studio Boz,"['hair_care', 'point_of_interest', 'establishment']",99.07140499466355,3824.8290558356566
+672,136.6343701,34.4879914,ＥＸサプライ合同会社 玉城営業所,"['store', 'point_of_interest', 'establishment']",99.02337017883913,3824.925483116882
+673,136.6348283,34.4879288,玉城町生涯現役促進協議会,"['point_of_interest', 'establishment']",99.06518419947626,3824.9167138828
+674,136.6348035,34.4879741,玄甲舎の祠,"['place_of_worship', 'point_of_interest', 'establishment']",99.06312211396936,3824.9218408481615
+675,136.6349931,34.48793850000001,Genkosha Parking Lot,"['parking', 'point_of_interest', 'establishment']",99.08037795113597,3824.9171359049487
+676,136.6344656,34.4887708,奈々,"['restaurant', 'food', 'point_of_interest', 'establishment']",99.0358877335565,3825.0116194892344
+677,136.63434,34.48887000000001,Tamaru Sta.,"['transit_station', 'point_of_interest', 'establishment']",99.02481963584083,3825.0231300374658
+678,136.63457,34.489973,Panasonic Service Center,"['home_goods_store', 'store', 'point_of_interest', 'establishment']",99.05125200346544,3825.1446526164777
+679,136.6342297,34.4895156,Komyosan Sanen Temple,"['place_of_worship', 'point_of_interest', 'establishment']",99.01777987557632,3825.0952319098083
+680,136.634612,34.489395,茂谷紙店,"['point_of_interest', 'establishment']",99.05233875153196,3825.080325954228
+681,136.6347675,34.4895753,近藤ガラス店,"['store', 'point_of_interest', 'establishment']",99.0674960469632,3825.099722006269
+682,136.6349038,34.48984449999999,一休,"['restaurant', 'food', 'point_of_interest', 'establishment']",99.08131515099784,3825.1290625302067
+683,136.6346192,34.49006050000001,Kumon Maths & English,"['point_of_interest', 'establishment']",99.05619386306883,3825.1541699092954
+684,136.6349583,34.4899733,Fujiya Liquor Store,"['liquor_store', 'store', 'point_of_interest', 'establishment']",99.08694226935343,3825.143143208139
+685,136.6346608,34.49046419999999,松田建具商,"['point_of_interest', 'establishment']",99.06195446573402,3825.198816579444
+686,136.6348852,34.4904906,武者隠しの家並み,"['point_of_interest', 'establishment']",99.08270572107152,3825.200855519593
+687,136.6351973,34.4901533,アトリエ・コバ子ども美術塾,"['school', 'point_of_interest', 'establishment']",99.10977247151162,3825.1621742863163
+688,136.6353066,34.4902534,玉城まちかど博物館 アトリエ コバ・子ども美術塾,"['museum', 'point_of_interest', 'establishment']",99.12029851125006,3825.1728514938086
+689,136.6346913,34.4917987,コンドウデンキ,"['point_of_interest', 'establishment']",99.07116133829614,3825.34682904284
+690,136.634371,34.4921229,Gentokuji,"['place_of_worship', 'point_of_interest', 'establishment']",99.04327889236116,3825.38408890263
+691,136.6342036,34.4925515,奥山衛生,"['point_of_interest', 'establishment']",99.02995041658689,3825.432330017709
+692,136.6351806,34.4936516,玉城町佐田サンクスホーム分譲地,"['general_contractor', 'point_of_interest', 'establishment']",99.12502265800943,3825.5505627180755
+693,136.6354765,34.5060983,宮川左岸第一土地改良区,"['point_of_interest', 'establishment']",99.21194593508676,3826.9310098571677
+694,136.635479,34.5060981,ＪＡ伊勢 玉城カントリーエレベーター,"['point_of_interest', 'establishment']",99.2121747066424,3826.9309777235685
+695,136.6353288,34.5158223,Kobekarakaratei Isetamakiten,"['restaurant', 'food', 'point_of_interest', 'establishment']",99.24505088092485,3828.0109920356526
+696,136.6347748,34.5161686,7-Eleven; Tamaki Seko,"['convenience_store', 'store', 'food', 'point_of_interest', 'establishment']",99.19581108787102,3828.051634121324
+697,136.634785,34.51624590000001,(有)友栄工業,"['point_of_interest', 'establishment']",99.19711943304958,3828.060174137239
+698,136.6355399,34.51550690000001,里山ガーデン,"['park', 'point_of_interest', 'establishment']",99.26293303232465,3827.9751427550245
+699,136.6350975,34.51629109999999,前川建築設計事務所,"['point_of_interest', 'establishment']",99.2260493746975,3828.0639495431196
+700,136.6348849,34.5169149,B Kagu Autorettoakayaisetamakiten,"['furniture_store', 'home_goods_store', 'store', 'point_of_interest', 'establishment']",99.20951052788843,3828.1340383032907
+701,136.6356648,34.5161422,ISEKIコイン精米,"['point_of_interest', 'establishment']",99.27745884510398,3828.0451668152155
+702,136.6342288,34.5174887,Drug SEIMS,"['drugstore', 'health', 'point_of_interest', 'store', 'establishment']",99.15198314193707,3828.2003397493704
+703,136.6488106,34.463852,Iwade,"['sublocality_level_2', 'sublocality', 'political']",100.23521861218865,3822.188675596883
+704,136.636031,34.480549,（有）タマル自動車,"['point_of_interest', 'establishment']",99.14033263287327,3824.0927566445644
+705,136.635567,34.48543999999999,Tamakifurukawa Dental Clinic,"['dentist', 'health', 'point_of_interest', 'establishment']",99.12114131670062,3824.6375150881577
+706,136.6357755,34.4851995,伊勢きのこ村,"['cafe', 'store', 'food', 'point_of_interest', 'establishment']",99.13915209749725,3824.609990722553
+707,136.635367,34.48549000000001,（有）永井電気工事,"['electrician', 'point_of_interest', 'establishment']",99.10299808491754,3824.643859659123
+708,136.6360627,34.4854367,天然たい焼き 鉄兵衛,"['store', 'food', 'point_of_interest', 'establishment']",99.16668795903719,3824.6351799669187
+709,136.6352996,34.4866416,Pino,"['point_of_interest', 'establishment']",99.10232747251057,3824.7719584801052
+710,136.6355631,34.48810979999999,cafe & space Nanajuniko Parking Lot,"['parking', 'point_of_interest', 'establishment']",99.13358993091789,3824.9338864542865
+711,136.6352195,34.48822229999999,玄甲舎,"['point_of_interest', 'establishment']",99.10254852962103,3824.947739183427
+712,136.6355715,34.48818060000001,cafe&space七十二候,"['cafe', 'food', 'point_of_interest', 'establishment']",99.13470163590415,3824.941712103097
+713,136.636117,34.488023,（有）山上産業,"['general_contractor', 'point_of_interest', 'establishment']",99.18408390045498,3824.922051358676
+714,136.6355399,34.4884517,Sada 1 Go Park,"['park', 'point_of_interest', 'establishment']",99.13309773443139,3824.9719305469603
+715,136.6355799,34.4887593,中日・日経・伊勢新聞 田丸販売所,"['point_of_interest', 'store', 'establishment']",99.13824984468269,3825.005916194439
+716,136.635612,34.488867,（株）丸吉建工,"['general_contractor', 'point_of_interest', 'establishment']",99.14171687200077,3825.017743715358
+717,136.6355167,34.4894799,土地家屋調査士 野上哲也事務所,"['point_of_interest', 'establishment']",99.13589799796935,3825.0861560317717
+718,136.6354079,34.4898909,玉城電機工事,"['electrician', 'point_of_interest', 'establishment']",99.12786987737293,3825.132210475579
+719,136.635348,34.490409,モリタ薬局,"['store', 'health', 'point_of_interest', 'establishment']",99.12485011084931,3825.1899591096903
+720,136.6357378,34.490556,旅籠扇屋跡,"['point_of_interest', 'establishment']",99.1613818018597,3825.204728157288
+721,136.6362851,34.49043209999999,理容タニサキ,"['hair_care', 'health', 'point_of_interest', 'establishment']",99.21108969830814,3825.1888010783073
+722,136.635367,34.492559,美多みん,"['health', 'hair_care', 'point_of_interest', 'establishment']",99.13691169646044,3825.428540235664
+723,136.6359047,34.4934191,しんようクリーンメンテナンス,"['point_of_interest', 'establishment']",99.19045663062437,3825.5218780448013
+724,136.6362274,34.4934202,バルカステール,"['point_of_interest', 'establishment']",99.22012016034557,3825.5207183921757
+725,136.6357385,34.4944797,Real Town Tamakisada Park,"['park', 'point_of_interest', 'establishment']",99.18027019915637,3825.640268080265
+726,136.6355328,34.4968398,（株）中浦土木,"['general_contractor', 'point_of_interest', 'establishment']",99.1726893420369,3825.9030636104094
+727,136.6359534,34.5057285,ＪＡ伊勢 玉城支店有田,"['atm', 'point_of_interest', 'finance', 'establishment']",99.25399485847541,3826.888066183703
+728,136.6359189,34.5156353,かつQ 玉城店,"['restaurant', 'food', 'point_of_interest', 'establishment']",99.29837270944927,3827.987889630229
+729,136.636802,34.5157756,Sanjusan Bank ATM,"['atm', 'finance', 'point_of_interest', 'establishment']",99.38018702028668,3827.9999549237646
+730,136.6368154,34.51576119999999,Hyakugo Bank ATM,"['atm', 'finance', 'point_of_interest', 'establishment']",99.38134912845877,3827.99830324675
+731,136.6368308,34.5157629,桑名三重信用金庫,"['atm', 'finance', 'point_of_interest', 'establishment']",99.38277226721863,3827.9984307761856
+732,136.6368083,34.515865,Kattokomuzu Tamakiten,"['hair_care', 'point_of_interest', 'establishment']",99.38119492341549,3828.0098535814627
+733,136.6368449,34.5157814,JAバンクATM,"['atm', 'finance', 'point_of_interest', 'establishment']",99.38415658516733,3828.0004283234093
+734,136.6365329,34.51701079999999,Dynam Mie Tamaki,"['point_of_interest', 'establishment']",99.3613900459786,3828.1381351048235
+735,136.6366861,34.5169691,めん六や 三重玉城店,"['restaurant', 'food', 'point_of_interest', 'establishment']",99.3752659941198,3828.132897649724
+736,136.636723,34.5172372,EV充電スポット,"['point_of_interest', 'establishment']",99.37994311499497,3828.162511015919
+737,136.6363503,34.4810045,幸栄産業（株）,"['point_of_interest', 'establishment']",99.17186725789692,3824.142050485862
+738,136.636917,34.487096,Cut House Cosmo,"['hair_care', 'health', 'point_of_interest', 'establishment']",99.25316838238581,3824.8159745963717
+739,136.637093,34.4869807,Sakaemachi Community Center,"['point_of_interest', 'establishment']",99.26879225847806,3824.8024770997663
+740,136.6365323,34.4888337,（株）桜井組,"['general_contractor', 'point_of_interest', 'establishment']",99.22614341517753,3825.0103921358764
+741,136.6367764,34.48885509999999,プログラミング教室もしゅーそ,"['point_of_interest', 'establishment']",99.24868167538732,3825.011798231662
+742,136.63704,34.4884169,飯嶋農機商会,"['point_of_interest', 'establishment']",99.27080813187891,3824.962109989221
+743,136.636765,34.4902777,萱町公会堂,"['point_of_interest', 'establishment']",99.2544567186443,3825.1697563444695
+744,136.636836,34.490714,（有）飯島金物店,"['hardware_store', 'store', 'point_of_interest', 'establishment']",99.2630748542223,3825.2179049964834
+745,136.6365765,34.4916392,FKヴィラージュ｜パークダイレクト,"['real_estate_agency', 'parking', 'point_of_interest', 'establishment']",99.24366199196292,3825.32163551406
+746,136.6365765,34.4916392,ヴィラージュ,"['point_of_interest', 'establishment']",99.24366199196292,3825.32163551406
+747,136.6365056,34.4923733,Tsudoi,"['health', 'point_of_interest', 'establishment']",99.24066687411157,3825.4034044024734
+748,136.6374711,34.5045277,Kazakuchi Construction,"['general_contractor', 'point_of_interest', 'establishment']",99.38770034596376,3826.7487453469157
+749,136.6371314,34.5052271,Twin Automobile,"['car_dealer', 'store', 'point_of_interest', 'establishment']",99.35983924299897,3826.827729996415
+750,136.637464,34.5055992,Uda Police Box,"['police', 'point_of_interest', 'establishment']",99.39218804533192,3826.867713325581
+751,136.6374137,34.51033,Yakushiji,"['place_of_worship', 'point_of_interest', 'establishment']",99.41026213130506,3827.393046495676
+752,136.6374521,34.51058019999999,西岡農園,"['food', 'point_of_interest', 'store', 'establishment']",99.41499103879265,3827.420666962467
+753,136.6374204,34.51125320000001,Tenpo,"['point_of_interest', 'establishment']",99.41530720075063,3827.495497956558
+754,136.6377314,34.5140878,Kodomoeikaiwapeppikizzukurabu Isenishikyoshitsu,"['point_of_interest', 'establishment']",99.45748379272793,3827.8089122171214
+755,136.6374603,34.51423069999999,Bikkuri Donkey,"['restaurant', 'food', 'point_of_interest', 'establishment']",99.43325980808073,3827.8258512843618
+756,136.6372479,34.5144432,Shifutopurasu Kabushikigaishamieeigyosho,"['point_of_interest', 'establishment']",99.41476343883492,3827.8502830840207
+757,136.6378402,34.5143019,Plage Tamaki,"['hair_care', 'health', 'point_of_interest', 'establishment']",99.46850795260649,3827.832245885039
+758,136.6371268,34.51476210000001,林商会,"['car_dealer', 'store', 'point_of_interest', 'establishment']",99.40516667676711,3827.8861630066604
+759,136.6374029,34.5154925,DAISO,"['furniture_store', 'home_goods_store', 'store', 'food', 'point_of_interest', 'establishment']",99.43404033687496,3827.9661430314377
+760,136.6374738,34.5156185,The Big-extra Tamaki store,"['atm', 'supermarket', 'grocery_or_supermarket', 'finance', 'store', 'food', 'point_of_interest', 'establishment']",99.44115937904252,3827.979847820644
+761,136.6374028,34.5154925,Ohisama Coin Laundry,"['laundry', 'point_of_interest', 'establishment']",99.43403114866244,3827.9661434286286
+762,136.637623,34.5153767,Aeon Bank ATM,"['atm', 'finance', 'point_of_interest', 'establishment']",99.4537079500173,3827.9524146710105
+763,136.6372899,34.4580778,大谷池,"['point_of_interest', 'establishment']",99.14834775052941,3821.5933917644606
+764,136.642778,34.4668337,Nakatsuno,"['sublocality_level_2', 'sublocality', 'political']",99.69486008044821,3822.5435498159695
+765,136.6384465,34.4860332,エンディングシティ,"['point_of_interest', 'establishment']",99.38865522285872,3824.6919283883603
+766,136.6376981,34.4871265,Sadayama Cemetery,"['cemetery', 'point_of_interest', 'establishment']",99.32510826820607,3824.81625882661
+767,136.63774,34.48801,たまる塾,"['school', 'point_of_interest', 'establishment']",99.33319556866766,3824.9141635538213
+768,136.6379637,34.4898058,シェアスペースCBD,"['lodging', 'point_of_interest', 'establishment']",99.36236658068566,3825.112614485307
+769,136.6381338,34.489722,上城音楽オフィス,"['point_of_interest', 'establishment']",99.37759877187439,3825.1026371500393
+770,136.6377056,34.4902938,Semadenkokusho Shrine,"['place_of_worship', 'point_of_interest', 'establishment']",99.34098446648171,3825.1678086170205
+771,136.6377,34.49044,Kayamachi(ise),"['transit_station', 'point_of_interest', 'establishment']",99.34117081373721,3825.1840594803807
+772,136.6380299,34.4905871,放課後等デイサービス Pal Life,"['point_of_interest', 'establishment']",99.37219716237323,3825.199078251622
+773,136.638295,34.490406,ニュージョイス 丸玉商店,"['convenience_store', 'store', 'food', 'point_of_interest', 'establishment']",99.39569412655167,3825.1779232034187
+774,136.6382678,34.4907061,佐田の道標,"['point_of_interest', 'establishment']",99.39463300647279,3825.2113431548564
+775,136.638234,34.491703,株式会社ゆうシニアハウスまほろ,"['point_of_interest', 'establishment']",99.39630621055572,3825.3221361427422
+776,136.638553,34.49208899999999,カークラブ自動車販売,"['car_dealer', 'store', 'point_of_interest', 'establishment']",99.42747559695697,3825.363716913301
+777,136.637753,34.4931104,ガーデンハイツⅠ,"['point_of_interest', 'establishment']",99.35884716054402,3825.480271323301
+778,136.6379972,34.4930221,玉城館,"['health', 'point_of_interest', 'establishment']",99.3808674039144,3825.4695002158714
+779,136.6380733,34.4932717,Next,"['health', 'point_of_interest', 'establishment']",99.3890583590609,3825.496904421323
+780,136.6380014,34.4933873,玉城2号館,"['health', 'point_of_interest', 'establishment']",99.38300458697387,3825.510021816377
+781,136.6384237,34.4934047,天河コーポレーション,"['painter', 'point_of_interest', 'establishment']",99.42190013731172,3825.510276733385
+782,136.6382105,34.4936411,Hatena,"['storage', 'point_of_interest', 'establishment']",99.4034391908294,3825.5373642126087
+783,136.6385556,34.4948545,Myohoji,"['sublocality_level_2', 'sublocality', 'political']",99.44097382783826,3825.6706851591584
+784,136.6382473,34.5041072,FARBE Eyelash Salon,"['hair_care', 'point_of_interest', 'establishment']",99.45701183446025,3826.698986349479
+785,136.6378679,34.5050961,Eisenji,"['place_of_worship', 'point_of_interest', 'establishment']",99.42689040284696,3826.810263744475
+786,136.6384991,34.50640250000001,吉田産業（株）,"['general_contractor', 'point_of_interest', 'establishment']",99.49115923726576,3826.9527718047807
+787,136.638459,34.506493,清し有田佐田沖環境保全会,"['point_of_interest', 'establishment']",99.48790842151921,3826.962976793379
+788,136.6380832,34.51001769999999,Ikuraku Park,"['park', 'point_of_interest', 'establishment']",99.47028288122924,3827.3557214313796
+789,136.6383838,34.5136824,ハーモニー玉城,"['point_of_interest', 'establishment']",99.5154838819261,3827.761320726552
+790,136.6388299,34.5136688,太陽書店玉城店,"['book_store', 'point_of_interest', 'store', 'establishment']",99.55640812262736,3827.758039746039
+791,136.6388305,34.513629,尾張書店 玉城店,"['book_store', 'point_of_interest', 'store', 'establishment']",99.55627234486258,3827.753619442069
+792,136.6383338,34.5171513,Okuyama,"['general_contractor', 'point_of_interest', 'establishment']",99.52753156670876,3828.1465779159334
+793,136.6387253,34.4862442,癒 LIEBE . (美容・エステ),"['hair_care', 'spa', 'beauty_salon', 'health', 'point_of_interest', 'establishment']",99.4152924402171,3824.7142433563586
+794,136.6395029,34.48548529999999,Iseshi Fire Department Hq Fire Department Tamaki Branch,"['fire_station', 'point_of_interest', 'establishment']",99.4831279926824,3824.626917184445
+795,136.6391947,34.4871311,ライツェント,"['point_of_interest', 'establishment']",99.46268795906391,3824.8108287453338
+796,136.6391211,34.48802189999999,田丸地蔵堂,"['place_of_worship', 'point_of_interest', 'establishment']",99.46019290135219,3824.9100021812046
+797,136.6394845,34.4879582,Kimura,"['point_of_interest', 'establishment']",99.49328856575809,3824.90148906699
+798,136.6388104,34.48856440000001,Elle Hair Salon,"['hair_care', 'point_of_interest', 'establishment']",99.43423624875618,3824.9714544131843
+799,136.6393551,34.4884989,マイン21,"['point_of_interest', 'establishment']",99.48398666983877,3824.962021838115
+800,136.639647,34.489495,Tamaki Hospital,"['hospital', 'health', 'point_of_interest', 'establishment']",99.51558982826025,3825.0714333270284
+801,136.6390457,34.4896094,玉城町役場 ケアハイツ玉城訪問看護,"['health', 'point_of_interest', 'establishment']",99.46087225733244,3825.0865184709637
+802,136.6387473,34.4898805,濱田 行政書士事務所,"['point_of_interest', 'establishment']",99.43474573026678,3825.117795754586
+803,136.6387473,34.4898805,はまだ 司法書士事務所,"['point_of_interest', 'establishment']",99.43474573026678,3825.117795754586
+804,136.639289,34.489206,（有）玉城調剤薬局 病院前店,"['pharmacy', 'store', 'health', 'point_of_interest', 'establishment']",99.48130053404532,3825.0407742813372
+805,136.639647,34.489495,玉城町役場 ケアハイツ玉城居宅介護支援事業所,"['point_of_interest', 'establishment']",99.51558982826025,3825.0714333270284
+806,136.6392089,34.4905199,小林政太郎生誕地,"['point_of_interest', 'establishment']",99.48023645872169,3825.1869388358664
+807,136.6394417,34.49050830000001,矢土錦山生誕地,"['point_of_interest', 'establishment']",99.50157742226368,3825.1847272578766
+808,136.6396008,34.4905279,3S（西川）,"['general_contractor', 'point_of_interest', 'establishment']",99.51629418993555,3825.1862715003917
+809,136.6392582,34.4915285,Daini Jotodanchi Park,"['park', 'point_of_interest', 'establishment']",99.48960228121967,3825.298700653683
+810,136.6389834,34.4943928,福祉タクシーやまや,"['point_of_interest', 'establishment']",99.47807725164603,3825.617736934766
+811,136.6390214,34.4939884,Myohojiku Community Center,"['point_of_interest', 'establishment']",99.47963092105917,3825.5726965281115
+812,136.6390588,34.4943014,辻井真也登記測量事務所,"['point_of_interest', 'establishment']",99.48456873782125,3825.6072919832714
+813,136.6388989,34.4950351,Treasure Hair Lounge,"['hair_care', 'point_of_interest', 'establishment']",99.47339062703453,3825.689369516449
+814,136.6391628,34.5039542,T2/T2-style,"['point_of_interest', 'establishment']",99.54040772103257,3826.6783682468904
+815,136.639584,34.505837,Uda Nursery School,"['school', 'point_of_interest', 'establishment']",99.58814142662398,3826.8856926457356
+816,136.6394085,34.5068018,Uda Elementary School,"['primary_school', 'school', 'point_of_interest', 'establishment']",99.57664062389324,3826.993484957019
+817,136.6397365,34.5068179,玉城町立 いなほの郷児童クラブ室,"['point_of_interest', 'establishment']",99.60685827311768,3826.993970117545
+818,136.6392903,34.5129951,513 BAKERY Isetamakiten,"['bakery', 'food', 'point_of_interest', 'store', 'establishment']",99.59548037783482,3827.6814290759066
+819,136.639469,34.5128178,（株）サントピアホーム 伊勢店,"['general_contractor', 'point_of_interest', 'establishment']",99.61104987626528,3827.6610388059626
+820,136.639104,34.5132462,Workman Plus Ise Tamaki,"['clothing_store', 'point_of_interest', 'store', 'establishment']",99.57956659834896,3827.7100415767613
+821,136.6392467,34.5143237,（株）中日三重サービスセンター 松阪伊勢営業所,"['point_of_interest', 'establishment']",99.59784647149773,3827.829080803456
+822,136.63985,34.514298,Nakamichi Tamaki,"['clothing_store', 'point_of_interest', 'store', 'establishment']",99.65315641927207,3827.8238329895044
+823,136.6398299,34.5135447,丹羽商事（株） 玉城倉庫,"['storage', 'point_of_interest', 'establishment']",99.6476970270815,3827.740294214572
+824,136.639048,34.5168469,ファミリーホールなごみ,"['funeral_home', 'point_of_interest', 'establishment']",99.59169224965969,3828.1099526155044
+825,136.6395612,34.51804579999999,伊勢広域環境組合斎場,"['point_of_interest', 'establishment']",99.64459566886367,3828.2409966363884
+826,136.6403219,34.4781302,Prugna,"['hair_care', 'point_of_interest', 'establishment']",99.52316712550807,3823.807231158725
+827,136.642778,34.4803663,Okade,"['sublocality_level_2', 'sublocality', 'political']",99.75964652496431,3824.045702796914
+828,136.6403237,34.480964,株式会社マルタカ農産,"['point_of_interest', 'establishment']",99.53690896611795,3824.121783515731
+829,136.640589,34.485124,（有）福井興業,"['general_contractor', 'point_of_interest', 'establishment']",99.58122597533087,3824.582502346456
+830,136.6397319,34.4861873,Tamakicho Sada Park,"['park', 'point_of_interest', 'establishment']",99.50754076430324,3824.703932406362
+831,136.64038,34.486676,Satsuma Ramen,"['restaurant', 'food', 'point_of_interest', 'establishment']",99.56945216739621,3824.7556078383714
+832,136.6398389,34.4879902,佐田山稲荷,"['place_of_worship', 'point_of_interest', 'establishment']",99.52601569937065,3824.903634758758
+833,136.640686,34.488679,有限会社中西肥料店,"['food', 'point_of_interest', 'establishment']",99.60717510825779,3824.9767323028136
+834,136.63964,34.4907339,Tamaki Post Office,"['post_office', 'atm', 'finance', 'point_of_interest', 'establishment']",99.52088440153742,3825.2089825171697
+835,136.6400825,34.49029540000001,Horie Tatami Shop,"['home_goods_store', 'point_of_interest', 'store', 'establishment']",99.55945280045137,3825.1585517858293
+836,136.6396557,34.4906856,Japan Post Bank ATM,"['atm', 'finance', 'point_of_interest', 'establishment']",99.52209587825881,3825.2035587738565
+837,136.640093,34.49049249999999,Horie,"['general_contractor', 'point_of_interest', 'establishment']",99.5613624464685,3825.1803887747196
+838,136.6397692,34.4909269,孔子廟跡,"['point_of_interest', 'establishment']",99.5336841173378,3825.229893333637
+839,136.64046,34.490604,Tamaki byoin-mae,"['transit_station', 'point_of_interest', 'establishment']",99.59562759603682,3825.19130934364
+840,136.640181,34.4917097,第一城東団地 一号棟,"['point_of_interest', 'establishment']",99.57528385511087,3825.315152206177
+841,136.6400974,34.49189959999999,第一城東団地 二号棟,"['point_of_interest', 'establishment']",99.56851044071047,3825.3365633797966
+842,136.639839,34.493575,（株）東ブロイラー 玉城工場,"['food', 'point_of_interest', 'establishment']",99.55279161686747,3825.523562957356
+843,136.6402165,34.49546960000001,塚田古墳,"['point_of_interest', 'establishment']",99.59656669735146,3825.7323708782583
+844,136.6410725,34.506532,ユニテハウス伊勢 展示場,"['point_of_interest', 'establishment']",99.7282549872467,3826.9569321939944
+845,136.6408065,34.5116667,BECK HAIR,"['hair_care', 'point_of_interest', 'establishment']",99.72842723204323,3827.527954416448
+846,136.6408401,34.5129705,WING,"['point_of_interest', 'establishment']",99.73776541969646,3827.672546705426
+847,136.6407905,34.5145109,美和ロックグラウンド （野球場）,"['point_of_interest', 'establishment']",99.74059343211108,3827.843732500942
+848,136.6407415,34.4783583,バスリメイク,"['painter', 'point_of_interest', 'establishment']",99.56283079336164,3823.830886286996
+849,136.640711,34.481208,（有）新珠化学,"['point_of_interest', 'establishment']",99.57367855663766,3824.1473316654888
+850,136.641133,34.483107,マッサージハウスなかがわ,"['point_of_interest', 'establishment']",99.62156551632198,3824.356451757334
+851,136.6410642,34.4832709,株式会社ジービーラバーズ,"['point_of_interest', 'establishment']",99.61602673736937,3824.3749180178315
+852,136.641033,34.485365,玉城鈑金,"['car_repair', 'store', 'point_of_interest', 'establishment']",99.62319105545548,3824.6074925706116
+853,136.6414966,34.4853618,N Garage,"['car_repair', 'point_of_interest', 'establishment']",99.66578763927298,3824.6052983597797
+854,136.6409307,34.4857187,久瀬医院(内科・眼科),"['health', 'point_of_interest', 'establishment']",99.6154826770791,3824.647160065042
+855,136.6415409,34.4858525,Lawson Tamakicho Sata,"['convenience_store', 'atm', 'finance', 'store', 'food', 'point_of_interest', 'establishment']",99.67221006927016,3824.6595916655183
+856,136.6416659,34.4853908,Cavallo portare,"['meal_takeaway', 'store', 'restaurant', 'food', 'point_of_interest', 'establishment']",99.68148780332122,3824.60784590992
+857,136.6413858,34.4917152,すみれ団地,"['point_of_interest', 'establishment']",99.68604128029331,3825.31098260041
+858,136.6408703,34.492009,Joto Park,"['park', 'point_of_interest', 'establishment']",99.64007040520507,3825.3456403343507
+859,136.6415781,34.4918674,Hama Hair Salon,"['hair_care', 'point_of_interest', 'establishment']",99.70444441933255,3825.3271143784227
+860,136.6411618,34.4942702,貴舟玉城店,"['restaurant', 'food', 'point_of_interest', 'establishment']",99.6776963444578,3825.5954833244355
+861,136.6411754,34.4942661,どっぐらん いぬかふぇ,"['restaurant', 'food', 'point_of_interest', 'establishment']",99.67892661198916,3825.5949742571024
+862,136.6415979,34.4959814,Wancafe Luce,"['cafe', 'store', 'food', 'point_of_interest', 'establishment']",99.7259752774915,3825.783701185851
+863,136.642778,34.4984067,Churaku,"['sublocality_level_2', 'sublocality', 'political']",99.84604851740488,3826.0482352147596
+864,136.641092,34.5070476,PlusMe伊勢,"['point_of_interest', 'establishment']",99.73251832933998,3827.0140879037554
+865,136.6421939,34.5102543,Hotel Chuchu Ise,"['lodging', 'point_of_interest', 'establishment']",99.84914096086163,3827.365668824969
+866,136.6419888,34.5115886,ポイント５ 伊勢店,"['car_dealer', 'store', 'point_of_interest', 'establishment']",99.83668991000363,3827.5145936558906
+867,136.6420643,34.5120018,HCMレンタカー/Honda Cars 三重 玉城店,"['car_rental', 'point_of_interest', 'establishment']",99.84560773935839,3827.5601604976923
+868,136.6411946,34.51299819999999,Wing Tamaki,"['point_of_interest', 'establishment']",99.77047135157528,3827.674214661652
+869,136.641303,34.513071,Shokujidokorokazu Tamakiten,"['restaurant', 'food', 'point_of_interest', 'establishment']",99.78078064665966,3827.6818655143074
+870,136.6414302,34.5132206,ENECHANGE EV Charging Station,"['point_of_interest', 'establishment']",99.79318551387853,3827.6979668002646
+871,136.6421602,34.5133064,Hotel Olive,"['lodging', 'point_of_interest', 'establishment']",99.86067237877461,3827.704594369873
+872,136.642078,34.48536000000001,神戸クリニック,"['doctor', 'health', 'point_of_interest', 'establishment']",99.71921853652276,3824.602792543557
+873,136.642197,34.487457,ミマス（株） 第一営業部,"['point_of_interest', 'establishment']",99.74020032386866,3824.8350931893615
+874,136.642197,34.487457,ミマス（株） 物流部,"['point_of_interest', 'establishment']",99.74020032386866,3824.8350931893615
+875,136.642197,34.4874567,Mimas,"['point_of_interest', 'establishment']",99.74019888693827,3824.8350598885577
+876,136.642197,34.487457,ミマス（株） 工場直通,"['point_of_interest', 'establishment']",99.74020032386866,3824.8350931893615
+877,136.6418854,34.4908068,西忠商店,"['point_of_interest', 'establishment']",99.7276068659586,3825.2081659212654
+878,136.6422125,34.4910051,天理教田丸分教会,"['point_of_interest', 'establishment']",99.75862025786074,3825.2288803618903
+879,136.6425957,34.4926589,リーヴァ カーサ,"['point_of_interest', 'establishment']",99.80176124747376,3825.4109368232853
+880,136.6428574,34.4927795,妙法寺小遊園,"['park', 'point_of_interest', 'establishment']",99.82639097794105,3825.423285887836
+881,136.6422278,34.4938513,西井自動車,"['car_repair', 'point_of_interest', 'establishment']",99.77366073311411,3825.5447556039853
+882,136.6423657,34.4939933,ポレポレカフェ,"['cafe', 'store', 'food', 'point_of_interest', 'establishment']",99.78701477926603,3825.559971038354
+883,136.6423079,34.494725,茶臼塚古墳群,"['point_of_interest', 'establishment']",99.78520783155568,3825.6414209820337
+884,136.642778,34.4984067,寿運輸（有）,"['point_of_interest', 'establishment']",99.84604851740488,3826.0482352147596
+885,136.6426354,34.5107298,ヴァーサス伊勢店,"['car_repair', 'point_of_interest', 'store', 'establishment']",99.89198801128549,3827.4166992173828
+886,136.6426354,34.5107298,オートモール伊勢,"['car_dealer', 'point_of_interest', 'store', 'establishment']",99.89198801128549,3827.4166992173828
+887,136.6424842,34.51159320000001,Honda Cars 三重 玉城店,"['car_dealer', 'car_repair', 'store', 'point_of_interest', 'establishment']",99.88223238336073,3827.5131388752293
+888,136.6423128,34.5114332,EV充電スタンド,"['point_of_interest', 'establishment']",99.86571627708233,3827.496058385787
+889,136.6427456,34.5114556,シリア進学スクール/NEXT 伊勢玉城校,"['school', 'point_of_interest', 'establishment']",99.90559204031655,3827.4968279271943
+890,136.6427239,34.5115328,（有）ソレイユ・サービス,"['general_contractor', 'point_of_interest', 'establishment']",99.90396805834118,3827.505483426055
+891,136.6432556,34.51111679999999,萬丸屋,"['point_of_interest', 'establishment']",99.95083070364525,3827.4571972213967
+892,136.6427435,34.5118997,Sunny Dipper Tamaki,"['point_of_interest', 'establishment']",99.90752725887049,3827.5461326163177
+893,136.642778,34.48036629999999,Okadenoson Park,"['park', 'point_of_interest', 'establishment']",99.75964652496431,3824.0457027969132
+894,136.6435509,34.4851292,Toyoigaku Deguchi Acupuncture,"['health', 'point_of_interest', 'establishment']",99.85349535438989,3824.571332556338
+895,136.643583,34.484929,サロンドチカ,"['hair_care', 'point_of_interest', 'establishment']",99.8554872937235,3824.5489825729233
+896,136.6435598,34.485325,社会保険労務士法人ノーツ,"['point_of_interest', 'establishment']",99.85525088991726,3824.5930315775045
+897,136.6436163,34.4861958,ふとんのはしもと,"['clothing_store', 'furniture_store', 'home_goods_store', 'store', 'point_of_interest', 'establishment']",99.86461348205019,3824.689468629214
+898,136.6436218,34.4863457,（株）ライフェックス,"['point_of_interest', 'establishment']",99.86583673875883,3824.7060861121954
+899,136.6430235,34.4896117,新田町区学供施設,"['point_of_interest', 'establishment']",99.82648515021562,3825.0709929597056
+900,136.6430176,34.4898934,アクレインシステム株式会社,"['point_of_interest', 'establishment']",99.82729197937553,3825.1022858025985
+901,136.6434704,34.48988120000001,Prime Town Tamakicho Sada Park,"['point_of_interest', 'establishment']",99.86885047915764,3825.0991361213546
+902,136.6434817,34.4939633,北出建築設計事務所,"['point_of_interest', 'establishment']",99.88943780185987,3825.5522152092026
+903,136.6437981,34.4954683,ヘアハウス maru,"['hair_care', 'point_of_interest', 'establishment']",99.92572401698946,3825.7180196477157
+904,136.6439263,34.4953401,Arakoku Community Center,"['point_of_interest', 'establishment']",99.9368921785176,3825.703280802539
+905,136.6433056,34.5106541,Toyota Corolla Tamaki,"['car_dealer', 'point_of_interest', 'store', 'establishment']",99.95320805713453,3827.4056379111717
+906,136.6436544,34.5104105,HAMA-SUSHI Tamaki,"['restaurant', 'food', 'point_of_interest', 'establishment']",99.98409122817428,3827.3772142594917
+907,136.6439709,34.5102,Coco's Tamaki,"['restaurant', 'food', 'point_of_interest', 'establishment']",100.01216518436628,3827.352593009117
+908,136.6442062,34.5104345,（株）東海近畿クボタ 玉城営業所,"['store', 'food', 'point_of_interest', 'establishment']",100.0349096853499,3827.3776900670846
+909,136.6436374,34.5113019,Big Wonder,"['car_repair', 'point_of_interest', 'establishment']",99.98679986511928,3827.476229559268
+910,136.6438493,34.4669955,中角の河津桜,"['point_of_interest', 'establishment']",99.79412502600724,3822.557263454714
+911,136.6440496,34.48532650000001,エコラックスランドリー 玉城佐田店,"['laundry', 'point_of_interest', 'establishment']",99.90027813055966,3824.5912562893377
+912,136.6446619,34.4851274,KuuPupu cafe&dogrun,"['point_of_interest', 'establishment']",99.95560473871853,3824.56672855626
+913,136.644741,34.485857,Nakanishi Dental Clinic,"['dentist', 'health', 'point_of_interest', 'establishment']",99.96636763214187,3824.647402477528
+914,136.6443865,34.4857167,一心玉城店,"['restaurant', 'food', 'point_of_interest', 'establishment']",99.93311228180711,3824.633233984299
+915,136.6442296,34.4857454,ビスケット（スナック ＆ クレープ）,"['store', 'food', 'point_of_interest', 'establishment']",99.91882825591532,3824.6370417122457
+916,136.644241,34.485843,学鈴玉城校,"['school', 'point_of_interest', 'establishment']",99.92034332456242,3824.6478303711715
+917,136.644077,34.486176,（有）セントラル厨房,"['point_of_interest', 'establishment']",99.90686357191723,3824.685444348524
+918,136.644788,34.48558200000001,Golf Kobo Green Field,"['store', 'point_of_interest', 'establishment']",99.96937127621669,3824.616690493019
+919,136.6442296,34.4867672,プレシャス,"['point_of_interest', 'establishment']",99.92371999506013,3824.7504641287496
+920,136.6449843,34.4878001,Park,"['park', 'point_of_interest', 'establishment']",99.9980313045053,3824.8621271598854
+921,136.644253,34.49051789999999,新田の天王さん,"['place_of_worship', 'point_of_interest', 'establishment']",99.94382777233696,3825.1667087363785
+922,136.6441435,34.4908183,佐田常夜灯,"['point_of_interest', 'establishment']",99.93520200729213,3825.20048801611
+923,136.644722,34.491314,（有）葵自動車商会,"['car_dealer', 'store', 'point_of_interest', 'establishment']",99.99074453657772,3825.2532187154275
+924,136.6441752,34.4942689,吉祥庵,"['store', 'food', 'point_of_interest', 'establishment']",99.95463769325299,3825.583387956223
+925,136.6444516,34.4939181,株式会社西井自動車,"['car_repair', 'car_dealer', 'point_of_interest', 'store', 'establishment']",99.97836065159953,3825.543352462164
+926,136.6448768,34.4939226,（有）中森建設,"['point_of_interest', 'establishment']",100.01746047779295,3825.5421664267383
+927,136.64487,34.494167,Arakodanchi-mae,"['transit_station', 'point_of_interest', 'establishment']",100.01800561283639,3825.5693224136558
+928,136.6442414,34.4946693,Churaku Park,"['park', 'point_of_interest', 'establishment']",99.96263908339152,3825.6275709524048
+929,136.64513,34.49411,Arakodanchi-mae,"['transit_station', 'point_of_interest', 'establishment']",100.04162812784664,3825.5619646702994
+930,136.644693,34.49495229999999,（株）ＣＫコーポレーション,"['point_of_interest', 'establishment']",100.0054982804624,3825.6571943892495
+931,136.6441851,34.49763839999999,Churakunoson Park,"['park', 'point_of_interest', 'establishment']",99.97168276430806,3825.957372093825
+932,136.644512,34.50967,Nissan Prince Ise Tamaki,"['car_dealer', 'point_of_interest', 'store', 'establishment']",100.05934692301979,3827.291615898081
+933,136.6448157,34.5091797,Kinsen,"['hair_care', 'point_of_interest', 'establishment']",100.08490506028384,3827.235987111599
+934,136.6447054,34.5097144,日産EV充電スポット,"['point_of_interest', 'establishment']",100.0773307693578,3827.2957775852283
+935,136.6447058,34.5097148,Nissan Charging Station,"['point_of_interest', 'establishment']",100.07736944051285,3827.2958204003453
+936,136.6453972,34.5091961,酸素販売（株）,"['point_of_interest', 'establishment']",100.13841690552432,3827.235502180857
+937,136.6453889,34.4688034,昭光堂玉城,"['store', 'point_of_interest', 'establishment']",99.94431751919399,3822.7518435827174
+938,136.6524305,34.4778526,Ogososone,"['sublocality_level_2', 'sublocality', 'political']",100.63490014706278,3823.728446064003
+939,136.6451801,34.4861903,Hair Salon Cozy,"['hair_care', 'health', 'point_of_interest', 'establishment']",100.00832258310733,3824.682659271935
+940,136.645416,34.48648500000001,菓奏 ししん,"['store', 'point_of_interest', 'establishment']",100.03141559055867,3824.714436804036
+941,136.6457628,34.4863494,コーポハピネス,"['point_of_interest', 'establishment']",100.06264236529265,3824.698010538601
+942,136.64533,34.48704289999999,（株）ゆう つどい,"['health', 'point_of_interest', 'establishment']",100.02618123247026,3824.7767059275448
+943,136.6457283,34.4865379,shaving＆totalbeauty Al'aise（アレーズ）,"['beauty_salon', 'point_of_interest', 'establishment']",100.06037344531994,3824.7190712209886
+944,136.6458316,34.4871821,中南勢労働福祉協会,"['point_of_interest', 'establishment']",100.07295106977591,3824.790169670399
+945,136.6455969,34.490722,ナカヤマ 自動車整備所,"['car_repair', 'point_of_interest', 'establishment']",100.06832171511638,3825.1840375229694
+946,136.646013,34.49078699999999,（有）池山機械,"['point_of_interest', 'establishment']",100.10687619235401,3825.1896037170877
+947,136.6460833,34.5095583,メルシ洋菓子店,"['store', 'food', 'point_of_interest', 'establishment']",100.20319601026765,3827.2729876702315
+948,136.6461456,34.50949729999999,伊勢ケバ部（キッチンカー）,"['restaurant', 'food', 'point_of_interest', 'establishment']",100.20862857684831,3827.265969575312
+949,136.6465141,34.5102021,株式会社アシュラン 南三重支店,"['insurance_agency', 'point_of_interest', 'establishment']",100.24586381965958,3827.3427436996913
+950,136.6465169,34.510185,Zero,"['point_of_interest', 'establishment']",100.24603923407005,3827.3408344576055
+951,136.6459985,34.5131737,セラピールームこもれびの滴サロン＆ベビーケアSchool,"['beauty_salon', 'point_of_interest', 'establishment']",100.21271615158884,3827.67464280825
+952,136.6456085,34.51350920000001,中西裕司,"['general_contractor', 'point_of_interest', 'establishment']",100.17848803501548,3827.7134302130758
+953,136.6462444,34.4685295,Nakatsuno Park,"['park', 'point_of_interest', 'establishment']",100.0216564472334,3822.7180507786807
+954,136.6467217,34.4693844,玉城園芸,"['point_of_interest', 'establishment']",100.0696249399162,3822.811056000506
+955,136.6542406,34.4735747,Yamaoka,"['sublocality_level_2', 'sublocality', 'political']",100.7808629555491,3823.246431269473
+956,136.64648,34.475953,玉城町立 下外城田保育所,"['point_of_interest', 'establishment']",100.07882393243646,3823.5411433373956
+957,136.646194,34.486904,さんておーる食堂,"['cafe', 'food', 'point_of_interest', 'establishment']",100.10492956345593,3824.757863862552
+958,136.646194,34.486904,身障者就労センター上々,"['point_of_interest', 'establishment']",100.10492956345593,3824.757863862552
+959,136.646455,34.487123,SumTec,"['point_of_interest', 'establishment']",100.1299668595341,3824.7811392552403
+960,136.6463999,34.4877727,玉幸住設,"['point_of_interest', 'establishment']",100.12801134100026,3824.853475864746
+961,136.6461147,34.4879151,あおい警備株式会社,"['point_of_interest', 'establishment']",100.10247938459564,3824.8704126772127
+962,136.646833,34.490926,中川運輸（株）,"['point_of_interest', 'establishment']",100.18290672347537,3825.2017839306423
+963,136.6464204,34.4908095,（有）小牧肥料店,"['food', 'point_of_interest', 'establishment']",100.14442761055695,3825.1904869339814
+964,136.6462,34.49091300000001,Shindemachi-Higashi,"['transit_station', 'point_of_interest', 'establishment']",100.12466618962091,3825.2028490171297
+965,136.6464218,34.4911007,株式会社 コンドウ電器,"['store', 'point_of_interest', 'establishment']",100.14594982756942,3825.2228053090316
+966,136.6464218,34.4911424,株式会社 ライフ・ライン,"['point_of_interest', 'establishment']",100.14614938473888,3825.227434112525
+967,136.6465281,34.4946896,カラオケスタジオリズム,"['point_of_interest', 'establishment']",100.17289491236099,3825.620760950258
+968,136.6463404,34.4976108,Churaku Community Center,"['point_of_interest', 'establishment']",100.16962598030734,3825.9457652960327
+969,136.6465322,34.4978827,Tokusenji,"['place_of_worship', 'point_of_interest', 'establishment']",100.18855406131613,3825.975186837137
+970,136.646702,34.458091,東海商事ブロック工業（株）三重工場,"['general_contractor', 'point_of_interest', 'establishment']",100.01381000742968,3821.557541147961
+971,136.647247,34.460149,（有）奥野建材 玉城営業所,"['general_contractor', 'point_of_interest', 'establishment']",100.07375885701227,3821.783825398245
+972,136.647632,34.462793,Blaze,"['store', 'point_of_interest', 'establishment']",100.12179674034292,3822.075790666417
+973,136.6473294,34.4692733,沖塚 建築,"['point_of_interest', 'establishment']",100.12496115501482,3822.7963167527496
+974,136.6469065,34.46958649999999,沖塚しめなわ工房,"['store', 'point_of_interest', 'establishment']",100.08758061572793,3822.832757596656
+975,136.6479952,34.4796828,Ogoso Shrine,"['place_of_worship', 'point_of_interest', 'establishment']",100.23594588120153,3823.9491582682626
+976,136.647205,34.48079599999999,株式会社SaTi,"['point_of_interest', 'establishment']",100.16863452831045,3824.075855825131
+977,136.6474346,34.4969424,株式会社奥井組,"['general_contractor', 'point_of_interest', 'establishment']",100.26698615626758,3825.8672357064224
+978,136.6481517,34.4979435,（株）コーヨーファースト,"['point_of_interest', 'establishment']",100.33767886427405,3825.9755195116863
+979,136.6481517,34.4979435,高洋電機（株）,"['point_of_interest', 'establishment']",100.33767886427405,3825.9755195116863
+980,136.6469831,34.4991031,中勢・板金,"['general_contractor', 'point_of_interest', 'establishment']",100.23583291648991,3826.108867643387
+981,136.647624,34.5128682,爪かき地蔵,"['point_of_interest', 'establishment']",100.36061161666719,3827.6342893678393
+982,136.647824,34.457686,伊勢コンクリート（株） 事務,"['general_contractor', 'point_of_interest', 'establishment']",100.11503657441568,3821.5081423272923
+983,136.647824,34.457686,伊勢コンクリート（株） 本社,"['general_contractor', 'point_of_interest', 'establishment']",100.11503657441568,3821.5081423272923
+984,136.6479261,34.4595723,伊勢舗装工業（株） 事務所,"['point_of_interest', 'establishment']",100.13344057921326,3821.7171214458735
+985,136.6479631,34.4595202,伊勢舗装工業（株） 工場,"['point_of_interest', 'establishment']",100.13659345008323,3821.7111917392826
+986,136.648895,34.46197339999999,（株）永光自動車,"['car_repair', 'point_of_interest', 'store', 'establishment']",100.23399971098144,3821.979812874373
+987,136.64799,34.46741199999999,宮川砂利協同組合,"['point_of_interest', 'establishment']",100.17679300053196,3822.5870922863146
+988,136.6485776,34.46878410000001,玉城まちかど博物館 角谷産業,"['museum', 'point_of_interest', 'establishment']",100.23737300883245,3822.7370718434418
+989,136.64859,34.468843,角谷しめなわ産業,"['point_of_interest', 'store', 'establishment']",100.23879454849451,3822.74356077858
+990,136.6485979,34.4703472,田村塗装工業,"['painter', 'point_of_interest', 'establishment']",100.24671167043381,3822.910499011474
+991,136.648443,34.476431,（有）マツヤマ環水,"['point_of_interest', 'establishment']",100.26155902273965,3823.58642773183
+992,136.648985,34.47646399999999,ＪＡ伊勢 玉城支店下外城田,"['point_of_interest', 'establishment']",100.31154003772495,3823.587944760274
+993,136.6542406,34.4859802,Tomioka,"['sublocality_level_2', 'sublocality', 'political']",100.84010563702928,3824.6234663366563
+994,136.6530339,34.5001076,Kubo,"['sublocality_level_2', 'sublocality', 'political']",100.79670027553814,3826.1964111554917
+995,136.6489298,34.46196,Tesla Destination Charger,"['point_of_interest', 'establishment']",100.23713520842243,3821.978187688558
+996,136.6489443,34.4619712,ガッツレンタカー三重玉城店,"['car_rental', 'point_of_interest', 'establishment']",100.23852187691763,3821.979373513788
+997,136.6494218,34.46923529999999,東谷養鶏場,"['food', 'point_of_interest', 'establishment']",100.31713957909227,3822.7838139738396
+998,136.650027,34.4748023,Shimotokida Shrine,"['place_of_worship', 'point_of_interest', 'establishment']",100.39938323232269,3823.3993674135636
+999,136.6498264,34.4771097,Shimotokida Elementary School,"['primary_school', 'school', 'point_of_interest', 'establishment']",100.39197197998543,3823.656287888883
+1000,136.6498719,34.4962657,"YK International Co.,Ltd.","['point_of_interest', 'establishment']",100.48774296932388,3825.7824671656344
+1001,136.6496833,34.4961398,Ｍ・ファクトリー（ｆａｃｔｏｒｙ）,"['car_repair', 'point_of_interest', 'establishment']",100.46980797200982,3825.769238744884
+1002,136.649704,34.4961315,TEN trading,"['point_of_interest', 'establishment']",100.47167066857016,3825.768235460855
+1003,136.6497633,34.4961015,Suzuki サービスショップ,"['store', 'point_of_interest', 'establishment']",100.47697704151872,3825.764670586089
+1004,136.6500233,34.49864999999999,辻本サッシ工業,"['point_of_interest', 'store', 'establishment']",100.51305957272427,3826.0465305894754
+1005,136.6502817,34.5133961,大仏山公園 展望広場,"['park', 'point_of_interest', 'establishment']",100.60733850265365,3827.682359870027
+1006,136.6503847,34.5160737,Daibutsuyama Koen Daini Parking Lot,"['parking', 'point_of_interest', 'establishment']",100.62961227692827,3827.979172164368
+1007,136.6502626,34.5166742,Daibutsuyama park lawn open square,"['park', 'point_of_interest', 'establishment']",100.62126663494337,3828.0463126797717
+1008,136.6505969,34.4644858,株式会社永光自動車鈑金工場,"['car_repair', 'point_of_interest', 'establishment']",100.40247671883827,3822.251958665859
+1009,136.6507753,34.4663356,岩出 四季の花畑,"['point_of_interest', 'establishment']",100.42771604513563,3822.4565843252512
+1010,136.6506311,34.4772437,玉城町立 つつじが丘児童クラブ室,"['point_of_interest', 'establishment']",100.46658362531709,3823.6679770599367
+1011,136.6513099,34.51306009999999,Kawarakei,"['roofing_contractor', 'point_of_interest', 'establishment']",100.70020643138646,3827.6409918634513
+1012,136.6513068,34.5129988,Ryuto,"['point_of_interest', 'establishment']",100.69962840421626,3827.634199689885
+1013,136.6511521,34.5160141,公衆トイレ（大仏山公園 駐車場）,"['point_of_interest', 'establishment']",100.6998365721557,3827.969517738674
+1014,136.6514284,34.5167129,Daibutsuyama park multipurpose open space,"['park', 'point_of_interest', 'establishment']",100.72856568610109,3828.045992288945
+1015,136.65189,34.463097,Iwade,"['transit_station', 'point_of_interest', 'establishment']",100.51472846845876,3822.092682906494
+1016,136.6518242,34.4641141,Ikeyama,"['point_of_interest', 'establishment']",100.51353674837941,3822.205843322805
+1017,136.6514076,34.4720657,玉城園芸株式会社,"['point_of_interest', 'establishment']",100.51322184550664,3823.090135292219
+1018,136.6517141,34.476092,Hosenji,"['place_of_worship', 'point_of_interest', 'establishment']",100.56063435595564,3823.5358502124277
+1019,136.6530432,34.51729700000001,休憩広場,"['park', 'point_of_interest', 'establishment']",100.87972647501749,3828.104436727015
+1020,136.6527769,34.5181519,Daibutsuyama Koen Ya Baseball Field,"['point_of_interest', 'establishment']",100.85934690501709,3828.2003866022787
+1021,136.65216,34.463398,Iwade,"['transit_station', 'point_of_interest', 'establishment']",100.54098962270149,3822.125026443422
+1022,136.6524494,34.46427379999999,（株）永井組,"['general_contractor', 'point_of_interest', 'establishment']",100.57177921663917,3822.2210972270223
+1023,136.6523314,34.4666255,Renkeizan Sanzon Temple,"['place_of_worship', 'point_of_interest', 'establishment']",100.57216196828749,3822.482607309022
+1024,136.652854,34.467429,（有）伊勢宅配,"['point_of_interest', 'establishment']",100.62404455881932,3822.5697302761578
+1025,136.6524305,34.4778526,Minka,"['point_of_interest', 'establishment']",100.63490014706278,3823.728446064003
+1026,136.6524305,34.4778526,三重県度会郡玉城町小社曽根1955-2,"['point_of_interest', 'establishment']",100.63490014706278,3823.728446064003
+1027,136.6530438,34.4779499,Little Happiness リトルハピネス,"['store', 'point_of_interest', 'establishment']",100.69174132259214,3823.7368204167747
+1028,136.6532684,34.4816892,万協製薬株式会社 第四工場,"['health', 'point_of_interest', 'establishment']",100.73024834319419,3824.1510019086345
+1029,136.653543,34.4870649,Kotokuji,"['place_of_worship', 'point_of_interest', 'establishment']",100.7811681460826,3824.7466294699284
+1030,136.6533581,34.4981567,（有）伊勢電装,"['car_repair', 'store', 'point_of_interest', 'establishment']",100.81717069099955,3825.978574265607
+1031,136.6537714,34.49846460000001,壽運輸,"['moving_company', 'point_of_interest', 'establishment']",100.85662443320139,3826.011116728649
+1032,136.6530339,34.50010760000001,Daisho,"['point_of_interest', 'establishment']",100.79670027553814,3826.1964111554917
+1033,136.6534236,34.5007745,役行者祠・庚申祠(久保),"['place_of_worship', 'point_of_interest', 'establishment']",100.8357001651894,3826.2688966193127
+1034,136.6531093,34.5010972,Kominkan Parking Lot,"['parking', 'point_of_interest', 'establishment']",100.80835901544965,3826.3059605941517
+1035,136.6532374,34.501104,Senbiki Shrine,"['place_of_worship', 'point_of_interest', 'establishment']",100.82016356297088,3826.3062085537586
+1036,136.6537632,34.5009199,Octo,"['meal_takeaway', 'restaurant', 'food', 'point_of_interest', 'establishment']",100.86760342543532,3826.2836927701946
+1037,136.6537985,34.500984,acatoki,"['cafe', 'restaurant', 'food', 'point_of_interest', 'establishment']",100.87115371456404,3826.290668357008
+1038,136.6533874,34.5152214,浅間ノ神,"['place_of_worship', 'point_of_interest', 'establishment']",100.90142813295446,3827.872678155094
+1039,136.6533275,34.5170009,Prefectural Daibutsuyama Park,"['park', 'tourist_attraction', 'point_of_interest', 'establishment']",100.90443211646517,3828.0704438063517
+1040,136.6533036,34.51870720000001,公衆トイレ,"['point_of_interest', 'establishment']",100.91039432985923,3828.2599416542903
+1041,136.6537315,34.4656139,トレリー リフォーム＆リサイクル,"['point_of_interest', 'establishment']",100.69605099512754,3822.364780359788
+1042,136.65371,34.46562699999999,シマダ住宅,"['general_contractor', 'point_of_interest', 'establishment']",100.69413690389058,3822.3663195029067
+1043,136.654243,34.4751,ボディショップサント,"['car_repair', 'point_of_interest', 'establishment']",100.78836666496791,3823.415733035524
+1044,136.6540885,34.47766850000001,Kabushikigaishaaitiesu Carpentry,"['point_of_interest', 'establishment']",100.78642937992095,3823.7014525351738
+1045,136.6542261,34.485978,創伸塾,"['school', 'point_of_interest', 'establishment']",100.83876237609365,3824.623279478914
+1046,136.6538075,34.4888521,Exceed株式会社,"['general_contractor', 'point_of_interest', 'establishment']",100.81401652996067,3824.9439661295037
+1047,136.65314,34.4889027,玉城まちかど博物館「紙の昆虫館」,"['museum', 'point_of_interest', 'establishment']",100.75290778646549,3824.9522233284474
+1048,136.6543446,34.4985141,リボーンマジックサーカス伊勢,"['car_rental', 'point_of_interest', 'establishment']",100.90953812842764,3826.0143438879204
+1049,136.6542719,34.4989244,"okanojidousha co.,ltd","['car_rental', 'car_dealer', 'car_repair', 'point_of_interest', 'store', 'establishment']",100.90481731424056,3826.060175627617
+1050,136.6541107,34.4991406,サニーヒル玉城,"['point_of_interest', 'establishment']",100.89103608785214,3826.084811943295
+1051,136.6543725,34.4994299,メナードフェイシャルサロン度会玉城,"['beauty_salon', 'point_of_interest', 'establishment']",100.91647756657314,3826.115889272658
+1052,136.654365,34.4994424,さくら塾,"['school', 'point_of_interest', 'establishment']",100.91584804525984,3826.1173064657287
+1053,136.65402,34.499607,hair salon Pono(ポノ),"['hair_care', 'point_of_interest', 'establishment']",100.88492933392646,3826.136942133677
+1054,136.65407,34.4996272,（有）日本テクニカ 三重工場,"['point_of_interest', 'establishment']",100.88962079928285,3826.1389865849956
+1055,136.6540955,34.4996402,朝日新聞サービスアンカーASA田丸明野,"['point_of_interest', 'establishment']",100.89202633703559,3826.1403287397875
+1056,136.6544945,34.4995334,毎日新聞川端・小俣町販売所,"['point_of_interest', 'store', 'establishment']",100.92818374502554,3826.126895424141
+1057,136.6546258,34.4996096,浜砂建築,"['point_of_interest', 'establishment']",100.9406141299419,3826.1348344458943
+1058,136.6539744,34.5012663,SMILE Guitar School,"['school', 'point_of_interest', 'establishment']",100.88866741758027,3826.3213083961273
+1059,136.6546204,34.5013516,大川自動車鈑金塗装,"['car_repair', 'point_of_interest', 'establishment']",100.94844048371341,3826.328221498021
+1060,136.6549562,34.5007535,（株）木内工芸,"['point_of_interest', 'store', 'establishment']",100.97644217922742,3826.2605029646415
+1061,136.6537627,34.50213420000001,絆ハウスKIZNA（有限会社 竹ヤ装建）,"['real_estate_agency', 'general_contractor', 'point_of_interest', 'establishment']",100.87336024292239,3826.4184846877333
+1062,136.6547199,34.5024765,グランリーオ,"['point_of_interest', 'establishment']",100.96295864734851,3826.4526942314014
+1063,136.6546926,34.4658793,Yamabiko,"['point_of_interest', 'establishment']",100.78567802027287,3822.3904401693194
+1064,136.6546888,34.4680157,岩出城跡,"['point_of_interest', 'establishment']",100.79552668416267,3822.6275995608135
+1065,136.6542621,34.4846239,Tomioka park,"['park', 'point_of_interest', 'establishment']",100.83560387428047,3824.472829263381
+1066,136.6555025,34.4995866,柳本工業（株）,"['general_contractor', 'point_of_interest', 'establishment']",101.02107203457726,3826.1288141320747
+1067,136.6557191,34.4994497,南和建設（株） 玉城支店,"['general_contractor', 'point_of_interest', 'establishment']",101.04032346315088,3826.1127614267725
+1068,136.655644,34.5012389,株式会社 宮忠 本社工場,"['point_of_interest', 'establishment']",101.041967900766,3826.3116632920246
+1069,136.65576,34.50116,Miyachu MEGA Don Quijote-mae,"['transit_station', 'point_of_interest', 'establishment']",101.0522510994072,3826.3024465176936
+1070,136.6554806,34.502075,株式会社 三友工業,"['point_of_interest', 'establishment']",101.03094580796972,3826.4051183055717
+1071,136.6554806,34.502075,（有）中西工業 久保工場,"['point_of_interest', 'establishment']",101.03094580796972,3826.4051183055717
+1072,136.6558546,34.5186027,伊勢市大仏山公園スポーツセンター,"['point_of_interest', 'establishment']",101.14427523208427,3828.2382492540214
+1073,136.6559797,34.5185136,Shinshoshayo Parking Lot,"['parking', 'point_of_interest', 'establishment']",101.15534340367734,3828.227864172581
+1074,136.656135,34.5184663,Parking Lot,"['parking', 'point_of_interest', 'establishment']",101.16938604266406,3828.221999558839
+1075,136.6557396,34.51875,公衆トイレ,"['point_of_interest', 'establishment']",101.13441316515201,3828.2550547306737
+1076,136.6553001,34.5190207,バーベキュー施設,"['point_of_interest', 'establishment']",101.09532661695074,3828.2868414753557
+1077,136.6565685,34.5188097,トリムコース,"['park', 'point_of_interest', 'establishment']",101.2108557999169,3828.2584033276958
+1078,136.6568233,34.4997335,リベルテ：,"['point_of_interest', 'establishment']",101.14315353002917,3826.1398980157896
+1079,136.6568293,34.4998304,（株）白清舎 玉城工場,"['laundry', 'point_of_interest', 'establishment']",101.14416762821143,3826.150630389615
+1080,136.6568128,34.5000698,株式会社白清舎 本社工場,"['laundry', 'furniture_store', 'home_goods_store', 'store', 'point_of_interest', 'establishment']",101.14379446712107,3826.1772694980937
+1081,136.6568805,34.4997727,（株）白清舎 営業部,"['laundry', 'point_of_interest', 'establishment']",101.14859731585992,3826.1440231666256
+1082,136.6567597,34.50245719999999,ENEOS 伊勢北 SS (中村石油店),"['gas_station', 'point_of_interest', 'establishment']",101.15031532670156,3826.4424856277014
+1083,136.6565759,34.5194378,大仏山公園スポーツセンター多目的グラウンド,"['point_of_interest', 'establishment']",101.21453658029728,3828.3280945215774
+1084,136.657131,34.475864,Hanabira,"['point_of_interest', 'establishment']",101.05749452355195,3823.489122027653
+1085,136.6583904,34.4724582,玉城町上水道水源地,"['local_government_office', 'point_of_interest', 'establishment']",101.15701840482168,3823.1060962604643
+1086,136.6580495,34.4762038,Zenrakuji,"['place_of_worship', 'point_of_interest', 'establishment']",101.1435488108428,3823.523211118304
+1087,136.6588711,34.51688,Parking Lot,"['parking', 'point_of_interest', 'establishment']",101.41319866426842,3828.035099409361
+1088,136.6589835,34.5173071,トライアルの丘,"['park', 'point_of_interest', 'establishment']",101.42556525539909,3828.082064135237
+1089,136.6588141,34.5188799,大仏山公園 展望テラス,"['park', 'point_of_interest', 'establishment']",101.41751123322872,3828.257317660764
+1090,136.6586452,34.519229,冒険の丘,"['park', 'point_of_interest', 'establishment']",101.40366023667443,3828.296736065439
+1091,136.6582472,34.5195983,マウンテンバイクコース,"['park', 'point_of_interest', 'establishment']",101.36885691399337,3828.339302363924
+1092,136.6579581,34.51940220000001,Suspension Bridge in Daibutsuyama Park,"['point_of_interest', 'establishment']",101.34135875335801,3828.318677717715
+1093,136.6612865,34.4732575,Bochi,"['cemetery', 'point_of_interest', 'establishment']",101.42706331142102,3823.1833828142367
+1094,136.6669128,34.475207,Hiruda,"['sublocality_level_2', 'sublocality', 'political']",101.95355703557364,3823.377582670128
+1095,136.6631221,34.47517719999999,増養殖研究所玉城分室,"['point_of_interest', 'establishment']",101.60495325455855,3823.389227260786
+1096,136.6638608,34.4736069,Mizubenogakko Parking Lot,"['parking', 'point_of_interest', 'establishment']",101.66537738440843,3823.2120068792665
+1097,136.6641803,34.4735856,たまき水辺の楽校 公衆トイレ,"['point_of_interest', 'establishment']",101.6946466741655,3823.208382015478
+1098,136.6635559,34.47475129999999,国立研究開発法人水産研究・教育機構玉城庁舎,"['point_of_interest', 'establishment']",101.64280129988376,3823.3402399511156
+1099,136.665311,34.47330599999999,たまき水辺の楽校,"['campground', 'park', 'lodging', 'point_of_interest', 'establishment']",101.79725721491948,3823.1728858031197
+1100,136.66632,34.47497,Hiruta,"['transit_station', 'point_of_interest', 'establishment']",101.89793517577625,3823.3536127956863
+1101,136.6661077,34.47595949999999,メダカ販売 宮川,"['pet_store', 'store', 'point_of_interest', 'establishment']",101.88313123591215,3823.4642857844515
+1102,136.667625,34.4764416,㈲MCD/松ちゃん堂,"['real_estate_agency', 'electronics_store', 'point_of_interest', 'store', 'establishment']",102.02490326208785,3823.511816994887
+1103,136.6679071,34.4765801,株式会社M&R,"['point_of_interest', 'establishment']",102.0514942728848,3823.5260786120907
+1104,136.6681093,34.476919,Smooth（セルフ脱毛）,"['beauty_salon', 'hair_care', 'point_of_interest', 'establishment']",102.07169436717145,3823.5628998867746
+1105,136.6403281,34.4858818,Home 1,['home'],99.56087627783394,3824.6676553632533
+1106,136.6370397,34.4857978,Home 2,['home'],99.25822085262614,3824.6713833573162
+1107,136.6445821,34.4872658,Home 3,['home'],99.95850636446802,3824.8044126943464
+1108,136.6462276,34.4916195,Home 4,['home'],100.13058402613538,3825.2811629122502
+1109,136.6314368,34.4915663,Home 5,['home'],98.77092908927199,3825.3339673349383
+1110,136.6279875,34.4886658,Home 6,['home'],98.43996845637844,3825.0257220773815
+1111,136.6359268,34.4917343,Home 7,['home'],99.18440522976802,3825.334772323052
+1112,136.6391628,34.4927854,Home 8,['home'],99.48685940520546,3825.4385988089452
+1113,136.6462505,34.4974038,Home 9,['home'],100.1603732281464,3825.923144028626
+1114,136.6445929,34.4978636,Home 10,['home'],100.01023855703697,3825.9807531316546
+1115,136.6386541,34.5054833,Home 11,['home'],99.5009940832507,3826.8501224342185
+1116,136.6252189,34.4834125,Home 12,['home'],98.16024039705638,3824.4536071222674
+1117,136.6156555,34.4844369,Home 13,['home'],97.28612487521885,3824.605437019683
+1118,136.5996584,34.4884629,Home 14,['home'],95.83517968348606,3825.116291432639
+1119,136.5977562,34.4699478,Home 15,['home'],95.57076733518299,3823.0686430801893
+1120,136.5879581,34.4731181,Home 16,['home'],94.68535340274975,3823.4598568143488
+1121,136.5861621,34.478775,Home 17,['home'],94.54768270057323,3824.095016607465
+1122,136.6067694,34.4767739,Home 18,['home'],96.43233808684768,3823.790302759644
+1123,136.6057823,34.4699458,Home 19,['home'],96.30862951825449,3823.036299635535
+1124,136.612322,34.474249,Home 20,['home'],96.93059385943268,3823.4878436264203
+1125,136.632312,34.4717503,Home 21,['home'],98.7562510960442,3823.130849201646
+1126,136.6402554,34.4789014,Home 22,['home'],99.52074890936905,3823.8931002755958
+1127,136.6398263,34.4804049,Home 23,['home'],99.48850890879723,3824.0616953824506
+1128,136.6510439,34.4759446,Home 24,['home'],100.4983218139186,3823.522140505106
+1129,136.6347528,34.4964108,Home 25,['home'],99.09894630741799,3825.8585422027845
+1130,136.6192174,34.5032544,Home 26,['home'],97.70414958024759,3826.680046986486
+1131,136.6273928,34.4996558,Home 27,['home'],98.43813674328703,3826.2480172540254
+1132,136.6271782,34.5056681,Home 28,['home'],98.44732354995789,3826.9162583281113
+1133,136.6254446,34.5094249,Home 29,['home'],98.30609008426923,3827.340179533089
+1134,136.6243073,34.5145701,Home 30,['home'],98.22634587116131,3827.9158463080544
+1135,136.6133147,34.4952706,Home 31,['home'],97.12320457761926,3825.8173663098714
+1136,136.6186898,34.4937851,Home 32,['home'],97.61005027067469,3825.6310208561

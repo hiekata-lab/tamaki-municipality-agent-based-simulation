@@ -216,3 +216,17 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Custom
+.vscode
+.DS_Store
+.venv
+.simulation-env
+.agents
+secrets.env
+simulations/
+.simulations/
+.lsps
+simulation_results/
+.matplotlib
+data/processed/
