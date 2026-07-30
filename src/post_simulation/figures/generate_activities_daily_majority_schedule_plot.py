@@ -1,22 +1,23 @@
-import pandas as pd
+import argparse
 import os
-
-
-os.environ["MPLCONFIGDIR"] = "./.matplotlib"
-
+import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 import numpy as np
-import argparse
-import matplotlib.patches as mpatches
+import pandas as pd
 from src.constants import (
     ACTIVITY_COLOR_MAP,
     COL_SCHEDULE_ACTIVITY,
     COL_SEGMENT_INDEX,
-    COL_TIME,
+)
+from src.post_simulation.figures.utils import (
+    configure_matplotlib_defaults,
+    save_figure,
 )
 
+configure_matplotlib_defaults()
 
-def generate_average_day_plot(csv_path, out_dir):
+
+def generate_average_day_plot(csv_path: str, out_dir: str) -> None:
     df = pd.read_csv(csv_path)
 
     most_common_activities = df.sort_values(COL_SEGMENT_INDEX)[
@@ -27,11 +28,10 @@ def generate_average_day_plot(csv_path, out_dir):
     fig, ax = plt.subplots(figsize=(15, 3))
 
     bar_height = 0.5
-    # Vectorize barh by passing arrays
-    acts_series = pd.Series(most_common_activities)
-    colors = acts_series.map(ACTIVITY_COLOR_MAP).fillna("#808080").tolist()
+    colors = [ACTIVITY_COLOR_MAP.get(act, "#808080") for act in most_common_activities]
     starts = np.arange(len(most_common_activities)) * 10
     widths = np.full(len(most_common_activities), 10)
+
     ax.barh(
         np.zeros(len(most_common_activities)),
         widths,
@@ -44,38 +44,32 @@ def generate_average_day_plot(csv_path, out_dir):
     ax.set_ylim(-0.5, 0.5)
 
     tick_positions = np.arange(0, 24 * 60 + 1, 120)
-    time_map = df.set_index(COL_SEGMENT_INDEX)[COL_TIME].to_dict()
-    tick_labels = [time_map.get(pos // 10, "24:00") for pos in tick_positions]
+    tick_labels = [f"{h:02d}:00" for h in range(0, 25, 2)]
 
     ax.set_xticks(tick_positions)
     ax.set_xticklabels(tick_labels)
-
     ax.set_yticks([])
     ax.set_xlabel("Time of Day")
     ax.set_title("Average Agent Daily Schedule (Majority of Every 10-min Segment)")
 
     patches = [
         mpatches.Patch(color=ACTIVITY_COLOR_MAP.get(act, "#808080"), label=act)
-        for act in unique_activities
+        for act in sorted(unique_activities)
     ]
     ax.legend(handles=patches, bbox_to_anchor=(1.05, 1), loc="upper left")
 
     plt.tight_layout()
-    os.makedirs(out_dir, exist_ok=True)
     output_path = os.path.join(out_dir, "average_agent_daily_schedule.png")
-    plt.savefig(output_path, dpi=300)
-    print(f"  Figure saved to {output_path}")
+    save_figure(fig, output_path)
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description="Generate activities daily majority schedule plot"
     )
-
     parser.add_argument(
         "--schedule-csv", type=str, required=True, help="Input CSV path"
     )
-
     parser.add_argument("--out-dir", type=str, required=True, help="Output directory")
     args = parser.parse_args()
 
