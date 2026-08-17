@@ -1,6 +1,8 @@
 import argparse
 import os
+import numpy as np
 import pandas as pd
+
 from src.constants import (
     COL_ACTIVITY,
     COL_AGE_GROUP,
@@ -23,13 +25,18 @@ from src.post_simulation.tables.utils import (
     calculate_confidence_interval,
     calculate_margin_of_error,
     calculate_standard_error,
+    calculate_welch_satterthwaite_dof,
     load_aggregated_simulation_data,
     save_table_csv,
 )
 
 
 def generate_comparison_table(
-    sim_dir: str, validation_path: str, se_ratios_path: str, out_dir: str
+    sim_dir: str,
+    validation_path: str,
+    se_ratios_path: str,
+    sample_size_path: str,
+    out_dir: str,
 ) -> None:
     df = load_aggregated_simulation_data(sim_dir)
     df = df[df[COL_SCENARIO] == "Scenario 2"].copy()
@@ -105,18 +112,31 @@ def generate_comparison_table(
     )
     se_val = se_ratio_col * df_merged[COL_VALIDATION_VALUE]
 
+    df_sample_size = pd.read_csv(sample_size_path)
+    count_val = int(df_sample_size["sample_size"].iloc[0])
+    df_merged["count_val"] = count_val
+
+
     df_merged["se_combined"] = calculate_combined_standard_error(
         se1=se_val, se2=df_merged["se_sim"]
     )
 
+    dof_welch = calculate_welch_satterthwaite_dof(
+        se1=se_val,
+        count1=count_val,
+        se2=df_merged["se_sim"],
+        count2=df_merged["count"],
+    )
+    df_merged["dof_welch"] = dof_welch
+
     val_mean = df_merged[COL_VALIDATION_VALUE]
-    count = df_merged["count"].replace(0, 1)
+    dof_sim = np.maximum(1.0, df_merged["count"] - 1.0)
 
     df_merged["CI_90_Lower"], df_merged["CI_90_Upper"] = (
         calculate_confidence_interval(
             mean=val_mean,
             se=df_merged["se_combined"],
-            count=count,
+            dof=dof_welch,
             confidence_level=0.90,
         )
     )
@@ -124,16 +144,16 @@ def generate_comparison_table(
         calculate_confidence_interval(
             mean=val_mean,
             se=df_merged["se_combined"],
-            count=count,
+            dof=dof_welch,
             confidence_level=0.95,
         )
     )
 
     df_merged["CI_90_Sim"] = calculate_margin_of_error(
-        se=df_merged["se_sim"], count=count, confidence_level=0.90
+        se=df_merged["se_sim"], dof=dof_sim, confidence_level=0.90
     )
     df_merged["CI_95_Sim"] = calculate_margin_of_error(
-        se=df_merged["se_sim"], count=count, confidence_level=0.95
+        se=df_merged["se_sim"], dof=dof_sim, confidence_level=0.95
     )
 
     df_merged = df_merged.fillna(0)
@@ -158,6 +178,13 @@ if __name__ == "__main__":
     args = parser.parse_args()
     validation_path = "data/processed/Average time spent in activities for participants by Kind of activities, Day of the week, Area classification, Sex, Usual economic activity, Usual state of health, Age (15 Years Old and Over)-Japan, Prefectures.csv"
     se_ratios_path = "data/processed/Standard Error Ratios of Average time spent in activities for all persons by Sex, Kind of activities - Weekly average, Japan, Prefectures.csv"
+    sample_size_path = "data/processed/survey_sample_size.csv"
     generate_comparison_table(
-        args.sim_dir, validation_path, se_ratios_path, args.out_dir
+        args.sim_dir,
+        validation_path,
+        se_ratios_path,
+        sample_size_path,
+        args.out_dir,
     )
+
+

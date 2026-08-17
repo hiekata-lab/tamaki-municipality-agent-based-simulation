@@ -12,6 +12,7 @@ from src.post_simulation.tables.utils.stats import (
     calculate_confidence_interval,
     calculate_margin_of_error,
     calculate_standard_error,
+    calculate_welch_satterthwaite_dof,
 )
 
 __all__ = [
@@ -24,4 +25,5 @@ __all__ = [
     "calculate_confidence_interval",
     "calculate_margin_of_error",
     "calculate_standard_error",
+    "calculate_welch_satterthwaite_dof",
 ]

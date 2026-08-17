@@ -26,6 +26,9 @@ def run_script(script_path, args=None):
 PREPROCESS_VALIDATION_DATA_SCRIPT = "src/pre_simulation/preprocess_validation_data.py"
 PREPROCESS_QUESTIONNAIRE_A_SCRIPT = "src/pre_simulation/preprocess_questionnaire_a.py"
 PREPROCESS_SE_RATIOS_SCRIPT = "src/pre_simulation/preprocess_se_ratios.py"
+PREPROCESS_SURVEY_SAMPLE_SIZE_SCRIPT = (
+    "src/pre_simulation/preprocess_survey_sample_size.py"
+)
 GENERATE_LOCATION_GRAPH_SCRIPT = "src/pre_simulation/generate_location_graph.py"
 SAMPLE_AGENT_SET_SCRIPT = "src/pre_simulation/sample_agent_set.py"
 SIMULATION_SCRIPT = "src/simulation/simulation.py"
@@ -119,6 +122,7 @@ def main():
     VAL_DIR = "data/raw/Average time spent in activities for participants by Kind of activities, Day of the week, Area classification, Sex, Usual economic activity, Usual state of health, Age (15 Years Old and Over)-Japan, Prefectures.csv"
     QA_DIR = "data/raw/Questionnaire A.csv"
     SE_FILE = "data/raw/Standard Error Ratios of Average time spent in activities for all persons by Sex, Kind of activities - Weekly average, Japan, Prefectures.csv"
+    SAMPLE_SIZE_RAW_FILE = "data/raw/Average time spent in activities for all persons by Kind of activities, Day of the week, Area classification, Sex, Usual economic activity, Age (Heads of One-Person Household)-Japan, Prefectures.csv"
     PRO_DIR = "data/processed"
     GEO_FILE = "data/raw/Tamaki-Town-Locations-EPSG32654-km-scale.csv"
     LOCG_FILE = "data/processed/locations_graph.json"
@@ -148,6 +152,11 @@ def main():
         )
 
         run_script(
+            PREPROCESS_SURVEY_SAMPLE_SIZE_SCRIPT,
+            ["--in-path", SAMPLE_SIZE_RAW_FILE, "--out-path", PRO_DIR],
+        )
+
+        run_script(
             GENERATE_LOCATION_GRAPH_SCRIPT,
             [
                 "--input",
@@ -162,6 +171,7 @@ def main():
             SAMPLE_AGENT_SET_SCRIPT,
             ["--num-agents", "100", "--output", AGN_FILE],
         )
+
 
     # Exectues the simulation and post simulation steps
     # Runs the actual simulation, aggregates the individual simulations results, produces output tables and figures.
