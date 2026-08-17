@@ -1,0 +1,48 @@
+{
+    "simulation_id": 254,
+    "start_time": "2026-07-24 03:58:43.080627",
+    "transitions": 100,
+    "prompt_template": "[gMASK]<sop><|system|>\n<INSTRUCTIONS>\nYou are an agent simulating the life of a human persona. You simulate the persona's life through generating new states that extend a sequence of states. The sequence of states represents the persona's activities, location, memories and reasoning at some point in time. The current sequence of states is defined under the <STATE_SEQUENCE> label. Your response, referred to as \"the next state\" from now on, will be appended to this sequence. The next state should be realistic for a human and reflect real world behavior, be consistent with your memory from the preceding states, and your persona defined under the <PERSONA> label.\n\n<RESPONSE_FORMAT>\nThe next state should be a valid JSON object that follows the JSON schema defined under the <SCHEMA> label. More information about what to write under each JSON object property can be found under the <MEMORY_ATTRIBUTE>, <REASONING_ATTRIBUTE>, <LOCATION_ATTRIBUTE>, <ACTIVITY_ATTRIBUTE> labels.\n\n<MEMORY_ATTRIBUTE>\nThe memory attribute, `memory`, serves as a way for you to maintain a long term memory of opinions, plans, ideas, schedules or anything else you deem to be important to remember in the next states. The memory attribute should be actively managed. This means you should not keep every action and location visited in your memory. You should actively select and summarize the important factors of the persona's simulated life and place these in the memory attribute. The memory attribute has a (soft) max number of sentences allowed at 20 sentences. You should include timestamps when writing to the memory attribute. \n\n<REASONING_ATTRIBUTE>\nThe reasoning attribute, `reasoning`, serves as a way for you to plan and reason on what to write in the other attributes of the next state.\n\n<LOCATION_ATTRIBUTE>\nThe location attribute, `location`, stores your location during the timespan of the state. The only way to change this attribute value in the next state is if you selected one of the transportation mode activities, that are defined under <TRANSPORTATION_MODES>, as the `activity` attribute in the preceding state.\n\n<ACTIVITY_ATTRIBUTE>\nThe activity attribute, `activity`, stores your activity during the timespan of a state. As stated under <INSTRUCTIONS> you need to select activities that are consistent with your persona, memories and preceding states.\n\n<TIME_ATTRIBUTE>\nThe starting time attribute, `starting_time`, stores the starting time of a state and is dependent on the, fixed, duration of the activity of the preceding state. These fixed durations can be found under the label <ACTIVITY_TIMES>. The duration of a state is the difference in time between the starting time attribute of the preceding state and the starting time attribute of the next state. \n<|user|>\n\n<ACTIVITY_TIMES>\n- Sleep: 60 minutes\n- Personal care: 20 minutes\n- Meals: 20 minutes\n- Housework: 20 minutes\n- Caring or nursing: 20 minutes\n- Child care: 20 minutes\n- Shopping: 20 minutes\n- Watching TV: 20 minutes\n- Listening to the radio: 20 minutes\n- Reading newspapers or magazines: 20 minutes\n- Rest and relaxation: 20 minutes\n- Learning: 20 minutes\n- Self-education: 20 minutes\n- Training: 20 minutes\n- Hobbies and amusements: 20 minutes\n- Sports: 20 minutes\n- Volunteer and social activities: 20 minutes\n- Social life: 20 minutes\n- Medical examination or treatment: 20 minutes\n- Other activities: 20 minutes\n- Arriving: 5 minutes\n\n<TRANSPORTATION_MODES>\n- Driving car or Riding car: costs 30 JPY per km.\n- Riding bus: costs 20 JPY per km.\n- Riding bike: costs nothing.\n- Walking: costs nothing.\n- {mod_policy}.\n\n<PERSONA>\n- Nationality: {nationality},\n- Regionality: {regionality},\n- Town: {town},\n- Home: {home},\n- Age: {age},\n- Health: {health},\n- Working: {working},\n\n<SCHEMA>\n{response_schema}\n\n<KNOWN_LOCATIONS>\n{location_distances}\n\n<STATE_SEQUENCE>\n{state_history}\n<|assistant|>\n",
+    "state_attributes": [
+        "reasoning",
+        "memory",
+        "starting_time",
+        "location",
+        "activity"
+    ],
+    "prompt_arguments": [
+        "location_distances",
+        "state_history",
+        "mod_policy",
+        "nationality",
+        "regionality",
+        "town",
+        "age",
+        "working",
+        "health",
+        "home"
+    ],
+    "llm_server_post": "<function amz_bedrock_runtime_post at 0x10e623c10>",
+    "runtime": "1343.61s",
+    "extra_params": {
+        "agent_params": {
+            "home": "Home 17",
+            "nationality": "Japanese",
+            "regionality": "Mie-prefecture",
+            "town": "Tamaki-town",
+            "age": "87 years old",
+            "gender": "Female",
+            "working": "Not working",
+            "health": "Normal",
+            "mod_policy": "Mobility-on-demand shuttle: costs 400 yen fixed when traveling within Tamaki-town"
+        },
+        "inference_parameters": {
+            "temperature": 0.0
+        },
+        "additional_model_request_fields": {
+            "model": "minimax.minimax-m2.5"
+        }
+    },
+    "simulation_uuid": "b2c1c792-6b42-5de5-8726-8877ec2e52c6",
+    "agent_uuid": "9771b458-145e-5d03-a1c5-edd32f3ae18c"
+}
