@@ -10,6 +10,9 @@ The defined state attributes that were used were:
 
 There was also a set of accompanying prompt arguments included. These served as contextual information for the LLM's decision process, for example distance to other locations.
 
+![Flowchart of the pre-implementation testing case study Scenarios](simulation-flowchart.png) <a id="fig:pre-implementation-testing-flow"></a>
+*The flowchart figure visualizes how the different scenarios are simulated, the data extracted, aggregated and presented as PIT for decision support. In the simulation code this process is done once for each LLM model.*
+
 ## Code overview
 A data -> simulation -> results pipeline using the LSPS package. Setup of the pipeline is loosely based on a microservices architecture.
 
