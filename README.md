@@ -12,15 +12,15 @@ There was also a set of accompanying prompt arguments included. These served as 
 
 ### Figures
 
-![Tamaki Town Geo-Spatial Model](tamaki-municipality-geo-spatial-model.png)
+![Tamaki Town Geo-Spatial Model](figs/tamaki-municipality-geo-spatial-model.png)
 
 *Red dot icons are locations registered by Google Maps, Blue house icons are randomly picked houses used as agent starting points, the red border is the municipality boundary, the inner multicolored shapes are municipality subdivisions.*
 
-![Flowchart of the case study DCSP](case-study-flowchart.png)
+![Flowchart of the case study DCSP](figs/case-study-flowchart.png)
 
 *The flowchart figure visualizes how a sequence of visited states $S$ transitions into a new state $s_{i+1}$ utilizing both inferred LLM choices and deterministic functions.*
 
-![Flowchart of the pre-implementation testing case study Scenarios](simulation-flowchart.png)
+![Flowchart of the pre-implementation testing case study Scenarios](figs/simulation-flowchart.png)
 
 *The flowchart figure visualizes how the different scenarios are simulated, the data extracted, aggregated and presented as PIT for decision support. In the simulation code this process is done once for each LLM model.*
 
