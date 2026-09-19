@@ -9,6 +9,8 @@ The defined state attributes that were used were:
 - **Time**: A completely deterministic value that is updated each step by a time mapped to an activity in a fixed table.
 
 There was also a set of accompanying prompt arguments included. These served as contextual information for the LLM's decision process, for example distance to other locations.
+![Flowchart of the case study DCSP](case-study-flowchart.png) <a id="fig:case-study-flowchart"></a>
+*The flowchart figure visualizes how a sequence of visited states $S$ transitions into a new state $s_{i+1}$ utilizing both inferred LLM choices and deterministic functions.*
 
 ![Flowchart of the pre-implementation testing case study Scenarios](simulation-flowchart.png) <a id="fig:pre-implementation-testing-flow"></a>
 *The flowchart figure visualizes how the different scenarios are simulated, the data extracted, aggregated and presented as PIT for decision support. In the simulation code this process is done once for each LLM model.*
