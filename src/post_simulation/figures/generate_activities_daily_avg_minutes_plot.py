@@ -96,10 +96,6 @@ def generate_activity_time_comparison_plot(
     )
 
     ax.set_xlabel("Average Time Spent (minutes)")
-    ax.set_title(
-        "Average Time Spent on Activities (2021 Japanese Time Use Survey vs Simulation)",
-        loc="center",
-    )
     ax.set_yticks(y)
     ax.set_yticklabels([textwrap.fill(act, width=30) for act in activities])
     ax.legend()

@@ -1,3 +1,5 @@
+"""Responsible for plotting total distance traveled by transport mode."""
+
 import argparse
 import os
 import pandas as pd
@@ -21,7 +23,6 @@ def plot_transport_metric(csv_path: str, out_dir: str) -> None:
         category_order=DEFAULT_SCENARIOS,
         value_cols=TRANSPORTATION_MODES,
         ylabel="Total Distance (km)",
-        title="Total Distance Traveled in Transportation Modes per Scenario",
         agg_func="sum",
     )
     save_figure(fig, os.path.join(out_dir, "transport_mode_total_km_dist.png"))

@@ -6,7 +6,7 @@ from src.constants import COL_END_TIME, COL_STARTING_TIME
 
 def load_aggregated_simulation_data(
     sim_dir: str,
-    filename: str = "aggregated.csv",
+    filename: str = "processed_activities.csv",
     parse_dates: Optional[List[str]] = None,
 ) -> pd.DataFrame:
     """Loads aggregated simulation data CSV from simulation directory."""

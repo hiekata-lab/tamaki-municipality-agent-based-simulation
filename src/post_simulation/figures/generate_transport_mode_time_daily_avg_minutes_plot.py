@@ -21,7 +21,6 @@ def plot_transport_metric(csv_path: str, out_dir: str) -> None:
         category_order=DEFAULT_SCENARIOS,
         value_cols=TRANSPORTATION_MODES,
         ylabel="Daily Average Time Spent (minutes)",
-        title="Daily Average Time Spent in Transportation Modes per Scenario",
         agg_func="mean",
     )
     save_figure(fig, os.path.join(out_dir, "transport_time_daily_avg_minutes.png"))

@@ -21,7 +21,6 @@ def plot_transport_metric(csv_path: str, out_dir: str) -> None:
         category_order=DEFAULT_SCENARIOS,
         value_cols=TRANSPORTATION_MODES,
         ylabel="Total Number of Trips",
-        title="Total Number of Trips per Transportation Mode per Scenario",
         agg_func="sum",
         integer_y_ticks=True,
     )

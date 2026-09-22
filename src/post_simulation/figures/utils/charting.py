@@ -1,3 +1,5 @@
+"""Responsible for providing shared charting and plotting utilities."""
+
 import os
 from typing import Dict, List, Optional, Tuple
 import matplotlib.pyplot as plt
@@ -11,22 +13,27 @@ def plot_grouped_category_bars(
     category_order: List[str],
     value_cols: List[str],
     ylabel: str,
-    title: str,
+    title: Optional[str] = None,
     agg_func: str = "mean",
     integer_y_ticks: bool = False,
-    figsize: Tuple[int, int] = (12, 6),
-    rot: int = 15,
+    figsize: Tuple[int, int] = (14, 7),
+    rot: int = 45,
     width: float = 0.8,
 ) -> Tuple[plt.Figure, plt.Axes]:
     """Renders a grouped bar chart comparing numeric metrics across categorical groups."""
     grouped = df.groupby(group_col).agg(agg_func, numeric_only=True)
     plot_df = grouped.reindex(category_order).fillna(0)[value_cols].T
+    plot_df = plot_df.rename(
+        index={"Riding mobility-on-demand shuttle": "Riding MoD shuttle"}
+    )
 
     fig, ax = plt.subplots(figsize=figsize)
     plot_df.plot.bar(ax=ax, width=width, rot=rot)
 
-    ax.set_ylabel(ylabel)
-    ax.set_title(title)
+    ax.set_ylabel(ylabel, fontsize=20)
+    ax.tick_params(axis="both", labelsize=20)
+    if title:
+        ax.set_title(title, fontweight="bold", fontsize=24)
     if integer_y_ticks:
         ax.yaxis.set_major_locator(MaxNLocator(integer=True))
     ax.legend()
@@ -59,9 +66,10 @@ def save_figure(
     fig: plt.Figure,
     output_path: str,
     dpi: int = 300,
-    bbox_inches: Optional[str] = None,
+    bbox_inches: Optional[str] = "tight",
 ) -> None:
-    """Saves a Matplotlib figure to the specified file path, creating parent directories if needed."""
+    """Saves a Matplotlib figure to the specified file path,
+    creating parent directories if needed."""
     out_dir = os.path.dirname(output_path)
     if out_dir:
         os.makedirs(out_dir, exist_ok=True)

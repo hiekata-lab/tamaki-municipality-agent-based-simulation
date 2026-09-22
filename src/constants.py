@@ -31,6 +31,7 @@ COL_SAMPLE_HOUSEHOLDS = "Sample_Households"
 COL_SAMPLE_PERSONS_LEISURE = "Sample_Persons_Leisure"
 COL_SAMPLE_PERSONS_TIME_USE = "Sample_Persons_Time_Use"
 COL_SAMPLE_PERSONS_AVERAGE_TIME = "Sample_Persons_Average_Time"
+SURVEY_MIE_TOTAL_SAMPLE_SIZE = 3372
 COL_METRIC = "Metric"
 COL_COUNT = "Count"
 COL_SIMULATION_UUID = "simulation_uuid"
@@ -159,6 +160,7 @@ VALIDATION_COL_MAP = {
 DAY_OF_WEEK_MAP = {
     "0_Total": "Total",
     "1_Average of days": "Average of days",
+    "1_Weekly average": "Weekly average",
     "2_Weekday": "Weekday",
     "3_Saturday": "Saturday",
     "4_Sunday": "Sunday",

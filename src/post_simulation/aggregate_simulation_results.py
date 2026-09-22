@@ -25,7 +25,7 @@ def aggregate_simulation_dirs(in_dir: str, out_dir: str):
         conf_file_map[f.parent] = (sim_uuid, agent_uuid)
         all_json_data.append(data)
 
-    out_json_path = os.path.join(out_dir, "aggregated.json")
+    out_json_path = os.path.join(out_dir, "agent_parameters.json")
     with open(out_json_path, "w", encoding="utf-8") as f:
         json.dump(all_json_data, f, indent=4)
     print(f"  Aggregated {len(all_json_data)} JSON files into {out_json_path}")
@@ -50,7 +50,7 @@ def aggregate_simulation_dirs(in_dir: str, out_dir: str):
         ]
         # Save aggregated raw data
         combined_df = combined_df[cols]
-        out_csv_path = os.path.join(out_dir, "aggregated_raw.csv")
+        out_csv_path = os.path.join(out_dir, "raw_activities.csv")
         combined_df.to_csv(out_csv_path, index=False)
         print(f"  Aggregated {len(csv_files)} CSV files into {out_csv_path}")
 

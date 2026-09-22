@@ -90,9 +90,6 @@ GENERATE_TRANSPORT_MODE_DAILY_AVG_KM_DIST_PLOT_SCRIPT = (
 GENERATE_TRANSPORT_MODE_TOTAL_KM_DIST_PLOT_SCRIPT = (
     "src/post_simulation/figures/generate_transport_mode_total_km_dist_plot.py"
 )
-GENERATE_AGENT_TRIPS_PLOT_SCRIPT = (
-    "src/post_simulation/figures/generate_agent_trips_plot.py"
-)
 GENERATE_AGENT_LOCATION_TIME_HEATMAP_SCRIPT = (
     "src/post_simulation/figures/generate_agent_location_time_heatmap.py"
 )
@@ -119,7 +116,7 @@ def main():
     print(f"Starting full experiment replication. Stages: {args.stages}", flush=True)
 
     # Pre-sim Paths
-    VAL_DIR = "data/raw/Average time spent in activities for participants by Kind of activities, Day of the week, Area classification, Sex, Usual economic activity, Usual state of health, Age (15 Years Old and Over)-Japan, Prefectures.csv"
+    VAL_DIR = "data/raw/Average time spent in activities for all persons by Kind of activities, Day of the week, Area classification, Sex, Usual economic activity, Usual state of health, Age (15 Years Old and Over)-Japan, Prefectures.csv"
     QA_DIR = "data/raw/Questionnaire A.csv"
     SE_FILE = "data/raw/Standard Error Ratios of Average time spent in activities for all persons by Sex, Kind of activities - Weekly average, Japan, Prefectures.csv"
     SAMPLE_SIZE_RAW_FILE = "data/raw/Average time spent in activities for all persons by Kind of activities, Day of the week, Area classification, Sex, Usual economic activity, Age (Heads of One-Person Household)-Japan, Prefectures.csv"
@@ -172,12 +169,10 @@ def main():
             ["--num-agents", "100", "--output", AGN_FILE],
         )
 
-
     # Exectues the simulation and post simulation steps
     # Runs the actual simulation, aggregates the individual simulations results, produces output tables and figures.
     if "sim" in args.stages or "post_sim" in args.stages:
         for model_id in ["minimax.minimax-m2.5", "zai.glm-5"]:
-
             print(f"\n--- Processing model: {model_id} ---", flush=True)
 
             # Sim-step and post-sim paths
@@ -322,12 +317,17 @@ def main():
                     ["--csv", t_dist_tot_csv, "--out-dir", fig_dir],
                 )
                 run_script(
-                    GENERATE_AGENT_TRIPS_PLOT_SCRIPT,
-                    ["--trip-csv", trip_csv, "--out-dir", fig_dir],
-                )
-                run_script(
                     GENERATE_AGENT_LOCATION_TIME_HEATMAP_SCRIPT,
-                    ["--time-csv", time_csv, "--out-dir", fig_dir],
+                    [
+                        "--time-csv",
+                        time_csv,
+                        "--trip-csv",
+                        trip_csv,
+                        "--agents-csv",
+                        agents_path,
+                        "--out-dir",
+                        fig_dir,
+                    ],
                 )
 
     print("Full experiment replication finished successfully.", flush=True)

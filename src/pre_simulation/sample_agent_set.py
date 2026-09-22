@@ -9,7 +9,7 @@ random.seed(20011108)
 # Statistical data
 
 # Get average time spent on activities data
-average_time_spent_path = "data/raw/Average time spent in activities for participants by Kind of activities, Day of the week, Area classification, Sex, Usual economic activity, Usual state of health, Age (15 Years Old and Over)-Japan, Prefectures.csv"
+average_time_spent_path = "data/raw/Average time spent in activities for all persons by Kind of activities, Day of the week, Area classification, Sex, Usual economic activity, Usual state of health, Age (15 Years Old and Over)-Japan, Prefectures.csv"
 AVERAGE_TIME_SPENT_DF = pd.read_csv(
     average_time_spent_path, engine="python", thousands=",", encoding="shift_jis"
 ).fillna(0)

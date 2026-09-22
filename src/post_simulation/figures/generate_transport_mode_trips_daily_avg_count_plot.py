@@ -21,7 +21,6 @@ def plot_transport_metric(csv_path: str, out_dir: str) -> None:
         category_order=DEFAULT_SCENARIOS,
         value_cols=TRANSPORTATION_MODES,
         ylabel="Daily Average Number of Trips",
-        title="Daily Average Number of Trips per Transportation Mode per Scenario",
         agg_func="mean",
         integer_y_ticks=True,
     )

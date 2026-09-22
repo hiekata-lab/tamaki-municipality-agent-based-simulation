@@ -39,7 +39,7 @@ def preprocess_aggregated_data(in_dir: str, out_dir: str):
     os.makedirs(out_dir, exist_ok=True)
 
     # Load aggregated raw data
-    csv_path = os.path.join(in_dir, "aggregated_raw.csv")
+    csv_path = os.path.join(in_dir, "raw_activities.csv")
     if not os.path.exists(csv_path):
         print(f"  No raw csv data found at {csv_path}")
         return
@@ -99,7 +99,7 @@ def preprocess_aggregated_data(in_dir: str, out_dir: str):
     )
 
     # NOTE: Create Metadata columns from the aggregated json metadata file
-    json_path = os.path.join(in_dir, "aggregated.json")
+    json_path = os.path.join(in_dir, "agent_parameters.json")
     df_meta_raw = pd.read_json(json_path)
     # Create a fresh df for the metadata columns
     df_meta = pd.DataFrame()
@@ -127,7 +127,7 @@ def preprocess_aggregated_data(in_dir: str, out_dir: str):
         df_sim, df_meta, on=[COL_SIMULATION_UUID, COL_AGENT_UUID], how="left"
     )
     # Export
-    out_csv_path = os.path.join(out_dir, "aggregated.csv")
+    out_csv_path = os.path.join(out_dir, "processed_activities.csv")
     df_sim.to_csv(out_csv_path, index=False)
     print(f"  Preprocessed data and output to {out_csv_path}")
 
@@ -140,13 +140,13 @@ if __name__ == "__main__":
         "--in-dir",
         type=str,
         required=True,
-        help="Input directory containing aggregated_raw.csv and aggregated.json.",
+        help="Input directory containing raw_activities.csv and agent_parameters.json.",
     )
     parser.add_argument(
         "--out-dir",
         type=str,
         required=True,
-        help="Output directory for aggregated.csv.",
+        help="Output directory for processed_activities.csv.",
     )
     args = parser.parse_args()
     preprocess_aggregated_data(args.in_dir, args.out_dir)
