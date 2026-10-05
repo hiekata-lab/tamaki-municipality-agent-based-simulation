@@ -27,8 +27,10 @@ from src.post_simulation.tables.utils import (
     calculate_combined_standard_error,
     calculate_confidence_interval,
     calculate_margin_of_error,
+    calculate_p_value,
     calculate_standard_error,
     calculate_welch_satterthwaite_dof,
+    calculate_welch_t_statistic,
     load_aggregated_simulation_data,
     save_table_csv,
 )
@@ -187,6 +189,17 @@ def generate_comparison_table(
     )
     df_merged["CI_95_Sim"] = calculate_margin_of_error(
         se=df_merged["se_sim"], dof=dof_sim, confidence_level=0.95
+    )
+
+    t_stat = calculate_welch_t_statistic(
+        mean1=df_merged[COL_SIMULATION],
+        mean2=val_mean,
+        se_combined=df_merged["se_combined"],
+    )
+    df_merged["t_stat"] = t_stat
+    df_merged["p_val"] = calculate_p_value(
+        t_stat=t_stat,
+        dof=dof_welch,
     )
 
     df_merged = df_merged.fillna(0)

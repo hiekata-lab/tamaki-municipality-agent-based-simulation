@@ -11,8 +11,10 @@ from src.post_simulation.tables.utils.stats import (
     calculate_combined_standard_error,
     calculate_confidence_interval,
     calculate_margin_of_error,
+    calculate_p_value,
     calculate_standard_error,
     calculate_welch_satterthwaite_dof,
+    calculate_welch_t_statistic,
 )
 
 __all__ = [
@@ -24,6 +26,8 @@ __all__ = [
     "calculate_combined_standard_error",
     "calculate_confidence_interval",
     "calculate_margin_of_error",
+    "calculate_p_value",
     "calculate_standard_error",
     "calculate_welch_satterthwaite_dof",
+    "calculate_welch_t_statistic",
 ]

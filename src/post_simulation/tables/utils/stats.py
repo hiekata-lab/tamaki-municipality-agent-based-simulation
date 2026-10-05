@@ -58,3 +58,25 @@ def calculate_confidence_interval(
     moe = calculate_margin_of_error(se, dof, confidence_level=confidence_level)
     return mean - moe, mean + moe
 
+
+def calculate_welch_t_statistic(
+    mean1: Union[float, np.ndarray],
+    mean2: Union[float, np.ndarray],
+    se_combined: Union[float, np.ndarray],
+) -> Union[float, np.ndarray]:
+    """Computes Welch's t-test statistic: t = (mean1 - mean2) / se_combined."""
+    valid_se = np.where(se_combined > 0, se_combined, np.nan)
+    diff = mean1 - mean2
+    return np.nan_to_num(diff / valid_se)
+
+
+def calculate_p_value(
+    t_stat: Union[float, np.ndarray],
+    dof: Union[float, np.ndarray],
+) -> Union[float, np.ndarray]:
+    """Computes two-tailed p-value from Student's t-distribution: p = 2 * (1 - CDF(|t|))."""
+    valid_dof = np.maximum(1.0, np.asarray(dof, dtype=float))
+    abs_t = np.abs(t_stat)
+    p_val = 2.0 * stats.t.sf(abs_t, valid_dof)
+    return np.nan_to_num(p_val)
+

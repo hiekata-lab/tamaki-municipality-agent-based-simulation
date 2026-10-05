@@ -110,5 +110,58 @@ An independent two-sample comparison using **Welch's $t$-test** is conducted to 
 
 5. **Confidence Intervals**:
    Confidence intervals at the 90% and 95% levels are computed using Student's $t$-distribution:
-   - **Simulation**: $CI_{\text{sim}} = \bar{x}_{\text{sim}} \pm t_{1 - \alpha/2, \, N_{\text{sim}} - 1} \times SE_{\text{sim}}$
-   - **Survey**: $CI_{\text{val}} = \bar{x}_{\text{val}} \pm t_{1 - \alpha/2, \, N_{\text{val}} - 1} \times SE_{\text{val}}$
+   - **Simulation**:
+     $$CI_{\text{sim}} = \bar{x}_{\text{sim}} \pm t_{1 - \alpha/2, \, N_{\text{sim}} - 1} \times SE_{\text{sim}}$$
+   - **Survey**:
+     $$CI_{\text{val}} = \bar{x}_{\text{val}} \pm t_{1 - \alpha/2, \, N_{\text{val}} - 1} \times SE_{\text{val}}$$
+
+6. **Test Statistics and $p$-Values**:
+   To test the null hypothesis of equal mean activity durations ($H_0: \mu_{\text{sim}} - \mu_{\text{val}} = 0$) against the two-sided alternative ($H_1: \mu_{\text{sim}} - \mu_{\text{val}} \neq 0$), Welch's $t$-statistic is calculated as:
+   $$t = \frac{\bar{x}_{\text{sim}} - \bar{x}_{\text{val}}}{SE_{\text{combined}}} = \frac{\bar{x}_{\text{sim}} - \bar{x}_{\text{val}}}{\sqrt{SE_{\text{sim}}^2 + SE_{\text{val}}^2}}$$
+   The two-tailed $p$-value is evaluated under Student's $t$-distribution with $\nu_{\text{Welch}}$ degrees of freedom:
+   $$p = 2 \times \left(1 - F_t\left(|t|; \, \nu_{\text{Welch}}\right)\right) = 2 \times P\left(T \ge |t|\right)$$
+   where $F_t(\cdot; \, \nu_{\text{Welch}})$ denotes the cumulative distribution function (CDF) of Student's $t$-distribution with $\nu_{\text{Welch}}$ degrees of freedom.
+
+   - **MiniMax-M2.5 (Scenario 2)**:
+
+     | Activity | $\bar{x}_{\text{sim}}$ (min) | $\bar{x}_{\text{val}}$ (min) | $SE_{\text{combined}}$ | $\nu_{\text{Welch}}$ | Welch's $t$ | $p$-value |
+     | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+     | Caring or nursing | 0.00 | 6.50 | 4.49 | 217.0 | -1.446 | 0.1495 |
+     | Child care | 0.00 | 3.00 | 0.71 | 217.0 | -4.231 | 3.44e-05 |
+     | Hobbies and amusements | 12.69 | 49.00 | 8.44 | 234.6 | -4.303 | 2.48e-05 |
+     | Housework | 27.97 | 144.50 | 21.17 | 220.5 | -5.504 | 1.02e-07 |
+     | Learning, self-education, and training (excluding schoolwork) | 2.60 | 9.50 | 2.25 | 312.6 | -3.062 | 0.0024 |
+     | Meals | 119.49 | 119.00 | 4.72 | 301.3 | 0.104 | 0.9173 |
+     | Medical examination or treatment | 0.20 | 14.50 | 6.70 | 217.4 | -2.135 | 0.0339 |
+     | Moving | 15.14 | 19.00 | 2.34 | 309.8 | -1.648 | 0.1005 |
+     | Other activities | 0.40 | 30.50 | 10.62 | 217.6 | -2.833 | 0.0050 |
+     | Personal care | 160.39 | 94.00 | 8.83 | 294.8 | 7.523 | 6.53e-13 |
+     | Rest and relaxation | 313.19 | 108.00 | 11.72 | 167.5 | 17.503 | 1.15e-39 |
+     | Shopping | 4.67 | 32.50 | 3.66 | 250.4 | -7.612 | 5.52e-13 |
+     | Sleep | 429.00 | 500.50 | 9.99 | 197.2 | -7.158 | 1.58e-11 |
+     | Social life | 9.98 | 12.00 | 5.09 | 306.0 | -0.397 | 0.6919 |
+     | Sports | 0.20 | 21.50 | 4.60 | 217.8 | -4.635 | 6.16e-06 |
+     | Volunteer and social activities | 0.00 | 4.00 | 1.31 | 217.0 | -3.045 | 0.0026 |
+     | Watching TV, listening to the radio, reading newspapers or magazines | 335.83 | 267.00 | 12.89 | 204.5 | 5.341 | 2.45e-07 |
+
+   - **GLM-5 (Scenario 2)**:
+
+     | Activity | $\bar{x}_{\text{sim}}$ (min) | $\bar{x}_{\text{val}}$ (min) | $SE_{\text{combined}}$ | $\nu_{\text{Welch}}$ | Welch's $t$ | $p$-value |
+     | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+     | Caring or nursing | 0.00 | 6.50 | 4.49 | 217.0 | -1.446 | 0.1495 |
+     | Child care | 0.00 | 3.00 | 0.71 | 217.0 | -4.231 | 3.44e-05 |
+     | Hobbies and amusements | 63.40 | 49.00 | 8.77 | 265.3 | 1.643 | 0.1016 |
+     | Housework | 15.60 | 144.50 | 21.11 | 218.1 | -6.106 | 4.63e-09 |
+     | Learning, self-education, and training (excluding schoolwork) | 0.20 | 9.50 | 1.94 | 221.6 | -4.789 | 3.07e-06 |
+     | Meals | 63.20 | 119.00 | 3.68 | 234.6 | -15.170 | 1.10e-36 |
+     | Medical examination or treatment | 0.00 | 14.50 | 6.70 | 217.0 | -2.166 | 0.0314 |
+     | Moving | 0.20 | 19.00 | 2.04 | 219.1 | -9.227 | 2.42e-17 |
+     | Other activities | 0.00 | 30.50 | 10.62 | 217.0 | -2.873 | 0.0045 |
+     | Personal care | 22.40 | 94.00 | 6.66 | 222.8 | -10.748 | 5.61e-22 |
+     | Rest and relaxation | 298.80 | 108.00 | 7.23 | 314.8 | 26.408 | 7.86e-82 |
+     | Shopping | 0.00 | 32.50 | 3.52 | 217.0 | -9.246 | 2.25e-17 |
+     | Sleep | 653.92 | 500.50 | 7.04 | 314.7 | 21.787 | 8.26e-65 |
+     | Social life | 0.00 | 12.00 | 3.95 | 217.0 | -3.034 | 0.0027 |
+     | Sports | 0.00 | 21.50 | 4.59 | 217.0 | -4.683 | 4.99e-06 |
+     | Volunteer and social activities | 0.00 | 4.00 | 1.31 | 217.0 | -3.045 | 0.0026 |
+     | Watching TV, listening to the radio, reading newspapers or magazines | 322.20 | 267.00 | 9.02 | 315.6 | 6.121 | 2.75e-09 |
