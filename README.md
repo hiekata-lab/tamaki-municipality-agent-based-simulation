@@ -88,11 +88,16 @@ An independent two-sample comparison using **Welch's $t$-test** is conducted to 
 
 1. **Sample Sizes ($N$)**:
    - **Simulation ($N_{\text{sim}} = 100$)**: Sample of $N = 100$ simulated autonomous elderly agents (aged 65+) under Scenario 2.
-   - **Survey Subgroup ($N_{\text{val}} = 800$)**: Benchmark sample size of elderly (65+), non-working citizens in Mie Prefecture derived from Table 70-1-1 (*Average time spent in activities for all persons by Kind of activities, Day of the week, Area classification, Sex, Usual economic activity, Usual state of health, Age (15 Years Old and Over) - Japan, Prefectures*). This reflects ~800 respondents across all households in Mie Prefecture, replacing the earlier one-person household subset from Table 78-1-1 ($N = 218$).
+   - **Survey Subgroup ($N_{\text{val}} = 800$)**: Benchmark sample size of elderly (65+),
+     non-working citizens in Mie Prefecture derived from Table 70-1-1 (*Average time spent in
+     activities for all persons by Kind of activities, Day of the week, Area classification,
+     Sex, Usual economic activity, Usual state of health, Age (15 Years Old and Over) - Japan,
+     Prefectures*), reflecting approximately 800 respondents across all households in Mie
+     Prefecture.
    - **Survey Total Sample ($N_{\text{total}} = 3{,}372$)**: Total sampled respondents in Mie Prefecture across all ages (15+) and employment statuses from Questionnaire A (`Sample_Persons_Average_Time` in `data/processed/Questionnaire A.csv`).
 
 2. **Activity Means ($\bar{x}$) and Alignment**:
-   - **Simulation Mean ($\bar{x}_{\text{sim}}$)**: Evaluated over each agent's first 24-hour cycle ($1{,}440\text{ minutes}$) starting from initial deployment ($T_0 = \text{2026-06-10 08:00:00}$ to $T_1 = \text{2026-06-11 08:00:00}$). Restricting the analysis window to exactly 24 hours (1 daytime cycle and 1 nighttime sleep cycle) ensures consistent daily proportions and avoids sleep deflation from multi-day partial spans. All transportation modes (`Walking`, `Riding bus`, `Driving car`, `Riding taxi`, `Riding mobility-on-demand shuttle`, `Riding bike`) as well as `Arriving` events are consolidated into a unified `Moving` category, preserving the full transit duration (retaining 8.25 min/agent transit duration).
+   - **Simulation Mean ($\bar{x}_{\text{sim}}$)**: Evaluated over each agent's first 24-hour cycle ($1{,}440\text{ minutes}$) starting from initial deployment ($T_0 = \text{2026-06-10 08:00:00}$ to $T_1 = \text{2026-06-11 08:00:00}$). Restricting the analysis window to exactly 24 hours (1 daytime cycle and 1 nighttime sleep cycle) ensures consistent daily proportions and avoids sleep deflation from multi-day partial spans. All transportation modes (`Walking`, `Riding bus`, `Driving car`, `Riding taxi`, `Riding mobility-on-demand shuttle`, `Riding bike`) as well as `Arriving` events are consolidated into a unified `Moving` category.
    - **Survey Mean ($\bar{x}_{\text{val}}$)**: Population mean from Table 70-1-2 (*Average time spent in activities for all persons by Kind of activities, Day of the week, Area classification, Sex, Usual economic activity, Usual state of health, Age (15 Years Old and Over) - Japan, Prefectures*) filtered to Mie Prefecture (`24000`), weekly average (`1_Weekly average`), both sexes (`0_Both sexes`), not working (`2_Not working`), and total health (`0_Total`). The two elderly age cohorts (`65 to 74 years old` and `75 years old and over`) are weighted using 2020 Population Census counts for Tamaki Town ($w_{65-74} = 2{,}031 / 4{,}250 \approx 0.478$, $w_{75+} = 2{,}219 / 4{,}250 \approx 0.522$):
      $$\bar{x}_{\text{val}} = w_{65-74} \bar{x}_{65-74} + w_{75+} \bar{x}_{75+}$$
    - **Activity Set Alignment**: Comparison is restricted via an inner join to mutual activities, mapping survey `Moving (excluding commuting)` to `Moving` and dropping non-simulated categories (`Work`, `Schoolwork`, `Commuting to and from school or work`).
@@ -117,7 +122,9 @@ An independent two-sample comparison using **Welch's $t$-test** is conducted to 
    - **Survey Interval**:
      $$[CI_{\text{val, Lower}}, CI_{\text{val, Upper}}] = \bar{x}_{\text{val}} \pm t_{1 - \alpha/2, \, N_{\text{val}} - 1} \times SE_{\text{val}}$$
 
-   > **Note on ACS Guidelines Compatibility**: In alignment with U.S. Census Bureau American Community Survey (ACS) comparison guidelines (*Instructions for Applying Statistical Testing to ACS Data*), confidence intervals overlap visualization provides an intuitive graphical heuristic: non-overlapping confidence intervals indicate a statistically significant difference at level $\alpha$, whereas partial overlap does not necessarily imply equivalence. Formal statistical conclusions are therefore determined by the two-sample Welch's $t$-test.
+   > **Note**: It is understood that comparing the confidence intervals of the means is an
+   > imprecise measure of similarity, but that its main use in this study is building
+   > intuition for the capacity of this method rather than statistically proving similarity.
 
 6. **Test Statistics, $p$-Values, and Multiple Testing Adjustment**:
    To test the null hypothesis of equal mean activity durations ($H_0: \mu_{\text{sim}} - \mu_{\text{val}} = 0$) against the two-sided alternative ($H_1: \mu_{\text{sim}} - \mu_{\text{val}} \neq 0$), Welch's $t$-statistic is calculated as:
