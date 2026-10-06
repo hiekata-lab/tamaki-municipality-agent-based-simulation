@@ -250,9 +250,7 @@ def generate_comparison_table(
         COL_SCENARIO: "Scenario 2",
         COL_DAY_OF_WEEK_EN: "Weekly average",
         COL_SIMULATION: 0.0,
-        "std": 0.0,
         "count": 0,
-        "se_sim": 0.0,
         COL_VALIDATION_VALUE: 0.0,
     }
     df_merged = df_merged.fillna(non_inferential_fill)
