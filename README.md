@@ -7,6 +7,7 @@
 - [Data sources](#data-sources)
   - [2021 Survey on Time Use and Leisure Activities](#2021-survey-on-time-use-and-leisure-activities)
     - [Questionnaire A](#questionnaire-a)
+    - [Table Number 70-1-1](#table-number-70-1-1)
     - [Table Number 70-1-2](#table-number-70-1-2)
     - [Table Number 78-1-1](#table-number-78-1-1)
     - [Table Number 13](#table-number-13)
@@ -56,6 +57,9 @@ Below is a full list of sources for all the data used in this simulation.
 #### Questionnaire A <a id="datasources:2021timeuse/qua"></a>
 **Statistics name**: 2021 Survey on Time Use and Leisure Activities, **Document title**: Questionnaire A, **Document URL**: [URL](https://www.stat.go.jp/english/data/shakai/2021/pdf/qua.pdf), **Accessed**: Jul 15, 2026
 
+#### Table Number 70-1-1 <a id="datasources:2021timeuse/70-1-1"></a>
+**Statistics name**: Survey on Time Use and Leisure Activities 2021 Survey on Time Use and Leisure Activities Questionnaire A Results on Time Use, Time Use for Prefectures, **Table title**: Sample size for all persons by Day of the week, Area classification, Sex, Usual economic activity, Usual state of health, Age (15 Years Old and Over)-Japan, Prefectures, **Table URL**: [URL](https://www.e-stat.go.jp/en/dbview?sid=0003457373), **Accessed**: Jul 16, 2026
+
 #### Table Number 70-1-2 <a id="datasources:2021timeuse/70-1-2"></a>
 **Statistics name**: Survey on Time Use and Leisure Activities 2021 Survey on Time Use and Leisure Activities Questionnaire A Results on Time Use, Time Use for Prefectures, **Table title**: Average time spent in activities for all persons by Kind of activities, Day of the week, Area classification, Sex, Usual economic activity, Usual state of health, Age (15 Years Old and Over)-Japan, Prefectures, **Table URL**: [URL](https://www.e-stat.go.jp/en/dbview?sid=0003457373), **Table API**: [URL](http://api.e-stat.go.jp/rest/3.0/app/getSimpleStatsData?cdCat01=1&cdCat03=0%2C1%2C2&cdCat05=0%2C6%2C7&cdArea=24000&appId=&lang=E&statsDataId=0003457373&metaGetFlg=Y&cntGetFlg=N&explanationGetFlg=Y&annotationGetFlg=Y&sectionHeaderFlg=1&replaceSpChars=0), **Accessed**: Jul 16, 2026
 
@@ -84,84 +88,90 @@ Below is a full list of sources for all the data used in this simulation.
 **Statistics name**: 2020 Population Census Boundary Data (e-Stat GIS), **Boundary title**: 24461 tama-ki-chō (Tamaki Town), **Download URL**: [URL](https://www.e-stat.go.jp/gis/statmap-search/data?dlserveyId=A002005212020&code=24461&coordSys=1&format=shape&downloadType=5&datum=2000), **Page URL**: [URL](https://www.e-stat.go.jp/gis/statmap-search?page=2&type=2&aggregateUnitForBoundary=A&toukeiCode=00200521&toukeiYear=2020&serveyId=A002005212020&prefCode=24&coordsys=1&format=shape&datum=2000), **Accessed**: Jul 15, 2026
 
 ## Statistical Comparison of Mean Time Spent on Activities in Simulation and Survey data
-An independent two-sample comparison using **Welch's $t$-test** is conducted to evaluate differences between the simulated agents' mean weekly time spent on each activity and the mean weekly time spent on each activity by the citizens who participated in the 2021 Survey on Time Use and Leisure Activities (Questionnaire A). Because the simulation and survey cohorts have unequal sample sizes ($N_{\text{sim}} = 100$ vs. $N_{\text{val}} = 218$) and unequal variances, equal variance is not assumed:
+An independent two-sample comparison using **Welch's $t$-test** is conducted to evaluate differences between the simulated agents' mean weekly time spent on each activity and the mean weekly time spent on each activity by the citizens who participated in the 2021 Survey on Time Use and Leisure Activities (Questionnaire A). Because the simulation and survey cohorts have unequal sample sizes ($N_{\text{sim}} = 100$ vs. $N_{\text{val}} = 800$) and unequal variances, equal variance is not assumed:
 
 1. **Sample Sizes ($N$)**:
    - **Simulation ($N_{\text{sim}} = 100$)**: Sample of $N = 100$ simulated autonomous elderly agents (aged 65+) under Scenario 2.
-   - **Survey Subgroup ($N_{\text{val}} = 218$)**: Effective sample size of elderly, non-working citizens in Mie Prefecture derived from Table 78-1-1 (*Heads of One-Person Household, Mie Prefecture, Not working, 65+*).
+   - **Survey Subgroup ($N_{\text{val}} = 800$)**: Benchmark sample size of elderly (65+), non-working citizens in Mie Prefecture derived from Table 70-1-1 (*Sample size for all persons by Day of the week, Area classification, Sex, Usual economic activity, Usual state of health, Age (15 Years Old and Over) - Japan, Prefectures*). This reflects ~800 respondents across all households in Mie Prefecture, replacing the earlier one-person household subset from Table 78-1-1 ($N = 218$).
    - **Survey Total Sample ($N_{\text{total}} = 3{,}372$)**: Total sampled respondents in Mie Prefecture across all ages (15+) and employment statuses from Questionnaire A (`Sample_Persons_Average_Time` in `data/processed/Questionnaire A.csv`).
 
 2. **Activity Means ($\bar{x}$) and Alignment**:
-   - **Simulation Mean ($\bar{x}_{\text{sim}}$)**: Evaluated over each agent's first 24-hour cycle ($1{,}440\text{ minutes}$) starting from initial deployment ($T_0 = \text{2026-06-10 08:00:00}$ to $T_1 = \text{2026-06-11 08:00:00}$). Restricting the analysis window to exactly 24 hours (1 daytime cycle and 1 nighttime sleep cycle) ensures consistent daily proportions and avoids sleep deflation from multi-day partial spans. All transportation modes (`Walking`, `Riding bus`, `Driving car`, `Riding taxi`, `Riding mobility-on-demand shuttle`, `Riding bike`) are consolidated into a unified `Moving` category.
-   - **Survey Mean ($\bar{x}_{\text{val}}$)**: Population mean from Table 70-1-2 (*Average time spent in activities for all persons by Kind of activities, Day of the week, Area classification, Sex, Usual economic activity, Usual state of health, Age (15 Years Old and Over) - Japan, Prefectures*) filtered to Mie Prefecture (`24000`), weekly average (`1_Weekly average`), both sexes (`0_Both sexes`), not working (`2_Not working`), total health (`0_Total`), and elderly cohorts (`65 to 74 years old` and `75 years old and over`).
+   - **Simulation Mean ($\bar{x}_{\text{sim}}$)**: Evaluated over each agent's first 24-hour cycle ($1{,}440\text{ minutes}$) starting from initial deployment ($T_0 = \text{2026-06-10 08:00:00}$ to $T_1 = \text{2026-06-11 08:00:00}$). Restricting the analysis window to exactly 24 hours (1 daytime cycle and 1 nighttime sleep cycle) ensures consistent daily proportions and avoids sleep deflation from multi-day partial spans. All transportation modes (`Walking`, `Riding bus`, `Driving car`, `Riding taxi`, `Riding mobility-on-demand shuttle`, `Riding bike`) as well as `Arriving` events are consolidated into a unified `Moving` category, preserving the full transit duration (retaining 8.25 min/agent transit duration).
+   - **Survey Mean ($\bar{x}_{\text{val}}$)**: Population mean from Table 70-1-2 (*Average time spent in activities for all persons by Kind of activities, Day of the week, Area classification, Sex, Usual economic activity, Usual state of health, Age (15 Years Old and Over) - Japan, Prefectures*) filtered to Mie Prefecture (`24000`), weekly average (`1_Weekly average`), both sexes (`0_Both sexes`), not working (`2_Not working`), and total health (`0_Total`). The two elderly age cohorts (`65 to 74 years old` and `75 years old and over`) are weighted using 2020 Population Census counts for Tamaki Town ($w_{65-74} = 2{,}031 / 4{,}250 \approx 0.478$, $w_{75+} = 2{,}219 / 4{,}250 \approx 0.522$):
+     $$\bar{x}_{\text{val}} = w_{65-74} \bar{x}_{65-74} + w_{75+} \bar{x}_{75+}$$
    - **Activity Set Alignment**: Comparison is restricted via an inner join to mutual activities, mapping survey `Moving (excluding commuting)` to `Moving` and dropping non-simulated categories (`Work`, `Schoolwork`, `Commuting to and from school or work`).
 
 3. **Standard Errors ($SE$)**:
    - **Simulation ($SE_{\text{sim}}$)**: Computed directly from agent-level sample standard deviations ($s_{\text{sim}}$) across the $N_{\text{sim}} = 100$ agents:
      $$SE_{\text{sim}} = \frac{s_{\text{sim}}}{\sqrt{N_{\text{sim}}}}$$
-   - **Survey ($SE_{\text{val}}$)**: Computed using the official Standard Error Ratio ($r$) from Table 13 (*Standard Error Ratios of Average time spent in activities for all persons by Sex, Kind of activities - Weekly average, Japan, Prefectures*) for Mie Prefecture. Because Table 13 computes $r$ across the entire prefectural sample ($N_{\text{total}} = 3{,}372$), the ratio is scaled to the elderly non-working subgroup ($N_{\text{val}} = 218$) using the square root ratio of the sample sizes ($SE \propto \frac{1}{\sqrt{N}}$):
-     $$SE_{\text{val}} = r \times \bar{x}_{\text{val}} \times \sqrt{\frac{N_{\text{total}}}{N_{\text{val}}}} = r \times \bar{x}_{\text{val}} \times \sqrt{\frac{3372}{218}} \approx 3.9329 \times (r \times \bar{x}_{\text{val}})$$
+   - **Survey ($SE_{\text{val}}$)**: Computed using the official Standard Error Ratio ($r$) from Table 13 (*Standard Error Ratios of Average time spent in activities for all persons by Sex, Kind of activities - Weekly average, Japan, Prefectures*) for Mie Prefecture. Because Table 13 computes $r$ across the entire prefectural sample ($N_{\text{total}} = 3{,}372$), the ratio is scaled to the elderly non-working subgroup ($N_{\text{val}} = 800$) following Kish domain estimation standards:
+     $$SE_{\text{val}} = r \times \bar{x}_{\text{val}} \times \sqrt{\frac{N_{\text{total}}}{N_{\text{val}}}} = r \times \bar{x}_{\text{val}} \times \sqrt{\frac{3372}{800}} \approx 2.0531 \times (r \times \bar{x}_{\text{val}})$$
    - **Combined Standard Error**:
      $$SE_{\text{combined}} = \sqrt{SE_{\text{sim}}^2 + SE_{\text{val}}^2}$$
 
 4. **Degrees of Freedom**:
    Effective degrees of freedom ($\nu_{\text{Welch}}$) for the mean difference are estimated using the Welch–Satterthwaite equation:
    $$\nu_{\text{Welch}} = \frac{\left(SE_{\text{sim}}^2 + SE_{\text{val}}^2\right)^2}{\frac{SE_{\text{sim}}^4}{N_{\text{sim}} - 1} + \frac{SE_{\text{val}}^4}{N_{\text{val}} - 1}}$$
+   When simulation variance is zero ($SE_{\text{sim}} = 0$), the formula simplifies to $\nu_{\text{Welch}} = N_{\text{val}} - 1 = 799.0$.
 
-5. **Confidence Intervals**:
-   Confidence intervals at the 90% and 95% levels are computed using Student's $t$-distribution:
-   - **Simulation**:
-     $$CI_{\text{sim}} = \bar{x}_{\text{sim}} \pm t_{1 - \alpha/2, \, N_{\text{sim}} - 1} \times SE_{\text{sim}}$$
-   - **Survey**:
-     $$CI_{\text{val}} = \bar{x}_{\text{val}} \pm t_{1 - \alpha/2, \, N_{\text{val}} - 1} \times SE_{\text{val}}$$
+5. **Confidence Intervals and Overlap Visualization**:
+   Confidence intervals at the 90% and 95% levels are computed using Student's $t$-distribution and standardized into explicit interval bounds:
+   - **Simulation Interval**:
+     $$[CI_{\text{sim, Lower}}, CI_{\text{sim, Upper}}] = \bar{x}_{\text{sim}} \pm t_{1 - \alpha/2, \, N_{\text{sim}} - 1} \times SE_{\text{sim}}$$
+   - **Survey Interval**:
+     $$[CI_{\text{val, Lower}}, CI_{\text{val, Upper}}] = \bar{x}_{\text{val}} \pm t_{1 - \alpha/2, \, N_{\text{val}} - 1} \times SE_{\text{val}}$$
 
-6. **Test Statistics and $p$-Values**:
+   > **Note on ACS Guidelines Compatibility**: In alignment with U.S. Census Bureau American Community Survey (ACS) comparison guidelines, confidence intervals overlap visualization provides an intuitive graphical heuristic: non-overlapping confidence intervals indicate a statistically significant difference at level $\alpha$, whereas partial overlap does not necessarily imply equivalence. Formal statistical conclusions are therefore determined by the two-sample Welch's $t$-test.
+
+6. **Test Statistics, $p$-Values, and Multiple Testing Adjustment**:
    To test the null hypothesis of equal mean activity durations ($H_0: \mu_{\text{sim}} - \mu_{\text{val}} = 0$) against the two-sided alternative ($H_1: \mu_{\text{sim}} - \mu_{\text{val}} \neq 0$), Welch's $t$-statistic is calculated as:
    $$t = \frac{\bar{x}_{\text{sim}} - \bar{x}_{\text{val}}}{SE_{\text{combined}}} = \frac{\bar{x}_{\text{sim}} - \bar{x}_{\text{val}}}{\sqrt{SE_{\text{sim}}^2 + SE_{\text{val}}^2}}$$
-   The two-tailed $p$-value is evaluated under Student's $t$-distribution with $\nu_{\text{Welch}}$ degrees of freedom:
+   The two-tailed unadjusted $p$-value is evaluated under Student's $t$-distribution with $\nu_{\text{Welch}}$ degrees of freedom:
    $$p = 2 \times \left(1 - F_t\left(|t|; \, \nu_{\text{Welch}}\right)\right) = 2 \times P\left(T \ge |t|\right)$$
    where $F_t(\cdot; \, \nu_{\text{Welch}})$ denotes the cumulative distribution function (CDF) of Student's $t$-distribution with $\nu_{\text{Welch}}$ degrees of freedom.
 
+   To control the Family-Wise Error Rate (FWER) across the simultaneous comparisons of 17 activity categories, $p$-values are adjusted using the step-down **Holm-Bonferroni method** ($p_{\text{holm}}$).
+
    - **MiniMax-M2.5 (Scenario 2)**:
 
-     | Activity | $\bar{x}_{\text{sim}}$ (min) | $\bar{x}_{\text{val}}$ (min) | $SE_{\text{combined}}$ | $\nu_{\text{Welch}}$ | Welch's $t$ | $p$-value |
-     | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-     | Caring or nursing | 0.00 | 6.50 | 4.49 | 217.0 | -1.446 | 0.1495 |
-     | Child care | 0.00 | 3.00 | 0.71 | 217.0 | -4.231 | 3.44e-05 |
-     | Hobbies and amusements | 12.69 | 49.00 | 8.44 | 234.6 | -4.303 | 2.48e-05 |
-     | Housework | 27.97 | 144.50 | 21.17 | 220.5 | -5.504 | 1.02e-07 |
-     | Learning, self-education, and training (excluding schoolwork) | 2.60 | 9.50 | 2.25 | 312.6 | -3.062 | 0.0024 |
-     | Meals | 119.49 | 119.00 | 4.72 | 301.3 | 0.104 | 0.9173 |
-     | Medical examination or treatment | 0.20 | 14.50 | 6.70 | 217.4 | -2.135 | 0.0339 |
-     | Moving | 15.14 | 19.00 | 2.34 | 309.8 | -1.648 | 0.1005 |
-     | Other activities | 0.40 | 30.50 | 10.62 | 217.6 | -2.833 | 0.0050 |
-     | Personal care | 160.39 | 94.00 | 8.83 | 294.8 | 7.523 | 6.53e-13 |
-     | Rest and relaxation | 313.19 | 108.00 | 11.72 | 167.5 | 17.503 | 1.15e-39 |
-     | Shopping | 4.67 | 32.50 | 3.66 | 250.4 | -7.612 | 5.52e-13 |
-     | Sleep | 429.00 | 500.50 | 9.99 | 197.2 | -7.158 | 1.58e-11 |
-     | Social life | 9.98 | 12.00 | 5.09 | 306.0 | -0.397 | 0.6919 |
-     | Sports | 0.20 | 21.50 | 4.60 | 217.8 | -4.635 | 6.16e-06 |
-     | Volunteer and social activities | 0.00 | 4.00 | 1.31 | 217.0 | -3.045 | 0.0026 |
-     | Watching TV, listening to the radio, reading newspapers or magazines | 335.83 | 267.00 | 12.89 | 204.5 | 5.341 | 2.45e-07 |
+     | Activity | $\bar{x}_{\text{sim}}$ (min) | $\bar{x}_{\text{val}}$ (min) | $SE_{\text{combined}}$ | $\nu_{\text{Welch}}$ | Welch's $t$ | $p$-value | $p_{\text{holm}}$ |
+     | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+     | Caring or nursing | 0.00 | 6.57 | 2.37 | 799.0 | -2.771 | 0.0057 | 0.0229 |
+     | Child care | 0.00 | 2.96 | 0.36 | 799.0 | -8.105 | 1.98e-15 | 2.38e-14 |
+     | Hobbies and amusements | 12.69 | 48.51 | 4.60 | 892.3 | -7.796 | 1.78e-14 | 1.96e-13 |
+     | Housework | 27.97 | 143.33 | 11.08 | 842.2 | -10.409 | 5.94e-24 | 8.91e-23 |
+     | Learning, self-education, and training (excluding schoolwork) | 2.60 | 9.43 | 1.53 | 282.1 | -4.459 | 1.19e-05 | 7.13e-05 |
+     | Meals | 119.49 | 119.18 | 3.58 | 186.2 | 0.088 | 0.9304 | 1.0000 |
+     | Medical examination or treatment | 0.20 | 14.74 | 3.56 | 804.0 | -4.086 | 4.83e-05 | 0.0002 |
+     | Moving | 23.39 | 18.82 | 2.14 | 169.7 | 2.132 | 0.0344 | 0.1032 |
+     | Other activities | 0.40 | 30.61 | 5.58 | 807.1 | -5.418 | 7.97e-08 | 5.58e-07 |
+     | Personal care | 160.39 | 94.09 | 6.79 | 177.9 | 9.770 | 2.55e-18 | 3.57e-17 |
+     | Rest and relaxation | 313.19 | 108.62 | 10.61 | 117.9 | 19.283 | 2.93e-38 | 4.98e-37 |
+     | Shopping | 4.67 | 32.26 | 2.08 | 776.8 | -13.258 | 2.59e-36 | 4.14e-35 |
+     | Sleep | 429.00 | 501.72 | 8.72 | 126.8 | -8.335 | 1.09e-13 | 1.09e-12 |
+     | Social life | 9.98 | 11.78 | 3.80 | 189.9 | -0.474 | 0.6361 | 1.0000 |
+     | Sports | 0.20 | 21.35 | 2.39 | 810.0 | -8.855 | 5.22e-18 | 6.78e-17 |
+     | Volunteer and social activities | 0.00 | 3.91 | 0.67 | 799.0 | -5.833 | 7.89e-09 | 7.10e-08 |
+     | Watching TV, listening to the radio, reading newspapers or magazines | 335.83 | 267.09 | 11.16 | 129.0 | 6.161 | 8.52e-09 | 7.10e-08 |
 
    - **GLM-5 (Scenario 2)**:
 
-     | Activity | $\bar{x}_{\text{sim}}$ (min) | $\bar{x}_{\text{val}}$ (min) | $SE_{\text{combined}}$ | $\nu_{\text{Welch}}$ | Welch's $t$ | $p$-value |
-     | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-     | Caring or nursing | 0.00 | 6.50 | 4.49 | 217.0 | -1.446 | 0.1495 |
-     | Child care | 0.00 | 3.00 | 0.71 | 217.0 | -4.231 | 3.44e-05 |
-     | Hobbies and amusements | 63.40 | 49.00 | 8.77 | 265.3 | 1.643 | 0.1016 |
-     | Housework | 15.60 | 144.50 | 21.11 | 218.1 | -6.106 | 4.63e-09 |
-     | Learning, self-education, and training (excluding schoolwork) | 0.20 | 9.50 | 1.94 | 221.6 | -4.789 | 3.07e-06 |
-     | Meals | 63.20 | 119.00 | 3.68 | 234.6 | -15.170 | 1.10e-36 |
-     | Medical examination or treatment | 0.00 | 14.50 | 6.70 | 217.0 | -2.166 | 0.0314 |
-     | Moving | 0.20 | 19.00 | 2.04 | 219.1 | -9.227 | 2.42e-17 |
-     | Other activities | 0.00 | 30.50 | 10.62 | 217.0 | -2.873 | 0.0045 |
-     | Personal care | 22.40 | 94.00 | 6.66 | 222.8 | -10.748 | 5.61e-22 |
-     | Rest and relaxation | 298.80 | 108.00 | 7.23 | 314.8 | 26.408 | 7.86e-82 |
-     | Shopping | 0.00 | 32.50 | 3.52 | 217.0 | -9.246 | 2.25e-17 |
-     | Sleep | 653.92 | 500.50 | 7.04 | 314.7 | 21.787 | 8.26e-65 |
-     | Social life | 0.00 | 12.00 | 3.95 | 217.0 | -3.034 | 0.0027 |
-     | Sports | 0.00 | 21.50 | 4.59 | 217.0 | -4.683 | 4.99e-06 |
-     | Volunteer and social activities | 0.00 | 4.00 | 1.31 | 217.0 | -3.045 | 0.0026 |
-     | Watching TV, listening to the radio, reading newspapers or magazines | 322.20 | 267.00 | 9.02 | 315.6 | 6.121 | 2.75e-09 |
+     | Activity | $\bar{x}_{\text{sim}}$ (min) | $\bar{x}_{\text{val}}$ (min) | $SE_{\text{combined}}$ | $\nu_{\text{Welch}}$ | Welch's $t$ | $p$-value | $p_{\text{holm}}$ |
+     | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+     | Caring or nursing | 0.00 | 6.57 | 2.37 | 799.0 | -2.771 | 0.0057 | 0.0083 |
+     | Child care | 0.00 | 2.96 | 0.36 | 799.0 | -8.105 | 1.98e-15 | 1.39e-14 |
+     | Hobbies and amusements | 63.40 | 48.51 | 5.17 | 624.7 | 2.878 | 0.0041 | 0.0083 |
+     | Housework | 15.60 | 143.33 | 10.97 | 813.2 | -11.646 | 4.22e-29 | 4.65e-28 |
+     | Learning, self-education, and training (excluding schoolwork) | 0.20 | 9.43 | 1.02 | 853.1 | -9.043 | 1.01e-18 | 1.01e-17 |
+     | Meals | 63.20 | 119.18 | 2.02 | 893.4 | -27.670 | 3.27e-122 | 5.56e-121 |
+     | Medical examination or treatment | 0.00 | 14.74 | 3.55 | 799.0 | -4.149 | 3.70e-05 | 0.0001 |
+     | Moving | 0.28 | 18.82 | 1.07 | 848.5 | -17.333 | 7.54e-58 | 9.05e-57 |
+     | Other activities | 0.00 | 30.61 | 5.56 | 799.0 | -5.504 | 5.01e-08 | 2.00e-07 |
+     | Personal care | 22.40 | 94.09 | 3.54 | 862.7 | -20.241 | 7.64e-75 | 1.07e-73 |
+     | Rest and relaxation | 298.80 | 108.62 | 5.23 | 224.1 | 36.389 | 4.94e-96 | 7.90e-95 |
+     | Shopping | 0.00 | 32.26 | 1.82 | 799.0 | -17.712 | 1.82e-59 | 2.37e-58 |
+     | Sleep | 653.92 | 501.72 | 5.09 | 222.6 | 29.894 | 6.92e-80 | 1.04e-78 |
+     | Social life | 0.00 | 11.78 | 2.03 | 799.0 | -5.812 | 8.90e-09 | 4.73e-08 |
+     | Sports | 0.00 | 21.35 | 2.38 | 799.0 | -8.970 | 2.07e-18 | 1.87e-17 |
+     | Volunteer and social activities | 0.00 | 3.91 | 0.67 | 799.0 | -5.833 | 7.89e-09 | 4.73e-08 |
+     | Watching TV, listening to the radio, reading newspapers or magazines | 322.20 | 267.09 | 6.30 | 254.9 | 8.742 | 3.14e-16 | 2.51e-15 |

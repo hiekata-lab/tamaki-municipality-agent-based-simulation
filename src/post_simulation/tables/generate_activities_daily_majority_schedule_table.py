@@ -20,12 +20,16 @@ from src.post_simulation.tables.utils import (
 def generate_daily_schedule_table(sim_dir: str, out_dir: str) -> None:
     df = load_aggregated_simulation_data(sim_dir)
 
-    df = df[
-        ~df[COL_SIM_ACTIVITY].isin(TRANSPORTATION_MODES)
-        & ~df[COL_SIM_ACTIVITY].str.startswith(
+    # Harmonize transit modes to Moving without dropping them,
+    # preserving transit events during 1-minute forward-fill resampling to prevent activity leaks.
+    transit_mask = (
+        df[COL_SIM_ACTIVITY].isin(TRANSPORTATION_MODES)
+        | df[COL_SIM_ACTIVITY].str.startswith(
             ("Riding", "Walking", "Driving"), na=False
         )
-    ].copy()
+        | (df[COL_SIM_ACTIVITY] == "Arriving")
+    )
+    df.loc[transit_mask, COL_SIM_ACTIVITY] = "Moving"
 
     df_last = df.groupby(COL_SIMULATION_UUID).last().reset_index()
     df_last[COL_STARTING_TIME] += pd.Timedelta(hours=8)
@@ -52,7 +56,7 @@ def generate_daily_schedule_table(sim_dir: str, out_dir: str) -> None:
 
     df_schedule = (
         df_min.groupby(COL_SEGMENT_INDEX)[COL_SIM_ACTIVITY]
-        .agg(lambda x: x.mode()[0])
+        .agg(lambda x: x.mode().iloc[0] if not x.mode().empty else "Unknown")
         .reset_index()
         .rename(columns={COL_SIM_ACTIVITY: COL_SCHEDULE_ACTIVITY})
     )

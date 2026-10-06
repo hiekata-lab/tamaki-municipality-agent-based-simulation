@@ -32,10 +32,33 @@ def generate_activity_time_comparison_plot(
     means_sim = df_plot[COL_SIMULATION].values
     means_gold = df_plot[COL_VALIDATION_VALUE].values
 
-    ci95_gold = (df_plot["CI_95_Upper"].values - df_plot["CI_95_Lower"].values) / 2.0
-    ci90_gold = (df_plot["CI_90_Upper"].values - df_plot["CI_90_Lower"].values) / 2.0
-    ci95_sim = df_plot["CI_95_Sim"].values
-    ci90_sim = df_plot["CI_90_Sim"].values
+    # Validation confidence interval half-widths using standardized bounds or fallback
+    if "CI_95_Val_Upper" in df_plot.columns and "CI_95_Val_Lower" in df_plot.columns:
+        ci95_gold = (
+            df_plot["CI_95_Val_Upper"].values - df_plot["CI_95_Val_Lower"].values
+        ) / 2.0
+        ci90_gold = (
+            df_plot["CI_90_Val_Upper"].values - df_plot["CI_90_Val_Lower"].values
+        ) / 2.0
+    else:
+        ci95_gold = (
+            df_plot["CI_95_Upper"].values - df_plot["CI_95_Lower"].values
+        ) / 2.0
+        ci90_gold = (
+            df_plot["CI_90_Upper"].values - df_plot["CI_90_Lower"].values
+        ) / 2.0
+
+    # Simulation confidence interval half-widths using standardized bounds or fallback
+    if "CI_95_Sim_Upper" in df_plot.columns and "CI_95_Sim_Lower" in df_plot.columns:
+        ci95_sim = (
+            df_plot["CI_95_Sim_Upper"].values - df_plot["CI_95_Sim_Lower"].values
+        ) / 2.0
+        ci90_sim = (
+            df_plot["CI_90_Sim_Upper"].values - df_plot["CI_90_Sim_Lower"].values
+        ) / 2.0
+    else:
+        ci95_sim = df_plot["CI_95_Sim"].values
+        ci90_sim = df_plot["CI_90_Sim"].values
 
     y = np.arange(len(activities))
     height = 0.35

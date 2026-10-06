@@ -26,26 +26,23 @@ from src.constants import (
 from src.post_simulation.tables.utils import (
     calculate_combined_standard_error,
     calculate_confidence_interval,
+    calculate_holm_bonferroni,
     calculate_margin_of_error,
     calculate_p_value,
     calculate_standard_error,
     calculate_welch_satterthwaite_dof,
     calculate_welch_t_statistic,
+    clip_to_first_day_duration,
     load_aggregated_simulation_data,
     save_table_csv,
 )
 
-
-def clip_to_first_day_duration(df: pd.DataFrame) -> pd.DataFrame:
-    """Clips simulation activities to the first 24-hour cycle per agent."""
-    t_start = df.groupby(COL_SIMULATION_UUID)[COL_STARTING_TIME].transform("min")
-    t_end = t_start + pd.Timedelta(hours=24)
-    in_window = (df[COL_END_TIME] > t_start) & (df[COL_STARTING_TIME] < t_end)
-    df_window = df[in_window].copy()
-    clipped_start = df_window[COL_STARTING_TIME].clip(lower=t_start[in_window])
-    clipped_end = df_window[COL_END_TIME].clip(upper=t_end[in_window])
-    df_window[COL_DURATION] = (clipped_end - clipped_start).dt.total_seconds() / 60.0
-    return df_window
+# Tamaki Town 2020 Census elderly population counts:
+# 65 to 74 years old: 2,031; 75 years old and over: 2,219; Total: 4,250
+TAMAKI_CENSUS_POP_WEIGHTS = {
+    "65 to 74 years old": 2031.0 / 4250.0,
+    "75 years old and over": 2219.0 / 4250.0,
+}
 
 
 def generate_comparison_table(
@@ -58,9 +55,13 @@ def generate_comparison_table(
     df = load_aggregated_simulation_data(sim_dir)
     df = df[df[COL_SCENARIO] == "Scenario 2"].copy()
 
-    transit_mask = df[COL_SIM_ACTIVITY].isin(TRANSPORTATION_MODES) | df[
-        COL_SIM_ACTIVITY
-    ].str.startswith(("Riding", "Walking", "Driving"), na=False)
+    transit_mask = (
+        df[COL_SIM_ACTIVITY].isin(TRANSPORTATION_MODES)
+        | df[COL_SIM_ACTIVITY].str.startswith(
+            ("Riding", "Walking", "Driving"), na=False
+        )
+        | (df[COL_SIM_ACTIVITY] == "Arriving")
+    )
     df.loc[transit_mask, COL_SIM_ACTIVITY] = "Moving"
 
     df_24h = clip_to_first_day_duration(df)
@@ -106,19 +107,32 @@ def generate_comparison_table(
     df_val[COL_ACTIVITY] = df_val[COL_ACTIVITY].replace(
         {"Moving (excluding commuting)": "Moving"}
     )
-    df_val_filtered = (
-        df_val[
-            (df_val[COL_SEX_EN] == "Both sexes")
-            & (df_val[COL_HEALTH] == "Total")
-            & (
-                df_val[COL_AGE_GROUP].isin(
-                    ["65 to 74 years old", "75 years old and over"]
-                )
+
+    # Filter validation data for Both sexes, Total health, Weekly average, and 65+ cohorts
+    df_val_sub = df_val[
+        (df_val[COL_SEX_EN] == "Both sexes")
+        & (df_val[COL_HEALTH] == "Total")
+        & (df_val[COL_DAY_OF_WEEK_EN] == "Weekly average")
+        & (
+            df_val[COL_AGE_GROUP].isin(
+                ["65 to 74 years old", "75 years old and over"]
             )
-        ]
-        .groupby([COL_DAY_OF_WEEK_EN, COL_ACTIVITY])[COL_VALIDATION_VALUE]
-        .mean()
+        )
+    ].copy()
+
+    # Weight 65-74 and 75+ age strata by municipal census population weights
+    df_val_sub["pop_weight"] = df_val_sub[COL_AGE_GROUP].map(
+        TAMAKI_CENSUS_POP_WEIGHTS
+    )
+    df_val_sub["weighted_val"] = (
+        df_val_sub[COL_VALIDATION_VALUE] * df_val_sub["pop_weight"]
+    )
+
+    df_val_filtered = (
+        df_val_sub.groupby([COL_DAY_OF_WEEK_EN, COL_ACTIVITY])["weighted_val"]
+        .sum()
         .reset_index()
+        .rename(columns={"weighted_val": COL_VALIDATION_VALUE})
     )
 
     df_merged = pd.merge(
@@ -132,11 +146,6 @@ def generate_comparison_table(
     df_merged[COL_DAY_OF_WEEK_EN] = df_merged[COL_DAY_OF_WEEK_EN].fillna(
         "Weekly average"
     )
-    df_merged[COL_SIMULATION] = df_merged[COL_SIMULATION].fillna(0)
-    df_merged["std"] = df_merged["std"].fillna(0)
-    df_merged["count"] = df_merged["count"].fillna(0)
-    df_merged["se_sim"] = df_merged["se_sim"].fillna(0)
-    df_merged[COL_VALIDATION_VALUE] = df_merged[COL_VALIDATION_VALUE].fillna(0)
 
     se_df = pd.read_csv(se_ratios_path)
     se_df[COL_ACTIVITY] = se_df[COL_ACTIVITY].replace(
@@ -148,6 +157,7 @@ def generate_comparison_table(
     se_ratio_col = df_merged[COL_ACTIVITY].map(
         lambda act: se_ratios.get(("Both sexes", act), 0.0)
     )
+
     df_sample_size = pd.read_csv(sample_size_path)
     count_val = int(df_sample_size["sample_size"].iloc[0])
     subgroup_scale = np.sqrt(SURVEY_MIE_TOTAL_SAMPLE_SIZE / count_val)
@@ -168,22 +178,54 @@ def generate_comparison_table(
     df_merged["dof_welch"] = dof_welch
 
     val_mean = df_merged[COL_VALIDATION_VALUE]
+    sim_mean = df_merged[COL_SIMULATION]
     dof_val = np.maximum(1.0, float(count_val) - 1.0)
     dof_sim = np.maximum(1.0, df_merged["count"] - 1.0)
 
-    df_merged["CI_90_Lower"], df_merged["CI_90_Upper"] = calculate_confidence_interval(
+    # Standardized CI schema for validation and simulation
+    (
+        df_merged["CI_90_Val_Lower"],
+        df_merged["CI_90_Val_Upper"],
+    ) = calculate_confidence_interval(
         mean=val_mean,
         se=se_val,
         dof=dof_val,
         confidence_level=0.90,
     )
-    df_merged["CI_95_Lower"], df_merged["CI_95_Upper"] = calculate_confidence_interval(
+    (
+        df_merged["CI_95_Val_Lower"],
+        df_merged["CI_95_Val_Upper"],
+    ) = calculate_confidence_interval(
         mean=val_mean,
         se=se_val,
         dof=dof_val,
         confidence_level=0.95,
     )
 
+    (
+        df_merged["CI_90_Sim_Lower"],
+        df_merged["CI_90_Sim_Upper"],
+    ) = calculate_confidence_interval(
+        mean=sim_mean,
+        se=df_merged["se_sim"],
+        dof=dof_sim,
+        confidence_level=0.90,
+    )
+    (
+        df_merged["CI_95_Sim_Lower"],
+        df_merged["CI_95_Sim_Upper"],
+    ) = calculate_confidence_interval(
+        mean=sim_mean,
+        se=df_merged["se_sim"],
+        dof=dof_sim,
+        confidence_level=0.95,
+    )
+
+    # Backward compatibility aliases
+    df_merged["CI_90_Lower"] = df_merged["CI_90_Val_Lower"]
+    df_merged["CI_90_Upper"] = df_merged["CI_90_Val_Upper"]
+    df_merged["CI_95_Lower"] = df_merged["CI_95_Val_Lower"]
+    df_merged["CI_95_Upper"] = df_merged["CI_95_Val_Upper"]
     df_merged["CI_90_Sim"] = calculate_margin_of_error(
         se=df_merged["se_sim"], dof=dof_sim, confidence_level=0.90
     )
@@ -192,7 +234,7 @@ def generate_comparison_table(
     )
 
     t_stat = calculate_welch_t_statistic(
-        mean1=df_merged[COL_SIMULATION],
+        mean1=sim_mean,
         mean2=val_mean,
         se_combined=df_merged["se_combined"],
     )
@@ -201,8 +243,20 @@ def generate_comparison_table(
         t_stat=t_stat,
         dof=dof_welch,
     )
+    df_merged["p_val_holm"] = calculate_holm_bonferroni(df_merged["p_val"])
 
-    df_merged = df_merged.fillna(0)
+    # Selective filling only on descriptive/aggregate columns, preserving NaN on inferential statistics
+    non_inferential_fill = {
+        COL_SCENARIO: "Scenario 2",
+        COL_DAY_OF_WEEK_EN: "Weekly average",
+        COL_SIMULATION: 0.0,
+        "std": 0.0,
+        "count": 0,
+        "se_sim": 0.0,
+        COL_VALIDATION_VALUE: 0.0,
+    }
+    df_merged = df_merged.fillna(non_inferential_fill)
+
     df_merged = df_merged.sort_values(
         by=[COL_SCENARIO, COL_DAY_OF_WEEK_EN, COL_ACTIVITY]
     ).reset_index(drop=True)

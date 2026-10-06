@@ -1,7 +1,11 @@
 from src.post_simulation.figures.utils.environment import (
     configure_matplotlib_defaults,
 )
-from src.post_simulation.figures.utils.gis import load_projected_shapefile
+try:
+    from src.post_simulation.figures.utils.gis import load_projected_shapefile
+except ImportError:
+    load_projected_shapefile = None
+
 from src.post_simulation.figures.utils.charting import (
     plot_grouped_category_bars,
     parse_legend_location_coordinates,

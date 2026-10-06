@@ -2,9 +2,9 @@ import argparse
 import os
 import pandas as pd
 from src.constants import (
+    COL_ACTIVITY,
     COL_AGE_GROUP,
     COL_AGENT_UUID,
-    COL_DAYS_SIMULATED,
     COL_DURATION,
     COL_HEALTH,
     COL_NORMALIZED_DURATION,
@@ -12,9 +12,11 @@ from src.constants import (
     COL_SEX_EN,
     COL_SIM_ACTIVITY,
     COL_SIMULATION_UUID,
+    TRANSPORTATION_MODES,
     VALIDATION_ACTIVITIES,
 )
 from src.post_simulation.tables.utils import (
+    clip_to_first_day_duration,
     export_grouped_pivot_table,
     load_aggregated_simulation_data,
 )
@@ -25,15 +27,35 @@ DEMOGRAPHIC_COLS = [COL_SCENARIO, COL_AGE_GROUP, COL_SEX_EN, COL_HEALTH]
 def generate_std_table(sim_dir: str, out_dir: str) -> None:
     df = load_aggregated_simulation_data(sim_dir)
 
+    # Harmonize normalization with average table: map transit modes and Arriving to Moving
+    transit_mask = (
+        df[COL_SIM_ACTIVITY].isin(TRANSPORTATION_MODES)
+        | df[COL_SIM_ACTIVITY].str.startswith(
+            ("Riding", "Walking", "Driving"), na=False
+        )
+        | (df[COL_SIM_ACTIVITY] == "Arriving")
+    )
+    df.loc[transit_mask, COL_SIM_ACTIVITY] = "Moving"
+
+    # Harmonize normalization: clip to first 24-hour cycle per agent
+    df_24h = clip_to_first_day_duration(df)
+
     df_act = (
-        df.dropna(subset=[COL_SIM_ACTIVITY])
-        .groupby([COL_SIMULATION_UUID, COL_DAYS_SIMULATED, COL_SIM_ACTIVITY])[
-            COL_DURATION
-        ]
+        df_24h.dropna(subset=[COL_SIM_ACTIVITY])
+        .groupby([COL_SIMULATION_UUID, COL_SIM_ACTIVITY])[COL_DURATION]
         .sum()
         .reset_index()
     )
-    df_act[COL_NORMALIZED_DURATION] = df_act[COL_DURATION] / df_act[COL_DAYS_SIMULATED]
+    df_act[COL_NORMALIZED_DURATION] = df_act[COL_DURATION]
+
+    sim_activities = [
+        act
+        for act in VALIDATION_ACTIVITIES
+        if act not in TRANSPORTATION_MODES
+        and not act.startswith(("Riding", "Walking", "Driving"))
+    ]
+    if "Moving" not in sim_activities:
+        sim_activities.append("Moving")
 
     df_meta = df[
         [
@@ -46,7 +68,7 @@ def generate_std_table(sim_dir: str, out_dir: str) -> None:
         ]
     ].drop_duplicates()
 
-    activities_df = pd.DataFrame({COL_SIM_ACTIVITY: VALIDATION_ACTIVITIES})
+    activities_df = pd.DataFrame({COL_SIM_ACTIVITY: sim_activities})
     df_full = pd.merge(
         df_meta.merge(activities_df, how="cross"),
         df_act,

@@ -127,7 +127,7 @@ SIM_ACTIVITY_TO_VAL_ACTIVIY_MAP = {
     "Social life": "Social life",
     "Medical examination or treatment": "Medical examination or treatment",
     "Other activities": "Other activities",
-    "Arriving": None,
+    "Arriving": "Moving",
     "Riding bus": "Riding bus",
     "Riding bike": "Riding bike",
     "Walking": "Walking",

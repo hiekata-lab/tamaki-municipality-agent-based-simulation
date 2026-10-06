@@ -308,6 +308,9 @@ def generate_location_time_heatmap(
     trip_csv: Optional[str] = None,
     agents_csv: Optional[str] = "data/processed/agents.csv",
 ) -> None:
+    if load_projected_shapefile is None:
+        print("  Warning: geopandas is not available; skipping geographic heatmap regeneration.")
+        return
     map_df = load_projected_shapefile("data/raw/r2ka24461.shp")
     df_time = pd.read_csv(time_csv)
 

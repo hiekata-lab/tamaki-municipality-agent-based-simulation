@@ -118,3 +118,16 @@ def generate_location_legend_table(
 
     save_table_csv(legend_df, output_path, index=False)
     return legend_df
+
+
+def clip_to_first_day_duration(df: pd.DataFrame) -> pd.DataFrame:
+    """Clips simulation activities to the first 24-hour cycle per agent."""
+    from src.constants import COL_STARTING_TIME, COL_END_TIME, COL_DURATION, COL_SIMULATION_UUID
+    t_start = df.groupby(COL_SIMULATION_UUID)[COL_STARTING_TIME].transform("min")
+    t_end = t_start + pd.Timedelta(hours=24)
+    in_window = (df[COL_END_TIME] > t_start) & (df[COL_STARTING_TIME] < t_end)
+    df_window = df[in_window].copy()
+    clipped_start = df_window[COL_STARTING_TIME].clip(lower=t_start[in_window])
+    clipped_end = df_window[COL_END_TIME].clip(upper=t_end[in_window])
+    df_window[COL_DURATION] = (clipped_end - clipped_start).dt.total_seconds() / 60.0
+    return df_window

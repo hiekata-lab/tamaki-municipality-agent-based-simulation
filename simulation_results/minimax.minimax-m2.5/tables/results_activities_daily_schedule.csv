@@ -62,11 +62,11 @@ Segment Index,Time,Activity
 60,10:00,Rest and relaxation
 61,10:10,Rest and relaxation
 62,10:20,Rest and relaxation
-63,10:30,Rest and relaxation
+63,10:30,"Watching TV, listening to the radio, reading newspapers or magazines"
 64,10:40,Rest and relaxation
 65,10:50,Rest and relaxation
 66,11:00,Rest and relaxation
-67,11:10,Rest and relaxation
+67,11:10,Meals
 68,11:20,Rest and relaxation
 69,11:30,Rest and relaxation
 70,11:40,Rest and relaxation
@@ -83,17 +83,17 @@ Segment Index,Time,Activity
 81,13:30,Rest and relaxation
 82,13:40,Rest and relaxation
 83,13:50,Rest and relaxation
-84,14:00,Rest and relaxation
+84,14:00,"Watching TV, listening to the radio, reading newspapers or magazines"
 85,14:10,"Watching TV, listening to the radio, reading newspapers or magazines"
 86,14:20,"Watching TV, listening to the radio, reading newspapers or magazines"
 87,14:30,Rest and relaxation
 88,14:40,Rest and relaxation
 89,14:50,Rest and relaxation
-90,15:00,Rest and relaxation
+90,15:00,"Watching TV, listening to the radio, reading newspapers or magazines"
 91,15:10,"Watching TV, listening to the radio, reading newspapers or magazines"
 92,15:20,Rest and relaxation
 93,15:30,Rest and relaxation
-94,15:40,Rest and relaxation
+94,15:40,"Watching TV, listening to the radio, reading newspapers or magazines"
 95,15:50,"Watching TV, listening to the radio, reading newspapers or magazines"
 96,16:00,"Watching TV, listening to the radio, reading newspapers or magazines"
 97,16:10,"Watching TV, listening to the radio, reading newspapers or magazines"
