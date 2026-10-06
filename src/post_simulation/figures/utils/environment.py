@@ -1,4 +1,9 @@
 import os
+
+scratch_mpl = "/Users/williamnorland/.gemini/antigravity/scratch/.mpl"
+if os.path.exists(scratch_mpl) or os.path.exists(os.path.dirname(scratch_mpl)):
+    os.environ.setdefault("MPLCONFIGDIR", scratch_mpl)
+
 import matplotlib.pyplot as plt
 
 
