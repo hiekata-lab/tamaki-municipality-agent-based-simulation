@@ -119,7 +119,7 @@ def main():
     VAL_DIR = "data/raw/Average time spent in activities for all persons by Kind of activities, Day of the week, Area classification, Sex, Usual economic activity, Usual state of health, Age (15 Years Old and Over)-Japan, Prefectures.csv"
     QA_DIR = "data/raw/Questionnaire A.csv"
     SE_FILE = "data/raw/Standard Error Ratios of Average time spent in activities for all persons by Sex, Kind of activities - Weekly average, Japan, Prefectures.csv"
-    SAMPLE_SIZE_RAW_FILE = "data/raw/Average time spent in activities for all persons by Kind of activities, Day of the week, Area classification, Sex, Usual economic activity, Age (Heads of One-Person Household)-Japan, Prefectures.csv"
+    SAMPLE_SIZE_RAW_FILE = "data/raw/Table 70-1-1 Sample size for all persons.csv"
     PRO_DIR = "data/processed"
     GEO_FILE = "data/raw/Tamaki-Town-Locations-EPSG32654-km-scale.csv"
     LOCG_FILE = "data/processed/locations_graph.json"
@@ -148,9 +148,13 @@ def main():
             ["--in-path", SE_FILE, "--out-path", PRO_DIR],
         )
 
+        sample_size_args = ["--out-path", PRO_DIR]
+        if os.path.exists(SAMPLE_SIZE_RAW_FILE):
+            sample_size_args.extend(["--in-path", SAMPLE_SIZE_RAW_FILE])
+
         run_script(
             PREPROCESS_SURVEY_SAMPLE_SIZE_SCRIPT,
-            ["--in-path", SAMPLE_SIZE_RAW_FILE, "--out-path", PRO_DIR],
+            sample_size_args,
         )
 
         run_script(
