@@ -121,14 +121,14 @@ An independent two-sample comparison using **Welch's $t$-test** is conducted to 
    - **Survey Interval**:
      $$[CI_{\text{val, Lower}}, CI_{\text{val, Upper}}] = \bar{x}_{\text{val}} \pm t_{1 - \alpha/2, \, N_{\text{val}} - 1} \times SE_{\text{val}}$$
 
-   > **Note on ACS Guidelines Compatibility**: In alignment with U.S. Census Bureau American Community Survey (ACS) comparison guidelines, confidence intervals overlap visualization provides an intuitive graphical heuristic: non-overlapping confidence intervals indicate a statistically significant difference at level $\alpha$, whereas partial overlap does not necessarily imply equivalence. Formal statistical conclusions are therefore determined by the two-sample Welch's $t$-test.
+   > **Note on ACS Guidelines Compatibility**: In alignment with U.S. Census Bureau American Community Survey (ACS) comparison guidelines (*Instructions for Applying Statistical Testing to ACS Data*), confidence intervals overlap visualization provides an intuitive graphical heuristic: non-overlapping confidence intervals indicate a statistically significant difference at level $\alpha$, whereas partial overlap does not necessarily imply equivalence. Formal statistical conclusions are therefore determined by the two-sample Welch's $t$-test.
 
 6. **Test Statistics, $p$-Values, and Multiple Testing Adjustment**:
    To test the null hypothesis of equal mean activity durations ($H_0: \mu_{\text{sim}} - \mu_{\text{val}} = 0$) against the two-sided alternative ($H_1: \mu_{\text{sim}} - \mu_{\text{val}} \neq 0$), Welch's $t$-statistic is calculated as:
    $$t = \frac{\bar{x}_{\text{sim}} - \bar{x}_{\text{val}}}{SE_{\text{combined}}} = \frac{\bar{x}_{\text{sim}} - \bar{x}_{\text{val}}}{\sqrt{SE_{\text{sim}}^2 + SE_{\text{val}}^2}}$$
    The two-tailed unadjusted $p$-value is evaluated under Student's $t$-distribution with $\nu_{\text{Welch}}$ degrees of freedom:
-   $$p = 2 \times \left(1 - F_t\left(|t|; \, \nu_{\text{Welch}}\right)\right) = 2 \times P\left(T \ge |t|\right)$$
-   where $F_t(\cdot; \, \nu_{\text{Welch}})$ denotes the cumulative distribution function (CDF) of Student's $t$-distribution with $\nu_{\text{Welch}}$ degrees of freedom.
+   $$p = 2 \times P\left(T \ge |t|\right)$$
+   where $T$ follows Student's $t$-distribution with $\nu_{\text{Welch}}$ degrees of freedom.
 
    To control the Family-Wise Error Rate (FWER) across the simultaneous comparisons of 17 activity categories, $p$-values are adjusted using the step-down **Holm-Bonferroni method** ($p_{\text{holm}}$).
 
