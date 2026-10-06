@@ -116,10 +116,18 @@ def main():
     print(f"Starting full experiment replication. Stages: {args.stages}", flush=True)
 
     # Pre-sim Paths
-    VAL_DIR = "data/raw/Average time spent in activities for all persons by Kind of activities, Day of the week, Area classification, Sex, Usual economic activity, Usual state of health, Age (15 Years Old and Over)-Japan, Prefectures.csv"
+    VAL_DIR = (
+        "data/raw/70-1-2 Average time spent in activities for all persons by Kind of "
+        "activities, Day of the week, Area classification, Sex, Usual economic activity, "
+        "Usual state of health, Age (15 Years Old and Over)-Japan, Prefectures.csv"
+    )
     QA_DIR = "data/raw/Questionnaire A.csv"
     SE_FILE = "data/raw/Standard Error Ratios of Average time spent in activities for all persons by Sex, Kind of activities - Weekly average, Japan, Prefectures.csv"
-    SAMPLE_SIZE_RAW_FILE = "data/raw/Table 70-1-1 Sample size for all persons.csv"
+    SAMPLE_SIZE_RAW_FILE = (
+        "data/raw/70-1-1 Average time spent in activities for all persons by Kind of "
+        "activities, Day of the week, Area classification, Sex, Usual economic activity, "
+        "Usual state of health, Age (15 Years Old and Over)-Japan, Prefectures.csv"
+    )
     PRO_DIR = "data/processed"
     GEO_FILE = "data/raw/Tamaki-Town-Locations-EPSG32654-km-scale.csv"
     LOCG_FILE = "data/processed/locations_graph.json"
