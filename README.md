@@ -9,7 +9,6 @@
     - [Questionnaire A](#questionnaire-a)
     - [Table Number 70-1-1](#table-number-70-1-1)
     - [Table Number 70-1-2](#table-number-70-1-2)
-    - [Table Number 78-1-1](#table-number-78-1-1)
     - [Table Number 13](#table-number-13)
     - [Appendix Table A](#appendix-table-a)
   - [2020 Population Census](#2020-population-census)
@@ -58,13 +57,9 @@ Below is a full list of sources for all the data used in this simulation.
 **Statistics name**: 2021 Survey on Time Use and Leisure Activities, **Document title**: Questionnaire A, **Document URL**: [URL](https://www.stat.go.jp/english/data/shakai/2021/pdf/qua.pdf), **Accessed**: Jul 15, 2026
 
 #### Table Number 70-1-1 <a id="datasources:2021timeuse/70-1-1"></a>
-**Statistics name**: Survey on Time Use and Leisure Activities 2021 Survey on Time Use and Leisure Activities Questionnaire A Results on Time Use, Time Use for Prefectures, **Table title**: Sample size for all persons by Day of the week, Area classification, Sex, Usual economic activity, Usual state of health, Age (15 Years Old and Over)-Japan, Prefectures, **Table URL**: [URL](https://www.e-stat.go.jp/en/dbview?sid=0003457373), **Accessed**: Jul 16, 2026
+**Statistics name**: Survey on Time Use and Leisure Activities 2021 Survey on Time Use and Leisure Activities Questionnaire A Results on Time Use, Time Use for Prefectures, **Table title**: Sample size for all persons by Day of the week, Area classification, Sex, Usual economic activity, Usual state of health, Age (15 Years Old and Over)-Japan, Prefectures, **Table URL**: [URL](https://www.e-stat.go.jp/en/dbview?sid=0003457372), **Table API**: [URL](https://api.e-stat.go.jp/rest/3.0/app/getSimpleStatsData?appId=&statsDataId=0003457372), **Accessed**: Oct 06, 2026
 
 #### Table Number 70-1-2 <a id="datasources:2021timeuse/70-1-2"></a>
-**Statistics name**: Survey on Time Use and Leisure Activities 2021 Survey on Time Use and Leisure Activities Questionnaire A Results on Time Use, Time Use for Prefectures, **Table title**: Average time spent in activities for all persons by Kind of activities, Day of the week, Area classification, Sex, Usual economic activity, Usual state of health, Age (15 Years Old and Over)-Japan, Prefectures, **Table URL**: [URL](https://www.e-stat.go.jp/en/dbview?sid=0003457373), **Table API**: [URL](http://api.e-stat.go.jp/rest/3.0/app/getSimpleStatsData?cdCat01=1&cdCat03=0%2C1%2C2&cdCat05=0%2C6%2C7&cdArea=24000&appId=&lang=E&statsDataId=0003457373&metaGetFlg=Y&cntGetFlg=N&explanationGetFlg=Y&annotationGetFlg=Y&sectionHeaderFlg=1&replaceSpChars=0), **Accessed**: Jul 16, 2026
-
-#### Table Number 78-1-1 <a id="datasources:2021timeuse/78-1-1"></a>
-**Statistics name**: Survey on Time Use and Leisure Activities 2021 Survey on Time Use and Leisure Activities Questionnaire A Results on Time Use, Time Use for Prefectures, **Table title**: Average time spent in activities for all persons by Kind of activities, Day of the week, Area classification, Sex, Usual economic activity, Age (Heads of One-Person Household)-Japan, Prefectures, **Table URL**: [URL](https://www.e-stat.go.jp/index.php/en/dbview?sid=0003457588), **Table API**: [URL](http://api.e-stat.go.jp/rest/3.0/app/getSimpleStatsData?cdCat04=0%2C1%2C2%2C3%2C4%2C5%2C6%2C7&cdArea=24000&cdTab=202126A99B99&appId=&lang=E&statsDataId=0003457588&metaGetFlg=Y&cntGetFlg=N&explanationGetFlg=Y&annotationGetFlg=Y&sectionHeaderFlg=1&replaceSpChars=0), **Accessed**: Aug 17, 2026
 
 #### Table Number 13 <a id="datasources:2021timeuse/13"></a><a id="datasource:standard-errors"></a>
 **Statistics name**: Survey on Time Use and Leisure Activities 2021 Survey on Time Use and Leisure Activities Questionnaire A Results on Time Use, Time Use for Prefectures, **Table title**: Standard Error Ratios of Average time spent in activities for all persons by Sex, Kind of activities - Weekly average, Japan, Prefectures, **Table URL**: [URL](https://www.stat.go.jp/english/data/shakai/2021/zuhyou/2021gosaA013.xlsx), **Accessed**: Jul 15, 2026
