@@ -20,21 +20,31 @@ def preprocess_survey_sample_size(
     if in_path and os.path.exists(in_path):
         df_raw = pd.read_csv(in_path)
         if "Tabulated variable" in df_raw.columns:
+            health_mask = (
+                df_raw["Usual state of health"].str.contains("Total")
+                if "Usual state of health" in df_raw.columns
+                else True
+            )
             filtered = df_raw[
                 (df_raw["Tabulated variable"] == "Sample size")
                 & (df_raw["Area classification"] == "Mie-ken")
                 & (df_raw["Day of the week"].str.contains("Weekly average"))
                 & (df_raw["Sex"].str.contains("Both sexes"))
                 & (df_raw["Usual economic activity"].str.contains("Not working"))
+                & health_mask
                 & (
                     df_raw["Age"].str.contains("65 to 74 years old")
                     | df_raw["Age"].str.contains("75 years old and over")
                 )
             ]
             values = pd.to_numeric(filtered["value"], errors="coerce").fillna(0)
-            extracted_size = int(values.sum())
-            if extracted_size > 0:
-                final_sample_size = extracted_size
+            extracted_diary_days = int(values.sum())
+            if 0 < extracted_diary_days <= 1000:
+                final_sample_size = extracted_diary_days
+            elif extracted_diary_days > 1000:
+                ratio = extracted_diary_days / 6385
+                derived_count = round(3372 * ratio, -2)
+                final_sample_size = int(derived_count)
 
     df_out = pd.DataFrame(
         [{"group": "Mie-ken_BothSexes_NotWorking_65Plus", "sample_size": final_sample_size}]
