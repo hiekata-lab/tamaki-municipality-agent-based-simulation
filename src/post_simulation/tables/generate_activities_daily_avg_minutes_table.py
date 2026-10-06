@@ -274,7 +274,11 @@ if __name__ == "__main__":
         "--out-dir", type=str, default="tables", help="Output directory for tables"
     )
     args = parser.parse_args()
-    validation_path = "data/processed/Average time spent in activities for all persons by Kind of activities, Day of the week, Area classification, Sex, Usual economic activity, Usual state of health, Age (15 Years Old and Over)-Japan, Prefectures.csv"
+    validation_path = (
+        "data/processed/70-1-2 Average time spent in activities for all persons by Kind of "
+        "activities, Day of the week, Area classification, Sex, Usual economic activity, "
+        "Usual state of health, Age (15 Years Old and Over)-Japan, Prefectures.csv"
+    )
     se_ratios_path = "data/processed/Standard Error Ratios of Average time spent in activities for all persons by Sex, Kind of activities - Weekly average, Japan, Prefectures.csv"
     sample_size_path = "data/processed/survey_sample_size.csv"
     generate_comparison_table(
