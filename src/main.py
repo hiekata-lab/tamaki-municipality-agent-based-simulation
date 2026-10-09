@@ -45,17 +45,8 @@ GENERATE_ACTIVITIES_DAILY_STD_MINUTES_TABLE_SCRIPT = (
 GENERATE_ACTIVITIES_DAILY_MAJORITY_SCHEDULE_TABLE_SCRIPT = (
     "src/post_simulation/tables/generate_activities_daily_majority_schedule_table.py"
 )
-GENERATE_TRANSPORT_MODE_TIME_DAILY_AVG_MINUTES_TABLE_SCRIPT = (
-    "src/post_simulation/tables/generate_transport_mode_time_daily_avg_minutes_table.py"
-)
-GENERATE_TRANSPORT_MODE_TRIPS_DAILY_AVG_COUNT_TABLE_SCRIPT = (
-    "src/post_simulation/tables/generate_transport_mode_trips_daily_avg_count_table.py"
-)
 GENERATE_TRANSPORT_MODE_TRIPS_TOTAL_COUNT_TABLE_SCRIPT = (
     "src/post_simulation/tables/generate_transport_mode_trips_total_count_table.py"
-)
-GENERATE_TRANSPORT_MODE_DAILY_AVG_KM_DIST_TABLE_SCRIPT = (
-    "src/post_simulation/tables/generate_transport_mode_daily_avg_km_dist_table.py"
 )
 GENERATE_TRANSPORT_MODE_TOTAL_KM_DIST_TABLE_SCRIPT = (
     "src/post_simulation/tables/generate_transport_mode_total_km_dist_table.py"
@@ -75,23 +66,11 @@ GENERATE_ACTIVITIES_DAILY_AVG_MINUTES_PLOT_SCRIPT = (
 GENERATE_ACTIVITIES_DAILY_MAJORITY_SCHEDULE_PLOT_SCRIPT = (
     "src/post_simulation/figures/generate_activities_daily_majority_schedule_plot.py"
 )
-GENERATE_TRANSPORT_MODE_TIME_DAILY_AVG_MINUTES_PLOT_SCRIPT = (
-    "src/post_simulation/figures/generate_transport_mode_time_daily_avg_minutes_plot.py"
+GENERATE_TRANSPORT_MODE_TOTAL_DISTANCE_AND_TRIPS_PLOT_SCRIPT = (
+    "src/post_simulation/figures/generate_transport_mode_total_distance_and_trips_plot.py"
 )
-GENERATE_TRANSPORT_MODE_TRIPS_DAILY_AVG_COUNT_PLOT_SCRIPT = (
-    "src/post_simulation/figures/generate_transport_mode_trips_daily_avg_count_plot.py"
-)
-GENERATE_TRANSPORT_MODE_TRIPS_TOTAL_COUNT_PLOT_SCRIPT = (
-    "src/post_simulation/figures/generate_transport_mode_trips_total_count_plot.py"
-)
-GENERATE_TRANSPORT_MODE_DAILY_AVG_KM_DIST_PLOT_SCRIPT = (
-    "src/post_simulation/figures/generate_transport_mode_daily_avg_km_dist_plot.py"
-)
-GENERATE_TRANSPORT_MODE_TOTAL_KM_DIST_PLOT_SCRIPT = (
-    "src/post_simulation/figures/generate_transport_mode_total_km_dist_plot.py"
-)
-GENERATE_AGENT_LOCATION_TIME_HEATMAP_SCRIPT = (
-    "src/post_simulation/figures/generate_agent_location_time_heatmap.py"
+GENERATE_AGENT_LOCATION_TIME_TRIP_MAP_SCRIPT = (
+    "src/post_simulation/figures/generate_agent_location_time_trip_map.py"
 )
 
 
@@ -121,8 +100,14 @@ def main():
         "activities, Day of the week, Area classification, Sex, Usual economic activity, "
         "Usual state of health, Age (15 Years Old and Over)-Japan, Prefectures.csv"
     )
-    QA_DIR = "data/raw/Questionnaire A.csv"
-    SE_FILE = "data/raw/Standard Error Ratios of Average time spent in activities for all persons by Sex, Kind of activities - Weekly average, Japan, Prefectures.csv"
+    QA_DIR = (
+        "data/raw/Appendix Table A Number of Sample EDs, Households and Persons "
+        "by Prefectures (Questionnaire A).csv"
+    )
+    SE_FILE = (
+        "data/raw/13 Standard Error Ratios of Average time spent in activities for "
+        "all persons by Sex, Kind of activities - Weekly average, Japan, Prefectures.csv"
+    )
     SAMPLE_SIZE_RAW_FILE = (
         "data/raw/70-1-1 Average time spent in activities for all persons by Kind of "
         "activities, Day of the week, Area classification, Sex, Usual economic activity, "
@@ -198,17 +183,8 @@ def main():
                 tab_dir, "results_activities_average_comparison_minutes.csv"
             )
             sched_csv = os.path.join(tab_dir, "results_activities_daily_schedule.csv")
-            t_time_avg_csv = os.path.join(
-                tab_dir, "results_transport_mode_time_daily_avg_minutes.csv"
-            )
-            t_trips_avg_csv = os.path.join(
-                tab_dir, "results_transport_mode_trips_daily_avg_count.csv"
-            )
             t_trips_tot_csv = os.path.join(
                 tab_dir, "results_transport_mode_trips_total_count.csv"
-            )
-            t_dist_avg_csv = os.path.join(
-                tab_dir, "results_transport_mode_daily_avg_km_dist.csv"
             )
             t_dist_tot_csv = os.path.join(
                 tab_dir, "results_transport_mode_total_km_dist.csv"
@@ -266,22 +242,7 @@ def main():
                     GENERATE_ACTIVITIES_DAILY_MAJORITY_SCHEDULE_TABLE_SCRIPT,
                     ["--sim-dir", agg_dir, "--out-dir", tab_dir],
                 )
-                run_script(
-                    GENERATE_TRANSPORT_MODE_TIME_DAILY_AVG_MINUTES_TABLE_SCRIPT,
-                    ["--sim-dir", agg_dir, "--out-dir", tab_dir],
-                )
-                run_script(
-                    GENERATE_TRANSPORT_MODE_TRIPS_DAILY_AVG_COUNT_TABLE_SCRIPT,
-                    ["--sim-dir", agg_dir, "--out-dir", tab_dir],
-                )
-                run_script(
-                    GENERATE_TRANSPORT_MODE_TRIPS_TOTAL_COUNT_TABLE_SCRIPT,
-                    ["--sim-dir", agg_dir, "--out-dir", tab_dir],
-                )
-                run_script(
-                    GENERATE_TRANSPORT_MODE_DAILY_AVG_KM_DIST_TABLE_SCRIPT,
-                    ["--sim-dir", agg_dir, "--out-dir", tab_dir],
-                )
+
                 run_script(
                     GENERATE_TRANSPORT_MODE_TOTAL_KM_DIST_TABLE_SCRIPT,
                     ["--sim-dir", agg_dir, "--out-dir", tab_dir],
@@ -309,27 +270,18 @@ def main():
                     ["--schedule-csv", sched_csv, "--out-dir", fig_dir],
                 )
                 run_script(
-                    GENERATE_TRANSPORT_MODE_TIME_DAILY_AVG_MINUTES_PLOT_SCRIPT,
-                    ["--csv", t_time_avg_csv, "--out-dir", fig_dir],
+                    GENERATE_TRANSPORT_MODE_TOTAL_DISTANCE_AND_TRIPS_PLOT_SCRIPT,
+                    [
+                        "--distance-csv",
+                        t_dist_tot_csv,
+                        "--trips-csv",
+                        t_trips_tot_csv,
+                        "--out-dir",
+                        fig_dir,
+                    ],
                 )
                 run_script(
-                    GENERATE_TRANSPORT_MODE_TRIPS_DAILY_AVG_COUNT_PLOT_SCRIPT,
-                    ["--csv", t_trips_avg_csv, "--out-dir", fig_dir],
-                )
-                run_script(
-                    GENERATE_TRANSPORT_MODE_TRIPS_TOTAL_COUNT_PLOT_SCRIPT,
-                    ["--csv", t_trips_tot_csv, "--out-dir", fig_dir],
-                )
-                run_script(
-                    GENERATE_TRANSPORT_MODE_DAILY_AVG_KM_DIST_PLOT_SCRIPT,
-                    ["--csv", t_dist_avg_csv, "--out-dir", fig_dir],
-                )
-                run_script(
-                    GENERATE_TRANSPORT_MODE_TOTAL_KM_DIST_PLOT_SCRIPT,
-                    ["--csv", t_dist_tot_csv, "--out-dir", fig_dir],
-                )
-                run_script(
-                    GENERATE_AGENT_LOCATION_TIME_HEATMAP_SCRIPT,
+                    GENERATE_AGENT_LOCATION_TIME_TRIP_MAP_SCRIPT,
                     [
                         "--time-csv",
                         time_csv,

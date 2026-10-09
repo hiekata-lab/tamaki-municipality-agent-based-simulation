@@ -3,7 +3,6 @@
 import argparse
 import os
 from typing import Optional, Tuple
-from matplotlib.colors import PowerNorm
 import matplotlib.patches as mpatches
 from matplotlib.patches import FancyArrowPatch
 import matplotlib.path as mpath
@@ -11,7 +10,6 @@ import matplotlib.patheffects as pe
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import seaborn as sns
 from src.constants import (
     COL_DEST_X,
     COL_DEST_Y,
@@ -101,32 +99,6 @@ def _calculate_duration_range_from_time_data(
     return float(durs_hours.min()), float(durs_hours.max())
 
 
-def _draw_kde_heatmap_on_axes(ax: plt.Axes, df_time: pd.DataFrame) -> None:
-    if df_time.empty:
-        return
-    loc_durations = (
-        df_time.groupby([COL_LOCATION, COL_X, COL_Y])[COL_DURATION].sum().reset_index()
-    )
-    if len(loc_durations) <= 1:
-        return
-    loc_durations["kde_weight"] = 2.0 + np.log1p(loc_durations[COL_DURATION])
-    sns.kdeplot(
-        data=loc_durations,
-        x=COL_X,
-        y=COL_Y,
-        weights="kde_weight",
-        fill=True,
-        cmap="YlOrRd",
-        alpha=0.45,
-        levels=40,
-        thresh=0.003,
-        cut=4,
-        bw_adjust=0.38,
-        ax=ax,
-        zorder=2,
-        norm=PowerNorm(gamma=2.0),
-    )
-
 
 def _draw_outside_home_durations_on_axes(
     ax: plt.Axes, df_outside: pd.DataFrame, vmin: float, vmax: float
@@ -175,7 +147,7 @@ def _draw_home_durations_on_axes(
         vmin=vmin,
         vmax=vmax,
         marker=marker,
-        s=220,
+        s=480,
         alpha=0.9,
         edgecolors="black",
         linewidth=0.8,
@@ -193,7 +165,7 @@ def _annotate_count_under_home_on_axes(
     ax.annotate(
         str(count),
         xy=(x, y),
-        xytext=(0, -11),
+        xytext=(0, -13),
         textcoords="offset points",
         ha="center",
         va="top",
@@ -302,14 +274,14 @@ def _add_shared_colorbar_to_axes(ax: plt.Axes, mappable: Optional[plt.Artist]) -
     cbar.ax.tick_params(labelsize=18)
 
 
-def generate_location_time_heatmap(
+def generate_agent_location_time_trip_map(
     time_csv: str,
     out_dir: str,
     trip_csv: Optional[str] = None,
     agents_csv: Optional[str] = "data/processed/agents.csv",
 ) -> None:
     if load_projected_shapefile is None:
-        print("  Warning: geopandas is not available; skipping geographic heatmap regeneration.")
+        print("  Warning: geopandas is not available; skipping geographic trip map regeneration.")
         return
     map_df = load_projected_shapefile("data/raw/r2ka24461.shp")
     df_time = pd.read_csv(time_csv)
@@ -321,7 +293,6 @@ def generate_location_time_heatmap(
 
     fig, ax = plt.subplots(figsize=(24, 24))
     map_df.plot(ax=ax, color="lightgrey", edgecolor="white", alpha=0.8, zorder=1)
-    _draw_kde_heatmap_on_axes(ax, df_time)
     _draw_all_trips_on_axes(ax, resolved_trip_csv)
 
     is_home = df_time[COL_LOCATION].str.startswith("Home")
@@ -342,13 +313,13 @@ def generate_location_time_heatmap(
     ax.axis("off")
 
     plt.tight_layout()
-    out_file = os.path.join(out_dir, "agent_location_time_heatmap.png")
+    out_file = os.path.join(out_dir, "agent_location_time_trip_map.png")
     save_figure(fig, out_file, bbox_inches="tight")
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="Generate agent location time heatmap."
+        description="Generate agent location time trip map."
     )
     parser.add_argument("--time-csv", type=str, required=True, help="Input CSV path")
     parser.add_argument(
@@ -363,6 +334,6 @@ if __name__ == "__main__":
     parser.add_argument("--out-dir", type=str, required=True, help="Output directory")
     args = parser.parse_args()
 
-    generate_location_time_heatmap(
+    generate_agent_location_time_trip_map(
         args.time_csv, args.out_dir, args.trip_csv, args.agents_csv
     )

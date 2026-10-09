@@ -94,7 +94,7 @@ An independent two-sample comparison using **Welch's $t$-test** is conducted to 
      Sex, Usual economic activity, Usual state of health, Age (15 Years Old and Over) - Japan,
      Prefectures*), reflecting approximately 800 respondents across all households in Mie
      Prefecture.
-   - **Survey Total Sample ($N_{\text{total}} = 3{,}372$)**: Total sampled respondents in Mie Prefecture across all ages (15+) and employment statuses from Questionnaire A (`Sample_Persons_Average_Time` in `data/processed/Questionnaire A.csv`).
+   - **Survey Total Sample ($N_{\text{total}} = 3{,}372$)**: Total sampled respondents in Mie Prefecture across all ages (15+) and employment statuses from Questionnaire A (`Sample_Persons_Average_Time` in `data/processed/Appendix Table A Number of Sample EDs, Households and Persons by Prefectures (Questionnaire A).csv`).
 
 2. **Activity Means ($\bar{x}$) and Alignment**:
    - **Simulation Mean ($\bar{x}_{\text{sim}}$)**: Evaluated over each agent's first 24-hour cycle ($1{,}440\text{ minutes}$) starting from initial deployment ($T_0 = \text{2026-06-10 08:00:00}$ to $T_1 = \text{2026-06-11 08:00:00}$). Restricting the analysis window to exactly 24 hours (1 daytime cycle and 1 nighttime sleep cycle) ensures consistent daily proportions and avoids sleep deflation from multi-day partial spans. All transportation modes (`Walking`, `Riding bus`, `Driving car`, `Riding taxi`, `Riding mobility-on-demand shuttle`, `Riding bike`) as well as `Arriving` events are consolidated into a unified `Moving` category.

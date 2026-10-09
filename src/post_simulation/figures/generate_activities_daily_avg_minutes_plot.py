@@ -118,10 +118,21 @@ def generate_activity_time_comparison_plot(
         elinewidth=3,
     )
 
-    ax.set_xlabel("Average Time Spent (minutes)")
+    ax.set_xlabel("Mean Minutes Spent Across All Agents", fontsize=12)
     ax.set_yticks(y)
-    ax.set_yticklabels([textwrap.fill(act, width=30) for act in activities])
-    ax.legend()
+    ytick_labels = [textwrap.fill(act, width=30) for act in activities]
+    ax.set_yticklabels(ytick_labels)
+    ax.text(
+        -0.02,
+        1.02,
+        "Activity",
+        transform=ax.transAxes,
+        ha="right",
+        va="bottom",
+        fontsize=12,
+        fontweight="bold",
+    )
+    ax.legend(fontsize=11)
     ax.invert_yaxis()
 
     plt.tight_layout()

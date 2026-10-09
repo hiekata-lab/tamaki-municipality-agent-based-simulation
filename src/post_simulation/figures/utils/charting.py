@@ -1,45 +1,9 @@
 """Responsible for providing shared charting and plotting utilities."""
 
 import os
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, Optional, Tuple
 import matplotlib.pyplot as plt
-from matplotlib.ticker import MaxNLocator
 import pandas as pd
-
-
-def plot_grouped_category_bars(
-    df: pd.DataFrame,
-    group_col: str,
-    category_order: List[str],
-    value_cols: List[str],
-    ylabel: str,
-    title: Optional[str] = None,
-    agg_func: str = "mean",
-    integer_y_ticks: bool = False,
-    figsize: Tuple[int, int] = (14, 7),
-    rot: int = 45,
-    width: float = 0.8,
-) -> Tuple[plt.Figure, plt.Axes]:
-    """Renders a grouped bar chart comparing numeric metrics across categorical groups."""
-    grouped = df.groupby(group_col).agg(agg_func, numeric_only=True)
-    plot_df = grouped.reindex(category_order).fillna(0)[value_cols].T
-    plot_df = plot_df.rename(
-        index={"Riding mobility-on-demand shuttle": "Riding MoD shuttle"}
-    )
-
-    fig, ax = plt.subplots(figsize=figsize)
-    plot_df.plot.bar(ax=ax, width=width, rot=rot)
-
-    ax.set_ylabel(ylabel, fontsize=20)
-    ax.tick_params(axis="both", labelsize=20)
-    if title:
-        ax.set_title(title, fontweight="bold", fontsize=24)
-    if integer_y_ticks:
-        ax.yaxis.set_major_locator(MaxNLocator(integer=True))
-    ax.legend()
-    plt.tight_layout()
-
-    return fig, ax
 
 
 def parse_legend_location_coordinates(

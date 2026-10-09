@@ -20,14 +20,20 @@ AVERAGE_TIME_SPENT_DF = pd.read_csv(
 print("Loaded average time spent data...")
 
 # Get househoulds by health awareness data
-household_size_path = "data/raw/Household size (15 years and older), health awareness, gender, age (5-year age groups), and education level.csv"
+household_size_path = (
+    "data/raw/30 Household size (15 years and older), health awareness, gender, "
+    "age (5-year age groups), and education level.csv"
+)
 HOUSEHOLD_SIZE_DF = pd.read_csv(
     household_size_path, engine="python", thousands=",", encoding="shift_jis"
 ).fillna(0)
 print("Loaded household size data...")
 
 # Get population data by age and gender
-population_path = "data/raw/Population by Sex, Age (single years) and All nationality or Japanese - Japan, Prefectures, Municipalities (including Municipalities as of 2000).csv"
+population_path = (
+    "data/raw/2-5-1 Population by Sex, Age (single years) and All nationality or "
+    "Japanese - Japan, Prefectures, Municipalities (including Municipalities as of 2000).csv"
+)
 POPULATION_DF = pd.read_csv(
     population_path, engine="python", thousands=",", encoding="shift_jis"
 ).fillna(0)

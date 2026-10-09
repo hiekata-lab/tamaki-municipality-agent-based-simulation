@@ -279,7 +279,11 @@ if __name__ == "__main__":
         "activities, Day of the week, Area classification, Sex, Usual economic activity, "
         "Usual state of health, Age (15 Years Old and Over)-Japan, Prefectures.csv"
     )
-    se_ratios_path = "data/processed/Standard Error Ratios of Average time spent in activities for all persons by Sex, Kind of activities - Weekly average, Japan, Prefectures.csv"
+    se_ratios_path = (
+        "data/processed/13 Standard Error Ratios of Average time spent in "
+        "activities for all persons by Sex, Kind of activities - Weekly average, "
+        "Japan, Prefectures.csv"
+    )
     sample_size_path = "data/processed/survey_sample_size.csv"
     generate_comparison_table(
         args.sim_dir,
